@@ -7092,9 +7092,10 @@ function adminLockSelectChange() {
   const m = state.matches.find(x => x.id === Number(sel.value));
   if (!m || !row || !inner) return;
   row.style.display = '';
-  const isLive = m.status === 'live';
+  const isLive     = m.status === 'live';
+  const isFinished = m.status === 'finished';
 
-  if (!isLive) {
+  if (!isLive && !isFinished) {
     inner.innerHTML = `<span style="font-family:'Azeret Mono',monospace;font-size:0.7rem;color:var(--text-muted);">⚪ Ouvert aux paris</span>
       <button class="admin-btn" style="background:var(--red);color:#fff;" onclick="adminLockMatch(${m.id})">🔒 Verrouiller</button>`;
     return;
@@ -7131,7 +7132,7 @@ function adminLockSelectChange() {
   const adjBtn = `${btnStyle}background:rgba(255,255,255,0.08);color:#fff;font-size:1rem;width:32px;height:32px;display:flex;align-items:center;justify-content:center;`;
 
   inner.innerHTML = `<div style="width:100%;">
-    <div style="font-family:'Azeret Mono',monospace;font-size:0.5rem;color:var(--green);letter-spacing:0.12em;margin-bottom:0.75rem;">● EN DIRECT — ${m.home} vs ${m.away}</div>
+    <div style="font-family:'Azeret Mono',monospace;font-size:0.5rem;color:${isFinished ? 'var(--text-muted)' : 'var(--green)'};letter-spacing:0.12em;margin-bottom:0.75rem;">${isFinished ? '✓ TERMINÉ' : '● EN DIRECT'} — ${m.home} vs ${m.away}</div>
     <div style="display:flex;align-items:center;justify-content:center;gap:2rem;padding:0.6rem 0;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);margin-bottom:0.75rem;">
       <div style="display:flex;flex-direction:column;align-items:center;gap:0.25rem;">
         <span style="font-family:'Azeret Mono',monospace;font-size:0.48rem;color:var(--text-muted);">${m.home}</span>
@@ -7160,7 +7161,7 @@ function adminLockSelectChange() {
       ${scorers.length ? `<div style="display:flex;flex-wrap:wrap;gap:0.3rem;">${scorerTagsHtml}</div>` : ''}
     </div>
     <div style="display:flex;gap:0.5rem;">
-      <button onclick="adminFinishMatch(${m.id})" class="admin-btn" style="background:var(--green);color:#fff;flex:1;justify-content:center;">✓ Match terminé</button>
+      ${isFinished ? '' : `<button onclick="adminFinishMatch(${m.id})" class="admin-btn" style="background:var(--green);color:#fff;flex:1;justify-content:center;">✓ Match terminé</button>`}
       <button onclick="adminUnlockMatch(${m.id})" class="admin-btn admin-btn--edit">🔓 Rouvrir</button>
     </div>
   </div>`;
