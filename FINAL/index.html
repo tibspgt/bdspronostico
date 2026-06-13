@@ -582,9 +582,9 @@
     }
 
     .match-status.upcoming {
-      background: rgba(212,160,23,0.1);
-      color: var(--gold);
-      border: 1px solid rgba(212,160,23,0.2);
+      background: color-mix(in srgb, var(--card-color) 10%, transparent);
+      color: var(--card-color);
+      border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent);
     }
 
     .pred-badge {
@@ -4772,13 +4772,13 @@ function renderMatchCard(m) {
       <div class="match-inner">
         <div class="match-meta">
           <div class="match-meta-top">
-            <span class="match-group">${m.match_group} · ${m.city}</span>
+            ${statusHtml}
             <div style="display:flex;align-items:center;gap:0.4rem;flex-shrink:0;">
               ${betCountBadgeHtml}
               ${state.currentUser && !isLocked && !isTBD ? (hasPred ? '<span class="pred-badge done">✓ POSÉ</span>' : '<span class="pred-badge todo">● À PARIER</span>') : ''}
             </div>
           </div>
-          ${statusHtml}
+          <span class="match-group">${m.match_group} · ${m.city}</span>
         </div>
         <div class="match-teams">
           <div class="team home">
