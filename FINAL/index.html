@@ -7291,7 +7291,14 @@ function buildAdminCard(m) {
 
   let scorerRow;
   if (m.scorer_result) {
-    const labels = m.scorer_result === 'AUCUN_BUT' ? ['Aucun but'] : m.scorer_result.split(',').map(s => s.trim());
+    let labels;
+    if (m.scorer_result === 'AUCUN_BUT') {
+      labels = ['Aucun but'];
+    } else {
+      const raw = m.scorer_result.split(',').map(s => s.trim()).filter(Boolean);
+      const cnt = {}; for (const n of raw) cnt[n] = (cnt[n] || 0) + 1;
+      labels = [...new Set(raw)].map(n => cnt[n] > 1 ? `${n} ×${cnt[n]}` : n);
+    }
     scorerRow = `<span class="admin-validated">${labels.join(' · ')}</span>
                  <button class="admin-btn admin-btn--edit" onclick="resetAdminField(${m.id},'scorer')">Modifier</button>`;
   } else {
@@ -7417,10 +7424,16 @@ async function saveAdminPenalty(matchId, side) {
 }
 
 async function resetAdminField(matchId, field) {
+  const m = state.matches.find(x => x.id === matchId);
+  if (field === 'scorer' && m?.scorer_result && m.scorer_result !== 'AUCUN_BUT') {
+    adminState.scorerPicks[matchId] = m.scorer_result.split(',').map(s => s.trim()).filter(Boolean);
+    m.scorer_result = null;
+    renderAdmin();
+    return;
+  }
   const col = field === 'motm' ? 'motm_result' : field === 'scorer' ? 'scorer_result' : 'penalty_winner';
   const { error } = await sb.from('matches').update({ [col]: null }).eq('id', matchId);
   if (error) { showToast('Erreur', 'error'); return; }
-  const m = state.matches.find(x => x.id === matchId);
   if (m) {
     if (field === 'motm')    m.motm_result    = null;
     else if (field === 'scorer') m.scorer_result = null;
@@ -8059,8 +8072,8 @@ function buildProfileHTML(player, rank) {
       motmPts > 0 ? `MOTM +${motmPts}` : null,
       scorerPts > 0 ? `buteur +${scorerPts}` : null,
     ].filter(Boolean).join(' · ');
-    const motmPickName = motmBet ? motmBet.pick_player_name.split(' ').pop() : null;
-    const scorerPickName = scorerBet ? (scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : scorerBet.pick_player_name.split(' ').pop()) : null;
+    const motmPickName = motmBet ? motmBet.pick_player_name : null;
+    const scorerPickName = scorerBet ? (scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : scorerBet.pick_player_name) : null;
     const picksLine = (motmPickName || scorerPickName) ? `<div style="display:flex;gap:0.6rem;margin-top:0.15rem;flex-wrap:wrap;">
       ${motmPickName ? `<span style="font-family:'Azeret Mono',monospace;font-size:0.46rem;color:${motmPts>0?'var(--gold)':'rgba(255,255,255,0.25)'};">⭐ ${motmPickName} ${motmPts>0?'✓':'✗'}</span>` : ''}
       ${scorerPickName ? `<span style="font-family:'Azeret Mono',monospace;font-size:0.46rem;color:${scorerPts>0?'var(--cyan-bright)':'rgba(255,255,255,0.25)'};">⚽ ${scorerPickName} ${scorerPts>0?'✓':'✗'}</span>` : ''}
