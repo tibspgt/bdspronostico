@@ -141,7 +141,7 @@
       letter-spacing: 0.3em;
       color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 2.25rem;
+      margin-bottom: 1.1rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.2s ease forwards;
     }
@@ -539,15 +539,33 @@
     }
 
     .match-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
       margin-bottom: 0.75rem;
     }
     .match-meta-top {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      gap: 0.25rem 0.4rem;
+    }
+    /* Desktop : groupe·ville à gauche (ordre 0), badges à droite (ordre 1), status en dessous (ordre 2) */
+    .match-meta-status {
+      order: 2;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .match-meta-badges {
+      order: 1;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .match-group {
+      order: 0;
+      flex: 1;
     }
 
     .match-group {
@@ -582,9 +600,9 @@
     }
 
     .match-status.upcoming {
-      background: color-mix(in srgb, var(--card-color) 10%, transparent);
-      color: var(--card-color);
-      border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent);
+      background: rgba(212,160,23,0.1);
+      color: var(--gold);
+      border: 1px solid rgba(212,160,23,0.2);
     }
 
     .pred-badge {
@@ -708,7 +726,7 @@
     }
 
     .team-flag {
-      height: 26px;
+      height: 20px;
       width: auto;
       flex-shrink: 0;
       display: block;
@@ -716,7 +734,7 @@
 
     .team-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       letter-spacing: 0.04em;
       color: var(--text);
     }
@@ -1962,12 +1980,17 @@
 
       /* Match cards — plus compactes */
       .match-inner { padding: 0.6rem 0.75rem; }
-      .match-meta { margin-bottom: 0.5rem; gap: 0.2rem; }
-      .match-group { font-size: 0.55rem; }
+      .match-meta { margin-bottom: 0.5rem; }
+      /* Mobile : status en haut à gauche, badges à droite, groupe·ville en dessous */
+      .match-meta-status { order: 0; width: auto; flex: 1; }
+      .match-meta-badges { order: 1; flex-shrink: 0; }
+      .match-group { order: 2; width: 100%; flex: none; font-size: 0.55rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .match-status.upcoming { background: color-mix(in srgb, var(--card-color) 10%, transparent); color: var(--card-color); border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent); }
       .match-time { font-size: 0.58rem; }
-      .match-status { font-size: 0.55rem; padding: 0.1rem 0.4rem; }
+      .match-status { font-size: 0.55rem; padding: 0.1rem 0.4rem; white-space: normal; }
       .match-teams { gap: 0.5rem; }
       .team-name { font-size: 1.15rem; }
+      .team-flag { height: 18px; }
       .score-actual { font-size: 1.5rem; }
       .score-vs { font-size: 0.6rem; }
       .odds-band { padding: 0.35rem 0.75rem; }
@@ -1990,12 +2013,11 @@
       .motm-area { border-right: none; border-bottom: 1px solid color-mix(in srgb, var(--card-color) 15%, transparent); }
       .scorer-save { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
       .match-card { margin-bottom: 0.5rem; overflow: hidden; max-width: 100%; }
-      .team-flag { height: 18px; }
-      .match-status { white-space: normal; }
-      .match-group { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
       .motm-pick { overflow: hidden; min-width: 0; }
       .scorer-pick { overflow: hidden; min-width: 0; }
       .pred-potential { overflow: hidden; }
+      /* Hero */
+      .hero-eyebrow { margin-bottom: 2.25rem; }
 
       /* Filtres matchs — bande défilante horizontale */
       .section-tabs {
@@ -4782,15 +4804,13 @@ function renderMatchCard(m) {
       <div class="match-inner">
         <div class="match-meta">
           <div class="match-meta-top">
-            <div style="display:flex;align-items:center;gap:0.4rem;">
-              ${statusHtml}
-            </div>
-            <div style="display:flex;align-items:center;gap:0.4rem;flex-shrink:0;">
+            <div class="match-meta-status">${statusHtml}</div>
+            <span class="match-group">${m.match_group} · ${m.city}</span>
+            <div class="match-meta-badges">
               ${betCountBadgeHtml}
               ${state.currentUser && !isLocked && !isTBD ? (hasPred ? '<span class="pred-badge done">✓ POSÉ</span>' : '<span class="pred-badge todo">● À PARIER</span>') : ''}
             </div>
           </div>
-          <span class="match-group">${m.match_group} · ${m.city}</span>
         </div>
         <div class="match-teams">
           <div class="team home">
