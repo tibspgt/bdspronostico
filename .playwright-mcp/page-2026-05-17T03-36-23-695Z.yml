@@ -1,0 +1,101 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: Pronostico — Édition officielle
+    - heading "COUPE DU MONDE 2026" [level=1] [ref=e6]:
+      - text: COUPE
+      - text: DU MONDE
+      - generic [ref=e7]: "2026"
+    - paragraph [ref=e8]: Pronostique. Rivalise. Triomphe.
+    - generic [ref=e9]:
+      - button "Rejoindre la ligue" [ref=e10] [cursor=pointer]
+      - button "Voir les matchs" [ref=e11] [cursor=pointer]
+  - navigation [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e17]: PRONOSTICO
+      - generic [ref=e18]:
+        - button "Matchs" [ref=e19] [cursor=pointer]
+        - button "Résultats" [ref=e20] [cursor=pointer]
+        - button "Groupes" [ref=e21] [cursor=pointer]
+        - button "Classement" [ref=e22] [cursor=pointer]
+        - button "Bonus" [ref=e23] [cursor=pointer]
+        - button "Cagnotte" [ref=e24] [cursor=pointer]
+        - button "Règles" [ref=e25] [cursor=pointer]
+      - generic [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: "?"
+        - generic [ref=e28]: Invité
+  - main [ref=e29]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - paragraph [ref=e33]: // CDM 2026 — 104 matchs
+        - heading "Matchs & Pronostics" [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - button "Tous" [ref=e37] [cursor=pointer]
+          - button "J1 (11-18 juin)" [ref=e38] [cursor=pointer]
+          - button "J2 (18-24 juin)" [ref=e39] [cursor=pointer]
+          - button "J3 (24-28 juin)" [ref=e40] [cursor=pointer]
+          - button "Phases Finales" [ref=e41] [cursor=pointer]
+        - generic [ref=e42]:
+          - generic [ref=e43]: Tri
+          - button "Par groupe" [ref=e44] [cursor=pointer]
+          - button "Par date" [ref=e45] [cursor=pointer]
+      - generic [ref=e47]:
+        - generic [ref=e48]: Chargement...
+        - generic [ref=e49]: Connexion à la base de données
+  - generic:
+    - generic:
+      - generic: REJOINDRE
+      - generic: Entre dans la ligue avec tes amis
+      - generic:
+        - button "Première fois"
+        - button "Je reviens"
+      - generic:
+        - generic:
+          - generic: Code de la ligue
+          - textbox "Demande-le à l'organisateur"
+        - generic:
+          - generic: Ton prénom
+          - 'textbox "ex: Thomas"'
+        - generic:
+          - generic: Ton équipe du coeur
+          - generic: Clique sur un drapeau
+        - generic:
+          - generic: Ton PIN (4 chiffres)
+          - textbox "••••"
+      - generic:
+        - button "C'est parti !"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: MON PROFIL
+      - generic: Modifier mes informations
+      - generic:
+        - generic: Ma photo de profil
+        - generic:
+          - generic:
+            - generic: 📷
+        - generic: CHANGER LA PHOTO
+      - generic:
+        - generic: Mon équipe du coeur
+        - generic: Chargement...
+      - generic:
+        - generic: Nouveau PIN — laisser vide pour ne pas changer
+        - textbox "••••"
+      - generic:
+        - button "Enregistrer"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: Étape 2 / 2
+      - generic: TA PHOTO
+      - generic: Mets un visage sur ton prénom !
+      - generic:
+        - generic:
+          - generic: 📷
+          - generic: CLIQUE POUR CHOISIR
+      - paragraph:
+        - text: Ta photo s'affichera dans le classement et sur les matchs.
+        - text: Ton drapeau restera affiché à côté de ton prénom.
+      - generic:
+        - button "Enregistrer" [disabled]
+        - button "Passer pour l'instant"

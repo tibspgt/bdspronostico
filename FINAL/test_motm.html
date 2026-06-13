@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --card-color: #E82020;
+  --bg: #080808; --bg2: #101010; --bg3: #181818;
+  --text: #F5F5F5; --text-dim: #999; --text-muted: #555;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Barlow Condensed', sans-serif; padding: 2rem; }
+
+.motm-picker { position: relative; width: 320px; }
+.motm-trigger {
+  width: 100%; height: 32px;
+  background: var(--bg3);
+  border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent);
+  color: var(--text);
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem;
+  padding: 0 0.5rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 0.4rem;
+  text-align: left;
+}
+.motm-trigger:hover, .motm-picker.open .motm-trigger { border-color: var(--card-color); }
+.motm-trigger-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: flex; align-items: center; gap: 0.35rem; }
+.motm-arrow { font-size: 0.6rem; color: var(--card-color); opacity: 0.7; flex-shrink: 0; transition: transform 0.2s; }
+.motm-picker.open .motm-arrow { transform: rotate(180deg); }
+
+.motm-dropdown {
+  display: none; position: absolute; top: calc(100% + 2px); left: 0; width: 100%;
+  background: var(--bg2); border: 1px solid color-mix(in srgb, var(--card-color) 30%, transparent);
+  z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.motm-picker.open .motm-dropdown { display: block; }
+
+.motm-two-col { display: grid; grid-template-columns: 1fr 1px 1fr; max-height: 240px; }
+.motm-col { overflow-y: auto; overscroll-behavior: contain; }
+.motm-col .motm-group-hdr { position: sticky; top: 0; z-index: 1; }
+.motm-col-sep { background: rgba(255,255,255,0.07); }
+
+.motm-group-hdr {
+  padding: 0.3rem 0.6rem 0.15rem;
+  font-family: 'Azeret Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.12em; color: var(--card-color); opacity: 0.7;
+  background: color-mix(in srgb, var(--card-color) 6%, transparent); text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--card-color) 10%, transparent);
+}
+.motm-group-hdr img { height: 11px; border-radius: 1px; }
+.motm-pos-sep {
+  padding: 0.25rem 0.75rem 0.1rem;
+  font-family: 'Azeret Mono', monospace; font-size: 0.52rem;
+  letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.05); margin-top: 0.1rem;
+}
+.motm-option {
+  padding: 0.16rem 0.75rem; cursor: pointer;
+  font-family: 'Barlow Condensed', sans-serif; font-size: 0.88rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  color: var(--text); transition: background 0.1s;
+}
+.motm-option:hover { background: color-mix(in srgb, var(--card-color) 8%, transparent); }
+.motm-option.selected { color: var(--card-color); background: color-mix(in srgb, var(--card-color) 6%, transparent); }
+.motm-option img { height: 12px; border-radius: 1px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<p style="color:#999;font-size:0.8rem;margin-bottom:1rem;font-family:'Azeret Mono',monospace;">TEST — MOTM PICKER DEUX COLONNES</p>
+
+<div class="motm-picker" id="picker">
+  <button class="motm-trigger" onclick="document.getElementById('picker').classList.toggle('open')">
+    <span class="motm-trigger-label">— choisir —</span>
+    <span class="motm-arrow">▾</span>
+  </button>
+  <div class="motm-dropdown">
+    <div class="motm-two-col">
+      <!-- SUÈDE -->
+      <div class="motm-col">
+        <div class="motm-group-hdr">
+          <img src="https://flagcdn.com/w20/se.png"> Suède
+        </div>
+        <div class="motm-pos-sep">Gardiens</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Olsen</div>
+        <div class="motm-pos-sep">Défenseurs</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Danielson</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Lindelöf</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Augustinsson</div>
+        <div class="motm-pos-sep">Milieux</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Ekdal</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Larsson</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Claesson</div>
+        <div class="motm-pos-sep">Attaquants</div>
+        <div class="motm-option selected"><img src="https://flagcdn.com/w20/se.png"> Isak</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Berg</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/se.png"> Quaison</div>
+      </div>
+      <!-- SÉPARATEUR -->
+      <div class="motm-col-sep"></div>
+      <!-- TUNISIE -->
+      <div class="motm-col">
+        <div class="motm-group-hdr">
+          <img src="https://flagcdn.com/w20/tn.png"> Tunisie
+        </div>
+        <div class="motm-pos-sep">Gardiens</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Dahmen</div>
+        <div class="motm-pos-sep">Défenseurs</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Bronn</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Meriah</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Talbi</div>
+        <div class="motm-pos-sep">Milieux</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Skhiri</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Laïdouni</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Ben Romdhane</div>
+        <div class="motm-pos-sep">Attaquants</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Msakni</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Khazri</div>
+        <div class="motm-option"><img src="https://flagcdn.com/w20/tn.png"> Jaziri</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

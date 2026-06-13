@@ -1,0 +1,56 @@
+- generic [ref=e3]:
+  - link "Passer au contenu principal" [ref=e4] [cursor=pointer]:
+    - /url: "#main-content"
+    - generic [ref=e5]: Passer au contenu principal
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - navigation [ref=e11]:
+        - link "FIFA" [ref=e12] [cursor=pointer]:
+          - /url: /
+          - img "FIFA" [ref=e13]
+        - generic [ref=e14]:
+          - link "BILLETS ET HOSPITALITÉ" [ref=e16] [cursor=pointer]:
+            - /url: https://www.fifa.com/fifaplus/tickets?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_ticketing)_(da_04052023)_(l_fr)
+          - link "FIFA STORE" [ref=e18] [cursor=pointer]:
+            - /url: https://store.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_fifastore)_(da_04052023)_(l_fr)
+          - link "FIFA REWARDS" [ref=e20] [cursor=pointer]:
+            - /url: https://www.fifa.com/fr/rewards/?intcmp=%28p_fifacom%29_%28d_%29_%28c_webuniversal-fwc2026%29_%28sc_rewards%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - link "FIFA+" [ref=e22] [cursor=pointer]:
+            - /url: https://www.plus.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_originals)_(da_17052023)_(l_fr)
+          - link "INSIDE FIFA" [ref=e24] [cursor=pointer]:
+            - /url: https://inside.fifa.com/fr
+      - generic [ref=e26]:
+        - link "FIFA" [ref=e33] [cursor=pointer]:
+          - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026
+          - img "FIFA" [ref=e34]
+        - navigation [ref=e36]:
+          - link "RÉSULTATS & CALENDRIER" [ref=e38] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures
+          - link "CLASSEMENTS" [ref=e40] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/standings
+          - link "ÉQUIPES" [ref=e42] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/teams
+          - link "QUALIFICATIONS" [ref=e44] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/qualifiers
+          - generic [ref=e46] [cursor=pointer]: LES PAYS ET LES VILLES HÔTES
+          - link "BILLETS" [ref=e48] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/tickets
+          - link "HOSPITALITÉ" [ref=e50] [cursor=pointer]:
+            - /url: https://fifaworldcup26.hospitality.fifa.com/fr?intcmp=%28p_fifacom%29_%28d_%29_%28c_webheader-fwc2026%29_%28sc_register-interest%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - generic [ref=e52] [cursor=pointer]: LE COIN DES FANS
+          - link "ORGANISATION" [ref=e54] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/organisation
+          - link "REGARDER SUR FIFA+" [ref=e56] [cursor=pointer]:
+            - /url: https://www.plus.fifa.com/showcase/fceffc49-6bb9-4c7e-99dc-a032f2797aa5?intcmp=%28p_fifacom%29_%28d_plusfifa%29_%28c_webheader-fwc2026%29_%28sc_fwc-2026-qualifiers%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - generic [ref=e58] [cursor=pointer]: TOURNOIS
+        - link "Search" [ref=e60] [cursor=pointer]:
+          - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures?searchOverlay=1
+          - img "Search" [ref=e61]
+        - button "Langue" [ref=e65] [cursor=pointer]:
+          - img "Langue" [ref=e66]
+        - button "Mon compte" [ref=e68] [cursor=pointer]:
+          - img [ref=e69]
+  - generic [ref=e73]:
+    - main [ref=e74]:
+      - generic [ref=e89]: ;
+    - separator [ref=e146]

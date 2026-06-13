@@ -1,0 +1,351 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: ⚽ Pronostico — Édition officielle
+    - heading "COUPE DU MONDE 2026" [level=1] [ref=e6]:
+      - text: COUPE
+      - text: DU MONDE
+      - generic [ref=e7]: "2026"
+    - paragraph [ref=e8]: Pronostique. Rivalise. Triomphe.
+    - generic [ref=e9]:
+      - button "Rejoindre la ligue" [ref=e10] [cursor=pointer]
+      - button "Voir les matchs" [ref=e11] [cursor=pointer]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Total matchs
+      - generic [ref=e16]: "104"
+    - generic [ref=e18]:
+      - generic [ref=e19]: Équipes
+      - generic [ref=e20]: "48"
+    - generic [ref=e22]:
+      - generic [ref=e23]: Groupes
+      - generic [ref=e24]: "12"
+    - generic [ref=e26]:
+      - generic [ref=e27]: Coup d'envoi
+      - generic [ref=e28]: 12 Juin 2026
+    - generic [ref=e30]:
+      - generic [ref=e31]: Finale
+      - generic [ref=e32]: 27 Juillet — New York
+    - generic [ref=e34]:
+      - generic [ref=e35]: 1er match France
+      - generic [ref=e36]: France vs Sénégal — 17 Juin
+    - generic [ref=e38]:
+      - generic [ref=e39]: Total matchs
+      - generic [ref=e40]: "104"
+    - generic [ref=e42]:
+      - generic [ref=e43]: Équipes
+      - generic [ref=e44]: "48"
+    - generic [ref=e46]:
+      - generic [ref=e47]: Groupes
+      - generic [ref=e48]: "12"
+    - generic [ref=e50]:
+      - generic [ref=e51]: Coup d'envoi
+      - generic [ref=e52]: 12 Juin 2026
+    - generic [ref=e54]:
+      - generic [ref=e55]: Finale
+      - generic [ref=e56]: 27 Juillet — New York
+    - generic [ref=e58]:
+      - generic [ref=e59]: 1er match France
+      - generic [ref=e60]: France vs Sénégal — 17 Juin
+  - navigation [ref=e62]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: CDM 2026
+      - generic [ref=e66]:
+        - button "Matchs" [ref=e67] [cursor=pointer]
+        - button "Résultats" [active] [ref=e68] [cursor=pointer]
+        - button "Classement" [ref=e69] [cursor=pointer]
+        - button "Bonus ⭐" [ref=e70] [cursor=pointer]
+        - button "Règles" [ref=e71] [cursor=pointer]
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: "?"
+        - generic [ref=e74]: Invité
+  - main [ref=e75]:
+    - generic [ref=e3557]:
+      - generic [ref=e3558]:
+        - paragraph [ref=e3559]: // Matchs terminés
+        - heading "Résultats" [level=2] [ref=e3560]
+      - generic [ref=e3561]:
+        - generic [ref=e3562]:
+          - generic [ref=e3564]:
+            - generic [ref=e3565]:
+              - generic [ref=e3566]: Groupe A · São Paulo · 14 juin
+              - generic [ref=e3567]: ● Terminé
+            - generic [ref=e3568]:
+              - generic [ref=e3569]:
+                - img "France" [ref=e3570]
+                - generic [ref=e3571]: France
+              - generic [ref=e3572]: "2 : 1"
+              - generic [ref=e3573]:
+                - generic [ref=e3574]: Brésil
+                - img "Brésil" [ref=e3575]
+            - generic [ref=e3576]: ⭐ Homme du match — Kylian Mbappé
+          - generic [ref=e3577]:
+            - generic [ref=e3578]:
+              - generic [ref=e3579]: 🦁 Thomas
+              - generic [ref=e3580]: 2—1 · Mbappé
+              - generic [ref=e3581]: +6 pts
+            - generic [ref=e3582]:
+              - generic [ref=e3583]: 🐻 Paul
+              - generic [ref=e3584]: 2—1 · Griezmann
+              - generic [ref=e3585]: +4 pts
+            - generic [ref=e3586]:
+              - generic [ref=e3587]: 🐺 Lucas
+              - generic [ref=e3588]: 3—0 · Mbappé
+              - generic [ref=e3589]: +3 pts
+            - generic [ref=e3590]:
+              - generic [ref=e3591]: 🦊 Marie
+              - generic [ref=e3592]: 1—1 · Vinicius
+              - generic [ref=e3593]: 0 pt
+        - generic [ref=e3594]:
+          - generic [ref=e3596]:
+            - generic [ref=e3597]:
+              - generic [ref=e3598]: Groupe B · Mexico City · 15 juin
+              - generic [ref=e3599]: ● Terminé
+            - generic [ref=e3600]:
+              - generic [ref=e3601]:
+                - img "Argentine" [ref=e3602]
+                - generic [ref=e3603]: Argentine
+              - generic [ref=e3604]: "1 : 1"
+              - generic [ref=e3605]:
+                - generic [ref=e3606]: Mexique
+                - img "Mexique" [ref=e3607]
+            - generic [ref=e3608]: ⭐ Homme du match — Lautaro Martínez
+          - generic [ref=e3609]:
+            - generic [ref=e3610]:
+              - generic [ref=e3611]: 🐺 Lucas
+              - generic [ref=e3612]: 1—1 · Lautaro
+              - generic [ref=e3613]: +6 pts
+            - generic [ref=e3614]:
+              - generic [ref=e3615]: 🦊 Marie
+              - generic [ref=e3616]: 1—1 · Messi
+              - generic [ref=e3617]: +4 pts
+            - generic [ref=e3618]:
+              - generic [ref=e3619]: 🦁 Thomas
+              - generic [ref=e3620]: 2—0 · Lautaro
+              - generic [ref=e3621]: +2 pts
+            - generic [ref=e3622]:
+              - generic [ref=e3623]: 🐻 Paul
+              - generic [ref=e3624]: 2—1 · Messi
+              - generic [ref=e3625]: 0 pt
+        - generic [ref=e3626]:
+          - generic [ref=e3628]:
+            - generic [ref=e3629]:
+              - generic [ref=e3630]: Groupe C · Los Angeles · 15 juin
+              - generic [ref=e3631]: ● Terminé
+            - generic [ref=e3632]:
+              - generic [ref=e3633]:
+                - img "Allemagne" [ref=e3634]
+                - generic [ref=e3635]: Allemagne
+              - generic [ref=e3636]: "3 : 0"
+              - generic [ref=e3637]:
+                - generic [ref=e3638]: Japon
+                - img "Japon" [ref=e3639]
+            - generic [ref=e3640]: ⭐ Homme du match — Florian Wirtz
+          - generic [ref=e3641]:
+            - generic [ref=e3642]:
+              - generic [ref=e3643]: 🐻 Paul
+              - generic [ref=e3644]: 3—0 · Wirtz
+              - generic [ref=e3645]: +6 pts
+            - generic [ref=e3646]:
+              - generic [ref=e3647]: 🦁 Thomas
+              - generic [ref=e3648]: 2—0 · Wirtz
+              - generic [ref=e3649]: +3 pts
+            - generic [ref=e3650]:
+              - generic [ref=e3651]: 🐺 Lucas
+              - generic [ref=e3652]: 1—0 · Müller
+              - generic [ref=e3653]: +1 pt
+            - generic [ref=e3654]:
+              - generic [ref=e3655]: 🦊 Marie
+              - generic [ref=e3656]: 0—0 · Honda
+              - generic [ref=e3657]: 0 pt
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: PODIUM
+        - generic [ref=e95]: // Top 3 · Phase de groupes
+      - generic [ref=e2748]:
+        - generic [ref=e2749]:
+          - generic [ref=e2750]: 🥇
+          - generic [ref=e2752]:
+            - generic [ref=e2753]: Tibs
+            - generic [ref=e2754]:
+              - generic [ref=e2755]: 0× exact
+              - generic [ref=e2756]: ·
+              - generic [ref=e2757]: 0× écart
+              - generic [ref=e2758]: ·
+              - generic [ref=e2759]: 0× vainq.
+          - generic [ref=e2760]:
+            - generic [ref=e2761]: "0"
+            - generic [ref=e2762]: pts
+        - generic [ref=e2763]:
+          - generic [ref=e2764]: 🥈
+          - generic [ref=e2766]:
+            - generic [ref=e2767]: Thomas
+            - generic [ref=e2768]:
+              - generic [ref=e2769]: 0× exact
+              - generic [ref=e2770]: ·
+              - generic [ref=e2771]: 0× écart
+              - generic [ref=e2772]: ·
+              - generic [ref=e2773]: 0× vainq.
+          - generic [ref=e2774]:
+            - generic [ref=e2775]: "0"
+            - generic [ref=e2776]: pts
+  - generic:
+    - generic:
+      - generic: REJOINDRE
+      - generic: Entre dans la ligue avec tes amis
+      - generic:
+        - button "Première fois"
+        - button "Je reviens"
+      - generic:
+        - generic:
+          - generic: Code de la ligue
+          - textbox "Demande-le à l'organisateur"
+        - generic:
+          - generic: Ton prénom
+          - 'textbox "ex: Thomas"'
+        - generic:
+          - generic: Ton équipe du coeur
+          - generic:
+            - button "États-Unis":
+              - img "États-Unis"
+            - button "Canada":
+              - img "Canada"
+            - button "Mexique":
+              - img "Mexique"
+            - button "Argentine":
+              - img "Argentine"
+            - button "Brésil":
+              - img "Brésil"
+            - button "Colombie":
+              - img "Colombie"
+            - button "Uruguay":
+              - img "Uruguay"
+            - button "Équateur":
+              - img "Équateur"
+            - button "Venezuela":
+              - img "Venezuela"
+            - button "Paraguay":
+              - img "Paraguay"
+            - button "Pérou":
+              - img "Pérou"
+            - button "Chili":
+              - img "Chili"
+            - button "Espagne":
+              - img "Espagne"
+            - button "France":
+              - img "France"
+            - button "Allemagne":
+              - img "Allemagne"
+            - button "Angleterre":
+              - img "Angleterre"
+            - button "Portugal":
+              - img "Portugal"
+            - button "Pays-Bas":
+              - img "Pays-Bas"
+            - button "Italie":
+              - img "Italie"
+            - button "Belgique":
+              - img "Belgique"
+            - button "Croatie":
+              - img "Croatie"
+            - button "Suisse":
+              - img "Suisse"
+            - button "Danemark":
+              - img "Danemark"
+            - button "Autriche":
+              - img "Autriche"
+            - button "Écosse":
+              - img "Écosse"
+            - button "Turquie":
+              - img "Turquie"
+            - button "Hongrie":
+              - img "Hongrie"
+            - button "Serbie":
+              - img "Serbie"
+            - button "Norvège":
+              - img "Norvège"
+            - button "Tchéquie":
+              - img "Tchéquie"
+            - button "Pologne":
+              - img "Pologne"
+            - button "Roumanie":
+              - img "Roumanie"
+            - button "Slovaquie":
+              - img "Slovaquie"
+            - button "Ukraine":
+              - img "Ukraine"
+            - button "Costa Rica":
+              - img "Costa Rica"
+            - button "Jamaïque":
+              - img "Jamaïque"
+            - button "Honduras":
+              - img "Honduras"
+            - button "Panama":
+              - img "Panama"
+            - button "El Salvador":
+              - img "El Salvador"
+            - button "Japon":
+              - img "Japon"
+            - button "Corée du Sud":
+              - img "Corée du Sud"
+            - button "Australie":
+              - img "Australie"
+            - button "Iran":
+              - img "Iran"
+            - button "Arabie Saoudite":
+              - img "Arabie Saoudite"
+            - button "Qatar":
+              - img "Qatar"
+            - button "Jordanie":
+              - img "Jordanie"
+            - button "Irak":
+              - img "Irak"
+            - button "Ouzbékistan":
+              - img "Ouzbékistan"
+            - button "Chine":
+              - img "Chine"
+            - button "Maroc":
+              - img "Maroc"
+            - button "Sénégal":
+              - img "Sénégal"
+            - button "Nigéria":
+              - img "Nigéria"
+            - button "Égypte":
+              - img "Égypte"
+            - button "Cameroun":
+              - img "Cameroun"
+            - button "Ghana":
+              - img "Ghana"
+            - button "Côte d'Ivoire":
+              - img "Côte d'Ivoire"
+            - button "Tunisie":
+              - img "Tunisie"
+            - button "Afrique du Sud":
+              - img "Afrique du Sud"
+            - button "Algérie":
+              - img "Algérie"
+            - button "Mali":
+              - img "Mali"
+            - button "RD Congo":
+              - img "RD Congo"
+            - button "Nouvelle-Zélande":
+              - img "Nouvelle-Zélande"
+          - generic: Clique sur un drapeau
+        - generic:
+          - generic: Ton PIN (4 chiffres)
+          - textbox "••••"
+      - generic:
+        - button "C'est parti !"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: MON PROFIL
+      - generic: Modifier mes informations
+      - generic:
+        - generic: Mon équipe du coeur
+        - generic: Chargement...
+      - generic:
+        - generic: Nouveau PIN — laisser vide pour ne pas changer
+        - textbox "••••"
+      - generic:
+        - button "Enregistrer"
+        - button "Annuler"

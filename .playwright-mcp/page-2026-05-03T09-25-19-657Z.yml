@@ -1,0 +1,355 @@
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: ⚽ Pronostico — Édition officielle
+    - heading "COUPE DU MONDE 2026" [level=1] [ref=e6]:
+      - text: COUPE
+      - text: DU MONDE
+      - generic [ref=e7]: "2026"
+    - paragraph [ref=e8]: Pronostique. Rivalise. Triomphe.
+    - generic [ref=e9]:
+      - button "Rejoindre la ligue" [ref=e10] [cursor=pointer]
+      - button "Voir les matchs" [ref=e11] [cursor=pointer]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Total matchs
+      - generic [ref=e16]: "104"
+    - generic [ref=e18]:
+      - generic [ref=e19]: Équipes
+      - generic [ref=e20]: "48"
+    - generic [ref=e22]:
+      - generic [ref=e23]: Groupes
+      - generic [ref=e24]: "12"
+    - generic [ref=e26]:
+      - generic [ref=e27]: Coup d'envoi
+      - generic [ref=e28]: 12 Juin 2026
+    - generic [ref=e30]:
+      - generic [ref=e31]: Finale
+      - generic [ref=e32]: 27 Juillet — New York
+    - generic [ref=e34]:
+      - generic [ref=e35]: 1er match France
+      - generic [ref=e36]: France vs Sénégal — 17 Juin
+    - generic [ref=e38]:
+      - generic [ref=e39]: Total matchs
+      - generic [ref=e40]: "104"
+    - generic [ref=e42]:
+      - generic [ref=e43]: Équipes
+      - generic [ref=e44]: "48"
+    - generic [ref=e46]:
+      - generic [ref=e47]: Groupes
+      - generic [ref=e48]: "12"
+    - generic [ref=e50]:
+      - generic [ref=e51]: Coup d'envoi
+      - generic [ref=e52]: 12 Juin 2026
+    - generic [ref=e54]:
+      - generic [ref=e55]: Finale
+      - generic [ref=e56]: 27 Juillet — New York
+    - generic [ref=e58]:
+      - generic [ref=e59]: 1er match France
+      - generic [ref=e60]: France vs Sénégal — 17 Juin
+  - navigation [ref=e62]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: CDM 2026
+      - generic [ref=e66]:
+        - button "Matchs" [ref=e67] [cursor=pointer]
+        - button "Résultats" [ref=e68] [cursor=pointer]
+        - button "Classement" [ref=e69] [cursor=pointer]
+        - button "Bonus ⭐" [ref=e70] [cursor=pointer]
+        - button "Règles" [active] [ref=e71] [cursor=pointer]
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: "?"
+        - generic [ref=e74]: Invité
+  - main [ref=e75]:
+    - generic [ref=e2862]:
+      - generic [ref=e2863]:
+        - paragraph [ref=e2864]: // Comment ça marche
+        - heading "Règles du jeu" [level=2] [ref=e2865]
+      - generic [ref=e2866]:
+        - generic [ref=e2867]:
+          - generic [ref=e2868]: 01 — Système de points
+          - heading "BARÈME DE BASE" [level=3] [ref=e2869]
+          - generic [ref=e2870]:
+            - generic [ref=e2871]:
+              - generic [ref=e2872]: "4"
+              - generic [ref=e2873]:
+                - generic [ref=e2874]: Score exact prédit
+                - generic [ref=e2875]: Tu prédis France 2-1 → score réel 2-1 ✓
+            - generic [ref=e2876]:
+              - generic [ref=e2877]: "2"
+              - generic [ref=e2878]:
+                - generic [ref=e2879]: Bon vainqueur + bon écart
+                - generic [ref=e2880]: Tu prédis Brésil 2-0 → réel 3-1 (écart = 2) ✓
+            - generic [ref=e2881]:
+              - generic [ref=e2882]: "1"
+              - generic [ref=e2883]:
+                - generic [ref=e2884]: Bon vainqueur seulement
+                - generic [ref=e2885]: Tu prédis Argentine 1-0 → réel 3-1 (écart différent) ✓
+            - generic [ref=e2886]:
+              - generic [ref=e2887]: "0"
+              - generic [ref=e2888]:
+                - generic [ref=e2889]: Mauvais résultat
+                - generic [ref=e2890]: Tu prédis France gagne → réel défaite ✗
+        - generic [ref=e2891]:
+          - generic [ref=e2892]: 02 — Bonus risque
+          - heading "MULTIPLICATEUR DE CÔTE ×" [level=3] [ref=e2893]
+          - paragraph [ref=e2894]:
+            - text: Tes points sont
+            - strong [ref=e2895]: multipliés par la côte du résultat réel
+            - text: . Plus l'outsider est surprenant, plus tu gagnes !
+          - generic [ref=e2896]:
+            - generic [ref=e2897]: Exemple — Argentine vs Algérie
+            - generic [ref=e2898]:
+              - generic [ref=e2899]:
+                - generic [ref=e2900]: 1 ARGENTINE
+                - generic [ref=e2901]: "1.35"
+              - generic [ref=e2902]:
+                - generic [ref=e2903]: X NUL
+                - generic [ref=e2904]: "4.20"
+              - generic [ref=e2905]:
+                - generic [ref=e2906]: 2 ALGÉRIE
+                - generic [ref=e2907]: "8.00"
+            - generic [ref=e2908]:
+              - generic [ref=e2909]:
+                - generic [ref=e2910]:
+                  - strong [ref=e2911]: Algérie 1-0
+                  - text: (surprise) · score exact prédit
+                - generic [ref=e2912]: 4 × 8.00 = 32 pts
+              - generic [ref=e2913]:
+                - generic [ref=e2914]:
+                  - strong [ref=e2915]: Argentine 2-0
+                  - text: · bon vainqueur seulement
+                - generic [ref=e2916]: 1 × 1.35 = 1.35 pts
+              - generic [ref=e2917]:
+                - generic [ref=e2918]: Mauvais pronostic → 0 pt quelle que soit la côte
+                - generic [ref=e2919]: 0 pt
+            - generic [ref=e2920]: Si aucune côte n'est renseignée, les points de base s'appliquent sans multiplication.
+        - generic [ref=e2921]:
+          - generic [ref=e2922]: 03 — Par match
+          - heading "MAN OF THE MATCH" [level=3] [ref=e2923]
+          - generic [ref=e2924]:
+            - generic [ref=e2925]: "+2"
+            - generic [ref=e2926]:
+              - generic [ref=e2927]: Par joueur du match trouvé
+              - generic [ref=e2928]:
+                - text: Tu paries sur Mbappé avant le match → il est MOTM → +2 pts
+                - text: Le multiplicateur de côte ne s'applique PAS sur ce bonus
+        - generic [ref=e2929]:
+          - generic [ref=e2930]: 04 — Avant tournoi
+          - heading "PARIS BONUS ⭐" [level=3] [ref=e2931]
+          - generic [ref=e2932]:
+            - generic [ref=e2933]: "+5"
+            - generic [ref=e2934]:
+              - generic [ref=e2935]: Par bonne réponse
+              - generic [ref=e2936]:
+                - text: Vainqueur du tournoi, meilleur buteur…
+                - text: Paris placés avant le début — définitifs, non modifiables
+        - generic [ref=e2937]:
+          - generic [ref=e2938]: 05 — À savoir
+          - heading "RÈGLES GÉNÉRALES" [level=3] [ref=e2939]
+          - generic [ref=e2940]:
+            - generic [ref=e2941]:
+              - generic [ref=e2942]: →
+              - text: Les pronostics doivent être soumis avant le coup d'envoi
+            - generic [ref=e2943]:
+              - generic [ref=e2944]: →
+              - text: Impossible de modifier un pronostic une fois le match commencé
+            - generic [ref=e2945]:
+              - generic [ref=e2946]: →
+              - text: Le classement est mis à jour après chaque match terminé
+            - generic [ref=e2947]:
+              - generic [ref=e2948]: →
+              - text: En cas d'égalité, le nombre de scores exacts détermine le classement
+            - generic [ref=e2949]:
+              - generic [ref=e2950]: →
+              - text: Le multiplicateur de côte ne s'applique qu'aux points positifs — 0 pt reste 0 pt
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: PODIUM
+        - generic [ref=e95]: // Top 3 · Phase de groupes
+      - generic [ref=e2748]:
+        - generic [ref=e2749]:
+          - generic [ref=e2750]: 🥇
+          - generic [ref=e2752]:
+            - generic [ref=e2753]: Tibs
+            - generic [ref=e2754]:
+              - generic [ref=e2755]: 0× exact
+              - generic [ref=e2756]: ·
+              - generic [ref=e2757]: 0× écart
+              - generic [ref=e2758]: ·
+              - generic [ref=e2759]: 0× vainq.
+          - generic [ref=e2760]:
+            - generic [ref=e2761]: "0"
+            - generic [ref=e2762]: pts
+        - generic [ref=e2763]:
+          - generic [ref=e2764]: 🥈
+          - generic [ref=e2766]:
+            - generic [ref=e2767]: Thomas
+            - generic [ref=e2768]:
+              - generic [ref=e2769]: 0× exact
+              - generic [ref=e2770]: ·
+              - generic [ref=e2771]: 0× écart
+              - generic [ref=e2772]: ·
+              - generic [ref=e2773]: 0× vainq.
+          - generic [ref=e2774]:
+            - generic [ref=e2775]: "0"
+            - generic [ref=e2776]: pts
+  - generic:
+    - generic:
+      - generic: REJOINDRE
+      - generic: Entre dans la ligue avec tes amis
+      - generic:
+        - button "Première fois"
+        - button "Je reviens"
+      - generic:
+        - generic:
+          - generic: Code de la ligue
+          - textbox "Demande-le à l'organisateur"
+        - generic:
+          - generic: Ton prénom
+          - 'textbox "ex: Thomas"'
+        - generic:
+          - generic: Ton équipe du coeur
+          - generic:
+            - button "États-Unis":
+              - img "États-Unis"
+            - button "Canada":
+              - img "Canada"
+            - button "Mexique":
+              - img "Mexique"
+            - button "Argentine":
+              - img "Argentine"
+            - button "Brésil":
+              - img "Brésil"
+            - button "Colombie":
+              - img "Colombie"
+            - button "Uruguay":
+              - img "Uruguay"
+            - button "Équateur":
+              - img "Équateur"
+            - button "Venezuela":
+              - img "Venezuela"
+            - button "Paraguay":
+              - img "Paraguay"
+            - button "Pérou":
+              - img "Pérou"
+            - button "Chili":
+              - img "Chili"
+            - button "Espagne":
+              - img "Espagne"
+            - button "France":
+              - img "France"
+            - button "Allemagne":
+              - img "Allemagne"
+            - button "Angleterre":
+              - img "Angleterre"
+            - button "Portugal":
+              - img "Portugal"
+            - button "Pays-Bas":
+              - img "Pays-Bas"
+            - button "Italie":
+              - img "Italie"
+            - button "Belgique":
+              - img "Belgique"
+            - button "Croatie":
+              - img "Croatie"
+            - button "Suisse":
+              - img "Suisse"
+            - button "Danemark":
+              - img "Danemark"
+            - button "Autriche":
+              - img "Autriche"
+            - button "Écosse":
+              - img "Écosse"
+            - button "Turquie":
+              - img "Turquie"
+            - button "Hongrie":
+              - img "Hongrie"
+            - button "Serbie":
+              - img "Serbie"
+            - button "Norvège":
+              - img "Norvège"
+            - button "Tchéquie":
+              - img "Tchéquie"
+            - button "Pologne":
+              - img "Pologne"
+            - button "Roumanie":
+              - img "Roumanie"
+            - button "Slovaquie":
+              - img "Slovaquie"
+            - button "Ukraine":
+              - img "Ukraine"
+            - button "Costa Rica":
+              - img "Costa Rica"
+            - button "Jamaïque":
+              - img "Jamaïque"
+            - button "Honduras":
+              - img "Honduras"
+            - button "Panama":
+              - img "Panama"
+            - button "El Salvador":
+              - img "El Salvador"
+            - button "Japon":
+              - img "Japon"
+            - button "Corée du Sud":
+              - img "Corée du Sud"
+            - button "Australie":
+              - img "Australie"
+            - button "Iran":
+              - img "Iran"
+            - button "Arabie Saoudite":
+              - img "Arabie Saoudite"
+            - button "Qatar":
+              - img "Qatar"
+            - button "Jordanie":
+              - img "Jordanie"
+            - button "Irak":
+              - img "Irak"
+            - button "Ouzbékistan":
+              - img "Ouzbékistan"
+            - button "Chine":
+              - img "Chine"
+            - button "Maroc":
+              - img "Maroc"
+            - button "Sénégal":
+              - img "Sénégal"
+            - button "Nigéria":
+              - img "Nigéria"
+            - button "Égypte":
+              - img "Égypte"
+            - button "Cameroun":
+              - img "Cameroun"
+            - button "Ghana":
+              - img "Ghana"
+            - button "Côte d'Ivoire":
+              - img "Côte d'Ivoire"
+            - button "Tunisie":
+              - img "Tunisie"
+            - button "Afrique du Sud":
+              - img "Afrique du Sud"
+            - button "Algérie":
+              - img "Algérie"
+            - button "Mali":
+              - img "Mali"
+            - button "RD Congo":
+              - img "RD Congo"
+            - button "Nouvelle-Zélande":
+              - img "Nouvelle-Zélande"
+          - generic: Clique sur un drapeau
+        - generic:
+          - generic: Ton PIN (4 chiffres)
+          - textbox "••••"
+      - generic:
+        - button "C'est parti !"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: MON PROFIL
+      - generic: Modifier mes informations
+      - generic:
+        - generic: Mon équipe du coeur
+        - generic: Chargement...
+      - generic:
+        - generic: Nouveau PIN — laisser vide pour ne pas changer
+        - textbox "••••"
+      - generic:
+        - button "Enregistrer"
+        - button "Annuler"

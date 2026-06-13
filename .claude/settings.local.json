@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:\\\\Users\\\\tibsp\\\\.claude\\\\skills\\\\impeccable\\\\scripts\\\\cleanup-deprecated.mjs\")",
+      "mcp__supabase__list_organizations",
+      "mcp__supabase__list_projects",
+      "mcp__supabase__get_project_url",
+      "mcp__supabase__execute_sql",
+      "mcp__supabase__list_tables",
+      "mcp__supabase__apply_migration",
+      "mcp__supabase__deploy_edge_function",
+      "WebSearch",
+      "WebFetch(domain:www.unibet.fr)",
+      "WebFetch(domain:www.dimers.com)",
+      "WebFetch(domain:chcdmfootball2026.com)",
+      "WebFetch(domain:www.ruedesjoueurs.com)",
+      "WebFetch(domain:footballwhispers.com)",
+      "Bash(curl -s -X POST https://godcigantcuuwnwerxjc.supabase.co/functions/v1/refresh-odds -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvZGNpZ2FudGN1dXdud2VyeGpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU4NDUxNjIsImV4cCI6MjA2MTQyMTE2Mn0.A0UmJKfRrHaYUXqcUv8wjZiMuPP33LGfmgEPDqDoBN0' -H 'Content-Type: application/json')",
+      "mcp__supabase__get_logs",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_snapshot",
+      "Bash(node -e ' *)",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_evaluate",
+      "Bash(netlify --version)",
+      "Bash(gh pr *)",
+      "PowerShell(gh pr list 2>&1)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\tibsp\\\\Documents\\\\TRAVAIL\\\\CLAUDE CODE\\\\TUTOS\\\\PROJET COUPE DU MONDE\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\tibsp\\\\Documents\\\\TRAVAIL\\\\CLAUDE CODE\\\\TUTOS\\\\PROJET COUPE DU MONDE\" -Recurse | % { if \\($_.PSIsContainer\\) { Write-Host \"📁 $\\($_.FullName.Substring\\(79\\)\\)\" } else { Write-Host \"📄 $\\($_.Name\\) - $\\($_.Length\\) bytes\" } })",
+      "Bash(node -e \"const crypto = require\\('crypto'\\); const {publicKey, privateKey} = crypto.generateKeyPairSync\\('ec', {namedCurve:'P-256'}\\); console.log\\('PUBLIC:', publicKey.export\\({type:'spki',format:'der'}\\).toString\\('base64url'\\)\\); console.log\\('PRIVATE:', privateKey.export\\({type:'pkcs8',format:'der'}\\).toString\\('base64url'\\)\\);\")",
+      "PowerShell(tree /F \"c:\\\\Users\\\\tibsp\\\\Documents\\\\TRAVAIL\\\\CLAUDE CODE\\\\TUTOS\\\\PROJET COUPE DU MONDE\" -L 3)"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+- generic [ref=e23]:
+  - generic [ref=e25]:
+    - link "Passer au contenu principal" [ref=e26] [cursor=pointer]:
+      - /url: "#main-content"
+      - generic [ref=e27]: Passer au contenu principal
+    - banner [ref=e31]:
+      - generic [ref=e32]:
+        - navigation [ref=e33]:
+          - link "FIFA" [ref=e34] [cursor=pointer]:
+            - /url: /
+            - img "FIFA" [ref=e35]
+          - generic [ref=e36]:
+            - link "BILLETS ET HOSPITALITÉ" [ref=e38] [cursor=pointer]:
+              - /url: https://www.fifa.com/fifaplus/tickets?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_ticketing)_(da_04052023)_(l_fr)
+            - link "FIFA STORE" [ref=e40] [cursor=pointer]:
+              - /url: https://store.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_fifastore)_(da_04052023)_(l_fr)
+            - link "FIFA REWARDS" [ref=e42] [cursor=pointer]:
+              - /url: https://www.fifa.com/fr/rewards/?intcmp=%28p_fifacom%29_%28d_%29_%28c_webuniversal-fwc2026%29_%28sc_rewards%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+            - link "FIFA+" [ref=e44] [cursor=pointer]:
+              - /url: https://www.plus.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_originals)_(da_17052023)_(l_fr)
+            - link "INSIDE FIFA" [ref=e46] [cursor=pointer]:
+              - /url: https://inside.fifa.com/fr
+        - generic [ref=e48]:
+          - link "FIFA" [ref=e55] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026
+            - img "FIFA" [ref=e56]
+          - navigation [ref=e58]:
+            - link "RÉSULTATS & CALENDRIER" [ref=e60] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures
+            - link "CLASSEMENTS" [ref=e62] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/standings
+            - link "ÉQUIPES" [ref=e64] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/teams
+            - link "QUALIFICATIONS" [ref=e66] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/qualifiers
+            - generic [ref=e68] [cursor=pointer]: LES PAYS ET LES VILLES HÔTES
+            - link "BILLETS" [ref=e70] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/tickets
+            - link "HOSPITALITÉ" [ref=e72] [cursor=pointer]:
+              - /url: https://fifaworldcup26.hospitality.fifa.com/fr?intcmp=%28p_fifacom%29_%28d_%29_%28c_webheader-fwc2026%29_%28sc_register-interest%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+            - generic [ref=e74] [cursor=pointer]: LE COIN DES FANS
+            - link "ORGANISATION" [ref=e76] [cursor=pointer]:
+              - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/organisation
+            - link "REGARDER SUR FIFA+" [ref=e78] [cursor=pointer]:
+              - /url: https://www.plus.fifa.com/showcase/fceffc49-6bb9-4c7e-99dc-a032f2797aa5?intcmp=%28p_fifacom%29_%28d_plusfifa%29_%28c_webheader-fwc2026%29_%28sc_fwc-2026-qualifiers%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+            - generic [ref=e80] [cursor=pointer]: TOURNOIS
+          - link "Search" [ref=e82] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/articles/calendrier-matches-resultats-equipes-stades?searchOverlay=1
+            - img "Search" [ref=e83]
+          - button "Langue" [ref=e87]:
+            - img "Langue" [ref=e88] [cursor=pointer]
+          - button "Mon compte" [ref=e90] [cursor=pointer]:
+            - img [ref=e91]
+    - img [ref=e95]
+  - dialog "Nous prenons à coeur de protéger vos données" [ref=e100]:
+    - generic [ref=e102]:
+      - generic [ref=e104]:
+        - heading "Nous prenons à coeur de protéger vos données" [level=2] [ref=e105]
+        - generic [ref=e106]: Notre organisation et ses 999 partenaires stockent et/ou accèdent à des informations, telles que les identifiants uniques de cookies pour traiter les données personnelles, sur un appareil. Vous pouvez accepter ou gérer vos préférences, notamment en exerçant votre droit d’opposition à l’intérêt légitime, en cliquant ci-dessous ou à tout moment sur la page de la politique de confidentialité. Ces préférences seront signalées à nos partenaires et n’affecteront pas les données de navigation.
+        - generic [ref=e107]:
+          - heading "Nos équipes ainsi que nos partenaires externes, traitent des données selon les finalités suivantes :" [level=3] [ref=e108]
+          - paragraph [ref=e110]:
+            - text: Utiliser des données de géolocalisation précises. Analyser activement les caractéristiques de l’appareil pour l’identification. Stocker et/ou accéder à des informations sur un appareil. Publicités et contenu personnalisés, mesure de performance des publicités et du contenu, études d’audience et développement de services.
+            - button "Liste de nos partenaires (fournisseurs)" [ref=e111] [cursor=pointer]
+      - generic [ref=e113]:
+        - button "J'accepte" [ref=e114] [cursor=pointer]
+        - button "Tout refuser" [ref=e115] [cursor=pointer]
+        - button "Afficher toutes les finalités, Ouvre la boîte de dialogue du centre de préférences" [ref=e116] [cursor=pointer]: Afficher toutes les finalités

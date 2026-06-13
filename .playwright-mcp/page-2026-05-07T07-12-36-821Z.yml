@@ -1,0 +1,113 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: ⚽ Pronostico — Édition officielle
+    - heading "COUPE DU MONDE 2026" [level=1] [ref=e6]:
+      - text: COUPE
+      - text: DU MONDE
+      - generic [ref=e7]: "2026"
+    - paragraph [ref=e8]: Pronostique. Rivalise. Triomphe.
+    - generic [ref=e9]:
+      - button "Rejoindre la ligue" [ref=e10] [cursor=pointer]
+      - button "Voir les matchs" [ref=e11] [cursor=pointer]
+  - generic [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Total matchs
+      - generic [ref=e16]: "104"
+    - generic [ref=e18]:
+      - generic [ref=e19]: Équipes
+      - generic [ref=e20]: "48"
+    - generic [ref=e22]:
+      - generic [ref=e23]: Groupes
+      - generic [ref=e24]: "12"
+    - generic [ref=e26]:
+      - generic [ref=e27]: Coup d'envoi
+      - generic [ref=e28]: 12 Juin 2026
+    - generic [ref=e30]:
+      - generic [ref=e31]: Finale
+      - generic [ref=e32]: 27 Juillet — New York
+    - generic [ref=e34]:
+      - generic [ref=e35]: 1er match France
+      - generic [ref=e36]: France vs Sénégal — 17 Juin
+    - generic [ref=e38]:
+      - generic [ref=e39]: Total matchs
+      - generic [ref=e40]: "104"
+    - generic [ref=e42]:
+      - generic [ref=e43]: Équipes
+      - generic [ref=e44]: "48"
+    - generic [ref=e46]:
+      - generic [ref=e47]: Groupes
+      - generic [ref=e48]: "12"
+    - generic [ref=e50]:
+      - generic [ref=e51]: Coup d'envoi
+      - generic [ref=e52]: 12 Juin 2026
+    - generic [ref=e54]:
+      - generic [ref=e55]: Finale
+      - generic [ref=e56]: 27 Juillet — New York
+    - generic [ref=e58]:
+      - generic [ref=e59]: 1er match France
+      - generic [ref=e60]: France vs Sénégal — 17 Juin
+  - navigation [ref=e62]:
+    - generic [ref=e64]:
+      - generic [ref=e65]: CDM 2026
+      - generic [ref=e66]:
+        - button "Matchs" [ref=e67] [cursor=pointer]
+        - button "Résultats" [ref=e68] [cursor=pointer]
+        - button "Classement" [ref=e69] [cursor=pointer]
+        - button "Bonus ⭐" [ref=e70] [cursor=pointer]
+        - button "Règles" [ref=e71] [cursor=pointer]
+      - generic [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: "?"
+        - generic [ref=e74]: Invité
+  - main [ref=e75]:
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - paragraph [ref=e79]: // CDM 2026 — 104 matchs
+        - heading "Matchs & Pronostics" [level=2] [ref=e80]
+      - generic [ref=e81]:
+        - button "Tous" [ref=e82] [cursor=pointer]
+        - button "J1 (12-18 juin)" [ref=e83] [cursor=pointer]
+        - button "J2 (18-24 juin)" [ref=e84] [cursor=pointer]
+        - button "J3 (25-28 juin)" [ref=e85] [cursor=pointer]
+        - button "Phases Finales" [ref=e86] [cursor=pointer]
+      - generic [ref=e88]:
+        - generic [ref=e89]: Chargement...
+        - generic [ref=e90]: Connexion à la base de données
+    - generic [ref=e93]:
+      - generic [ref=e94]: PODIUM
+      - generic [ref=e95]: // Top 3 · Phase de groupes
+  - generic:
+    - generic:
+      - generic: REJOINDRE
+      - generic: Entre dans la ligue avec tes amis
+      - generic:
+        - button "Première fois"
+        - button "Je reviens"
+      - generic:
+        - generic:
+          - generic: Code de la ligue
+          - textbox "Demande-le à l'organisateur"
+        - generic:
+          - generic: Ton prénom
+          - 'textbox "ex: Thomas"'
+        - generic:
+          - generic: Ton équipe du coeur
+          - generic: Clique sur un drapeau
+        - generic:
+          - generic: Ton PIN (4 chiffres)
+          - textbox "••••"
+      - generic:
+        - button "C'est parti !"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: MON PROFIL
+      - generic: Modifier mes informations
+      - generic:
+        - generic: Mon équipe du coeur
+        - generic: Chargement...
+      - generic:
+        - generic: Nouveau PIN — laisser vide pour ne pas changer
+        - textbox "••••"
+      - generic:
+        - button "Enregistrer"
+        - button "Annuler"

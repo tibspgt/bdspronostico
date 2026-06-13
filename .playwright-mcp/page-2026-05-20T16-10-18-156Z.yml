@@ -1,0 +1,3334 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: Pronostico — Édition officielle
+    - heading "COUPE DU MONDE 2026" [level=1] [ref=e6]:
+      - text: COUPE
+      - text: DU MONDE
+      - generic [ref=e7]: "2026"
+    - paragraph [ref=e8]: Pronostique. Rivalise. Triomphe.
+    - generic [ref=e9]:
+      - button "Rejoindre la ligue" [ref=e10] [cursor=pointer]
+      - button "Voir les matchs" [ref=e11] [cursor=pointer]
+  - generic [ref=e12]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: Total matchs
+        - generic [ref=e17]: "104"
+      - generic [ref=e19]:
+        - generic [ref=e20]: Équipes
+        - generic [ref=e21]: "48"
+      - generic [ref=e23]:
+        - generic [ref=e24]: Groupes
+        - generic [ref=e25]: "12"
+      - generic [ref=e27]:
+        - generic [ref=e28]: Coup d'envoi
+        - generic [ref=e29]: 11 Juin 2026
+      - generic [ref=e31]:
+        - generic [ref=e32]: Finale
+        - generic [ref=e33]: 19 Juillet — 21h
+      - generic [ref=e35]:
+        - generic [ref=e36]: 1er match France
+        - generic [ref=e37]: France vs Sénégal — 17 Juin
+      - generic [ref=e40]: // Prochains matchs
+      - generic [ref=e42]:
+        - img [ref=e43]
+        - generic [ref=e44]: Mexique
+        - generic [ref=e45]: vs
+        - img [ref=e46]
+        - generic [ref=e47]: Afrique du Sud
+        - generic [ref=e48]: 11 juin · 21h00
+      - generic [ref=e50]:
+        - img [ref=e51]
+        - generic [ref=e52]: Corée du Sud
+        - generic [ref=e53]: vs
+        - img [ref=e54]
+        - generic [ref=e55]: Tchéquie
+        - generic [ref=e56]: 12 juin · 04h00
+      - generic [ref=e58]:
+        - img [ref=e59]
+        - generic [ref=e60]: Canada
+        - generic [ref=e61]: vs
+        - img [ref=e62]
+        - generic [ref=e63]: Bosnie-Herzégovine
+        - generic [ref=e64]: 12 juin · 21h00
+      - generic [ref=e66]:
+        - img [ref=e67]
+        - generic [ref=e68]: États-Unis
+        - generic [ref=e69]: vs
+        - img [ref=e70]
+        - generic [ref=e71]: Paraguay
+        - generic [ref=e72]: 13 juin · 03h00
+      - generic [ref=e74]:
+        - generic [ref=e75]: Total matchs
+        - generic [ref=e76]: "104"
+      - generic [ref=e78]:
+        - generic [ref=e79]: Équipes
+        - generic [ref=e80]: "48"
+      - generic [ref=e82]:
+        - generic [ref=e83]: Groupes
+        - generic [ref=e84]: "12"
+      - generic [ref=e86]:
+        - generic [ref=e87]: Coup d'envoi
+        - generic [ref=e88]: 11 Juin 2026
+      - generic [ref=e90]:
+        - generic [ref=e91]: Finale
+        - generic [ref=e92]: 19 Juillet — 21h
+      - generic [ref=e94]:
+        - generic [ref=e95]: 1er match France
+        - generic [ref=e96]: France vs Sénégal — 17 Juin
+      - generic [ref=e99]: // Prochains matchs
+      - generic [ref=e101]:
+        - img [ref=e102]
+        - generic [ref=e103]: Mexique
+        - generic [ref=e104]: vs
+        - img [ref=e105]
+        - generic [ref=e106]: Afrique du Sud
+        - generic [ref=e107]: 11 juin · 21h00
+      - generic [ref=e109]:
+        - img [ref=e110]
+        - generic [ref=e111]: Corée du Sud
+        - generic [ref=e112]: vs
+        - img [ref=e113]
+        - generic [ref=e114]: Tchéquie
+        - generic [ref=e115]: 12 juin · 04h00
+      - generic [ref=e117]:
+        - img [ref=e118]
+        - generic [ref=e119]: Canada
+        - generic [ref=e120]: vs
+        - img [ref=e121]
+        - generic [ref=e122]: Bosnie-Herzégovine
+        - generic [ref=e123]: 12 juin · 21h00
+      - generic [ref=e125]:
+        - img [ref=e126]
+        - generic [ref=e127]: États-Unis
+        - generic [ref=e128]: vs
+        - img [ref=e129]
+        - generic [ref=e130]: Paraguay
+        - generic [ref=e131]: 13 juin · 03h00
+    - navigation [ref=e133]:
+      - generic [ref=e135]:
+        - generic [ref=e136]: PRONOSTICO
+        - generic [ref=e137]:
+          - button "Matchs" [ref=e138] [cursor=pointer]
+          - button "Résultats" [ref=e139] [cursor=pointer]
+          - button "Groupes" [ref=e140] [cursor=pointer]
+          - button "Classement" [ref=e141] [cursor=pointer]
+          - button "Bonus" [ref=e142] [cursor=pointer]
+          - button "Cagnotte" [ref=e143] [cursor=pointer]
+          - button "Règles" [ref=e144] [cursor=pointer]
+        - generic [ref=e145] [cursor=pointer]:
+          - generic [ref=e146]: "?"
+          - generic [ref=e147]: Invité
+  - main [ref=e148]:
+    - generic [ref=e150]:
+      - generic [ref=e151]:
+        - paragraph [ref=e152]: // CDM 2026 — 104 matchs
+        - heading "Matchs & Pronostics" [level=2] [ref=e153]
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - button "Tous" [ref=e156] [cursor=pointer]
+          - button "J1 (11-18 juin)" [ref=e157] [cursor=pointer]
+          - button "J2 (18-24 juin)" [ref=e158] [cursor=pointer]
+          - button "J3 (24-28 juin)" [ref=e159] [cursor=pointer]
+          - button "Phases Finales" [ref=e160] [cursor=pointer]
+        - generic [ref=e161]:
+          - generic [ref=e162]: Tri
+          - button "Par groupe" [ref=e163] [cursor=pointer]
+          - button "Par date" [ref=e164] [cursor=pointer]
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]: Groupe A — 1ère journée
+            - generic [ref=e169]: 2 matchs
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - img [ref=e173]
+              - text: MATCH D'OUVERTURE MEXIQUE · POINTS × 1.5
+            - generic [ref=e174]:
+              - generic [ref=e175]:
+                - generic [ref=e176]: Groupe A · Mexico City
+                - generic [ref=e178]: 11 juin ·21h00
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - img "Mexique" [ref=e181]
+                  - generic [ref=e182]: Mexique
+                - generic [ref=e184]: VS
+                - generic [ref=e185]:
+                  - generic [ref=e186]: Afrique du Sud
+                  - img "Afrique du Sud" [ref=e187]
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - generic [ref=e190]: "1"
+                - generic [ref=e191]: "1.50"
+              - generic [ref=e192]:
+                - generic [ref=e193]: X
+                - generic [ref=e194]: "4.14"
+              - generic [ref=e195]:
+                - generic [ref=e196]: "2"
+                - generic [ref=e197]: "6.75"
+            - generic [ref=e198]:
+              - generic [ref=e199]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e200] [cursor=pointer]
+            - generic [ref=e201]:
+              - generic [ref=e202]:
+                - generic [ref=e203]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e204] [cursor=pointer]
+              - generic [ref=e205]:
+                - generic [ref=e206]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e207] [cursor=pointer]
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - generic [ref=e211]: Groupe A · Guadalajara
+                - generic [ref=e213]: 12 juin ·04h00
+              - generic [ref=e214]:
+                - generic [ref=e215]:
+                  - img "Corée du Sud" [ref=e216]
+                  - generic [ref=e217]: Corée du Sud
+                - generic [ref=e219]: VS
+                - generic [ref=e220]:
+                  - generic [ref=e221]: Tchéquie
+                  - img "Tchéquie" [ref=e222]
+            - generic [ref=e223]:
+              - generic [ref=e224]:
+                - generic [ref=e225]: "1"
+                - generic [ref=e226]: "2.65"
+              - generic [ref=e227]:
+                - generic [ref=e228]: X
+                - generic [ref=e229]: "3.16"
+              - generic [ref=e230]:
+                - generic [ref=e231]: "2"
+                - generic [ref=e232]: "2.74"
+            - generic [ref=e233]:
+              - generic [ref=e234]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e235] [cursor=pointer]
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - generic [ref=e238]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e239] [cursor=pointer]
+              - generic [ref=e240]:
+                - generic [ref=e241]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e242] [cursor=pointer]
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - generic [ref=e245]: Groupe B — 1ère journée
+            - generic [ref=e246]: 2 matchs
+          - generic [ref=e248]:
+            - generic [ref=e249]:
+              - img [ref=e250]
+              - text: MATCH D'OUVERTURE CANADA · POINTS × 1.5
+            - generic [ref=e251]:
+              - generic [ref=e252]:
+                - generic [ref=e253]: Groupe B · Toronto
+                - generic [ref=e255]: 12 juin ·21h00
+              - generic [ref=e256]:
+                - generic [ref=e257]:
+                  - img "Canada" [ref=e258]
+                  - generic [ref=e259]: Canada
+                - generic [ref=e261]: VS
+                - generic [ref=e262]:
+                  - generic [ref=e263]: Bosnie-Herzégovine
+                  - img "Bosnie-Herzégovine" [ref=e264]
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - generic [ref=e267]: "1"
+                - generic [ref=e268]: "1.79"
+              - generic [ref=e269]:
+                - generic [ref=e270]: X
+                - generic [ref=e271]: "3.74"
+              - generic [ref=e272]:
+                - generic [ref=e273]: "2"
+                - generic [ref=e274]: "4.34"
+            - generic [ref=e275]:
+              - generic [ref=e276]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e277] [cursor=pointer]
+            - generic [ref=e278]:
+              - generic [ref=e279]:
+                - generic [ref=e280]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e281] [cursor=pointer]
+              - generic [ref=e282]:
+                - generic [ref=e283]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e284] [cursor=pointer]
+          - generic [ref=e285]:
+            - generic [ref=e286]:
+              - generic [ref=e287]:
+                - generic [ref=e288]: Groupe B · San Francisco
+                - generic [ref=e290]: 13 juin ·21h00
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - img "Qatar" [ref=e293]
+                  - generic [ref=e294]: Qatar
+                - generic [ref=e296]: VS
+                - generic [ref=e297]:
+                  - generic [ref=e298]: Suisse
+                  - img "Suisse" [ref=e299]
+            - generic [ref=e300]:
+              - generic [ref=e301]:
+                - generic [ref=e302]: "1"
+                - generic [ref=e303]: "10.09"
+              - generic [ref=e304]:
+                - generic [ref=e305]: X
+                - generic [ref=e306]: "5.45"
+              - generic [ref=e307]:
+                - generic [ref=e308]: "2"
+                - generic [ref=e309]: "1.29"
+            - generic [ref=e310]:
+              - generic [ref=e311]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e312] [cursor=pointer]
+            - generic [ref=e313]:
+              - generic [ref=e314]:
+                - generic [ref=e315]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e316] [cursor=pointer]
+              - generic [ref=e317]:
+                - generic [ref=e318]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e319] [cursor=pointer]
+        - generic [ref=e320]:
+          - generic [ref=e321]:
+            - generic [ref=e322]: Groupe C — 1ère journée
+            - generic [ref=e323]: 2 matchs
+          - generic [ref=e325]:
+            - generic [ref=e326]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - generic [ref=e329]: Groupe C · New York
+                - generic [ref=e331]: 14 juin ·00h00
+              - generic [ref=e332]:
+                - generic [ref=e333]:
+                  - img "Brésil" [ref=e334]
+                  - generic [ref=e335]: Brésil
+                - generic [ref=e337]: VS
+                - generic [ref=e338]:
+                  - generic [ref=e339]: Maroc
+                  - img "Maroc" [ref=e340]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]: "1"
+                - generic [ref=e344]: "1.60"
+              - generic [ref=e345]:
+                - generic [ref=e346]: X
+                - generic [ref=e347]: "3.93"
+              - generic [ref=e348]:
+                - generic [ref=e349]: "2"
+                - generic [ref=e350]: "5.53"
+            - generic [ref=e351]:
+              - generic [ref=e352]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e353] [cursor=pointer]
+            - generic [ref=e354]:
+              - generic [ref=e355]:
+                - generic [ref=e356]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e357] [cursor=pointer]
+              - generic [ref=e358]:
+                - generic [ref=e359]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e360] [cursor=pointer]
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - generic [ref=e364]: Groupe C · Boston
+                - generic [ref=e366]: 14 juin ·03h00
+              - generic [ref=e367]:
+                - generic [ref=e368]:
+                  - img "Haïti" [ref=e369]
+                  - generic [ref=e370]: Haïti
+                - generic [ref=e372]: VS
+                - generic [ref=e373]:
+                  - generic [ref=e374]: Écosse
+                  - img "Écosse" [ref=e375]
+            - generic [ref=e376]:
+              - generic [ref=e377]:
+                - generic [ref=e378]: "1"
+                - generic [ref=e379]: "6.96"
+              - generic [ref=e380]:
+                - generic [ref=e381]: X
+                - generic [ref=e382]: "4.71"
+              - generic [ref=e383]:
+                - generic [ref=e384]: "2"
+                - generic [ref=e385]: "1.42"
+            - generic [ref=e386]:
+              - generic [ref=e387]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e388] [cursor=pointer]
+            - generic [ref=e389]:
+              - generic [ref=e390]:
+                - generic [ref=e391]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e392] [cursor=pointer]
+              - generic [ref=e393]:
+                - generic [ref=e394]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e395] [cursor=pointer]
+        - generic [ref=e396]:
+          - generic [ref=e397]:
+            - generic [ref=e398]: Groupe D — 1ère journée
+            - generic [ref=e399]: 2 matchs
+          - generic [ref=e401]:
+            - generic [ref=e402]:
+              - img [ref=e403]
+              - text: MATCH D'OUVERTURE ÉTATS-UNIS · POINTS × 1.5
+            - generic [ref=e404]:
+              - generic [ref=e405]:
+                - generic [ref=e406]: Groupe D · Los Angeles
+                - generic [ref=e408]: 13 juin ·03h00
+              - generic [ref=e409]:
+                - generic [ref=e410]:
+                  - img "États-Unis" [ref=e411]
+                  - generic [ref=e412]: États-Unis
+                - generic [ref=e414]: VS
+                - generic [ref=e415]:
+                  - generic [ref=e416]: Paraguay
+                  - img "Paraguay" [ref=e417]
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - generic [ref=e420]: "1"
+                - generic [ref=e421]: "1.99"
+              - generic [ref=e422]:
+                - generic [ref=e423]: X
+                - generic [ref=e424]: "3.51"
+              - generic [ref=e425]:
+                - generic [ref=e426]: "2"
+                - generic [ref=e427]: "3.67"
+            - generic [ref=e428]:
+              - generic [ref=e429]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e430] [cursor=pointer]
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - generic [ref=e433]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e434] [cursor=pointer]
+              - generic [ref=e435]:
+                - generic [ref=e436]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e437] [cursor=pointer]
+          - generic [ref=e438]:
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - generic [ref=e441]: Groupe D · Vancouver
+                - generic [ref=e443]: 14 juin ·06h00
+              - generic [ref=e444]:
+                - generic [ref=e445]:
+                  - img "Australie" [ref=e446]
+                  - generic [ref=e447]: Australie
+                - generic [ref=e449]: VS
+                - generic [ref=e450]:
+                  - generic [ref=e451]: Turquie
+                  - img "Turquie" [ref=e452]
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - generic [ref=e455]: "1"
+                - generic [ref=e456]: "4.43"
+              - generic [ref=e457]:
+                - generic [ref=e458]: X
+                - generic [ref=e459]: "3.60"
+              - generic [ref=e460]:
+                - generic [ref=e461]: "2"
+                - generic [ref=e462]: "1.81"
+            - generic [ref=e463]:
+              - generic [ref=e464]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e465] [cursor=pointer]
+            - generic [ref=e466]:
+              - generic [ref=e467]:
+                - generic [ref=e468]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e469] [cursor=pointer]
+              - generic [ref=e470]:
+                - generic [ref=e471]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e472] [cursor=pointer]
+        - generic [ref=e473]:
+          - generic [ref=e474]:
+            - generic [ref=e475]: Groupe E — 1ère journée
+            - generic [ref=e476]: 2 matchs
+          - generic [ref=e478]:
+            - generic [ref=e479]:
+              - generic [ref=e480]:
+                - generic [ref=e481]: Groupe E · Philadelphia
+                - generic [ref=e483]: 15 juin ·01h00
+              - generic [ref=e484]:
+                - generic [ref=e485]:
+                  - img "Côte d'Ivoire" [ref=e486]
+                  - generic [ref=e487]: Côte d'Ivoire
+                - generic [ref=e489]: VS
+                - generic [ref=e490]:
+                  - generic [ref=e491]: Équateur
+                  - img "Équateur" [ref=e492]
+            - generic [ref=e493]:
+              - generic [ref=e494]:
+                - generic [ref=e495]: "1"
+                - generic [ref=e496]: "3.38"
+              - generic [ref=e497]:
+                - generic [ref=e498]: X
+                - generic [ref=e499]: "2.96"
+              - generic [ref=e500]:
+                - generic [ref=e501]: "2"
+                - generic [ref=e502]: "2.37"
+            - generic [ref=e503]:
+              - generic [ref=e504]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e505] [cursor=pointer]
+            - generic [ref=e506]:
+              - generic [ref=e507]:
+                - generic [ref=e508]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e509] [cursor=pointer]
+              - generic [ref=e510]:
+                - generic [ref=e511]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e512] [cursor=pointer]
+          - generic [ref=e513]:
+            - generic [ref=e514]: 🌈 MATCH FUNKY · POINTS × 1.25
+            - generic [ref=e515]:
+              - generic [ref=e516]:
+                - generic [ref=e517]: Groupe E · Houston
+                - generic [ref=e519]: 14 juin ·19h00
+              - generic [ref=e520]:
+                - generic [ref=e521]:
+                  - img "Allemagne" [ref=e522]
+                  - generic [ref=e523]: Allemagne
+                - generic [ref=e525]: VS
+                - generic [ref=e526]:
+                  - generic [ref=e527]: Curaçao
+                  - img "Curaçao" [ref=e528]
+            - generic [ref=e529]:
+              - generic [ref=e530]:
+                - generic [ref=e531]: "1"
+                - generic [ref=e532]: "1.03"
+              - generic [ref=e533]:
+                - generic [ref=e534]: X
+                - generic [ref=e535]: "17.19"
+              - generic [ref=e536]:
+                - generic [ref=e537]: "2"
+                - generic [ref=e538]: "52.31"
+            - generic [ref=e539]:
+              - generic [ref=e540]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e541] [cursor=pointer]
+            - generic [ref=e542]:
+              - generic [ref=e543]:
+                - generic [ref=e544]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e545] [cursor=pointer]
+              - generic [ref=e546]:
+                - generic [ref=e547]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e548] [cursor=pointer]
+        - generic [ref=e549]:
+          - generic [ref=e550]:
+            - generic [ref=e551]: Groupe F — 1ère journée
+            - generic [ref=e552]: 2 matchs
+          - generic [ref=e554]:
+            - generic [ref=e555]:
+              - generic [ref=e556]:
+                - generic [ref=e557]: Groupe F · Monterrey
+                - generic [ref=e559]: 15 juin ·04h00
+              - generic [ref=e560]:
+                - generic [ref=e561]:
+                  - img "Suède" [ref=e562]
+                  - generic [ref=e563]: Suède
+                - generic [ref=e565]: VS
+                - generic [ref=e566]:
+                  - generic [ref=e567]: Tunisie
+                  - img "Tunisie" [ref=e568]
+            - generic [ref=e569]:
+              - generic [ref=e570]:
+                - generic [ref=e571]: "1"
+                - generic [ref=e572]: "1.92"
+              - generic [ref=e573]:
+                - generic [ref=e574]: X
+                - generic [ref=e575]: "3.38"
+              - generic [ref=e576]:
+                - generic [ref=e577]: "2"
+                - generic [ref=e578]: "4.10"
+            - generic [ref=e579]:
+              - generic [ref=e580]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e581] [cursor=pointer]
+            - generic [ref=e582]:
+              - generic [ref=e583]:
+                - generic [ref=e584]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e585] [cursor=pointer]
+              - generic [ref=e586]:
+                - generic [ref=e587]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e588] [cursor=pointer]
+          - generic [ref=e589]:
+            - generic [ref=e590]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e591]:
+              - generic [ref=e592]:
+                - generic [ref=e593]: Groupe F · Dallas
+                - generic [ref=e595]: 14 juin ·22h00
+              - generic [ref=e596]:
+                - generic [ref=e597]:
+                  - img "Pays-Bas" [ref=e598]
+                  - generic [ref=e599]: Pays-Bas
+                - generic [ref=e601]: VS
+                - generic [ref=e602]:
+                  - generic [ref=e603]: Japon
+                  - img "Japon" [ref=e604]
+            - generic [ref=e605]:
+              - generic [ref=e606]:
+                - generic [ref=e607]: "1"
+                - generic [ref=e608]: "2.00"
+              - generic [ref=e609]:
+                - generic [ref=e610]: X
+                - generic [ref=e611]: "3.59"
+              - generic [ref=e612]:
+                - generic [ref=e613]: "2"
+                - generic [ref=e614]: "3.56"
+            - generic [ref=e615]:
+              - generic [ref=e616]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e617] [cursor=pointer]
+            - generic [ref=e618]:
+              - generic [ref=e619]:
+                - generic [ref=e620]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e621] [cursor=pointer]
+              - generic [ref=e622]:
+                - generic [ref=e623]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e624] [cursor=pointer]
+        - generic [ref=e625]:
+          - generic [ref=e626]:
+            - generic [ref=e627]: Groupe G — 1ère journée
+            - generic [ref=e628]: 2 matchs
+          - generic [ref=e630]:
+            - generic [ref=e631]:
+              - generic [ref=e632]:
+                - generic [ref=e633]: Groupe G · Los Angeles
+                - generic [ref=e635]: 16 juin ·03h00
+              - generic [ref=e636]:
+                - generic [ref=e637]:
+                  - img "Iran" [ref=e638]
+                  - generic [ref=e639]: Iran
+                - generic [ref=e641]: VS
+                - generic [ref=e642]:
+                  - generic [ref=e643]: Nouvelle-Zélande
+                  - img "Nouvelle-Zélande" [ref=e644]
+            - generic [ref=e645]:
+              - generic [ref=e646]:
+                - generic [ref=e647]: "1"
+                - generic [ref=e648]: "1.81"
+              - generic [ref=e649]:
+                - generic [ref=e650]: X
+                - generic [ref=e651]: "3.59"
+              - generic [ref=e652]:
+                - generic [ref=e653]: "2"
+                - generic [ref=e654]: "4.49"
+            - generic [ref=e655]:
+              - generic [ref=e656]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e657] [cursor=pointer]
+            - generic [ref=e658]:
+              - generic [ref=e659]:
+                - generic [ref=e660]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e661] [cursor=pointer]
+              - generic [ref=e662]:
+                - generic [ref=e663]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e664] [cursor=pointer]
+          - generic [ref=e665]:
+            - generic [ref=e666]:
+              - generic [ref=e667]:
+                - generic [ref=e668]: Groupe G · Seattle
+                - generic [ref=e670]: 15 juin ·21h00
+              - generic [ref=e671]:
+                - generic [ref=e672]:
+                  - img "Belgique" [ref=e673]
+                  - generic [ref=e674]: Belgique
+                - generic [ref=e676]: VS
+                - generic [ref=e677]:
+                  - generic [ref=e678]: Égypte
+                  - img "Égypte" [ref=e679]
+            - generic [ref=e680]:
+              - generic [ref=e681]:
+                - generic [ref=e682]: "1"
+                - generic [ref=e683]: "1.66"
+              - generic [ref=e684]:
+                - generic [ref=e685]: X
+                - generic [ref=e686]: "3.96"
+              - generic [ref=e687]:
+                - generic [ref=e688]: "2"
+                - generic [ref=e689]: "4.85"
+            - generic [ref=e690]:
+              - generic [ref=e691]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e692] [cursor=pointer]
+            - generic [ref=e693]:
+              - generic [ref=e694]:
+                - generic [ref=e695]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e696] [cursor=pointer]
+              - generic [ref=e697]:
+                - generic [ref=e698]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e699] [cursor=pointer]
+        - generic [ref=e700]:
+          - generic [ref=e701]:
+            - generic [ref=e702]: Groupe H — 1ère journée
+            - generic [ref=e703]: 2 matchs
+          - generic [ref=e705]:
+            - generic [ref=e706]:
+              - generic [ref=e707]:
+                - generic [ref=e708]: Groupe H · Miami
+                - generic [ref=e710]: 16 juin ·00h00
+              - generic [ref=e711]:
+                - generic [ref=e712]:
+                  - img "Arabie Saoudite" [ref=e713]
+                  - generic [ref=e714]: Arabie Saoudite
+                - generic [ref=e716]: VS
+                - generic [ref=e717]:
+                  - generic [ref=e718]: Uruguay
+                  - img "Uruguay" [ref=e719]
+            - generic [ref=e720]:
+              - generic [ref=e721]:
+                - generic [ref=e722]: "1"
+                - generic [ref=e723]: "6.30"
+              - generic [ref=e724]:
+                - generic [ref=e725]: X
+                - generic [ref=e726]: "4.18"
+              - generic [ref=e727]:
+                - generic [ref=e728]: "2"
+                - generic [ref=e729]: "1.51"
+            - generic [ref=e730]:
+              - generic [ref=e731]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e732] [cursor=pointer]
+            - generic [ref=e733]:
+              - generic [ref=e734]:
+                - generic [ref=e735]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e736] [cursor=pointer]
+              - generic [ref=e737]:
+                - generic [ref=e738]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e739] [cursor=pointer]
+          - generic [ref=e740]:
+            - generic [ref=e741]:
+              - generic [ref=e742]:
+                - generic [ref=e743]: Groupe H · Atlanta
+                - generic [ref=e745]: 15 juin ·18h00
+              - generic [ref=e746]:
+                - generic [ref=e747]:
+                  - img "Espagne" [ref=e748]
+                  - generic [ref=e749]: Espagne
+                - generic [ref=e751]: VS
+                - generic [ref=e752]:
+                  - generic [ref=e753]: Cap-Vert
+                  - img "Cap-Vert" [ref=e754]
+            - generic [ref=e755]:
+              - generic [ref=e756]:
+                - generic [ref=e757]: "1"
+                - generic [ref=e758]: "1.08"
+              - generic [ref=e759]:
+                - generic [ref=e760]: X
+                - generic [ref=e761]: "10.42"
+              - generic [ref=e762]:
+                - generic [ref=e763]: "2"
+                - generic [ref=e764]: "28.16"
+            - generic [ref=e765]:
+              - generic [ref=e766]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e767] [cursor=pointer]
+            - generic [ref=e768]:
+              - generic [ref=e769]:
+                - generic [ref=e770]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e771] [cursor=pointer]
+              - generic [ref=e772]:
+                - generic [ref=e773]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e774] [cursor=pointer]
+        - generic [ref=e775]:
+          - generic [ref=e776]:
+            - generic [ref=e777]: Groupe I — 1ère journée
+            - generic [ref=e778]: 2 matchs
+          - generic [ref=e780]:
+            - generic [ref=e781]:
+              - generic [ref=e782]:
+                - generic [ref=e783]: Groupe I · Boston
+                - generic [ref=e785]: 17 juin ·00h00
+              - generic [ref=e786]:
+                - generic [ref=e787]:
+                  - img "Irak" [ref=e788]
+                  - generic [ref=e789]: Irak
+                - generic [ref=e791]: VS
+                - generic [ref=e792]:
+                  - generic [ref=e793]: Norvège
+                  - img "Norvège" [ref=e794]
+            - generic [ref=e795]:
+              - generic [ref=e796]:
+                - generic [ref=e797]: "1"
+                - generic [ref=e798]: "11.03"
+              - generic [ref=e799]:
+                - generic [ref=e800]: X
+                - generic [ref=e801]: "5.67"
+              - generic [ref=e802]:
+                - generic [ref=e803]: "2"
+                - generic [ref=e804]: "1.26"
+            - generic [ref=e805]:
+              - generic [ref=e806]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e807] [cursor=pointer]
+            - generic [ref=e808]:
+              - generic [ref=e809]:
+                - generic [ref=e810]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e811] [cursor=pointer]
+              - generic [ref=e812]:
+                - generic [ref=e813]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e814] [cursor=pointer]
+          - generic [ref=e815]:
+            - generic [ref=e816]:
+              - img [ref=e817]
+              - text: OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS
+            - generic [ref=e818]:
+              - generic [ref=e819]:
+                - generic [ref=e820]: Groupe I · New York
+                - generic [ref=e822]: 16 juin ·21h00
+              - generic [ref=e823]:
+                - generic [ref=e824]:
+                  - img "France" [ref=e825]
+                  - generic [ref=e826]: France
+                - generic [ref=e828]: VS
+                - generic [ref=e829]:
+                  - generic [ref=e830]: Sénégal
+                  - img "Sénégal" [ref=e831]
+            - generic [ref=e832]:
+              - generic [ref=e833]:
+                - generic [ref=e834]: "1"
+                - generic [ref=e835]: "1.44"
+              - generic [ref=e836]:
+                - generic [ref=e837]: X
+                - generic [ref=e838]: "4.48"
+              - generic [ref=e839]:
+                - generic [ref=e840]: "2"
+                - generic [ref=e841]: "7.02"
+            - generic [ref=e842]:
+              - generic [ref=e843]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e844] [cursor=pointer]
+            - generic [ref=e845]:
+              - generic [ref=e846]:
+                - generic [ref=e847]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e848] [cursor=pointer]
+              - generic [ref=e849]:
+                - generic [ref=e850]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e851] [cursor=pointer]
+        - generic [ref=e852]:
+          - generic [ref=e853]:
+            - generic [ref=e854]: Groupe J — 1ère journée
+            - generic [ref=e855]: 2 matchs
+          - generic [ref=e857]:
+            - generic [ref=e858]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e859]:
+              - generic [ref=e860]:
+                - generic [ref=e861]: Groupe J · Kansas City
+                - generic [ref=e863]: 17 juin ·03h00
+              - generic [ref=e864]:
+                - generic [ref=e865]:
+                  - img "Argentine" [ref=e866]
+                  - generic [ref=e867]: Argentine
+                - generic [ref=e869]: VS
+                - generic [ref=e870]:
+                  - generic [ref=e871]: Algérie
+                  - img "Algérie" [ref=e872]
+            - generic [ref=e873]:
+              - generic [ref=e874]:
+                - generic [ref=e875]: "1"
+                - generic [ref=e876]: "1.41"
+              - generic [ref=e877]:
+                - generic [ref=e878]: X
+                - generic [ref=e879]: "4.42"
+              - generic [ref=e880]:
+                - generic [ref=e881]: "2"
+                - generic [ref=e882]: "8.23"
+            - generic [ref=e883]:
+              - generic [ref=e884]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e885] [cursor=pointer]
+            - generic [ref=e886]:
+              - generic [ref=e887]:
+                - generic [ref=e888]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e889] [cursor=pointer]
+              - generic [ref=e890]:
+                - generic [ref=e891]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e892] [cursor=pointer]
+          - generic [ref=e893]:
+            - generic [ref=e894]:
+              - generic [ref=e895]:
+                - generic [ref=e896]: Groupe J · San Francisco
+                - generic [ref=e898]: 17 juin ·06h00
+              - generic [ref=e899]:
+                - generic [ref=e900]:
+                  - img "Autriche" [ref=e901]
+                  - generic [ref=e902]: Autriche
+                - generic [ref=e904]: VS
+                - generic [ref=e905]:
+                  - generic [ref=e906]: Jordanie
+                  - img "Jordanie" [ref=e907]
+            - generic [ref=e908]:
+              - generic [ref=e909]:
+                - generic [ref=e910]: "1"
+                - generic [ref=e911]: "1.34"
+              - generic [ref=e912]:
+                - generic [ref=e913]: X
+                - generic [ref=e914]: "5.18"
+              - generic [ref=e915]:
+                - generic [ref=e916]: "2"
+                - generic [ref=e917]: "8.63"
+            - generic [ref=e918]:
+              - generic [ref=e919]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e920] [cursor=pointer]
+            - generic [ref=e921]:
+              - generic [ref=e922]:
+                - generic [ref=e923]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e924] [cursor=pointer]
+              - generic [ref=e925]:
+                - generic [ref=e926]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e927] [cursor=pointer]
+        - generic [ref=e928]:
+          - generic [ref=e929]:
+            - generic [ref=e930]: Groupe K — 1ère journée
+            - generic [ref=e931]: 2 matchs
+          - generic [ref=e933]:
+            - generic [ref=e934]:
+              - generic [ref=e935]:
+                - generic [ref=e936]: Groupe K · Mexico City
+                - generic [ref=e938]: 18 juin ·04h00
+              - generic [ref=e939]:
+                - generic [ref=e940]:
+                  - img "Ouzbékistan" [ref=e941]
+                  - generic [ref=e942]: Ouzbékistan
+                - generic [ref=e944]: VS
+                - generic [ref=e945]:
+                  - generic [ref=e946]: Colombie
+                  - img "Colombie" [ref=e947]
+            - generic [ref=e948]:
+              - generic [ref=e949]:
+                - generic [ref=e950]: "1"
+                - generic [ref=e951]: "7.51"
+              - generic [ref=e952]:
+                - generic [ref=e953]: X
+                - generic [ref=e954]: "4.45"
+              - generic [ref=e955]:
+                - generic [ref=e956]: "2"
+                - generic [ref=e957]: "1.41"
+            - generic [ref=e958]:
+              - generic [ref=e959]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e960] [cursor=pointer]
+            - generic [ref=e961]:
+              - generic [ref=e962]:
+                - generic [ref=e963]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e964] [cursor=pointer]
+              - generic [ref=e965]:
+                - generic [ref=e966]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e967] [cursor=pointer]
+          - generic [ref=e968]:
+            - generic [ref=e969]:
+              - generic [ref=e970]:
+                - generic [ref=e971]: Groupe K · Houston
+                - generic [ref=e973]: 17 juin ·19h00
+              - generic [ref=e974]:
+                - generic [ref=e975]:
+                  - img "Portugal" [ref=e976]
+                  - generic [ref=e977]: Portugal
+                - generic [ref=e979]: VS
+                - generic [ref=e980]:
+                  - generic [ref=e981]: RD Congo
+                  - img "RD Congo" [ref=e982]
+            - generic [ref=e983]:
+              - generic [ref=e984]:
+                - generic [ref=e985]: "1"
+                - generic [ref=e986]: "1.28"
+              - generic [ref=e987]:
+                - generic [ref=e988]: X
+                - generic [ref=e989]: "5.61"
+              - generic [ref=e990]:
+                - generic [ref=e991]: "2"
+                - generic [ref=e992]: "10.11"
+            - generic [ref=e993]:
+              - generic [ref=e994]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e995] [cursor=pointer]
+            - generic [ref=e996]:
+              - generic [ref=e997]:
+                - generic [ref=e998]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e999] [cursor=pointer]
+              - generic [ref=e1000]:
+                - generic [ref=e1001]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1002] [cursor=pointer]
+        - generic [ref=e1003]:
+          - generic [ref=e1004]:
+            - generic [ref=e1005]: Groupe L — 1ère journée
+            - generic [ref=e1006]: 2 matchs
+          - generic [ref=e1008]:
+            - generic [ref=e1009]:
+              - generic [ref=e1010]:
+                - generic [ref=e1011]: Groupe L · Toronto
+                - generic [ref=e1013]: 18 juin ·01h00
+              - generic [ref=e1014]:
+                - generic [ref=e1015]:
+                  - img "Ghana" [ref=e1016]
+                  - generic [ref=e1017]: Ghana
+                - generic [ref=e1019]: VS
+                - generic [ref=e1020]:
+                  - generic [ref=e1021]: Panama
+                  - img "Panama" [ref=e1022]
+            - generic [ref=e1023]:
+              - generic [ref=e1024]:
+                - generic [ref=e1025]: "1"
+                - generic [ref=e1026]: "1.94"
+              - generic [ref=e1027]:
+                - generic [ref=e1028]: X
+                - generic [ref=e1029]: "3.56"
+              - generic [ref=e1030]:
+                - generic [ref=e1031]: "2"
+                - generic [ref=e1032]: "3.73"
+            - generic [ref=e1033]:
+              - generic [ref=e1034]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1035] [cursor=pointer]
+            - generic [ref=e1036]:
+              - generic [ref=e1037]:
+                - generic [ref=e1038]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1039] [cursor=pointer]
+              - generic [ref=e1040]:
+                - generic [ref=e1041]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1042] [cursor=pointer]
+          - generic [ref=e1043]:
+            - generic [ref=e1044]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e1045]:
+              - generic [ref=e1046]:
+                - generic [ref=e1047]: Groupe L · Dallas
+                - generic [ref=e1049]: 17 juin ·22h00
+              - generic [ref=e1050]:
+                - generic [ref=e1051]:
+                  - img "Angleterre" [ref=e1052]
+                  - generic [ref=e1053]: Angleterre
+                - generic [ref=e1055]: VS
+                - generic [ref=e1056]:
+                  - generic [ref=e1057]: Croatie
+                  - img "Croatie" [ref=e1058]
+            - generic [ref=e1059]:
+              - generic [ref=e1060]:
+                - generic [ref=e1061]: "1"
+                - generic [ref=e1062]: "1.71"
+              - generic [ref=e1063]:
+                - generic [ref=e1064]: X
+                - generic [ref=e1065]: "3.77"
+              - generic [ref=e1066]:
+                - generic [ref=e1067]: "2"
+                - generic [ref=e1068]: "4.70"
+            - generic [ref=e1069]:
+              - generic [ref=e1070]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1071] [cursor=pointer]
+            - generic [ref=e1072]:
+              - generic [ref=e1073]:
+                - generic [ref=e1074]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1075] [cursor=pointer]
+              - generic [ref=e1076]:
+                - generic [ref=e1077]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1078] [cursor=pointer]
+        - generic [ref=e1079]:
+          - generic [ref=e1080]:
+            - generic [ref=e1081]: Groupe A — 2e journée
+            - generic [ref=e1082]: 2 matchs
+          - generic [ref=e1084]:
+            - generic [ref=e1085]:
+              - generic [ref=e1086]:
+                - generic [ref=e1087]: Groupe A · Guadalajara
+                - generic [ref=e1089]: 19 juin ·03h00
+              - generic [ref=e1090]:
+                - generic [ref=e1091]:
+                  - img "Mexique" [ref=e1092]
+                  - generic [ref=e1093]: Mexique
+                - generic [ref=e1095]: VS
+                - generic [ref=e1096]:
+                  - generic [ref=e1097]: Corée du Sud
+                  - img "Corée du Sud" [ref=e1098]
+            - generic [ref=e1099]:
+              - generic [ref=e1100]:
+                - generic [ref=e1101]: "1"
+                - generic [ref=e1102]: "1.84"
+              - generic [ref=e1103]:
+                - generic [ref=e1104]: X
+                - generic [ref=e1105]: "3.43"
+              - generic [ref=e1106]:
+                - generic [ref=e1107]: "2"
+                - generic [ref=e1108]: "4.48"
+            - generic [ref=e1109]:
+              - generic [ref=e1110]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1111] [cursor=pointer]
+            - generic [ref=e1112]:
+              - generic [ref=e1113]:
+                - generic [ref=e1114]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1115] [cursor=pointer]
+              - generic [ref=e1116]:
+                - generic [ref=e1117]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1118] [cursor=pointer]
+          - generic [ref=e1119]:
+            - generic [ref=e1120]:
+              - generic [ref=e1121]:
+                - generic [ref=e1122]: Groupe A · Atlanta
+                - generic [ref=e1124]: 18 juin ·18h00
+              - generic [ref=e1125]:
+                - generic [ref=e1126]:
+                  - img "Tchéquie" [ref=e1127]
+                  - generic [ref=e1128]: Tchéquie
+                - generic [ref=e1130]: VS
+                - generic [ref=e1131]:
+                  - generic [ref=e1132]: Afrique du Sud
+                  - img "Afrique du Sud" [ref=e1133]
+            - generic [ref=e1134]:
+              - generic [ref=e1135]:
+                - generic [ref=e1136]: "1"
+                - generic [ref=e1137]: "2.01"
+              - generic [ref=e1138]:
+                - generic [ref=e1139]: X
+                - generic [ref=e1140]: "3.21"
+              - generic [ref=e1141]:
+                - generic [ref=e1142]: "2"
+                - generic [ref=e1143]: "4.00"
+            - generic [ref=e1144]:
+              - generic [ref=e1145]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1146] [cursor=pointer]
+            - generic [ref=e1147]:
+              - generic [ref=e1148]:
+                - generic [ref=e1149]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1150] [cursor=pointer]
+              - generic [ref=e1151]:
+                - generic [ref=e1152]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1153] [cursor=pointer]
+        - generic [ref=e1154]:
+          - generic [ref=e1155]:
+            - generic [ref=e1156]: Groupe B — 2e journée
+            - generic [ref=e1157]: 2 matchs
+          - generic [ref=e1159]:
+            - generic [ref=e1160]:
+              - generic [ref=e1161]:
+                - generic [ref=e1162]: Groupe B · Vancouver
+                - generic [ref=e1164]: 19 juin ·00h00
+              - generic [ref=e1165]:
+                - generic [ref=e1166]:
+                  - img "Canada" [ref=e1167]
+                  - generic [ref=e1168]: Canada
+                - generic [ref=e1170]: VS
+                - generic [ref=e1171]:
+                  - generic [ref=e1172]: Qatar
+                  - img "Qatar" [ref=e1173]
+            - generic [ref=e1174]:
+              - generic [ref=e1175]:
+                - generic [ref=e1176]: "1"
+                - generic [ref=e1177]: "1.50"
+              - generic [ref=e1178]:
+                - generic [ref=e1179]: X
+                - generic [ref=e1180]: "4.04"
+              - generic [ref=e1181]:
+                - generic [ref=e1182]: "2"
+                - generic [ref=e1183]: "6.72"
+            - generic [ref=e1184]:
+              - generic [ref=e1185]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1186] [cursor=pointer]
+            - generic [ref=e1187]:
+              - generic [ref=e1188]:
+                - generic [ref=e1189]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1190] [cursor=pointer]
+              - generic [ref=e1191]:
+                - generic [ref=e1192]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1193] [cursor=pointer]
+          - generic [ref=e1194]:
+            - generic [ref=e1195]:
+              - generic [ref=e1196]:
+                - generic [ref=e1197]: Groupe B · Los Angeles
+                - generic [ref=e1199]: 18 juin ·21h00
+              - generic [ref=e1200]:
+                - generic [ref=e1201]:
+                  - img "Suisse" [ref=e1202]
+                  - generic [ref=e1203]: Suisse
+                - generic [ref=e1205]: VS
+                - generic [ref=e1206]:
+                  - generic [ref=e1207]: Bosnie-Herzégovine
+                  - img "Bosnie-Herzégovine" [ref=e1208]
+            - generic [ref=e1209]:
+              - generic [ref=e1210]:
+                - generic [ref=e1211]: "1"
+                - generic [ref=e1212]: "1.54"
+              - generic [ref=e1213]:
+                - generic [ref=e1214]: X
+                - generic [ref=e1215]: "4.08"
+              - generic [ref=e1216]:
+                - generic [ref=e1217]: "2"
+                - generic [ref=e1218]: "5.92"
+            - generic [ref=e1219]:
+              - generic [ref=e1220]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1221] [cursor=pointer]
+            - generic [ref=e1222]:
+              - generic [ref=e1223]:
+                - generic [ref=e1224]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1225] [cursor=pointer]
+              - generic [ref=e1226]:
+                - generic [ref=e1227]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1228] [cursor=pointer]
+        - generic [ref=e1229]:
+          - generic [ref=e1230]:
+            - generic [ref=e1231]: Groupe C — 2e journée
+            - generic [ref=e1232]: 2 matchs
+          - generic [ref=e1234]:
+            - generic [ref=e1235]:
+              - generic [ref=e1236]:
+                - generic [ref=e1237]: Groupe C · Boston
+                - generic [ref=e1239]: 20 juin ·00h00
+              - generic [ref=e1240]:
+                - generic [ref=e1241]:
+                  - img "Écosse" [ref=e1242]
+                  - generic [ref=e1243]: Écosse
+                - generic [ref=e1245]: VS
+                - generic [ref=e1246]:
+                  - generic [ref=e1247]: Maroc
+                  - img "Maroc" [ref=e1248]
+            - generic [ref=e1249]:
+              - generic [ref=e1250]:
+                - generic [ref=e1251]: "1"
+                - generic [ref=e1252]: "3.64"
+              - generic [ref=e1253]:
+                - generic [ref=e1254]: X
+                - generic [ref=e1255]: "3.18"
+              - generic [ref=e1256]:
+                - generic [ref=e1257]: "2"
+                - generic [ref=e1258]: "2.09"
+            - generic [ref=e1259]:
+              - generic [ref=e1260]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1261] [cursor=pointer]
+            - generic [ref=e1262]:
+              - generic [ref=e1263]:
+                - generic [ref=e1264]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1265] [cursor=pointer]
+              - generic [ref=e1266]:
+                - generic [ref=e1267]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1268] [cursor=pointer]
+          - generic [ref=e1269]:
+            - generic [ref=e1270]: 🌈 MATCH FUNKY · POINTS × 1.25
+            - generic [ref=e1271]:
+              - generic [ref=e1272]:
+                - generic [ref=e1273]: Groupe C · Philadelphia
+                - generic [ref=e1275]: 20 juin ·02h30
+              - generic [ref=e1276]:
+                - generic [ref=e1277]:
+                  - img "Brésil" [ref=e1278]
+                  - generic [ref=e1279]: Brésil
+                - generic [ref=e1281]: VS
+                - generic [ref=e1282]:
+                  - generic [ref=e1283]: Haïti
+                  - img "Haïti" [ref=e1284]
+            - generic [ref=e1285]:
+              - generic [ref=e1286]:
+                - generic [ref=e1287]: "1"
+                - generic [ref=e1288]: "1.05"
+              - generic [ref=e1289]:
+                - generic [ref=e1290]: X
+                - generic [ref=e1291]: "12.35"
+              - generic [ref=e1292]:
+                - generic [ref=e1293]: "2"
+                - generic [ref=e1294]: "35.15"
+            - generic [ref=e1295]:
+              - generic [ref=e1296]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1297] [cursor=pointer]
+            - generic [ref=e1298]:
+              - generic [ref=e1299]:
+                - generic [ref=e1300]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1301] [cursor=pointer]
+              - generic [ref=e1302]:
+                - generic [ref=e1303]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1304] [cursor=pointer]
+        - generic [ref=e1305]:
+          - generic [ref=e1306]:
+            - generic [ref=e1307]: Groupe D — 2e journée
+            - generic [ref=e1308]: 2 matchs
+          - generic [ref=e1310]:
+            - generic [ref=e1311]:
+              - generic [ref=e1312]:
+                - generic [ref=e1313]: Groupe D · San Francisco
+                - generic [ref=e1315]: 20 juin ·05h00
+              - generic [ref=e1316]:
+                - generic [ref=e1317]:
+                  - img "Turquie" [ref=e1318]
+                  - generic [ref=e1319]: Turquie
+                - generic [ref=e1321]: VS
+                - generic [ref=e1322]:
+                  - generic [ref=e1323]: Paraguay
+                  - img "Paraguay" [ref=e1324]
+            - generic [ref=e1325]:
+              - generic [ref=e1326]:
+                - generic [ref=e1327]: "1"
+                - generic [ref=e1328]: "2.24"
+              - generic [ref=e1329]:
+                - generic [ref=e1330]: X
+                - generic [ref=e1331]: "3.13"
+              - generic [ref=e1332]:
+                - generic [ref=e1333]: "2"
+                - generic [ref=e1334]: "3.38"
+            - generic [ref=e1335]:
+              - generic [ref=e1336]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1337] [cursor=pointer]
+            - generic [ref=e1338]:
+              - generic [ref=e1339]:
+                - generic [ref=e1340]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1341] [cursor=pointer]
+              - generic [ref=e1342]:
+                - generic [ref=e1343]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1344] [cursor=pointer]
+          - generic [ref=e1345]:
+            - generic [ref=e1346]: 🌈 MATCH FUNKY · POINTS × 1.25
+            - generic [ref=e1347]:
+              - generic [ref=e1348]:
+                - generic [ref=e1349]: Groupe D · Seattle
+                - generic [ref=e1351]: 19 juin ·21h00
+              - generic [ref=e1352]:
+                - generic [ref=e1353]:
+                  - img "États-Unis" [ref=e1354]
+                  - generic [ref=e1355]: États-Unis
+                - generic [ref=e1357]: VS
+                - generic [ref=e1358]:
+                  - generic [ref=e1359]: Australie
+                  - img "Australie" [ref=e1360]
+            - generic [ref=e1361]:
+              - generic [ref=e1362]:
+                - generic [ref=e1363]: "1"
+                - generic [ref=e1364]: "1.73"
+              - generic [ref=e1365]:
+                - generic [ref=e1366]: X
+                - generic [ref=e1367]: "3.72"
+              - generic [ref=e1368]:
+                - generic [ref=e1369]: "2"
+                - generic [ref=e1370]: "4.63"
+            - generic [ref=e1371]:
+              - generic [ref=e1372]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1373] [cursor=pointer]
+            - generic [ref=e1374]:
+              - generic [ref=e1375]:
+                - generic [ref=e1376]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1377] [cursor=pointer]
+              - generic [ref=e1378]:
+                - generic [ref=e1379]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1380] [cursor=pointer]
+        - generic [ref=e1381]:
+          - generic [ref=e1382]:
+            - generic [ref=e1383]: Groupe E — 2e journée
+            - generic [ref=e1384]: 2 matchs
+          - generic [ref=e1386]:
+            - generic [ref=e1387]:
+              - generic [ref=e1388]:
+                - generic [ref=e1389]: Groupe E · Kansas City
+                - generic [ref=e1391]: 21 juin ·02h00
+              - generic [ref=e1392]:
+                - generic [ref=e1393]:
+                  - img "Équateur" [ref=e1394]
+                  - generic [ref=e1395]: Équateur
+                - generic [ref=e1397]: VS
+                - generic [ref=e1398]:
+                  - generic [ref=e1399]: Curaçao
+                  - img "Curaçao" [ref=e1400]
+            - generic [ref=e1401]:
+              - generic [ref=e1402]:
+                - generic [ref=e1403]: "1"
+                - generic [ref=e1404]: "1.23"
+              - generic [ref=e1405]:
+                - generic [ref=e1406]: X
+                - generic [ref=e1407]: "5.83"
+              - generic [ref=e1408]:
+                - generic [ref=e1409]: "2"
+                - generic [ref=e1410]: "12.04"
+            - generic [ref=e1411]:
+              - generic [ref=e1412]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1413] [cursor=pointer]
+            - generic [ref=e1414]:
+              - generic [ref=e1415]:
+                - generic [ref=e1416]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1417] [cursor=pointer]
+              - generic [ref=e1418]:
+                - generic [ref=e1419]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1420] [cursor=pointer]
+          - generic [ref=e1421]:
+            - generic [ref=e1422]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e1423]:
+              - generic [ref=e1424]:
+                - generic [ref=e1425]: Groupe E · Toronto
+                - generic [ref=e1427]: 20 juin ·22h00
+              - generic [ref=e1428]:
+                - generic [ref=e1429]:
+                  - img "Allemagne" [ref=e1430]
+                  - generic [ref=e1431]: Allemagne
+                - generic [ref=e1433]: VS
+                - generic [ref=e1434]:
+                  - generic [ref=e1435]: Côte d'Ivoire
+                  - img "Côte d'Ivoire" [ref=e1436]
+            - generic [ref=e1437]:
+              - generic [ref=e1438]:
+                - generic [ref=e1439]: "1"
+                - generic [ref=e1440]: "1.55"
+              - generic [ref=e1441]:
+                - generic [ref=e1442]: X
+                - generic [ref=e1443]: "4.18"
+              - generic [ref=e1444]:
+                - generic [ref=e1445]: "2"
+                - generic [ref=e1446]: "5.61"
+            - generic [ref=e1447]:
+              - generic [ref=e1448]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1449] [cursor=pointer]
+            - generic [ref=e1450]:
+              - generic [ref=e1451]:
+                - generic [ref=e1452]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1453] [cursor=pointer]
+              - generic [ref=e1454]:
+                - generic [ref=e1455]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1456] [cursor=pointer]
+        - generic [ref=e1457]:
+          - generic [ref=e1458]:
+            - generic [ref=e1459]: Groupe F — 2e journée
+            - generic [ref=e1460]: 2 matchs
+          - generic [ref=e1462]:
+            - generic [ref=e1463]:
+              - generic [ref=e1464]:
+                - generic [ref=e1465]: Groupe F · Monterrey
+                - generic [ref=e1467]: 21 juin ·06h00
+              - generic [ref=e1468]:
+                - generic [ref=e1469]:
+                  - img "Tunisie" [ref=e1470]
+                  - generic [ref=e1471]: Tunisie
+                - generic [ref=e1473]: VS
+                - generic [ref=e1474]:
+                  - generic [ref=e1475]: Japon
+                  - img "Japon" [ref=e1476]
+            - generic [ref=e1477]:
+              - generic [ref=e1478]:
+                - generic [ref=e1479]: "1"
+                - generic [ref=e1480]: "4.55"
+              - generic [ref=e1481]:
+                - generic [ref=e1482]: X
+                - generic [ref=e1483]: "3.32"
+              - generic [ref=e1484]:
+                - generic [ref=e1485]: "2"
+                - generic [ref=e1486]: "1.85"
+            - generic [ref=e1487]:
+              - generic [ref=e1488]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1489] [cursor=pointer]
+            - generic [ref=e1490]:
+              - generic [ref=e1491]:
+                - generic [ref=e1492]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1493] [cursor=pointer]
+              - generic [ref=e1494]:
+                - generic [ref=e1495]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1496] [cursor=pointer]
+          - generic [ref=e1497]:
+            - generic [ref=e1498]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e1499]:
+              - generic [ref=e1500]:
+                - generic [ref=e1501]: Groupe F · Houston
+                - generic [ref=e1503]: 20 juin ·19h00
+              - generic [ref=e1504]:
+                - generic [ref=e1505]:
+                  - img "Pays-Bas" [ref=e1506]
+                  - generic [ref=e1507]: Pays-Bas
+                - generic [ref=e1509]: VS
+                - generic [ref=e1510]:
+                  - generic [ref=e1511]: Suède
+                  - img "Suède" [ref=e1512]
+            - generic [ref=e1513]:
+              - generic [ref=e1514]:
+                - generic [ref=e1515]: "1"
+                - generic [ref=e1516]: "1.65"
+              - generic [ref=e1517]:
+                - generic [ref=e1518]: X
+                - generic [ref=e1519]: "3.91"
+              - generic [ref=e1520]:
+                - generic [ref=e1521]: "2"
+                - generic [ref=e1522]: "4.99"
+            - generic [ref=e1523]:
+              - generic [ref=e1524]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1525] [cursor=pointer]
+            - generic [ref=e1526]:
+              - generic [ref=e1527]:
+                - generic [ref=e1528]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1529] [cursor=pointer]
+              - generic [ref=e1530]:
+                - generic [ref=e1531]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1532] [cursor=pointer]
+        - generic [ref=e1533]:
+          - generic [ref=e1534]:
+            - generic [ref=e1535]: Groupe G — 2e journée
+            - generic [ref=e1536]: 2 matchs
+          - generic [ref=e1538]:
+            - generic [ref=e1539]:
+              - generic [ref=e1540]:
+                - generic [ref=e1541]: Groupe G · Vancouver
+                - generic [ref=e1543]: 22 juin ·03h00
+              - generic [ref=e1544]:
+                - generic [ref=e1545]:
+                  - img "Nouvelle-Zélande" [ref=e1546]
+                  - generic [ref=e1547]: Nouvelle-Zélande
+                - generic [ref=e1549]: VS
+                - generic [ref=e1550]:
+                  - generic [ref=e1551]: Égypte
+                  - img "Égypte" [ref=e1552]
+            - generic [ref=e1553]:
+              - generic [ref=e1554]:
+                - generic [ref=e1555]: "1"
+                - generic [ref=e1556]: "4.89"
+              - generic [ref=e1557]:
+                - generic [ref=e1558]: X
+                - generic [ref=e1559]: "3.74"
+              - generic [ref=e1560]:
+                - generic [ref=e1561]: "2"
+                - generic [ref=e1562]: "1.73"
+            - generic [ref=e1563]:
+              - generic [ref=e1564]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1565] [cursor=pointer]
+            - generic [ref=e1566]:
+              - generic [ref=e1567]:
+                - generic [ref=e1568]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1569] [cursor=pointer]
+              - generic [ref=e1570]:
+                - generic [ref=e1571]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1572] [cursor=pointer]
+          - generic [ref=e1573]:
+            - generic [ref=e1574]:
+              - generic [ref=e1575]:
+                - generic [ref=e1576]: Groupe G · Los Angeles
+                - generic [ref=e1578]: 21 juin ·21h00
+              - generic [ref=e1579]:
+                - generic [ref=e1580]:
+                  - img "Belgique" [ref=e1581]
+                  - generic [ref=e1582]: Belgique
+                - generic [ref=e1584]: VS
+                - generic [ref=e1585]:
+                  - generic [ref=e1586]: Iran
+                  - img "Iran" [ref=e1587]
+            - generic [ref=e1588]:
+              - generic [ref=e1589]:
+                - generic [ref=e1590]: "1"
+                - generic [ref=e1591]: "1.41"
+              - generic [ref=e1592]:
+                - generic [ref=e1593]: X
+                - generic [ref=e1594]: "4.46"
+              - generic [ref=e1595]:
+                - generic [ref=e1596]: "2"
+                - generic [ref=e1597]: "7.18"
+            - generic [ref=e1598]:
+              - generic [ref=e1599]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1600] [cursor=pointer]
+            - generic [ref=e1601]:
+              - generic [ref=e1602]:
+                - generic [ref=e1603]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1604] [cursor=pointer]
+              - generic [ref=e1605]:
+                - generic [ref=e1606]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1607] [cursor=pointer]
+        - generic [ref=e1608]:
+          - generic [ref=e1609]:
+            - generic [ref=e1610]: Groupe H — 2e journée
+            - generic [ref=e1611]: 2 matchs
+          - generic [ref=e1613]:
+            - generic [ref=e1614]:
+              - generic [ref=e1615]:
+                - generic [ref=e1616]: Groupe H · Miami
+                - generic [ref=e1618]: 22 juin ·00h00
+              - generic [ref=e1619]:
+                - generic [ref=e1620]:
+                  - img "Uruguay" [ref=e1621]
+                  - generic [ref=e1622]: Uruguay
+                - generic [ref=e1624]: VS
+                - generic [ref=e1625]:
+                  - generic [ref=e1626]: Cap-Vert
+                  - img "Cap-Vert" [ref=e1627]
+            - generic [ref=e1628]:
+              - generic [ref=e1629]:
+                - generic [ref=e1630]: "1"
+                - generic [ref=e1631]: "1.43"
+              - generic [ref=e1632]:
+                - generic [ref=e1633]: X
+                - generic [ref=e1634]: "4.39"
+              - generic [ref=e1635]:
+                - generic [ref=e1636]: "2"
+                - generic [ref=e1637]: "7.03"
+            - generic [ref=e1638]:
+              - generic [ref=e1639]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1640] [cursor=pointer]
+            - generic [ref=e1641]:
+              - generic [ref=e1642]:
+                - generic [ref=e1643]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1644] [cursor=pointer]
+              - generic [ref=e1645]:
+                - generic [ref=e1646]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1647] [cursor=pointer]
+          - generic [ref=e1648]:
+            - generic [ref=e1649]:
+              - generic [ref=e1650]:
+                - generic [ref=e1651]: Groupe H · Atlanta
+                - generic [ref=e1653]: 21 juin ·18h00
+              - generic [ref=e1654]:
+                - generic [ref=e1655]:
+                  - img "Espagne" [ref=e1656]
+                  - generic [ref=e1657]: Espagne
+                - generic [ref=e1659]: VS
+                - generic [ref=e1660]:
+                  - generic [ref=e1661]: Arabie Saoudite
+                  - img "Arabie Saoudite" [ref=e1662]
+            - generic [ref=e1663]:
+              - generic [ref=e1664]:
+                - generic [ref=e1665]: "1"
+                - generic [ref=e1666]: "1.11"
+              - generic [ref=e1667]:
+                - generic [ref=e1668]: X
+                - generic [ref=e1669]: "8.24"
+              - generic [ref=e1670]:
+                - generic [ref=e1671]: "2"
+                - generic [ref=e1672]: "25.29"
+            - generic [ref=e1673]:
+              - generic [ref=e1674]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1675] [cursor=pointer]
+            - generic [ref=e1676]:
+              - generic [ref=e1677]:
+                - generic [ref=e1678]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1679] [cursor=pointer]
+              - generic [ref=e1680]:
+                - generic [ref=e1681]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1682] [cursor=pointer]
+        - generic [ref=e1683]:
+          - generic [ref=e1684]:
+            - generic [ref=e1685]: Groupe I — 2e journée
+            - generic [ref=e1686]: 2 matchs
+          - generic [ref=e1688]:
+            - generic [ref=e1689]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e1690]:
+              - generic [ref=e1691]:
+                - generic [ref=e1692]: Groupe I · Toronto
+                - generic [ref=e1694]: 23 juin ·02h00
+              - generic [ref=e1695]:
+                - generic [ref=e1696]:
+                  - img "Norvège" [ref=e1697]
+                  - generic [ref=e1698]: Norvège
+                - generic [ref=e1700]: VS
+                - generic [ref=e1701]:
+                  - generic [ref=e1702]: Sénégal
+                  - img "Sénégal" [ref=e1703]
+            - generic [ref=e1704]:
+              - generic [ref=e1705]:
+                - generic [ref=e1706]: "1"
+                - generic [ref=e1707]: "2.04"
+              - generic [ref=e1708]:
+                - generic [ref=e1709]: X
+                - generic [ref=e1710]: "3.42"
+              - generic [ref=e1711]:
+                - generic [ref=e1712]: "2"
+                - generic [ref=e1713]: "3.58"
+            - generic [ref=e1714]:
+              - generic [ref=e1715]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1716] [cursor=pointer]
+            - generic [ref=e1717]:
+              - generic [ref=e1718]:
+                - generic [ref=e1719]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1720] [cursor=pointer]
+              - generic [ref=e1721]:
+                - generic [ref=e1722]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1723] [cursor=pointer]
+          - generic [ref=e1724]:
+            - generic [ref=e1725]:
+              - img [ref=e1726]
+              - text: OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS
+            - generic [ref=e1727]:
+              - generic [ref=e1728]:
+                - generic [ref=e1729]: Groupe I · Philadelphia
+                - generic [ref=e1731]: 22 juin ·23h00
+              - generic [ref=e1732]:
+                - generic [ref=e1733]:
+                  - img "France" [ref=e1734]
+                  - generic [ref=e1735]: France
+                - generic [ref=e1737]: VS
+                - generic [ref=e1738]:
+                  - generic [ref=e1739]: Irak
+                  - img "Irak" [ref=e1740]
+            - generic [ref=e1741]:
+              - generic [ref=e1742]:
+                - generic [ref=e1743]: "1"
+                - generic [ref=e1744]: "1.13"
+              - generic [ref=e1745]:
+                - generic [ref=e1746]: X
+                - generic [ref=e1747]: "7.86"
+              - generic [ref=e1748]:
+                - generic [ref=e1749]: "2"
+                - generic [ref=e1750]: "22.16"
+            - generic [ref=e1751]:
+              - generic [ref=e1752]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1753] [cursor=pointer]
+            - generic [ref=e1754]:
+              - generic [ref=e1755]:
+                - generic [ref=e1756]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1757] [cursor=pointer]
+              - generic [ref=e1758]:
+                - generic [ref=e1759]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1760] [cursor=pointer]
+        - generic [ref=e1761]:
+          - generic [ref=e1762]:
+            - generic [ref=e1763]: Groupe J — 2e journée
+            - generic [ref=e1764]: 2 matchs
+          - generic [ref=e1766]:
+            - generic [ref=e1767]:
+              - generic [ref=e1768]:
+                - generic [ref=e1769]: Groupe J · San Francisco
+                - generic [ref=e1771]: 23 juin ·05h00
+              - generic [ref=e1772]:
+                - generic [ref=e1773]:
+                  - img "Jordanie" [ref=e1774]
+                  - generic [ref=e1775]: Jordanie
+                - generic [ref=e1777]: VS
+                - generic [ref=e1778]:
+                  - generic [ref=e1779]: Algérie
+                  - img "Algérie" [ref=e1780]
+            - generic [ref=e1781]:
+              - generic [ref=e1782]:
+                - generic [ref=e1783]: "1"
+                - generic [ref=e1784]: "4.81"
+              - generic [ref=e1785]:
+                - generic [ref=e1786]: X
+                - generic [ref=e1787]: "3.63"
+              - generic [ref=e1788]:
+                - generic [ref=e1789]: "2"
+                - generic [ref=e1790]: "1.72"
+            - generic [ref=e1791]:
+              - generic [ref=e1792]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1793] [cursor=pointer]
+            - generic [ref=e1794]:
+              - generic [ref=e1795]:
+                - generic [ref=e1796]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1797] [cursor=pointer]
+              - generic [ref=e1798]:
+                - generic [ref=e1799]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1800] [cursor=pointer]
+          - generic [ref=e1801]:
+            - generic [ref=e1802]:
+              - generic [ref=e1803]:
+                - generic [ref=e1804]: Groupe J · Dallas
+                - generic [ref=e1806]: 22 juin ·19h00
+              - generic [ref=e1807]:
+                - generic [ref=e1808]:
+                  - img "Argentine" [ref=e1809]
+                  - generic [ref=e1810]: Argentine
+                - generic [ref=e1812]: VS
+                - generic [ref=e1813]:
+                  - generic [ref=e1814]: Autriche
+                  - img "Autriche" [ref=e1815]
+            - generic [ref=e1816]:
+              - generic [ref=e1817]:
+                - generic [ref=e1818]: "1"
+                - generic [ref=e1819]: "1.67"
+              - generic [ref=e1820]:
+                - generic [ref=e1821]: X
+                - generic [ref=e1822]: "3.68"
+              - generic [ref=e1823]:
+                - generic [ref=e1824]: "2"
+                - generic [ref=e1825]: "5.21"
+            - generic [ref=e1826]:
+              - generic [ref=e1827]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1828] [cursor=pointer]
+            - generic [ref=e1829]:
+              - generic [ref=e1830]:
+                - generic [ref=e1831]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1832] [cursor=pointer]
+              - generic [ref=e1833]:
+                - generic [ref=e1834]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1835] [cursor=pointer]
+        - generic [ref=e1836]:
+          - generic [ref=e1837]:
+            - generic [ref=e1838]: Groupe K — 2e journée
+            - generic [ref=e1839]: 2 matchs
+          - generic [ref=e1841]:
+            - generic [ref=e1842]:
+              - generic [ref=e1843]:
+                - generic [ref=e1844]: Groupe K · Guadalajara
+                - generic [ref=e1846]: 24 juin ·04h00
+              - generic [ref=e1847]:
+                - generic [ref=e1848]:
+                  - img "Colombie" [ref=e1849]
+                  - generic [ref=e1850]: Colombie
+                - generic [ref=e1852]: VS
+                - generic [ref=e1853]:
+                  - generic [ref=e1854]: RD Congo
+                  - img "RD Congo" [ref=e1855]
+            - generic [ref=e1856]:
+              - generic [ref=e1857]:
+                - generic [ref=e1858]: "1"
+                - generic [ref=e1859]: "1.50"
+              - generic [ref=e1860]:
+                - generic [ref=e1861]: X
+                - generic [ref=e1862]: "4.05"
+              - generic [ref=e1863]:
+                - generic [ref=e1864]: "2"
+                - generic [ref=e1865]: "6.96"
+            - generic [ref=e1866]:
+              - generic [ref=e1867]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1868] [cursor=pointer]
+            - generic [ref=e1869]:
+              - generic [ref=e1870]:
+                - generic [ref=e1871]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1872] [cursor=pointer]
+              - generic [ref=e1873]:
+                - generic [ref=e1874]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1875] [cursor=pointer]
+          - generic [ref=e1876]:
+            - generic [ref=e1877]:
+              - generic [ref=e1878]:
+                - generic [ref=e1879]: Groupe K · Houston
+                - generic [ref=e1881]: 23 juin ·19h00
+              - generic [ref=e1882]:
+                - generic [ref=e1883]:
+                  - img "Portugal" [ref=e1884]
+                  - generic [ref=e1885]: Portugal
+                - generic [ref=e1887]: VS
+                - generic [ref=e1888]:
+                  - generic [ref=e1889]: Ouzbékistan
+                  - img "Ouzbékistan" [ref=e1890]
+            - generic [ref=e1891]:
+              - generic [ref=e1892]:
+                - generic [ref=e1893]: "1"
+                - generic [ref=e1894]: "1.21"
+              - generic [ref=e1895]:
+                - generic [ref=e1896]: X
+                - generic [ref=e1897]: "6.39"
+              - generic [ref=e1898]:
+                - generic [ref=e1899]: "2"
+                - generic [ref=e1900]: "12.88"
+            - generic [ref=e1901]:
+              - generic [ref=e1902]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1903] [cursor=pointer]
+            - generic [ref=e1904]:
+              - generic [ref=e1905]:
+                - generic [ref=e1906]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1907] [cursor=pointer]
+              - generic [ref=e1908]:
+                - generic [ref=e1909]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1910] [cursor=pointer]
+        - generic [ref=e1911]:
+          - generic [ref=e1912]:
+            - generic [ref=e1913]: Groupe L — 2e journée
+            - generic [ref=e1914]: 2 matchs
+          - generic [ref=e1916]:
+            - generic [ref=e1917]:
+              - generic [ref=e1918]:
+                - generic [ref=e1919]: Groupe L · Boston
+                - generic [ref=e1921]: 24 juin ·01h00
+              - generic [ref=e1922]:
+                - generic [ref=e1923]:
+                  - img "Panama" [ref=e1924]
+                  - generic [ref=e1925]: Panama
+                - generic [ref=e1927]: VS
+                - generic [ref=e1928]:
+                  - generic [ref=e1929]: Croatie
+                  - img "Croatie" [ref=e1930]
+            - generic [ref=e1931]:
+              - generic [ref=e1932]:
+                - generic [ref=e1933]: "1"
+                - generic [ref=e1934]: "6.68"
+              - generic [ref=e1935]:
+                - generic [ref=e1936]: X
+                - generic [ref=e1937]: "3.94"
+              - generic [ref=e1938]:
+                - generic [ref=e1939]: "2"
+                - generic [ref=e1940]: "1.51"
+            - generic [ref=e1941]:
+              - generic [ref=e1942]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1943] [cursor=pointer]
+            - generic [ref=e1944]:
+              - generic [ref=e1945]:
+                - generic [ref=e1946]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1947] [cursor=pointer]
+              - generic [ref=e1948]:
+                - generic [ref=e1949]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1950] [cursor=pointer]
+          - generic [ref=e1951]:
+            - generic [ref=e1952]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e1953]:
+              - generic [ref=e1954]:
+                - generic [ref=e1955]: Groupe L · Boston
+                - generic [ref=e1957]: 23 juin ·22h00
+              - generic [ref=e1958]:
+                - generic [ref=e1959]:
+                  - img "Angleterre" [ref=e1960]
+                  - generic [ref=e1961]: Angleterre
+                - generic [ref=e1963]: VS
+                - generic [ref=e1964]:
+                  - generic [ref=e1965]: Ghana
+                  - img "Ghana" [ref=e1966]
+            - generic [ref=e1967]:
+              - generic [ref=e1968]:
+                - generic [ref=e1969]: "1"
+                - generic [ref=e1970]: "1.32"
+              - generic [ref=e1971]:
+                - generic [ref=e1972]: X
+                - generic [ref=e1973]: "5.10"
+              - generic [ref=e1974]:
+                - generic [ref=e1975]: "2"
+                - generic [ref=e1976]: "8.89"
+            - generic [ref=e1977]:
+              - generic [ref=e1978]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e1979] [cursor=pointer]
+            - generic [ref=e1980]:
+              - generic [ref=e1981]:
+                - generic [ref=e1982]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e1983] [cursor=pointer]
+              - generic [ref=e1984]:
+                - generic [ref=e1985]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e1986] [cursor=pointer]
+        - generic [ref=e1987]:
+          - generic [ref=e1988]:
+            - generic [ref=e1989]: Groupe A — 3e journée
+            - generic [ref=e1990]: 2 matchs
+          - generic [ref=e1992]:
+            - generic [ref=e1993]:
+              - generic [ref=e1994]:
+                - generic [ref=e1995]: Groupe A · Monterrey
+                - generic [ref=e1997]: 25 juin ·03h00
+              - generic [ref=e1998]:
+                - generic [ref=e1999]:
+                  - img "Afrique du Sud" [ref=e2000]
+                  - generic [ref=e2001]: Afrique du Sud
+                - generic [ref=e2003]: VS
+                - generic [ref=e2004]:
+                  - generic [ref=e2005]: Corée du Sud
+                  - img "Corée du Sud" [ref=e2006]
+            - generic [ref=e2007]:
+              - generic [ref=e2008]:
+                - generic [ref=e2009]: "1"
+                - generic [ref=e2010]: "3.23"
+              - generic [ref=e2011]:
+                - generic [ref=e2012]: X
+                - generic [ref=e2013]: "3.27"
+              - generic [ref=e2014]:
+                - generic [ref=e2015]: "2"
+                - generic [ref=e2016]: "2.19"
+            - generic [ref=e2017]:
+              - generic [ref=e2018]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2019] [cursor=pointer]
+            - generic [ref=e2020]:
+              - generic [ref=e2021]:
+                - generic [ref=e2022]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2023] [cursor=pointer]
+              - generic [ref=e2024]:
+                - generic [ref=e2025]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2026] [cursor=pointer]
+          - generic [ref=e2027]:
+            - generic [ref=e2028]:
+              - generic [ref=e2029]:
+                - generic [ref=e2030]: Groupe A · Mexico City
+                - generic [ref=e2032]: 25 juin ·03h00
+              - generic [ref=e2033]:
+                - generic [ref=e2034]:
+                  - img "Tchéquie" [ref=e2035]
+                  - generic [ref=e2036]: Tchéquie
+                - generic [ref=e2038]: VS
+                - generic [ref=e2039]:
+                  - generic [ref=e2040]: Mexique
+                  - img "Mexique" [ref=e2041]
+            - generic [ref=e2042]:
+              - generic [ref=e2043]:
+                - generic [ref=e2044]: "1"
+                - generic [ref=e2045]: "3.54"
+              - generic [ref=e2046]:
+                - generic [ref=e2047]: X
+                - generic [ref=e2048]: "3.39"
+              - generic [ref=e2049]:
+                - generic [ref=e2050]: "2"
+                - generic [ref=e2051]: "1.95"
+            - generic [ref=e2052]:
+              - generic [ref=e2053]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2054] [cursor=pointer]
+            - generic [ref=e2055]:
+              - generic [ref=e2056]:
+                - generic [ref=e2057]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2058] [cursor=pointer]
+              - generic [ref=e2059]:
+                - generic [ref=e2060]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2061] [cursor=pointer]
+        - generic [ref=e2062]:
+          - generic [ref=e2063]:
+            - generic [ref=e2064]: Groupe B — 3e journée
+            - generic [ref=e2065]: 2 matchs
+          - generic [ref=e2067]:
+            - generic [ref=e2068]:
+              - generic [ref=e2069]:
+                - generic [ref=e2070]: Groupe B · Vancouver
+                - generic [ref=e2072]: 24 juin ·21h00
+              - generic [ref=e2073]:
+                - generic [ref=e2074]:
+                  - img "Suisse" [ref=e2075]
+                  - generic [ref=e2076]: Suisse
+                - generic [ref=e2078]: VS
+                - generic [ref=e2079]:
+                  - generic [ref=e2080]: Canada
+                  - img "Canada" [ref=e2081]
+            - generic [ref=e2082]:
+              - generic [ref=e2083]:
+                - generic [ref=e2084]: "1"
+                - generic [ref=e2085]: "2.02"
+              - generic [ref=e2086]:
+                - generic [ref=e2087]: X
+                - generic [ref=e2088]: "3.40"
+              - generic [ref=e2089]:
+                - generic [ref=e2090]: "2"
+                - generic [ref=e2091]: "3.24"
+            - generic [ref=e2092]:
+              - generic [ref=e2093]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2094] [cursor=pointer]
+            - generic [ref=e2095]:
+              - generic [ref=e2096]:
+                - generic [ref=e2097]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2098] [cursor=pointer]
+              - generic [ref=e2099]:
+                - generic [ref=e2100]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2101] [cursor=pointer]
+          - generic [ref=e2102]:
+            - generic [ref=e2103]:
+              - generic [ref=e2104]:
+                - generic [ref=e2105]: Groupe B · Seattle
+                - generic [ref=e2107]: 24 juin ·21h00
+              - generic [ref=e2108]:
+                - generic [ref=e2109]:
+                  - img "Bosnie-Herzégovine" [ref=e2110]
+                  - generic [ref=e2111]: Bosnie-Herzégovine
+                - generic [ref=e2113]: VS
+                - generic [ref=e2114]:
+                  - generic [ref=e2115]: Qatar
+                  - img "Qatar" [ref=e2116]
+            - generic [ref=e2117]:
+              - generic [ref=e2118]:
+                - generic [ref=e2119]: "1"
+                - generic [ref=e2120]: "1.84"
+              - generic [ref=e2121]:
+                - generic [ref=e2122]: X
+                - generic [ref=e2123]: "3.43"
+              - generic [ref=e2124]:
+                - generic [ref=e2125]: "2"
+                - generic [ref=e2126]: "3.83"
+            - generic [ref=e2127]:
+              - generic [ref=e2128]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2129] [cursor=pointer]
+            - generic [ref=e2130]:
+              - generic [ref=e2131]:
+                - generic [ref=e2132]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2133] [cursor=pointer]
+              - generic [ref=e2134]:
+                - generic [ref=e2135]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2136] [cursor=pointer]
+        - generic [ref=e2137]:
+          - generic [ref=e2138]:
+            - generic [ref=e2139]: Groupe C — 3e journée
+            - generic [ref=e2140]: 2 matchs
+          - generic [ref=e2142]:
+            - generic [ref=e2143]:
+              - generic [ref=e2144]:
+                - generic [ref=e2145]: Groupe C · Atlanta
+                - generic [ref=e2147]: 25 juin ·00h00
+              - generic [ref=e2148]:
+                - generic [ref=e2149]:
+                  - img "Maroc" [ref=e2150]
+                  - generic [ref=e2151]: Maroc
+                - generic [ref=e2153]: VS
+                - generic [ref=e2154]:
+                  - generic [ref=e2155]: Haïti
+                  - img "Haïti" [ref=e2156]
+            - generic [ref=e2157]:
+              - generic [ref=e2158]:
+                - generic [ref=e2159]: "1"
+                - generic [ref=e2160]: "1.26"
+              - generic [ref=e2161]:
+                - generic [ref=e2162]: X
+                - generic [ref=e2163]: "5.14"
+              - generic [ref=e2164]:
+                - generic [ref=e2165]: "2"
+                - generic [ref=e2166]: "8.08"
+            - generic [ref=e2167]:
+              - generic [ref=e2168]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2169] [cursor=pointer]
+            - generic [ref=e2170]:
+              - generic [ref=e2171]:
+                - generic [ref=e2172]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2173] [cursor=pointer]
+              - generic [ref=e2174]:
+                - generic [ref=e2175]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2176] [cursor=pointer]
+          - generic [ref=e2177]:
+            - generic [ref=e2178]:
+              - generic [ref=e2179]:
+                - generic [ref=e2180]: Groupe C · Miami
+                - generic [ref=e2182]: 25 juin ·00h00
+              - generic [ref=e2183]:
+                - generic [ref=e2184]:
+                  - img "Écosse" [ref=e2185]
+                  - generic [ref=e2186]: Écosse
+                - generic [ref=e2188]: VS
+                - generic [ref=e2189]:
+                  - generic [ref=e2190]: Brésil
+                  - img "Brésil" [ref=e2191]
+            - generic [ref=e2192]:
+              - generic [ref=e2193]:
+                - generic [ref=e2194]: "1"
+                - generic [ref=e2195]: "7.09"
+              - generic [ref=e2196]:
+                - generic [ref=e2197]: X
+                - generic [ref=e2198]: "4.80"
+              - generic [ref=e2199]:
+                - generic [ref=e2200]: "2"
+                - generic [ref=e2201]: "1.39"
+            - generic [ref=e2202]:
+              - generic [ref=e2203]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2204] [cursor=pointer]
+            - generic [ref=e2205]:
+              - generic [ref=e2206]:
+                - generic [ref=e2207]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2208] [cursor=pointer]
+              - generic [ref=e2209]:
+                - generic [ref=e2210]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2211] [cursor=pointer]
+        - generic [ref=e2212]:
+          - generic [ref=e2213]:
+            - generic [ref=e2214]: Groupe D — 3e journée
+            - generic [ref=e2215]: 2 matchs
+          - generic [ref=e2217]:
+            - generic [ref=e2218]:
+              - generic [ref=e2219]:
+                - generic [ref=e2220]: Groupe D · Los Angeles
+                - generic [ref=e2222]: 26 juin ·04h00
+              - generic [ref=e2223]:
+                - generic [ref=e2224]:
+                  - img "Turquie" [ref=e2225]
+                  - generic [ref=e2226]: Turquie
+                - generic [ref=e2228]: VS
+                - generic [ref=e2229]:
+                  - generic [ref=e2230]: États-Unis
+                  - img "États-Unis" [ref=e2231]
+            - generic [ref=e2232]:
+              - generic [ref=e2233]:
+                - generic [ref=e2234]: "1"
+                - generic [ref=e2235]: "2.69"
+              - generic [ref=e2236]:
+                - generic [ref=e2237]: X
+                - generic [ref=e2238]: "3.38"
+              - generic [ref=e2239]:
+                - generic [ref=e2240]: "2"
+                - generic [ref=e2241]: "2.40"
+            - generic [ref=e2242]:
+              - generic [ref=e2243]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2244] [cursor=pointer]
+            - generic [ref=e2245]:
+              - generic [ref=e2246]:
+                - generic [ref=e2247]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2248] [cursor=pointer]
+              - generic [ref=e2249]:
+                - generic [ref=e2250]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2251] [cursor=pointer]
+          - generic [ref=e2252]:
+            - generic [ref=e2253]:
+              - generic [ref=e2254]:
+                - generic [ref=e2255]: Groupe D · San Francisco
+                - generic [ref=e2257]: 26 juin ·04h00
+              - generic [ref=e2258]:
+                - generic [ref=e2259]:
+                  - img "Paraguay" [ref=e2260]
+                  - generic [ref=e2261]: Paraguay
+                - generic [ref=e2263]: VS
+                - generic [ref=e2264]:
+                  - generic [ref=e2265]: Australie
+                  - img "Australie" [ref=e2266]
+            - generic [ref=e2267]:
+              - generic [ref=e2268]:
+                - generic [ref=e2269]: "1"
+                - generic [ref=e2270]: "2.21"
+              - generic [ref=e2271]:
+                - generic [ref=e2272]: X
+                - generic [ref=e2273]: "3.45"
+              - generic [ref=e2274]:
+                - generic [ref=e2275]: "2"
+                - generic [ref=e2276]: "3.25"
+            - generic [ref=e2277]:
+              - generic [ref=e2278]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2279] [cursor=pointer]
+            - generic [ref=e2280]:
+              - generic [ref=e2281]:
+                - generic [ref=e2282]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2283] [cursor=pointer]
+              - generic [ref=e2284]:
+                - generic [ref=e2285]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2286] [cursor=pointer]
+        - generic [ref=e2287]:
+          - generic [ref=e2288]:
+            - generic [ref=e2289]: Groupe E — 3e journée
+            - generic [ref=e2290]: 2 matchs
+          - generic [ref=e2292]:
+            - generic [ref=e2293]:
+              - generic [ref=e2294]:
+                - generic [ref=e2295]: Groupe E · Philadelphia
+                - generic [ref=e2297]: 25 juin ·22h00
+              - generic [ref=e2298]:
+                - generic [ref=e2299]:
+                  - img "Curaçao" [ref=e2300]
+                  - generic [ref=e2301]: Curaçao
+                - generic [ref=e2303]: VS
+                - generic [ref=e2304]:
+                  - generic [ref=e2305]: Côte d'Ivoire
+                  - img "Côte d'Ivoire" [ref=e2306]
+            - generic [ref=e2307]:
+              - generic [ref=e2308]:
+                - generic [ref=e2309]: "1"
+                - generic [ref=e2310]: "10.96"
+              - generic [ref=e2311]:
+                - generic [ref=e2312]: X
+                - generic [ref=e2313]: "5.33"
+              - generic [ref=e2314]:
+                - generic [ref=e2315]: "2"
+                - generic [ref=e2316]: "1.24"
+            - generic [ref=e2317]:
+              - generic [ref=e2318]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2319] [cursor=pointer]
+            - generic [ref=e2320]:
+              - generic [ref=e2321]:
+                - generic [ref=e2322]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2323] [cursor=pointer]
+              - generic [ref=e2324]:
+                - generic [ref=e2325]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2326] [cursor=pointer]
+          - generic [ref=e2327]:
+            - generic [ref=e2328]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e2329]:
+              - generic [ref=e2330]:
+                - generic [ref=e2331]: Groupe E · New York
+                - generic [ref=e2333]: 25 juin ·22h00
+              - generic [ref=e2334]:
+                - generic [ref=e2335]:
+                  - img "Équateur" [ref=e2336]
+                  - generic [ref=e2337]: Équateur
+                - generic [ref=e2339]: VS
+                - generic [ref=e2340]:
+                  - generic [ref=e2341]: Allemagne
+                  - img "Allemagne" [ref=e2342]
+            - generic [ref=e2343]:
+              - generic [ref=e2344]:
+                - generic [ref=e2345]: "1"
+                - generic [ref=e2346]: "5.38"
+              - generic [ref=e2347]:
+                - generic [ref=e2348]: X
+                - generic [ref=e2349]: "3.97"
+              - generic [ref=e2350]:
+                - generic [ref=e2351]: "2"
+                - generic [ref=e2352]: "1.55"
+            - generic [ref=e2353]:
+              - generic [ref=e2354]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2355] [cursor=pointer]
+            - generic [ref=e2356]:
+              - generic [ref=e2357]:
+                - generic [ref=e2358]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2359] [cursor=pointer]
+              - generic [ref=e2360]:
+                - generic [ref=e2361]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2362] [cursor=pointer]
+        - generic [ref=e2363]:
+          - generic [ref=e2364]:
+            - generic [ref=e2365]: Groupe F — 3e journée
+            - generic [ref=e2366]: 2 matchs
+          - generic [ref=e2368]:
+            - generic [ref=e2369]:
+              - generic [ref=e2370]:
+                - generic [ref=e2371]: Groupe F · Kansas City
+                - generic [ref=e2373]: 26 juin ·01h00
+              - generic [ref=e2374]:
+                - generic [ref=e2375]:
+                  - img "Tunisie" [ref=e2376]
+                  - generic [ref=e2377]: Tunisie
+                - generic [ref=e2379]: VS
+                - generic [ref=e2380]:
+                  - generic [ref=e2381]: Pays-Bas
+                  - img "Pays-Bas" [ref=e2382]
+            - generic [ref=e2383]:
+              - generic [ref=e2384]:
+                - generic [ref=e2385]: "1"
+                - generic [ref=e2386]: "6.80"
+              - generic [ref=e2387]:
+                - generic [ref=e2388]: X
+                - generic [ref=e2389]: "4.22"
+              - generic [ref=e2390]:
+                - generic [ref=e2391]: "2"
+                - generic [ref=e2392]: "1.44"
+            - generic [ref=e2393]:
+              - generic [ref=e2394]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2395] [cursor=pointer]
+            - generic [ref=e2396]:
+              - generic [ref=e2397]:
+                - generic [ref=e2398]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2399] [cursor=pointer]
+              - generic [ref=e2400]:
+                - generic [ref=e2401]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2402] [cursor=pointer]
+          - generic [ref=e2403]:
+            - generic [ref=e2404]: 🌈 MATCH FUNKY · POINTS × 1.25
+            - generic [ref=e2405]:
+              - generic [ref=e2406]:
+                - generic [ref=e2407]: Groupe F · Dallas
+                - generic [ref=e2409]: 26 juin ·01h00
+              - generic [ref=e2410]:
+                - generic [ref=e2411]:
+                  - img "Japon" [ref=e2412]
+                  - generic [ref=e2413]: Japon
+                - generic [ref=e2415]: VS
+                - generic [ref=e2416]:
+                  - generic [ref=e2417]: Suède
+                  - img "Suède" [ref=e2418]
+            - generic [ref=e2419]:
+              - generic [ref=e2420]:
+                - generic [ref=e2421]: "1"
+                - generic [ref=e2422]: "2.18"
+              - generic [ref=e2423]:
+                - generic [ref=e2424]: X
+                - generic [ref=e2425]: "3.27"
+              - generic [ref=e2426]:
+                - generic [ref=e2427]: "2"
+                - generic [ref=e2428]: "3.01"
+            - generic [ref=e2429]:
+              - generic [ref=e2430]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2431] [cursor=pointer]
+            - generic [ref=e2432]:
+              - generic [ref=e2433]:
+                - generic [ref=e2434]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2435] [cursor=pointer]
+              - generic [ref=e2436]:
+                - generic [ref=e2437]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2438] [cursor=pointer]
+        - generic [ref=e2439]:
+          - generic [ref=e2440]:
+            - generic [ref=e2441]: Groupe G — 3e journée
+            - generic [ref=e2442]: 2 matchs
+          - generic [ref=e2444]:
+            - generic [ref=e2445]: 🌈 MATCH FUNKY · POINTS × 1.25
+            - generic [ref=e2446]:
+              - generic [ref=e2447]:
+                - generic [ref=e2448]: Groupe G · Vancouver
+                - generic [ref=e2450]: 27 juin ·05h00
+              - generic [ref=e2451]:
+                - generic [ref=e2452]:
+                  - img "Nouvelle-Zélande" [ref=e2453]
+                  - generic [ref=e2454]: Nouvelle-Zélande
+                - generic [ref=e2456]: VS
+                - generic [ref=e2457]:
+                  - generic [ref=e2458]: Belgique
+                  - img "Belgique" [ref=e2459]
+            - generic [ref=e2460]:
+              - generic [ref=e2461]:
+                - generic [ref=e2462]: "1"
+                - generic [ref=e2463]: "14.71"
+              - generic [ref=e2464]:
+                - generic [ref=e2465]: X
+                - generic [ref=e2466]: "6.47"
+              - generic [ref=e2467]:
+                - generic [ref=e2468]: "2"
+                - generic [ref=e2469]: "1.23"
+            - generic [ref=e2470]:
+              - generic [ref=e2471]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2472] [cursor=pointer]
+            - generic [ref=e2473]:
+              - generic [ref=e2474]:
+                - generic [ref=e2475]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2476] [cursor=pointer]
+              - generic [ref=e2477]:
+                - generic [ref=e2478]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2479] [cursor=pointer]
+          - generic [ref=e2480]:
+            - generic [ref=e2481]:
+              - generic [ref=e2482]:
+                - generic [ref=e2483]: Groupe G · Seattle
+                - generic [ref=e2485]: 27 juin ·05h00
+              - generic [ref=e2486]:
+                - generic [ref=e2487]:
+                  - img "Égypte" [ref=e2488]
+                  - generic [ref=e2489]: Égypte
+                - generic [ref=e2491]: VS
+                - generic [ref=e2492]:
+                  - generic [ref=e2493]: Iran
+                  - img "Iran" [ref=e2494]
+            - generic [ref=e2495]:
+              - generic [ref=e2496]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2497] [cursor=pointer]
+            - generic [ref=e2498]:
+              - generic [ref=e2499]:
+                - generic [ref=e2500]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2501] [cursor=pointer]
+              - generic [ref=e2502]:
+                - generic [ref=e2503]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2504] [cursor=pointer]
+        - generic [ref=e2505]:
+          - generic [ref=e2506]:
+            - generic [ref=e2507]: Groupe H — 3e journée
+            - generic [ref=e2508]: 2 matchs
+          - generic [ref=e2510]:
+            - generic [ref=e2511]:
+              - generic [ref=e2512]:
+                - generic [ref=e2513]: Groupe H · Houston
+                - generic [ref=e2515]: 27 juin ·02h00
+              - generic [ref=e2516]:
+                - generic [ref=e2517]:
+                  - img "Cap-Vert" [ref=e2518]
+                  - generic [ref=e2519]: Cap-Vert
+                - generic [ref=e2521]: VS
+                - generic [ref=e2522]:
+                  - generic [ref=e2523]: Arabie Saoudite
+                  - img "Arabie Saoudite" [ref=e2524]
+            - generic [ref=e2525]:
+              - generic [ref=e2526]:
+                - generic [ref=e2527]: "1"
+                - generic [ref=e2528]: "3.39"
+              - generic [ref=e2529]:
+                - generic [ref=e2530]: X
+                - generic [ref=e2531]: "3.26"
+              - generic [ref=e2532]:
+                - generic [ref=e2533]: "2"
+                - generic [ref=e2534]: "2.05"
+            - generic [ref=e2535]:
+              - generic [ref=e2536]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2537] [cursor=pointer]
+            - generic [ref=e2538]:
+              - generic [ref=e2539]:
+                - generic [ref=e2540]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2541] [cursor=pointer]
+              - generic [ref=e2542]:
+                - generic [ref=e2543]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2544] [cursor=pointer]
+          - generic [ref=e2545]:
+            - generic [ref=e2546]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e2547]:
+              - generic [ref=e2548]:
+                - generic [ref=e2549]: Groupe H · Guadalajara
+                - generic [ref=e2551]: 27 juin ·02h00
+              - generic [ref=e2552]:
+                - generic [ref=e2553]:
+                  - img "Uruguay" [ref=e2554]
+                  - generic [ref=e2555]: Uruguay
+                - generic [ref=e2557]: VS
+                - generic [ref=e2558]:
+                  - generic [ref=e2559]: Espagne
+                  - img "Espagne" [ref=e2560]
+            - generic [ref=e2561]:
+              - generic [ref=e2562]:
+                - generic [ref=e2563]: "1"
+                - generic [ref=e2564]: "5.49"
+              - generic [ref=e2565]:
+                - generic [ref=e2566]: X
+                - generic [ref=e2567]: "3.94"
+              - generic [ref=e2568]:
+                - generic [ref=e2569]: "2"
+                - generic [ref=e2570]: "1.53"
+            - generic [ref=e2571]:
+              - generic [ref=e2572]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2573] [cursor=pointer]
+            - generic [ref=e2574]:
+              - generic [ref=e2575]:
+                - generic [ref=e2576]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2577] [cursor=pointer]
+              - generic [ref=e2578]:
+                - generic [ref=e2579]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2580] [cursor=pointer]
+        - generic [ref=e2581]:
+          - generic [ref=e2582]:
+            - generic [ref=e2583]: Groupe I — 3e journée
+            - generic [ref=e2584]: 2 matchs
+          - generic [ref=e2586]:
+            - generic [ref=e2587]:
+              - img [ref=e2588]
+              - text: OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS
+            - generic [ref=e2589]:
+              - generic [ref=e2590]:
+                - generic [ref=e2591]: Groupe I · Boston
+                - generic [ref=e2593]: 26 juin ·21h00
+              - generic [ref=e2594]:
+                - generic [ref=e2595]:
+                  - img "Norvège" [ref=e2596]
+                  - generic [ref=e2597]: Norvège
+                - generic [ref=e2599]: VS
+                - generic [ref=e2600]:
+                  - generic [ref=e2601]: France
+                  - img "France" [ref=e2602]
+            - generic [ref=e2603]:
+              - generic [ref=e2604]:
+                - generic [ref=e2605]: "1"
+                - generic [ref=e2606]: "5.37"
+              - generic [ref=e2607]:
+                - generic [ref=e2608]: X
+                - generic [ref=e2609]: "3.97"
+              - generic [ref=e2610]:
+                - generic [ref=e2611]: "2"
+                - generic [ref=e2612]: "1.56"
+            - generic [ref=e2613]:
+              - generic [ref=e2614]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2615] [cursor=pointer]
+            - generic [ref=e2616]:
+              - generic [ref=e2617]:
+                - generic [ref=e2618]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2619] [cursor=pointer]
+              - generic [ref=e2620]:
+                - generic [ref=e2621]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2622] [cursor=pointer]
+          - generic [ref=e2623]:
+            - generic [ref=e2624]:
+              - generic [ref=e2625]:
+                - generic [ref=e2626]: Groupe I · Toronto
+                - generic [ref=e2628]: 26 juin ·21h00
+              - generic [ref=e2629]:
+                - generic [ref=e2630]:
+                  - img "Sénégal" [ref=e2631]
+                  - generic [ref=e2632]: Sénégal
+                - generic [ref=e2634]: VS
+                - generic [ref=e2635]:
+                  - generic [ref=e2636]: Irak
+                  - img "Irak" [ref=e2637]
+            - generic [ref=e2638]:
+              - generic [ref=e2639]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2640] [cursor=pointer]
+            - generic [ref=e2641]:
+              - generic [ref=e2642]:
+                - generic [ref=e2643]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2644] [cursor=pointer]
+              - generic [ref=e2645]:
+                - generic [ref=e2646]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2647] [cursor=pointer]
+        - generic [ref=e2648]:
+          - generic [ref=e2649]:
+            - generic [ref=e2650]: Groupe J — 3e journée
+            - generic [ref=e2651]: 2 matchs
+          - generic [ref=e2653]:
+            - generic [ref=e2654]:
+              - generic [ref=e2655]:
+                - generic [ref=e2656]: Groupe J · Kansas City
+                - generic [ref=e2658]: 28 juin ·04h00
+              - generic [ref=e2659]:
+                - generic [ref=e2660]:
+                  - img "Jordanie" [ref=e2661]
+                  - generic [ref=e2662]: Jordanie
+                - generic [ref=e2664]: VS
+                - generic [ref=e2665]:
+                  - generic [ref=e2666]: Argentine
+                  - img "Argentine" [ref=e2667]
+            - generic [ref=e2668]:
+              - generic [ref=e2669]:
+                - generic [ref=e2670]: "1"
+                - generic [ref=e2671]: "16.78"
+              - generic [ref=e2672]:
+                - generic [ref=e2673]: X
+                - generic [ref=e2674]: "7.97"
+              - generic [ref=e2675]:
+                - generic [ref=e2676]: "2"
+                - generic [ref=e2677]: "1.11"
+            - generic [ref=e2678]:
+              - generic [ref=e2679]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2680] [cursor=pointer]
+            - generic [ref=e2681]:
+              - generic [ref=e2682]:
+                - generic [ref=e2683]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2684] [cursor=pointer]
+              - generic [ref=e2685]:
+                - generic [ref=e2686]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2687] [cursor=pointer]
+          - generic [ref=e2688]:
+            - generic [ref=e2689]:
+              - generic [ref=e2690]:
+                - generic [ref=e2691]: Groupe J · Dallas
+                - generic [ref=e2693]: 28 juin ·04h00
+              - generic [ref=e2694]:
+                - generic [ref=e2695]:
+                  - img "Algérie" [ref=e2696]
+                  - generic [ref=e2697]: Algérie
+                - generic [ref=e2699]: VS
+                - generic [ref=e2700]:
+                  - generic [ref=e2701]: Autriche
+                  - img "Autriche" [ref=e2702]
+            - generic [ref=e2703]:
+              - generic [ref=e2704]:
+                - generic [ref=e2705]: "1"
+                - generic [ref=e2706]: "3.10"
+              - generic [ref=e2707]:
+                - generic [ref=e2708]: X
+                - generic [ref=e2709]: "3.35"
+              - generic [ref=e2710]:
+                - generic [ref=e2711]: "2"
+                - generic [ref=e2712]: "2.19"
+            - generic [ref=e2713]:
+              - generic [ref=e2714]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2715] [cursor=pointer]
+            - generic [ref=e2716]:
+              - generic [ref=e2717]:
+                - generic [ref=e2718]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2719] [cursor=pointer]
+              - generic [ref=e2720]:
+                - generic [ref=e2721]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2722] [cursor=pointer]
+        - generic [ref=e2723]:
+          - generic [ref=e2724]:
+            - generic [ref=e2725]: Groupe K — 3e journée
+            - generic [ref=e2726]: 2 matchs
+          - generic [ref=e2728]:
+            - generic [ref=e2729]: 💥 BIG MATCH · POINTS × 1.5
+            - generic [ref=e2730]:
+              - generic [ref=e2731]:
+                - generic [ref=e2732]: Groupe K · Miami
+                - generic [ref=e2734]: 28 juin ·01h30
+              - generic [ref=e2735]:
+                - generic [ref=e2736]:
+                  - img "Colombie" [ref=e2737]
+                  - generic [ref=e2738]: Colombie
+                - generic [ref=e2740]: VS
+                - generic [ref=e2741]:
+                  - generic [ref=e2742]: Portugal
+                  - img "Portugal" [ref=e2743]
+            - generic [ref=e2744]:
+              - generic [ref=e2745]:
+                - generic [ref=e2746]: "1"
+                - generic [ref=e2747]: "3.31"
+              - generic [ref=e2748]:
+                - generic [ref=e2749]: X
+                - generic [ref=e2750]: "3.32"
+              - generic [ref=e2751]:
+                - generic [ref=e2752]: "2"
+                - generic [ref=e2753]: "2.14"
+            - generic [ref=e2754]:
+              - generic [ref=e2755]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2756] [cursor=pointer]
+            - generic [ref=e2757]:
+              - generic [ref=e2758]:
+                - generic [ref=e2759]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2760] [cursor=pointer]
+              - generic [ref=e2761]:
+                - generic [ref=e2762]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2763] [cursor=pointer]
+          - generic [ref=e2764]:
+            - generic [ref=e2765]:
+              - generic [ref=e2766]:
+                - generic [ref=e2767]: Groupe K · Atlanta
+                - generic [ref=e2769]: 28 juin ·01h30
+              - generic [ref=e2770]:
+                - generic [ref=e2771]:
+                  - img "RD Congo" [ref=e2772]
+                  - generic [ref=e2773]: RD Congo
+                - generic [ref=e2775]: VS
+                - generic [ref=e2776]:
+                  - generic [ref=e2777]: Ouzbékistan
+                  - img "Ouzbékistan" [ref=e2778]
+            - generic [ref=e2779]:
+              - generic [ref=e2780]:
+                - generic [ref=e2781]: "1"
+                - generic [ref=e2782]: "2.16"
+              - generic [ref=e2783]:
+                - generic [ref=e2784]: X
+                - generic [ref=e2785]: "3.20"
+              - generic [ref=e2786]:
+                - generic [ref=e2787]: "2"
+                - generic [ref=e2788]: "3.20"
+            - generic [ref=e2789]:
+              - generic [ref=e2790]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2791] [cursor=pointer]
+            - generic [ref=e2792]:
+              - generic [ref=e2793]:
+                - generic [ref=e2794]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2795] [cursor=pointer]
+              - generic [ref=e2796]:
+                - generic [ref=e2797]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2798] [cursor=pointer]
+        - generic [ref=e2799]:
+          - generic [ref=e2800]:
+            - generic [ref=e2801]: Groupe L — 3e journée
+            - generic [ref=e2802]: 2 matchs
+          - generic [ref=e2804]:
+            - generic [ref=e2805]:
+              - generic [ref=e2806]:
+                - generic [ref=e2807]: Groupe L · New York
+                - generic [ref=e2809]: 27 juin ·23h00
+              - generic [ref=e2810]:
+                - generic [ref=e2811]:
+                  - img "Panama" [ref=e2812]
+                  - generic [ref=e2813]: Panama
+                - generic [ref=e2815]: VS
+                - generic [ref=e2816]:
+                  - generic [ref=e2817]: Angleterre
+                  - img "Angleterre" [ref=e2818]
+            - generic [ref=e2819]:
+              - generic [ref=e2820]:
+                - generic [ref=e2821]: "1"
+                - generic [ref=e2822]: "15.62"
+              - generic [ref=e2823]:
+                - generic [ref=e2824]: X
+                - generic [ref=e2825]: "7.49"
+              - generic [ref=e2826]:
+                - generic [ref=e2827]: "2"
+                - generic [ref=e2828]: "1.12"
+            - generic [ref=e2829]:
+              - generic [ref=e2830]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2831] [cursor=pointer]
+            - generic [ref=e2832]:
+              - generic [ref=e2833]:
+                - generic [ref=e2834]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2835] [cursor=pointer]
+              - generic [ref=e2836]:
+                - generic [ref=e2837]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2838] [cursor=pointer]
+          - generic [ref=e2839]:
+            - generic [ref=e2840]:
+              - generic [ref=e2841]:
+                - generic [ref=e2842]: Groupe L · Philadelphia
+                - generic [ref=e2844]: 27 juin ·23h00
+              - generic [ref=e2845]:
+                - generic [ref=e2846]:
+                  - img "Croatie" [ref=e2847]
+                  - generic [ref=e2848]: Croatie
+                - generic [ref=e2850]: VS
+                - generic [ref=e2851]:
+                  - generic [ref=e2852]: Ghana
+                  - img "Ghana" [ref=e2853]
+            - generic [ref=e2854]:
+              - generic [ref=e2855]:
+                - generic [ref=e2856]: "1"
+                - generic [ref=e2857]: "1.81"
+              - generic [ref=e2858]:
+                - generic [ref=e2859]: X
+                - generic [ref=e2860]: "3.42"
+              - generic [ref=e2861]:
+                - generic [ref=e2862]: "2"
+                - generic [ref=e2863]: "4.03"
+            - generic [ref=e2864]:
+              - generic [ref=e2865]: Pronostic
+              - button "Rejoindre pour parier →" [ref=e2866] [cursor=pointer]
+            - generic [ref=e2867]:
+              - generic [ref=e2868]:
+                - generic [ref=e2869]: ⭐ MOTM
+                - button "Rejoindre pour parier →" [ref=e2870] [cursor=pointer]
+              - generic [ref=e2871]:
+                - generic [ref=e2872]: 🔥 Buteur
+                - button "Rejoindre pour parier →" [ref=e2873] [cursor=pointer]
+        - generic [ref=e2874]:
+          - generic [ref=e2875]:
+            - generic [ref=e2876]: Seizièmes de finale
+            - generic [ref=e2877]: 16 matchs
+          - generic [ref=e2879]:
+            - generic [ref=e2880]:
+              - generic [ref=e2881]:
+                - generic [ref=e2882]: Seizièmes de finale · Dallas
+                - generic [ref=e2884]: Qualifiés à déterminer
+              - generic [ref=e2885]:
+                - generic [ref=e2886]:
+                  - img "TBD" [ref=e2887]
+                  - generic [ref=e2888]: TBD
+                - generic [ref=e2890]: VS
+                - generic [ref=e2891]:
+                  - generic [ref=e2892]: TBD
+                  - img "TBD" [ref=e2893]
+            - generic [ref=e2895]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2896]:
+            - generic [ref=e2897]:
+              - generic [ref=e2898]:
+                - generic [ref=e2899]: Seizièmes de finale · Philadelphia
+                - generic [ref=e2901]: Qualifiés à déterminer
+              - generic [ref=e2902]:
+                - generic [ref=e2903]:
+                  - img "TBD" [ref=e2904]
+                  - generic [ref=e2905]: TBD
+                - generic [ref=e2907]: VS
+                - generic [ref=e2908]:
+                  - generic [ref=e2909]: TBD
+                  - img "TBD" [ref=e2910]
+            - generic [ref=e2912]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2913]:
+            - generic [ref=e2914]:
+              - generic [ref=e2915]:
+                - generic [ref=e2916]: Seizièmes de finale · Guadalajara
+                - generic [ref=e2918]: Qualifiés à déterminer
+              - generic [ref=e2919]:
+                - generic [ref=e2920]:
+                  - img "TBD" [ref=e2921]
+                  - generic [ref=e2922]: TBD
+                - generic [ref=e2924]: VS
+                - generic [ref=e2925]:
+                  - generic [ref=e2926]: TBD
+                  - img "TBD" [ref=e2927]
+            - generic [ref=e2929]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2930]:
+            - generic [ref=e2931]:
+              - generic [ref=e2932]:
+                - generic [ref=e2933]: Seizièmes de finale · Dallas
+                - generic [ref=e2935]: Qualifiés à déterminer
+              - generic [ref=e2936]:
+                - generic [ref=e2937]:
+                  - img "TBD" [ref=e2938]
+                  - generic [ref=e2939]: TBD
+                - generic [ref=e2941]: VS
+                - generic [ref=e2942]:
+                  - generic [ref=e2943]: TBD
+                  - img "TBD" [ref=e2944]
+            - generic [ref=e2946]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2947]:
+            - generic [ref=e2948]:
+              - generic [ref=e2949]:
+                - generic [ref=e2950]: Seizièmes de finale · New York
+                - generic [ref=e2952]: Qualifiés à déterminer
+              - generic [ref=e2953]:
+                - generic [ref=e2954]:
+                  - img "TBD" [ref=e2955]
+                  - generic [ref=e2956]: TBD
+                - generic [ref=e2958]: VS
+                - generic [ref=e2959]:
+                  - generic [ref=e2960]: TBD
+                  - img "TBD" [ref=e2961]
+            - generic [ref=e2963]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2964]:
+            - generic [ref=e2965]:
+              - generic [ref=e2966]:
+                - generic [ref=e2967]: Seizièmes de finale · Boston
+                - generic [ref=e2969]: Qualifiés à déterminer
+              - generic [ref=e2970]:
+                - generic [ref=e2971]:
+                  - img "TBD" [ref=e2972]
+                  - generic [ref=e2973]: TBD
+                - generic [ref=e2975]: VS
+                - generic [ref=e2976]:
+                  - generic [ref=e2977]: TBD
+                  - img "TBD" [ref=e2978]
+            - generic [ref=e2980]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2981]:
+            - generic [ref=e2982]:
+              - generic [ref=e2983]:
+                - generic [ref=e2984]: Seizièmes de finale · Atlanta
+                - generic [ref=e2986]: Qualifiés à déterminer
+              - generic [ref=e2987]:
+                - generic [ref=e2988]:
+                  - img "TBD" [ref=e2989]
+                  - generic [ref=e2990]: TBD
+                - generic [ref=e2992]: VS
+                - generic [ref=e2993]:
+                  - generic [ref=e2994]: TBD
+                  - img "TBD" [ref=e2995]
+            - generic [ref=e2997]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e2998]:
+            - generic [ref=e2999]:
+              - generic [ref=e3000]:
+                - generic [ref=e3001]: Seizièmes de finale · Kansas City
+                - generic [ref=e3003]: Qualifiés à déterminer
+              - generic [ref=e3004]:
+                - generic [ref=e3005]:
+                  - img "TBD" [ref=e3006]
+                  - generic [ref=e3007]: TBD
+                - generic [ref=e3009]: VS
+                - generic [ref=e3010]:
+                  - generic [ref=e3011]: TBD
+                  - img "TBD" [ref=e3012]
+            - generic [ref=e3014]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3015]:
+            - generic [ref=e3016]:
+              - generic [ref=e3017]:
+                - generic [ref=e3018]: Seizièmes de finale · San Francisco
+                - generic [ref=e3020]: Qualifiés à déterminer
+              - generic [ref=e3021]:
+                - generic [ref=e3022]:
+                  - img "TBD" [ref=e3023]
+                  - generic [ref=e3024]: TBD
+                - generic [ref=e3026]: VS
+                - generic [ref=e3027]:
+                  - generic [ref=e3028]: TBD
+                  - img "TBD" [ref=e3029]
+            - generic [ref=e3031]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3032]:
+            - generic [ref=e3033]:
+              - generic [ref=e3034]:
+                - generic [ref=e3035]: Seizièmes de finale · Toronto
+                - generic [ref=e3037]: Qualifiés à déterminer
+              - generic [ref=e3038]:
+                - generic [ref=e3039]:
+                  - img "TBD" [ref=e3040]
+                  - generic [ref=e3041]: TBD
+                - generic [ref=e3043]: VS
+                - generic [ref=e3044]:
+                  - generic [ref=e3045]: TBD
+                  - img "TBD" [ref=e3046]
+            - generic [ref=e3048]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3049]:
+            - generic [ref=e3050]:
+              - generic [ref=e3051]:
+                - generic [ref=e3052]: Seizièmes de finale · Monterrey
+                - generic [ref=e3054]: Qualifiés à déterminer
+              - generic [ref=e3055]:
+                - generic [ref=e3056]:
+                  - img "TBD" [ref=e3057]
+                  - generic [ref=e3058]: TBD
+                - generic [ref=e3060]: VS
+                - generic [ref=e3061]:
+                  - generic [ref=e3062]: TBD
+                  - img "TBD" [ref=e3063]
+            - generic [ref=e3065]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3066]:
+            - generic [ref=e3067]:
+              - generic [ref=e3068]:
+                - generic [ref=e3069]: Seizièmes de finale · Miami
+                - generic [ref=e3071]: Qualifiés à déterminer
+              - generic [ref=e3072]:
+                - generic [ref=e3073]:
+                  - img "TBD" [ref=e3074]
+                  - generic [ref=e3075]: TBD
+                - generic [ref=e3077]: VS
+                - generic [ref=e3078]:
+                  - generic [ref=e3079]: TBD
+                  - img "TBD" [ref=e3080]
+            - generic [ref=e3082]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3083]:
+            - generic [ref=e3084]:
+              - generic [ref=e3085]:
+                - generic [ref=e3086]: Seizièmes de finale · Los Angeles
+                - generic [ref=e3088]: Qualifiés à déterminer
+              - generic [ref=e3089]:
+                - generic [ref=e3090]:
+                  - img "TBD" [ref=e3091]
+                  - generic [ref=e3092]: TBD
+                - generic [ref=e3094]: VS
+                - generic [ref=e3095]:
+                  - generic [ref=e3096]: TBD
+                  - img "TBD" [ref=e3097]
+            - generic [ref=e3099]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3100]:
+            - generic [ref=e3101]:
+              - generic [ref=e3102]:
+                - generic [ref=e3103]: Seizièmes de finale · Seattle
+                - generic [ref=e3105]: Qualifiés à déterminer
+              - generic [ref=e3106]:
+                - generic [ref=e3107]:
+                  - img "TBD" [ref=e3108]
+                  - generic [ref=e3109]: TBD
+                - generic [ref=e3111]: VS
+                - generic [ref=e3112]:
+                  - generic [ref=e3113]: TBD
+                  - img "TBD" [ref=e3114]
+            - generic [ref=e3116]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3117]:
+            - generic [ref=e3118]:
+              - generic [ref=e3119]:
+                - generic [ref=e3120]: Seizièmes de finale · Houston
+                - generic [ref=e3122]: Qualifiés à déterminer
+              - generic [ref=e3123]:
+                - generic [ref=e3124]:
+                  - img "TBD" [ref=e3125]
+                  - generic [ref=e3126]: TBD
+                - generic [ref=e3128]: VS
+                - generic [ref=e3129]:
+                  - generic [ref=e3130]: TBD
+                  - img "TBD" [ref=e3131]
+            - generic [ref=e3133]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3134]:
+            - generic [ref=e3135]:
+              - generic [ref=e3136]:
+                - generic [ref=e3137]: Seizièmes de finale · Vancouver
+                - generic [ref=e3139]: Qualifiés à déterminer
+              - generic [ref=e3140]:
+                - generic [ref=e3141]:
+                  - img "TBD" [ref=e3142]
+                  - generic [ref=e3143]: TBD
+                - generic [ref=e3145]: VS
+                - generic [ref=e3146]:
+                  - generic [ref=e3147]: TBD
+                  - img "TBD" [ref=e3148]
+            - generic [ref=e3150]: Pronostic disponible une fois les qualifiés connus
+        - generic [ref=e3151]:
+          - generic [ref=e3152]:
+            - generic [ref=e3153]: Huitièmes de finale
+            - generic [ref=e3154]: 8 matchs
+          - generic [ref=e3156]:
+            - generic [ref=e3157]:
+              - generic [ref=e3158]:
+                - generic [ref=e3159]: Huitièmes de finale · Los Angeles
+                - generic [ref=e3161]: Qualifiés à déterminer
+              - generic [ref=e3162]:
+                - generic [ref=e3163]:
+                  - img "TBD" [ref=e3164]
+                  - generic [ref=e3165]: TBD
+                - generic [ref=e3167]: VS
+                - generic [ref=e3168]:
+                  - generic [ref=e3169]: TBD
+                  - img "TBD" [ref=e3170]
+            - generic [ref=e3172]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3173]:
+            - generic [ref=e3174]:
+              - generic [ref=e3175]:
+                - generic [ref=e3176]: Huitièmes de finale · Dallas
+                - generic [ref=e3178]: Qualifiés à déterminer
+              - generic [ref=e3179]:
+                - generic [ref=e3180]:
+                  - img "TBD" [ref=e3181]
+                  - generic [ref=e3182]: TBD
+                - generic [ref=e3184]: VS
+                - generic [ref=e3185]:
+                  - generic [ref=e3186]: TBD
+                  - img "TBD" [ref=e3187]
+            - generic [ref=e3189]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3190]:
+            - generic [ref=e3191]:
+              - generic [ref=e3192]:
+                - generic [ref=e3193]: Huitièmes de finale · Atlanta
+                - generic [ref=e3195]: Qualifiés à déterminer
+              - generic [ref=e3196]:
+                - generic [ref=e3197]:
+                  - img "TBD" [ref=e3198]
+                  - generic [ref=e3199]: TBD
+                - generic [ref=e3201]: VS
+                - generic [ref=e3202]:
+                  - generic [ref=e3203]: TBD
+                  - img "TBD" [ref=e3204]
+            - generic [ref=e3206]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3207]:
+            - generic [ref=e3208]:
+              - generic [ref=e3209]:
+                - generic [ref=e3210]: Huitièmes de finale · Seattle
+                - generic [ref=e3212]: Qualifiés à déterminer
+              - generic [ref=e3213]:
+                - generic [ref=e3214]:
+                  - img "TBD" [ref=e3215]
+                  - generic [ref=e3216]: TBD
+                - generic [ref=e3218]: VS
+                - generic [ref=e3219]:
+                  - generic [ref=e3220]: TBD
+                  - img "TBD" [ref=e3221]
+            - generic [ref=e3223]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3224]:
+            - generic [ref=e3225]:
+              - generic [ref=e3226]:
+                - generic [ref=e3227]: Huitièmes de finale · New York
+                - generic [ref=e3229]: Qualifiés à déterminer
+              - generic [ref=e3230]:
+                - generic [ref=e3231]:
+                  - img "TBD" [ref=e3232]
+                  - generic [ref=e3233]: TBD
+                - generic [ref=e3235]: VS
+                - generic [ref=e3236]:
+                  - generic [ref=e3237]: TBD
+                  - img "TBD" [ref=e3238]
+            - generic [ref=e3240]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3241]:
+            - generic [ref=e3242]:
+              - generic [ref=e3243]:
+                - generic [ref=e3244]: Huitièmes de finale · Miami
+                - generic [ref=e3246]: Qualifiés à déterminer
+              - generic [ref=e3247]:
+                - generic [ref=e3248]:
+                  - img "TBD" [ref=e3249]
+                  - generic [ref=e3250]: TBD
+                - generic [ref=e3252]: VS
+                - generic [ref=e3253]:
+                  - generic [ref=e3254]: TBD
+                  - img "TBD" [ref=e3255]
+            - generic [ref=e3257]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3258]:
+            - generic [ref=e3259]:
+              - generic [ref=e3260]:
+                - generic [ref=e3261]: Huitièmes de finale · Boston
+                - generic [ref=e3263]: Qualifiés à déterminer
+              - generic [ref=e3264]:
+                - generic [ref=e3265]:
+                  - img "TBD" [ref=e3266]
+                  - generic [ref=e3267]: TBD
+                - generic [ref=e3269]: VS
+                - generic [ref=e3270]:
+                  - generic [ref=e3271]: TBD
+                  - img "TBD" [ref=e3272]
+            - generic [ref=e3274]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3275]:
+            - generic [ref=e3276]:
+              - generic [ref=e3277]:
+                - generic [ref=e3278]: Huitièmes de finale · Houston
+                - generic [ref=e3280]: Qualifiés à déterminer
+              - generic [ref=e3281]:
+                - generic [ref=e3282]:
+                  - img "TBD" [ref=e3283]
+                  - generic [ref=e3284]: TBD
+                - generic [ref=e3286]: VS
+                - generic [ref=e3287]:
+                  - generic [ref=e3288]: TBD
+                  - img "TBD" [ref=e3289]
+            - generic [ref=e3291]: Pronostic disponible une fois les qualifiés connus
+        - generic [ref=e3292]:
+          - generic [ref=e3293]:
+            - generic [ref=e3294]: Quarts de finale
+            - generic [ref=e3295]: 4 matchs
+          - generic [ref=e3297]:
+            - generic [ref=e3298]:
+              - generic [ref=e3299]:
+                - generic [ref=e3300]: Quarts de finale · Dallas
+                - generic [ref=e3302]: Qualifiés à déterminer
+              - generic [ref=e3303]:
+                - generic [ref=e3304]:
+                  - img "TBD" [ref=e3305]
+                  - generic [ref=e3306]: TBD
+                - generic [ref=e3308]: VS
+                - generic [ref=e3309]:
+                  - generic [ref=e3310]: TBD
+                  - img "TBD" [ref=e3311]
+            - generic [ref=e3313]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3314]:
+            - generic [ref=e3315]:
+              - generic [ref=e3316]:
+                - generic [ref=e3317]: Quarts de finale · Atlanta
+                - generic [ref=e3319]: Qualifiés à déterminer
+              - generic [ref=e3320]:
+                - generic [ref=e3321]:
+                  - img "TBD" [ref=e3322]
+                  - generic [ref=e3323]: TBD
+                - generic [ref=e3325]: VS
+                - generic [ref=e3326]:
+                  - generic [ref=e3327]: TBD
+                  - img "TBD" [ref=e3328]
+            - generic [ref=e3330]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3331]:
+            - generic [ref=e3332]:
+              - generic [ref=e3333]:
+                - generic [ref=e3334]: Quarts de finale · Los Angeles
+                - generic [ref=e3336]: Qualifiés à déterminer
+              - generic [ref=e3337]:
+                - generic [ref=e3338]:
+                  - img "TBD" [ref=e3339]
+                  - generic [ref=e3340]: TBD
+                - generic [ref=e3342]: VS
+                - generic [ref=e3343]:
+                  - generic [ref=e3344]: TBD
+                  - img "TBD" [ref=e3345]
+            - generic [ref=e3347]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3348]:
+            - generic [ref=e3349]:
+              - generic [ref=e3350]:
+                - generic [ref=e3351]: Quarts de finale · New York
+                - generic [ref=e3353]: Qualifiés à déterminer
+              - generic [ref=e3354]:
+                - generic [ref=e3355]:
+                  - img "TBD" [ref=e3356]
+                  - generic [ref=e3357]: TBD
+                - generic [ref=e3359]: VS
+                - generic [ref=e3360]:
+                  - generic [ref=e3361]: TBD
+                  - img "TBD" [ref=e3362]
+            - generic [ref=e3364]: Pronostic disponible une fois les qualifiés connus
+        - generic [ref=e3365]:
+          - generic [ref=e3366]:
+            - generic [ref=e3367]: Demi-finales
+            - generic [ref=e3368]: 2 matchs
+          - generic [ref=e3370]:
+            - generic [ref=e3371]:
+              - generic [ref=e3372]:
+                - generic [ref=e3373]: Demi-finales · Dallas
+                - generic [ref=e3375]: Qualifiés à déterminer
+              - generic [ref=e3376]:
+                - generic [ref=e3377]:
+                  - img "TBD" [ref=e3378]
+                  - generic [ref=e3379]: TBD
+                - generic [ref=e3381]: VS
+                - generic [ref=e3382]:
+                  - generic [ref=e3383]: TBD
+                  - img "TBD" [ref=e3384]
+            - generic [ref=e3386]: Pronostic disponible une fois les qualifiés connus
+          - generic [ref=e3387]:
+            - generic [ref=e3388]:
+              - generic [ref=e3389]:
+                - generic [ref=e3390]: Demi-finales · Los Angeles
+                - generic [ref=e3392]: Qualifiés à déterminer
+              - generic [ref=e3393]:
+                - generic [ref=e3394]:
+                  - img "TBD" [ref=e3395]
+                  - generic [ref=e3396]: TBD
+                - generic [ref=e3398]: VS
+                - generic [ref=e3399]:
+                  - generic [ref=e3400]: TBD
+                  - img "TBD" [ref=e3401]
+            - generic [ref=e3403]: Pronostic disponible une fois les qualifiés connus
+        - generic [ref=e3404]:
+          - generic [ref=e3405]:
+            - generic [ref=e3406]: Match pour la 3e place
+            - generic [ref=e3407]: 1 match
+          - generic [ref=e3409]:
+            - generic [ref=e3410]:
+              - generic [ref=e3411]:
+                - generic [ref=e3412]: 3e place · Miami
+                - generic [ref=e3414]: Qualifiés à déterminer
+              - generic [ref=e3415]:
+                - generic [ref=e3416]:
+                  - img "TBD" [ref=e3417]
+                  - generic [ref=e3418]: TBD
+                - generic [ref=e3420]: VS
+                - generic [ref=e3421]:
+                  - generic [ref=e3422]: TBD
+                  - img "TBD" [ref=e3423]
+            - generic [ref=e3425]: Pronostic disponible une fois les qualifiés connus
+        - generic [ref=e3426]:
+          - generic [ref=e3427]:
+            - generic [ref=e3428]: Finale
+            - generic [ref=e3429]: 1 match
+          - generic [ref=e3431]:
+            - generic [ref=e3432]:
+              - generic [ref=e3433]:
+                - generic [ref=e3434]: Finale · New York
+                - generic [ref=e3436]: Qualifiés à déterminer
+              - generic [ref=e3437]:
+                - generic [ref=e3438]:
+                  - img "TBD" [ref=e3439]
+                  - generic [ref=e3440]: TBD
+                - generic [ref=e3442]: VS
+                - generic [ref=e3443]:
+                  - generic [ref=e3444]: TBD
+                  - img "TBD" [ref=e3445]
+            - generic [ref=e3447]: Pronostic disponible une fois les qualifiés connus
+  - generic:
+    - generic:
+      - generic: REJOINDRE
+      - generic: Entre dans la ligue avec tes amis
+      - generic:
+        - button "Première fois"
+        - button "Je reviens"
+      - generic:
+        - generic:
+          - generic: Code de la ligue
+          - textbox "Demande-le à l'organisateur"
+        - generic:
+          - generic: Ton prénom
+          - 'textbox "ex: Thomas"'
+        - generic:
+          - generic: Ton équipe du coeur
+          - generic:
+            - button "États-Unis":
+              - img "États-Unis"
+            - button "Canada":
+              - img "Canada"
+            - button "Mexique":
+              - img "Mexique"
+            - button "Argentine":
+              - img "Argentine"
+            - button "Brésil":
+              - img "Brésil"
+            - button "Colombie":
+              - img "Colombie"
+            - button "Uruguay":
+              - img "Uruguay"
+            - button "Équateur":
+              - img "Équateur"
+            - button "Venezuela":
+              - img "Venezuela"
+            - button "Paraguay":
+              - img "Paraguay"
+            - button "Pérou":
+              - img "Pérou"
+            - button "Chili":
+              - img "Chili"
+            - button "Espagne":
+              - img "Espagne"
+            - button "France":
+              - img "France"
+            - button "Allemagne":
+              - img "Allemagne"
+            - button "Angleterre":
+              - img "Angleterre"
+            - button "Portugal":
+              - img "Portugal"
+            - button "Pays-Bas":
+              - img "Pays-Bas"
+            - button "Italie":
+              - img "Italie"
+            - button "Belgique":
+              - img "Belgique"
+            - button "Croatie":
+              - img "Croatie"
+            - button "Suisse":
+              - img "Suisse"
+            - button "Danemark":
+              - img "Danemark"
+            - button "Autriche":
+              - img "Autriche"
+            - button "Écosse":
+              - img "Écosse"
+            - button "Turquie":
+              - img "Turquie"
+            - button "Hongrie":
+              - img "Hongrie"
+            - button "Serbie":
+              - img "Serbie"
+            - button "Norvège":
+              - img "Norvège"
+            - button "Tchéquie":
+              - img "Tchéquie"
+            - button "Pologne":
+              - img "Pologne"
+            - button "Roumanie":
+              - img "Roumanie"
+            - button "Slovaquie":
+              - img "Slovaquie"
+            - button "Ukraine":
+              - img "Ukraine"
+            - button "Bosnie-Herzégovine":
+              - img "Bosnie-Herzégovine"
+            - button "Suède":
+              - img "Suède"
+            - button "Costa Rica":
+              - img "Costa Rica"
+            - button "Jamaïque":
+              - img "Jamaïque"
+            - button "Honduras":
+              - img "Honduras"
+            - button "Panama":
+              - img "Panama"
+            - button "El Salvador":
+              - img "El Salvador"
+            - button "Curaçao":
+              - img "Curaçao"
+            - button "Haïti":
+              - img "Haïti"
+            - button "Japon":
+              - img "Japon"
+            - button "Corée du Sud":
+              - img "Corée du Sud"
+            - button "Australie":
+              - img "Australie"
+            - button "Iran":
+              - img "Iran"
+            - button "Arabie Saoudite":
+              - img "Arabie Saoudite"
+            - button "Qatar":
+              - img "Qatar"
+            - button "Jordanie":
+              - img "Jordanie"
+            - button "Irak":
+              - img "Irak"
+            - button "Ouzbékistan":
+              - img "Ouzbékistan"
+            - button "Chine":
+              - img "Chine"
+            - button "Maroc":
+              - img "Maroc"
+            - button "Sénégal":
+              - img "Sénégal"
+            - button "Nigéria":
+              - img "Nigéria"
+            - button "Égypte":
+              - img "Égypte"
+            - button "Cameroun":
+              - img "Cameroun"
+            - button "Ghana":
+              - img "Ghana"
+            - button "Côte d'Ivoire":
+              - img "Côte d'Ivoire"
+            - button "Tunisie":
+              - img "Tunisie"
+            - button "Afrique du Sud":
+              - img "Afrique du Sud"
+            - button "Algérie":
+              - img "Algérie"
+            - button "Mali":
+              - img "Mali"
+            - button "RD Congo":
+              - img "RD Congo"
+            - button "Nouvelle-Zélande":
+              - img "Nouvelle-Zélande"
+          - generic: Clique sur un drapeau
+        - generic:
+          - generic: Ton PIN (4 chiffres)
+          - textbox "••••"
+      - generic:
+        - button "C'est parti !"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: MON PROFIL
+      - generic: Modifier mes informations
+      - generic:
+        - generic: Ma photo de profil
+        - generic:
+          - generic:
+            - generic: 📷
+        - generic: CHANGER LA PHOTO
+      - generic:
+        - generic: Mon équipe du coeur
+        - generic: Chargement...
+      - generic:
+        - generic: Nouveau PIN — laisser vide pour ne pas changer
+        - textbox "••••"
+      - generic:
+        - button "Enregistrer"
+        - button "Annuler"
+  - generic:
+    - generic:
+      - generic: Étape 2 / 2
+      - generic: TA PHOTO
+      - generic: Mets un visage sur ton prénom !
+      - generic:
+        - generic:
+          - generic: 📷
+          - generic: CLIQUE POUR CHOISIR
+      - paragraph:
+        - text: Ta photo s'affichera dans le classement et sur les matchs.
+        - text: Ton drapeau restera affiché à côté de ton prénom.
+      - generic:
+        - button "Enregistrer" [disabled]
+        - button "Passer pour l'instant"

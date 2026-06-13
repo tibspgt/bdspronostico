@@ -1,0 +1,841 @@
+- generic [ref=e25]:
+  - link "Passer au contenu principal" [ref=e26] [cursor=pointer]:
+    - /url: "#main-content"
+    - generic [ref=e27]: Passer au contenu principal
+  - banner [ref=e31]:
+    - generic [ref=e32]:
+      - navigation [ref=e33]:
+        - link "FIFA" [ref=e34] [cursor=pointer]:
+          - /url: /
+          - img "FIFA" [ref=e35]
+        - generic [ref=e36]:
+          - link "BILLETS ET HOSPITALITÉ" [ref=e38] [cursor=pointer]:
+            - /url: https://www.fifa.com/fifaplus/tickets?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_ticketing)_(da_04052023)_(l_fr)
+          - link "FIFA STORE" [ref=e40] [cursor=pointer]:
+            - /url: https://store.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_fifastore)_(da_04052023)_(l_fr)
+          - link "FIFA REWARDS" [ref=e42] [cursor=pointer]:
+            - /url: https://www.fifa.com/fr/rewards/?intcmp=%28p_fifacom%29_%28d_%29_%28c_webuniversal-fwc2026%29_%28sc_rewards%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - link "FIFA+" [ref=e44] [cursor=pointer]:
+            - /url: https://www.plus.fifa.com/?intcmp=(p_fifaplus)_(c_webheader-fwc2026)_(sc_morefifa)_(ssc_originals)_(da_17052023)_(l_fr)
+          - link "INSIDE FIFA" [ref=e46] [cursor=pointer]:
+            - /url: https://inside.fifa.com/fr
+      - generic [ref=e48]:
+        - link "FIFA" [ref=e55] [cursor=pointer]:
+          - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026
+          - img "FIFA" [ref=e56]
+        - navigation [ref=e58]:
+          - link "RÉSULTATS & CALENDRIER" [ref=e60] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/scores-fixtures
+          - link "CLASSEMENTS" [ref=e62] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/standings
+          - link "ÉQUIPES" [ref=e64] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/teams
+          - link "QUALIFICATIONS" [ref=e66] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/qualifiers
+          - generic [ref=e68] [cursor=pointer]: LES PAYS ET LES VILLES HÔTES
+          - link "BILLETS" [ref=e70] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/tickets
+          - link "HOSPITALITÉ" [ref=e72] [cursor=pointer]:
+            - /url: https://fifaworldcup26.hospitality.fifa.com/fr?intcmp=%28p_fifacom%29_%28d_%29_%28c_webheader-fwc2026%29_%28sc_register-interest%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - generic [ref=e74] [cursor=pointer]: LE COIN DES FANS
+          - link "ORGANISATION" [ref=e76] [cursor=pointer]:
+            - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/organisation
+          - link "REGARDER SUR FIFA+" [ref=e78] [cursor=pointer]:
+            - /url: https://www.plus.fifa.com/showcase/fceffc49-6bb9-4c7e-99dc-a032f2797aa5?intcmp=%28p_fifacom%29_%28d_plusfifa%29_%28c_webheader-fwc2026%29_%28sc_fwc-2026-qualifiers%29_%28ssc_%29_%28sssc_%29_%28l_fr%29_%28da_19032026%29
+          - generic [ref=e80] [cursor=pointer]: TOURNOIS
+        - link "Search" [ref=e82] [cursor=pointer]:
+          - /url: /fr/tournaments/mens/worldcup/canadamexicousa2026/articles/calendrier-matches-resultats-equipes-stades?searchOverlay=1
+          - img "Search" [ref=e83]
+        - button "Langue" [ref=e87]:
+          - img "Langue" [ref=e88] [cursor=pointer]
+        - button "Mon compte" [ref=e90] [cursor=pointer]:
+          - img [ref=e91]
+  - generic [ref=e117]:
+    - main [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e122]:
+          - button "Retourner" [ref=e124] [cursor=pointer]:
+            - img [ref=e125]
+            - text: Retourner
+          - article [ref=e127]:
+            - heading "Consultez le calendrier des matches de la Coupe du Monde de la FIFA 2026™" [level=1] [ref=e129]
+            - region "video player" [ref=e135]:
+              - generic [ref=e136]:
+                - text:  
+                - text:            
+                - img [ref=e138]
+                - generic:
+                  - button:
+                    - img
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Le calendrier de la Coupe du Monde de la FIFA 2026™ en bref
+                    - generic:
+                      - generic:
+                        - generic: Découvrez comment et pourquoi les matches de la Coupe du Monde de la FIFA 2026™ ont été attribués.
+            - paragraph [ref=e141]: Découvrez le calendrier complet des 104 matches de la Coupe du Monde 2026 au Canada, au Mexique et aux États-Unis.
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: Le calendrier des matches de la Coupe du Monde de la FIFA 2026™ a été dévoilé.
+              - paragraph [ref=e144]: La plus grande édition de l'histoire du tournoi planétaire voit pour la première fois 48 équipes participer. Un total record de 104 matches sont amenés à être disputés dans 16 villes hôtes de trois pays, le Canada, le Mexique et les États-Unis.
+              - paragraph [ref=e145]: Retrouvez ci-dessous les horaires des différentes rencontres.
+              - separator [ref=e146]
+              - heading "Les équipes qualifiées" [level=2] [ref=e147]:
+                - generic "Les équipes qualifiées" [ref=e149]:
+                  - link "Les équipes qualifiées" [ref=e150] [cursor=pointer]:
+                    - /url: https://www.fifa.com/fr/tournaments/mens/worldcup/canadamexicousa2026/articles/coupe-du-monde-2026-equipes-qualifiees
+              - separator [ref=e151]
+              - heading "Consultez le calendrier complet de la Coupe du Monde de la FIFA 2026™ ici" [level=2] [ref=e152]:
+                - generic "Consultez le calendrier complet de la Coupe du Monde de la FIFA 2026™ ici" [ref=e154]:
+                  - link "Consultez le calendrier complet de la Coupe du Monde de la FIFA 2026™ ici" [ref=e155] [cursor=pointer]:
+                    - /url: https://digitalhub.fifa.com/asset/8c1dfbc0-9a88-4021-a291-616c920800b2/FWC26-Match-Schedule_French.pdf
+              - separator [ref=e160]
+              - heading "Vos billets pour la Coupe du Monde 2026" [level=3] [ref=e161]:
+                - generic "\"Vos billets pour la Coupe du Monde 2026\"" [ref=e163]:
+                  - strong [ref=e164]: Vos billets pour la Coupe du Monde 2026
+              - generic [ref=e167]:
+                - generic [ref=e168]:
+                  - generic [ref=e170]:
+                    - generic [ref=e173]: Billets pour la Coupe du Monde 2026
+                    - generic [ref=e176]: Découvrez notre offre de billets et commencez l’aventure Coupe du Monde de la FIFA 2026™ !
+                  - link "En savoir plus" [ref=e177] [cursor=pointer]:
+                    - /url: https://www.fifa.com/fr/tournaments/mens/worldcup/canadamexicousa2026/tickets
+                    - generic [ref=e178]: En savoir plus
+                    - img [ref=e179]
+                - img "FIFA" [ref=e182]
+              - separator [ref=e183]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Phase de groupes" [level=2] [ref=e184]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Phase de groupes\"" [ref=e186]':
+                  - strong [ref=e187]: "Coupe du Monde de la FIFA 2026™ : Phase de groupes"
+              - paragraph [ref=e188]:
+                - emphasis [ref=e189]: "*tous les coups d'envois sont indiqués en heure de l'Est (ET)"
+              - heading "Jeudi 11 juin 2026" [level=4] [ref=e194]:
+                - generic "\"Jeudi 11 juin 2026\"" [ref=e196]:
+                  - strong [ref=e197]: Jeudi 11 juin 2026
+              - paragraph [ref=e198]:
+                - strong [ref=e199]: "Groupe A :"
+                - link "Mexique - Afrique du Sud" [ref=e200] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021443
+                - text: – Stade de Mexico (15h)
+                - strong [ref=e201]: "Groupe A :"
+                - link "République de Corée - Tchéquie" [ref=e202] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021441
+                - text: – Stade de Guadalajara (22h)
+              - heading "Vendredi 12 juin 2026" [level=4] [ref=e203]:
+                - generic "\"Vendredi 12 juin 2026\"" [ref=e205]:
+                  - strong [ref=e206]: Vendredi 12 juin 2026
+              - paragraph [ref=e207]:
+                - strong [ref=e208]: "Groupe B :"
+                - link "Canada - Bosnie-et-Herzégovine" [ref=e209] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021449
+                - text: – Stade de Toronto (15h)
+                - strong [ref=e210]: "Groupe D :"
+                - link "États-Unis - Paraguay" [ref=e211] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021458
+                - text: – Stade de Los Angeles (21h)
+              - heading "Samedi 13 juin 2026" [level=4] [ref=e212]:
+                - generic "\"Samedi 13 juin 2026\"" [ref=e214]:
+                  - strong [ref=e215]: Samedi 13 juin 2026
+              - paragraph [ref=e216]:
+                - strong [ref=e217]: "Groupe B :"
+                - link "Qatar - Suisse" [ref=e218] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021447
+                - text: – Stade de la baie de San Francisco (15h)
+                - strong [ref=e219]: "Groupe C :"
+                - link "Brésil - Maroc" [ref=e220] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021456
+                - text: – Stade de New York New Jersey (18h)
+                - strong [ref=e221]: "Groupe C :"
+                - link "Haïti - Écosse" [ref=e222] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021453
+                - text: – Stade de Boston (21h)
+                - strong [ref=e223]: "Groupe D :"
+                - link "Australie - Turquie" [ref=e224] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021463
+                - text: – BC Place de Vancouver (00h)
+              - heading "Dimanche 14 juin 2026" [level=4] [ref=e225]:
+                - generic "\"Dimanche 14 juin 2026\"" [ref=e227]:
+                  - strong [ref=e228]: Dimanche 14 juin 2026
+              - paragraph [ref=e229]:
+                - strong [ref=e230]: "Groupe E :"
+                - link "Allemagne - Curaçao" [ref=e231] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021464
+                - text: – Stade de Houston (13h)
+                - strong [ref=e232]: "Groupe F :"
+                - link "Pays-Bas - Japon" [ref=e233] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021470
+                - text: – Stade de Dallas (16h)
+                - strong [ref=e234]: "Groupe E :"
+                - link "Côte d'Ivoire - Équateur" [ref=e235] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021467
+                - text: – Stade de Philadelphie (19h)
+                - strong [ref=e236]: "Groupe F :"
+                - link "Suède - Tunisie" [ref=e237] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021474
+                - text: – Stade de Monterrey (22h)
+              - img "FIFA World Cup 2026™ fixture location map showing 11 cities in the USA, 3 in Mexico and 2 in Canada where games will be held." [ref=e242]
+              - heading "Lundi 15 juin 2026" [level=4] [ref=e243]:
+                - generic "\"Lundi 15 juin 2026\"" [ref=e245]:
+                  - strong [ref=e246]: Lundi 15 juin 2026
+              - paragraph [ref=e247]:
+                - strong [ref=e248]: "Groupe H :"
+                - link "Espagne - Cap-Vert" [ref=e249] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021482
+                - text: – Stade d'Atlanta (12h)
+                - strong [ref=e250]: "Groupe G :"
+                - link "Belgique - Égypte" [ref=e251] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021478
+                - text: – Stade de Seattle (15h)
+                - strong [ref=e252]: "Groupe H :"
+                - link "Arabie saoudite - Uruguay" [ref=e253] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021486
+                - text: – Stade de Miami (18h)
+                - strong [ref=e254]: "Groupe G :"
+                - link "RI Iran - Nouvelle-Zélande" [ref=e255] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021476
+                - text: – Stade de Los Angeles (21h)
+              - heading "Mardi 16 juin 2026" [level=4] [ref=e256]:
+                - generic "\"Mardi 16 juin 2026\"" [ref=e258]:
+                  - strong [ref=e259]: Mardi 16 juin 2026
+              - paragraph [ref=e260]:
+                - strong [ref=e261]: "Groupe I :"
+                - link "France - Sénégal" [ref=e262] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021490
+                - text: – Stade de New York New Jersey (15h)
+                - strong [ref=e263]: "Groupe I :"
+                - link "Irak - Norvège" [ref=e264] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021488
+                - text: – Stade de Boston (18h)
+                - strong [ref=e265]: "Groupe J :"
+                - link "Argentine - Algérie" [ref=e266] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021496
+                - text: – Stade de Kansas City (21h)
+                - strong [ref=e267]: "Groupe J :"
+                - link "Autriche - Jordanie" [ref=e268] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021498
+                - text: – Stade de la baie de San Francisco (00h)
+              - heading "Mercredi 17 juin 2026" [level=4] [ref=e269]:
+                - generic "\"Mercredi 17 juin 2026\"" [ref=e271]:
+                  - strong [ref=e272]: Mercredi 17 juin 2026
+              - paragraph [ref=e273]:
+                - strong [ref=e274]: "Groupe K :"
+                - link "Portugal - RD Congo" [ref=e275] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021502
+                - text: – Stade de Houston (13h)
+                - strong [ref=e276]: "Groupe L :"
+                - link "Angleterre - Croatie" [ref=e277] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021507
+                - text: – Stade de Dallas (16h)
+                - strong [ref=e278]: "Groupe L :"
+                - link "Ghana - Panamá" [ref=e279] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021510
+                - text: – Stade de Toronto (19h)
+                - strong [ref=e280]: "Groupe K :"
+                - link "Ouzbékistan - Colombie" [ref=e281] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021504
+                - text: – Stade de Mexico (22h)
+              - region "video player" [ref=e287]:
+                - generic [ref=e288]:
+                  - text:  
+                  - text:            
+                  - img [ref=e290]
+                  - generic:
+                    - button:
+                      - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Les villes hôtes de la Coupe du Monde de la FIFA 26™
+                      - generic:
+                        - generic:
+                          - generic: Découvrez les 16 villes qui accueilleront la Coupe du Monde de la FIFA 26™.
+              - heading "Jeudi 18 juin 2026" [level=4] [ref=e293]:
+                - generic "\"Jeudi 18 juin 2026\"" [ref=e295]:
+                  - strong [ref=e296]: Jeudi 18 juin 2026
+              - paragraph [ref=e297]:
+                - strong [ref=e298]: "Groupe A :"
+                - link "Tchéquie - Afrique du Sud" [ref=e299] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021440
+                - text: – Stade d'Atlanta (12h)
+                - strong [ref=e300]: "Groupe B :"
+                - link "Suisse - Bosnie-et-Herzégovine" [ref=e301] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021446
+                - text: – Stade de Los Angeles (15h)
+                - strong [ref=e302]: "Groupe B :"
+                - link "Canada - Qatar" [ref=e303] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021450
+                - text: – BC Place de Vancouver (18h)
+                - strong [ref=e304]: "Groupe A :"
+                - link "Mexique - République de Corée" [ref=e305] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021442
+                - text: – Stade de Guadalajara (21h)
+              - heading "Vendredi 19 juin 2026" [level=4] [ref=e306]:
+                - generic "\"Vendredi 19 juin 2026\"" [ref=e308]:
+                  - strong [ref=e309]: Vendredi 19 juin 2026
+              - paragraph [ref=e310]:
+                - strong [ref=e311]: "Groupe D :"
+                - link "États-Unis - Australie" [ref=e312] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021462
+                - text: – Stade de Seattle (15h)
+                - strong [ref=e313]: "Groupe C :"
+                - link "Écosse - Maroc" [ref=e314] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021454
+                - text: – Stade de Boston (18h)
+                - strong [ref=e315]: "Groupe C :"
+                - link "Brésil - Haïti" [ref=e316] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021457
+                - text: – Stade de Philadelphie (20h30)
+                - strong [ref=e317]: "Groupe D :"
+                - link "Turquie - Paraguay" [ref=e318] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021460
+                - text: – Stade de la baie de San Francisco (23h)
+              - heading "Samedi 20 juin 2026" [level=4] [ref=e319]:
+                - generic "\"Samedi 20 juin 2026\"" [ref=e321]:
+                  - strong [ref=e322]: Samedi 20 juin 2026
+              - paragraph [ref=e323]:
+                - strong [ref=e324]: "Groupe F :"
+                - link "Pays-Bas - Suède" [ref=e325] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021472
+                - text: – Stade de Houston (13h)
+                - strong [ref=e326]: "Groupe E :"
+                - link "Allemagne - Côte d'Ivoire" [ref=e327] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021469
+                - text: – Stade de Toronto (16h)
+                - strong [ref=e328]: "Groupe E :"
+                - link "Équateur - Curaçao" [ref=e329] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021465
+                - text: – Stade de Kansas City (20h)
+                - strong [ref=e330]: "Groupe F :"
+                - link "Tunisie - Japon" [ref=e331] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021475
+                - text: – Stade de Monterrey (00h)
+              - heading "Dimanche 21 juin 2026" [level=4] [ref=e332]:
+                - generic "\"Dimanche 21 juin 2026\"" [ref=e334]:
+                  - strong [ref=e335]: Dimanche 21 juin 2026
+              - paragraph [ref=e336]:
+                - strong [ref=e337]: "Groupe H :"
+                - link "Espagne - Arabie saoudite" [ref=e338] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021483
+                - text: – Stade d'Atlanta (12h)
+                - strong [ref=e339]: "Groupe G :"
+                - link "Belgique - RI Iran" [ref=e340] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021477
+                - text: – Stade de Los Angeles (15h)
+                - strong [ref=e341]: "Groupe H :"
+                - link "Uruguay - Cap-Vert" [ref=e342] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021487
+                - text: – Stade de Miami (18h)
+                - strong [ref=e343]: "Groupe G :"
+                - link "Nouvelle-Zélande - Égypte" [ref=e344] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021480
+                - text: – BC Place de Vancouver (21h)
+              - heading "Lundi 22 juin 2026" [level=4] [ref=e345]:
+                - generic "\"Lundi 22 juin 2026\"" [ref=e347]:
+                  - strong [ref=e348]: Lundi 22 juin 2026
+              - paragraph [ref=e349]:
+                - strong [ref=e350]: "Groupe J :"
+                - link "Argentine - Autriche" [ref=e351] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021494
+                - text: – Stade de Dallas (13h)
+                - strong [ref=e352]: "Groupe I :"
+                - link "France - Irak" [ref=e353] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021492
+                - text: – Stade de Philadelphie (17h)
+                - strong [ref=e354]: "Groupe I :"
+                - link "Norvège - Sénégal" [ref=e355] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021491
+                - text: – Stade de New York New Jersey (20h)
+                - strong [ref=e356]: "Groupe J :"
+                - link "Jordanie - Algérie" [ref=e357] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021499
+                - text: – Stade de la baie de San Francisco (23h)
+              - heading "Mardi 23 juin 2026" [level=4] [ref=e358]:
+                - generic "\"Mardi 23 juin 2026\"" [ref=e360]:
+                  - strong [ref=e361]: Mardi 23 juin 2026
+              - paragraph [ref=e362]:
+                - strong [ref=e363]: "Groupe K :"
+                - link "Portugal - Ouzbékistan" [ref=e364] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021503
+                - text: – Stade de Houston (13h)
+                - strong [ref=e365]: "Groupe L :"
+                - link "Angleterre - Ghana" [ref=e366] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021506
+                - text: – Stade de Boston (16h)
+                - strong [ref=e367]: "Groupe L :"
+                - link "Panamá - Croatie" [ref=e368] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021511
+                - text: – Stade de Toronto (19h)
+                - strong [ref=e369]: "Groupe K :"
+                - link "Colombie - RD Congo" [ref=e370] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021501
+                - text: – Stade de Guadalajara (22h)
+              - blockquote "Twitter" [ref=e372]:
+                - paragraph [ref=e373]:
+                  - text: 🗣️ "We are the opening game." 🇲🇽
+                  - link "#WeAre26" [ref=e374] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/WeAre26?src=hash&ref_src=twsrc%5Etfw
+                  - text: "|"
+                  - link "#FIFAWorldCup" [ref=e375] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/FIFAWorldCup?src=hash&ref_src=twsrc%5Etfw
+                - text: — FIFA World Cup (@FIFAWorldCup)
+                - link "February 4, 2024" [ref=e376] [cursor=pointer]:
+                  - /url: https://twitter.com/FIFAWorldCup/status/1754258841393320224?ref_src=twsrc%5Etfw
+              - heading "Mercredi 24 juin 2026" [level=4] [ref=e377]:
+                - generic "\"Mercredi 24 juin 2026\"" [ref=e379]:
+                  - strong [ref=e380]: Mercredi 24 juin 2026
+              - paragraph [ref=e381]:
+                - strong [ref=e382]: "Groupe B :"
+                - link "Suisse - Canada" [ref=e383] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021451
+                - text: – BC Place de Vancouver (15h)
+                - strong [ref=e384]: "Groupe B :"
+                - link "Bosnie-et-Herzégovine - Qatar" [ref=e385] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021448
+                - text: – Stade de Seattle (15h)
+                - strong [ref=e386]: "Groupe C :"
+                - link "Écosse - Brésil" [ref=e387] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021455
+                - text: – Stade de Miami (18h)
+                - strong [ref=e388]: "Groupe C :"
+                - link "Maroc - Haïti" [ref=e389] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021452
+                - text: – Stade d'Atlanta (18h)
+                - strong [ref=e390]: "Groupe A :"
+                - link "Tchéquie - Mexique" [ref=e391] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021444
+                - text: – Stade de Mexico (21h)
+                - strong [ref=e392]: "Groupe A :"
+                - link "Afrique du Sud - République de Corée" [ref=e393] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021445
+                - text: – Stade de Monterrey (21h)
+              - heading "Jeudi 25 juin 2026" [level=4] [ref=e394]:
+                - generic "\"Jeudi 25 juin 2026\"" [ref=e396]:
+                  - strong [ref=e397]: Jeudi 25 juin 2026
+              - paragraph [ref=e398]:
+                - strong [ref=e399]: "Groupe E :"
+                - link "Équateur - Allemagne" [ref=e400] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021466
+                - text: – Stade de New York New Jersey (16h)
+                - strong [ref=e401]: "Groupe E :"
+                - link "Curaçao - Côte d'Ivoire" [ref=e402] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021468
+                - text: – Stade de Philadelphie (16h)
+                - strong [ref=e403]: "Groupe F :"
+                - link "Tunisie - Pays-Bas" [ref=e404] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021473
+                - text: – Stade de Kansas City (19h)
+                - strong [ref=e405]: "Groupe F :"
+                - link "Japon - Suède" [ref=e406] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021471
+                - text: – Stade de Dallas (19h)
+                - strong [ref=e407]: "Groupe D :"
+                - link "Turquie - États-Unis" [ref=e408] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021459
+                - text: – Stade de Los Angeles (22h)
+                - strong [ref=e409]: "Groupe D :"
+                - link "Paraguay - Australie" [ref=e410] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021461
+                - text: – Stade de la baie de San Francisco (22h)
+              - heading "Vendredi 26 juin 2026" [level=4] [ref=e411]:
+                - generic "\"Vendredi 26 juin 2026\"" [ref=e413]:
+                  - strong [ref=e414]: Vendredi 26 juin 2026
+              - paragraph [ref=e415]:
+                - strong [ref=e416]: "Groupe I :"
+                - link "Norvège - France" [ref=e417] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021489
+                - text: – Stade de Boston (15h)
+                - strong [ref=e418]: "Groupe I :"
+                - link "Sénégal - Irak" [ref=e419] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021493
+                - text: – Stade de Toronto (15h)
+                - strong [ref=e420]: "Groupe H :"
+                - link "Uruguay - Espagne" [ref=e421] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021484
+                - text: – Stade de Guadalajara (20h)
+                - strong [ref=e422]: "Groupe H :"
+                - link "Cap-Vert - Arabie saoudite" [ref=e423] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021485
+                - text: – Stade de Houston (20h)
+                - strong [ref=e424]: "Groupe G :"
+                - link "Nouvelle-Zélande - Belgique" [ref=e425] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021481
+                - text: – BC Place de Vancouver (23h)
+                - strong [ref=e426]: "Groupe G :"
+                - link "Égypte - RI Iran" [ref=e427] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021479
+                - text: – Stade de Seattle (23h)
+              - heading "Samedi 27 juin 2026" [level=4] [ref=e428]:
+                - generic "\"Samedi 27 juin 2026\"" [ref=e430]:
+                  - strong [ref=e431]: Samedi 27 juin 2026
+              - paragraph [ref=e432]:
+                - strong [ref=e433]: "Groupe L :"
+                - link "Panamá - Angleterre" [ref=e434] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021508
+                - text: – Stade de New York New Jersey (17h)
+                - strong [ref=e435]: "Groupe L :"
+                - link "Croatie - Ghana" [ref=e436] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021509
+                - text: – Stade de Philadelphie (17h)
+                - strong [ref=e437]: "Groupe K :"
+                - link "Colombie - Portugal" [ref=e438] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021505
+                - text: – Stade de Miami (19h30)
+                - strong [ref=e439]: "Groupe K :"
+                - link "RD Congo - Ouzbékistan" [ref=e440] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021500
+                - text: – Stade d'Atlanta (19h30)
+                - strong [ref=e441]: "Groupe J :"
+                - link "Jordanie - Argentine" [ref=e442] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021495
+                - text: – Stade de Dallas (22h)
+                - strong [ref=e443]: "Groupe J :"
+                - link "Algérie - Autriche" [ref=e444] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289273/400021497
+                - text: – Stade de Kansas City (22h)
+              - blockquote "Twitter" [ref=e446]:
+                - paragraph [ref=e447]:
+                  - text: 🗣️ "We are Canada's opening game." 🇨🇦
+                  - link "#WeAre26" [ref=e448] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/WeAre26?src=hash&ref_src=twsrc%5Etfw
+                  - text: "|"
+                  - link "#FIFAWorldCup" [ref=e449] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/FIFAWorldCup?src=hash&ref_src=twsrc%5Etfw
+                - text: — FIFA World Cup (@FIFAWorldCup)
+                - link "February 4, 2024" [ref=e450] [cursor=pointer]:
+                  - /url: https://twitter.com/FIFAWorldCup/status/1754271823976390948?ref_src=twsrc%5Etfw
+              - separator [ref=e451]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Seizièmes de finale" [level=2] [ref=e452]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Seizièmes de finale\"" [ref=e454]':
+                  - strong [ref=e455]: "Coupe du Monde de la FIFA 2026™ : Seizièmes de finale"
+              - heading "Dimanche 28 juin 2026" [level=4] [ref=e460]:
+                - generic "\"Dimanche 28 juin 2026\"" [ref=e462]:
+                  - strong [ref=e463]: Dimanche 28 juin 2026
+              - paragraph [ref=e464]:
+                - strong [ref=e465]: "Match 73 :"
+                - link "Deuxième du Groupe A - Deuxième du Groupe B" [ref=e466] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021518
+                - text: – Stade de Los Angeles (15h)
+              - heading "Lundi 29 juin 2026" [level=4] [ref=e467]:
+                - generic "\"Lundi 29 juin 2026\"" [ref=e469]:
+                  - strong [ref=e470]: Lundi 29 juin 2026
+              - paragraph [ref=e471]:
+                - strong [ref=e472]: "Match 76 :"
+                - link "Premier du Groupe C - Deuxième du Groupe F" [ref=e473] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021516
+                - text: – Stade de Houston (13h)
+                - strong [ref=e474]: "Match 74 :"
+                - link "Premier du Groupe E - Troisième du Groupe A/B/C/D/F" [ref=e475] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021513
+                - text: – Stade de Boston (16h30)
+                - strong [ref=e476]: "Match 75 :"
+                - link "Premier du Groupe F - Deuxième du Groupe C" [ref=e477] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021522
+                - text: – Stade de Monterrey (21h)
+              - heading "Mardi 30 juin 2026" [level=4] [ref=e478]:
+                - generic "\"Mardi 30 juin 2026\"" [ref=e480]:
+                  - strong [ref=e481]: Mardi 30 juin 2026
+              - paragraph [ref=e482]:
+                - strong [ref=e483]: "Match 78 :"
+                - link "Deuxième du Groupe E - Deuxième du Groupe I" [ref=e484] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021514
+                - text: – Stade de Dallas (13h)
+                - strong [ref=e485]: "Match 77 :"
+                - link "Premier du Groupe I - Troisième du Groupe C/D/F/G/H" [ref=e486] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021523
+                - text: – Stade de New York New Jersey (17h)
+                - strong [ref=e487]: "Match 79 :"
+                - link "Premier du Groupe A - Troisième du Groupe C/E/F/H/I" [ref=e488] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021520
+                - text: – Stade de Mexico (21h)
+              - heading "Mercredi 1er juillet 2026" [level=4] [ref=e489]:
+                - generic "\"Mercredi 1er juillet 2026\"" [ref=e491]:
+                  - strong [ref=e492]: Mercredi 1er juillet 2026
+              - paragraph [ref=e493]:
+                - strong [ref=e494]: "Match 80 :"
+                - link "Premier du Groupe L - Troisième du Groupe E/H/I/J/K" [ref=e495] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021512
+                - text: – Stade d'Atlanta (12h)
+                - strong [ref=e496]: "Match 82 :"
+                - link "Premier du Groupe G - Troisième du Groupe A/E/H/I/J" [ref=e497] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021525
+                - text: – Stade de Seattle (16h)
+                - strong [ref=e498]: "Match 81 :"
+                - link "Premier du Groupe D - Troisième du Groupe B/E/F/I/J" [ref=e499] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021524
+                - text: – Stade de la baie de San Francisco (20h)
+              - heading "Jeudi 2 juillet 2026" [level=4] [ref=e500]:
+                - generic "\"Jeudi 2 juillet 2026\"" [ref=e502]:
+                  - strong [ref=e503]: Jeudi 2 juillet 2026
+              - paragraph [ref=e504]:
+                - strong [ref=e505]: "Match 84 :"
+                - link "Premier du Groupe H - Deuxième du Groupe J" [ref=e506] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021519
+                - text: – Stade de Los Angeles (15h)
+                - strong [ref=e507]: "Match 83 :"
+                - link "Deuxième du Groupe K - Deuxième du Groupe L" [ref=e508] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021526
+                - text: – Stade de Toronto (19h)
+                - strong [ref=e509]: "Match 85 :"
+                - link "Premier du Groupe B - Troisième du Groupe E/F/G/I/J" [ref=e510] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021527
+                - text: – Place de Vancouver (23h)
+              - heading "Vendredi 3 juillet 2026" [level=4] [ref=e511]:
+                - generic "\"Vendredi 3 juillet 2026\"" [ref=e513]:
+                  - strong [ref=e514]: Vendredi 3 juillet 2026
+              - paragraph [ref=e515]:
+                - strong [ref=e516]: "Match 88 :"
+                - link "Deuxième du Groupe K - Deuxième du Groupe L" [ref=e517] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021526
+                - text: – Stade de Dallas (14h)
+                - strong [ref=e518]: "Match 86 :"
+                - link "Premier du Groupe J - Deuxième du Groupe H" [ref=e519] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021521
+                - text: – Stade de Miami (18h)
+                - strong [ref=e520]: "Match 87 :"
+                - link "Premier du Groupe K - Troisième du Groupe D/E/I/J/L" [ref=e521] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289287/400021517
+                - text: –Stade de Kansas City (21h30)
+              - 'img "ARLINGTON, TX - APRIL 13: Dallas Cowboys Stadium during contruction on April 13, 2009 in Arlington, Texas. (Photo by Ronald Martinez/Getty Images)" [ref=e526]'
+              - separator [ref=e527]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Huitièmes de finale" [level=2] [ref=e528]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Huitièmes de finale\"" [ref=e530]':
+                  - strong [ref=e531]: "Coupe du Monde de la FIFA 2026™ : Huitièmes de finale"
+              - heading "Samedi 4 juillet 2026" [level=4] [ref=e532]:
+                - generic "\"Samedi 4 juillet 2026\"" [ref=e534]:
+                  - strong [ref=e535]: Samedi 4 juillet 2026
+              - paragraph [ref=e536]:
+                - strong [ref=e537]: "Match 90 :"
+                - link "Vainqueur du match 73 - Vainqueur du match 75" [ref=e538] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021530
+                - text: – Stade de Houston (13h)
+                - strong [ref=e539]: "Match 89 :"
+                - link "Vainqueur du match 74 - Vainqueur du match 77" [ref=e540] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021533
+                - text: – Stade de Philadelphie (17h)
+              - heading "Dimanche 5 juillet 2026" [level=4] [ref=e541]:
+                - generic "\"Dimanche 5 juillet 2026\"" [ref=e543]:
+                  - strong [ref=e544]: Dimanche 5 juillet 2026
+              - paragraph [ref=e545]:
+                - strong [ref=e546]: "Match 91 :"
+                - link "Vainqueur du match 76 - Vainqueur du match 78" [ref=e547] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021532
+                - text: – Stade de New York New Jersey (16h)
+                - strong [ref=e548]: "Match 92 :"
+                - link "Vainqueur du match 79 - Vainqueur du match 80" [ref=e549] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021531
+                - text: – Stade de Mexico (20h)
+              - heading "Lundi 6 juillet 2026" [level=4] [ref=e550]:
+                - generic "\"Lundi 6 juillet 2026\"" [ref=e552]:
+                  - strong [ref=e553]: Lundi 6 juillet 2026
+              - paragraph [ref=e554]:
+                - strong [ref=e555]: "Match 93 :"
+                - link "Vainqueur du match 83 - Vainqueur du match 84" [ref=e556] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021529
+                - text: – Stade de Dallas (15h)
+                - strong [ref=e557]: "Match 94 :"
+                - link "Vainqueur du match 81 - Vainqueur du match 82" [ref=e558] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021534
+                - text: – Stade de Seattle (20h)
+              - heading "Mardi 7 juillet 2026" [level=4] [ref=e559]:
+                - generic "\"Mardi 7 juillet 2026\"" [ref=e561]:
+                  - strong [ref=e562]: Mardi 7 juillet 2026
+              - paragraph [ref=e563]:
+                - strong [ref=e564]: "Match 95 :"
+                - link "Vainqueur du match 86 - Vainqueur du match 88" [ref=e565] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021528
+                - text: – Stade d'Atlanta (12h)
+                - strong [ref=e566]: "Match 96 :"
+                - link "Vainqueur du match 85 - Vainqueur du match 87" [ref=e567] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289288/400021535
+                - text: – BC Place de Vancouver (16h)
+              - img "A general view of the exterior of BC Place Vancouver, one of the stadiums being used for FIFA World Cup 2026." [ref=e572]
+              - separator [ref=e573]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Quarts de finale" [level=2] [ref=e574]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Quarts de finale\"" [ref=e576]':
+                  - strong [ref=e577]: "Coupe du Monde de la FIFA 2026™ : Quarts de finale"
+              - heading "Jeudi 9 juillet 2026" [level=4] [ref=e578]:
+                - generic "\"Jeudi 9 juillet 2026\"" [ref=e580]:
+                  - strong [ref=e581]: Jeudi 9 juillet 2026
+              - paragraph [ref=e582]:
+                - strong [ref=e583]: "Match 97 :"
+                - link "Vainqueur du match 89 - Vainqueur du match 90" [ref=e584] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289289/400021536
+                - text: – Stade de Boston (16h)
+              - heading "Vendredi 10 juillet 2026" [level=4] [ref=e585]:
+                - generic "\"Vendredi 10 juillet 2026\"" [ref=e587]:
+                  - strong [ref=e588]: Vendredi 10 juillet 2026
+              - paragraph [ref=e589]:
+                - strong [ref=e590]: "Match 98 :"
+                - link "Vainqueur du match 93 - Vainqueur du match 94" [ref=e591] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289289/400021538
+                - text: – Stade de Los Angeles (15h)
+              - heading "Samedi 11 juillet 2026" [level=4] [ref=e592]:
+                - generic "\"Samedi 11 juillet 2026\"" [ref=e594]:
+                  - strong [ref=e595]: Samedi 11 juillet 2026
+              - paragraph [ref=e596]:
+                - strong [ref=e597]: "Match 99 :"
+                - link "Vainqueur du match 91 - Vainqueur du match 92" [ref=e598] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289289/400021539
+                - text: – Stade de Miami (17h)
+                - strong [ref=e599]: "Match 100 :"
+                - link "Vainqueur du match 95 - Vainqueur du match 96" [ref=e600] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289289/400021537
+                - text: – Stade de Kansas City (21h)
+              - 'img "KANSAS CITY, MO - OCTOBER 28: A general view of the outside of Arrowhead stadium ahead of the game between the Denver Broncos and the Kansas City Chiefs 28, 2018 in Kansas City, Missouri. (Photo by Jamie Squire/Getty Images)" [ref=e605]'
+              - separator [ref=e606]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Demi-finales" [level=2] [ref=e607]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Demi-finales\"" [ref=e609]':
+                  - strong [ref=e610]: "Coupe du Monde de la FIFA 2026™ : Demi-finales"
+              - heading "Mardi 14 juillet 2026" [level=4] [ref=e611]:
+                - generic "\"Mardi 14 juillet 2026\"" [ref=e613]:
+                  - strong [ref=e614]: Mardi 14 juillet 2026
+              - paragraph [ref=e615]:
+                - strong [ref=e616]: "Match 101 :"
+                - link "Vainqueur du match 97 - Vainqueur du match 98" [ref=e617] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289290/400021541
+                - text: – Stade de Dallas (15h)
+              - heading "Mercredi 15 juillet 2026" [level=4] [ref=e618]:
+                - generic "\"Mercredi 15 juillet 2026\"" [ref=e620]:
+                  - strong [ref=e621]: Mercredi 15 juillet 2026
+              - paragraph [ref=e622]:
+                - strong [ref=e623]: "Match 102 :"
+                - link "Vainqueur du match 99 - Vainqueur du match 100" [ref=e624] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289290/400021540
+                - text: – Stade d'Atlanta (15h)
+              - separator [ref=e625]
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Finale pour le bronze" [level=2] [ref=e626]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Finale pour le bronze\"" [ref=e628]':
+                  - strong [ref=e629]: "Coupe du Monde de la FIFA 2026™ : Finale pour le bronze"
+              - heading "Samedi 18 juillet 2026" [level=4] [ref=e630]:
+                - generic "\"Samedi 18 juillet 2026\"" [ref=e632]:
+                  - strong [ref=e633]: Samedi 18 juillet 2026
+              - paragraph [ref=e634]:
+                - strong [ref=e635]: "Match 103 :"
+                - link "Perdant du match 101 - Perdant du match 102" [ref=e636] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289291/400021542
+                - text: – Stade de Miami (17h)
+              - 'heading "Coupe du Monde de la FIFA 2026™ : Finale" [level=2] [ref=e637]':
+                - 'generic "\"Coupe du Monde de la FIFA 2026™ : Finale\"" [ref=e639]':
+                  - strong [ref=e640]: "Coupe du Monde de la FIFA 2026™ : Finale"
+              - heading "Dimanche 19 juillet 2026" [level=4] [ref=e641]:
+                - generic "\"Dimanche 19 juillet 2026\"" [ref=e643]:
+                  - strong [ref=e644]: Dimanche 19 juillet 2026
+              - paragraph [ref=e645]:
+                - strong [ref=e646]: "Match 104 :"
+                - link "Vainqueur du match 101 - Vainqueur du match 102" [ref=e647] [cursor=pointer]:
+                  - /url: https://www.fifa.com/fr/match-centre/match/17/285023/289292/400021543
+                - text: – Stade de New York New Jersey (15h)
+              - blockquote "Twitter" [ref=e649]:
+                - paragraph [ref=e650]:
+                  - text: 🥁 The
+                  - link "#FIFAWorldCup" [ref=e651] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/FIFAWorldCup?src=hash&ref_src=twsrc%5Etfw
+                  - text: trophy will be raised in New York New Jersey!
+                  - link "#WeAre26" [ref=e652] [cursor=pointer]:
+                    - /url: https://twitter.com/hashtag/WeAre26?src=hash&ref_src=twsrc%5Etfw
+                  - link "pic.twitter.com/VIuAvYxOMV" [ref=e653] [cursor=pointer]:
+                    - /url: https://t.co/VIuAvYxOMV
+                - text: — FIFA World Cup (@FIFAWorldCup)
+                - link "February 4, 2024" [ref=e654] [cursor=pointer]:
+                  - /url: https://twitter.com/FIFAWorldCup/status/1754248123004658042?ref_src=twsrc%5Etfw
+              - separator [ref=e655]
+              - heading "Revivez l'annonce du calendrier" [level=4] [ref=e656]:
+                - generic "Revivez l'annonce du calendrier" [ref=e658]:
+                  - link "Revivez l'annonce du calendrier" [ref=e659] [cursor=pointer]:
+                    - /url: https://www.fifa.com/fifaplus/fr/watch/5TQKS3Lut0DacahMvqiuaf
+              - separator [ref=e660]
+              - paragraph
+        - generic [ref=e671]:
+          - generic [ref=e673]:
+            - heading "L’ACTU DE LA COUPE DU MONDE DE LA FIFA 26™" [level=2] [ref=e675]:
+              - generic [ref=e677]: L’ACTU DE LA COUPE DU MONDE DE LA FIFA 26™
+            - link "Tout afficher" [ref=e680] [cursor=pointer]:
+              - /url: /fr/cat/3mR8OXLBhxVZtVr8Az1aPi
+          - generic [ref=e681]:
+            - region "L’ACTU DE LA COUPE DU MONDE DE LA FIFA 26™" [ref=e684]:
+              - 'link "Les plus beaux buts du Mondial (J-53) : Le double \"une-deux\" de King Kalle Les plus beaux buts du Mondial (J-53) : Le double \"une-deux\" de King Kalle" [ref=e686] [cursor=pointer]':
+                - /url: /fr/articles/but-karl-heinz-rummenigge-allemagne-de-l-ouest-autriche-1978
+                - 'img "Les plus beaux buts du Mondial (J-53) : Le double \"une-deux\" de King Kalle" [ref=e689]'
+                - generic [ref=e691]: "Les plus beaux buts du Mondial (J-53) : Le double \"une-deux\" de King Kalle"
+              - 'link "J-53 : Le roi du dribble J-53 : Le roi du dribble" [ref=e693] [cursor=pointer]':
+                - /url: /fr/articles/diego-maradona-argentine-record-dribbles-1986
+                - 'img "J-53 : Le roi du dribble" [ref=e696]'
+                - generic [ref=e698]: "J-53 : Le roi du dribble"
+              - 'link "Les plus beaux buts du Mondial (J-54) : Le génial \"tir flottant\" de David Luiz Les plus beaux buts du Mondial (J-54) : Le génial \"tir flottant\" de David Luiz" [ref=e700] [cursor=pointer]':
+                - /url: /fr/articles/but-david-luiz-bresil-colombie-2014
+                - 'img "Les plus beaux buts du Mondial (J-54) : Le génial \"tir flottant\" de David Luiz" [ref=e703]'
+                - generic [ref=e705]: "Les plus beaux buts du Mondial (J-54) : Le génial \"tir flottant\" de David Luiz"
+              - 'link "J-54 : Les rois des triplés J-54 : Les rois des triplés" [ref=e707] [cursor=pointer]':
+                - /url: /fr/articles/triples-buts-record
+                - 'img "J-54 : Les rois des triplés" [ref=e710]'
+                - generic [ref=e712]: "J-54 : Les rois des triplés"
+              - 'link "Les plus beaux buts du Mondial (J-55) : Un Maradona miraculeux Les plus beaux buts du Mondial (J-55) : Un Maradona miraculeux" [ref=e714] [cursor=pointer]':
+                - /url: /fr/articles/but-diego-maradona-argentine-belgique-1986
+                - 'img "Les plus beaux buts du Mondial (J-55) : Un Maradona miraculeux" [ref=e717]'
+                - generic [ref=e719]: "Les plus beaux buts du Mondial (J-55) : Un Maradona miraculeux"
+              - 'link "Sortie musicale : \"Por Ella\", deuxième single de l''album de la Coupe du Monde 2026 Sortie musicale : \"Por Ella\", deuxième single de l''album de la Coupe du Monde 2026" [ref=e721] [cursor=pointer]':
+                - /url: /fr/articles/por-ella-los-angeles-azules-belinda-sortie-deuxieme-signle-album-mondial-2026
+                - 'img "Sortie musicale : \"Por Ella\", deuxième single de l''album de la Coupe du Monde 2026" [ref=e724]'
+                - generic [ref=e726]: "Sortie musicale : \"Por Ella\", deuxième single de l'album de la Coupe du Monde 2026"
+              - 'link "26 stars de la Coupe du Monde 2026 : Riyad Mahrez 26 stars de la Coupe du Monde 2026 : Riyad Mahrez" [ref=e728] [cursor=pointer]':
+                - /url: /fr/articles/26-stars-riyad-mahrez-algerie
+                - 'img "26 stars de la Coupe du Monde 2026 : Riyad Mahrez" [ref=e731]'
+                - generic [ref=e733]: "26 stars de la Coupe du Monde 2026 : Riyad Mahrez"
+              - 'link "Amicaux des Bleus : Côte d''Ivoire et Irlande du Nord au programme Amicaux des Bleus : Côte d''Ivoire et Irlande du Nord au programme" [ref=e735] [cursor=pointer]':
+                - /url: /fr/articles/matches-amicaux-france-avant-coupe-du-monde-2026
+                - 'img "Amicaux des Bleus : Côte d''Ivoire et Irlande du Nord au programme" [ref=e738]'
+                - generic [ref=e740]: "Amicaux des Bleus : Côte d'Ivoire et Irlande du Nord au programme"
+              - 'link "J-56 : Les succès scandinaves J-56 : Les succès scandinaves" [ref=e742] [cursor=pointer]':
+                - /url: /fr/articles/danemark-norvege-suede-succes
+                - 'img "J-56 : Les succès scandinaves" [ref=e745]'
+                - generic [ref=e747]: "J-56 : Les succès scandinaves"
+              - 'link "Les plus beaux buts du Mondial (J-56) : L''inattendu ciseau d''Edmílson Les plus beaux buts du Mondial (J-56) : L''inattendu ciseau d''Edmílson" [ref=e749] [cursor=pointer]':
+                - /url: /fr/articles/but-edmilson-bresil-costa-rica-2002
+                - 'img "Les plus beaux buts du Mondial (J-56) : L''inattendu ciseau d''Edmílson" [ref=e752]'
+                - generic [ref=e754]: "Les plus beaux buts du Mondial (J-56) : L'inattendu ciseau d'Edmílson"
+              - link "Coup dur pour les Bleus, Hugo Ekitiké ne verra pas le Mondial Coup dur pour les Bleus, Hugo Ekitiké ne verra pas le Mondial" [ref=e756] [cursor=pointer]:
+                - /url: /fr/articles/blessure-hugo-ekitike-france-mondial-2026
+                - img "Coup dur pour les Bleus, Hugo Ekitiké ne verra pas le Mondial" [ref=e759]
+                - generic [ref=e761]: Coup dur pour les Bleus, Hugo Ekitiké ne verra pas le Mondial
+              - link "Michael Olise, le magicien qui pourrait mettre les Bleus sur la voie royale ? Michael Olise, le magicien qui pourrait mettre les Bleus sur la voie royale ?" [ref=e763] [cursor=pointer]:
+                - /url: /fr/articles/michael-olise-magicien-portrait-france-mondial-2026
+                - img "Michael Olise, le magicien qui pourrait mettre les Bleus sur la voie royale ?" [ref=e766]
+                - generic [ref=e768]: Michael Olise, le magicien qui pourrait mettre les Bleus sur la voie royale ?
+              - 'link "J-57 : Et 1, et 2, et 3-0 ! J-57 : Et 1, et 2, et 3-0 !" [ref=e770] [cursor=pointer]':
+                - /url: /fr/articles/victoires-trois-zero-record
+                - 'img "J-57 : Et 1, et 2, et 3-0 !" [ref=e773]'
+                - generic [ref=e775]: "J-57 : Et 1, et 2, et 3-0 !"
+              - link "Dix stars africaines à suivre à la Coupe du Monde 2026 Dix stars africaines à suivre à la Coupe du Monde 2026" [ref=e777] [cursor=pointer]:
+                - /url: /fr/articles/stars-africaines-a-suivre-coupe-du-monde-2026
+                - img "Dix stars africaines à suivre à la Coupe du Monde 2026" [ref=e780]
+                - generic [ref=e782]: Dix stars africaines à suivre à la Coupe du Monde 2026
+              - 'link "Les plus beaux buts du Mondial (J-57) : La lourde frappe de Charlton Les plus beaux buts du Mondial (J-57) : La lourde frappe de Charlton" [ref=e784] [cursor=pointer]':
+                - /url: /fr/articles/but-bobby-charlton-angleterre-mexique-1966
+                - 'img "Les plus beaux buts du Mondial (J-57) : La lourde frappe de Charlton" [ref=e787]'
+                - generic [ref=e789]: "Les plus beaux buts du Mondial (J-57) : La lourde frappe de Charlton"
+              - link "Ces non-Américains qui auraient pu jouer pour les États-Unis Ces non-Américains qui auraient pu jouer pour les États-Unis" [ref=e791] [cursor=pointer]:
+                - /url: /fr/articles/joueurs-non-americains-usa-mondial-2026
+                - img "Ces non-Américains qui auraient pu jouer pour les États-Unis" [ref=e794]
+                - generic [ref=e796]: Ces non-Américains qui auraient pu jouer pour les États-Unis
+              - 'link "Jusuf Nurkić : \"On aura tellement de supporters aux États-Unis que les gens vont être surpris\" Jusuf Nurkić : \"On aura tellement de supporters aux États-Unis que les gens vont être surpris\"" [ref=e798] [cursor=pointer]':
+                - /url: /fr/articles/interview-jusuf-nurkic-bosnie-nba
+                - 'img "Jusuf Nurkić : \"On aura tellement de supporters aux États-Unis que les gens vont être surpris\"" [ref=e801]'
+                - generic [ref=e803]: "Jusuf Nurkić : \"On aura tellement de supporters aux États-Unis que les gens vont être surpris\""
+              - 'link "J-58 : Les buts inscrits par des numéros 12 J-58 : Les buts inscrits par des numéros 12" [ref=e805] [cursor=pointer]':
+                - /url: /fr/articles/buts-numero-12
+                - 'img "J-58 : Les buts inscrits par des numéros 12" [ref=e808]'
+                - generic [ref=e810]: "J-58 : Les buts inscrits par des numéros 12"
+              - 'link "Silvio Gazzaniga : l’artiste derrière le trophée le plus convoité au monde Silvio Gazzaniga : l’artiste derrière le trophée le plus convoité au monde" [ref=e812] [cursor=pointer]':
+                - /url: /fr/articles/silvio-gazzaniga-trophee-coupe-du-monde-musee
+                - 'img "Silvio Gazzaniga : l’artiste derrière le trophée le plus convoité au monde" [ref=e815]'
+                - generic [ref=e817]: "Silvio Gazzaniga : l’artiste derrière le trophée le plus convoité au monde"
+              - 'link "Les plus beaux buts du Mondial (J-58) : Le sprint supersonique de Robben Les plus beaux buts du Mondial (J-58) : Le sprint supersonique de Robben" [ref=e819] [cursor=pointer]':
+                - /url: /fr/articles/but-arjen-robben-pays-bas-espagne-2014
+                - 'img "Les plus beaux buts du Mondial (J-58) : Le sprint supersonique de Robben" [ref=e822]'
+                - generic [ref=e824]: "Les plus beaux buts du Mondial (J-58) : Le sprint supersonique de Robben"
+            - button "Suivant" [ref=e825] [cursor=pointer]:
+              - img [ref=e826]
+              - generic [ref=e828]: Suivant
+    - separator [ref=e899]

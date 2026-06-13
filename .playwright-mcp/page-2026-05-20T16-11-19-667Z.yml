@@ -1,0 +1,83 @@
+- generic [ref=e1]:
+  - paragraph [ref=e2]: TEST — MOTM PICKER DEUX COLONNES
+  - generic [ref=e3]:
+    - button "— choisir — ▾" [active] [ref=e4] [cursor=pointer]:
+      - generic [ref=e5]: — choisir —
+      - generic [ref=e6]: ▾
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]:
+          - img [ref=e11]
+          - text: Suède
+        - generic [ref=e12]: Gardiens
+        - generic [ref=e13] [cursor=pointer]:
+          - img [ref=e14]
+          - text: Olsen
+        - generic [ref=e15]: Défenseurs
+        - generic [ref=e16] [cursor=pointer]:
+          - img [ref=e17]
+          - text: Danielson
+        - generic [ref=e18] [cursor=pointer]:
+          - img [ref=e19]
+          - text: Lindelöf
+        - generic [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+          - text: Augustinsson
+        - generic [ref=e22]: Milieux
+        - generic [ref=e23] [cursor=pointer]:
+          - img [ref=e24]
+          - text: Ekdal
+        - generic [ref=e25] [cursor=pointer]:
+          - img [ref=e26]
+          - text: Larsson
+        - generic [ref=e27] [cursor=pointer]:
+          - img [ref=e28]
+          - text: Claesson
+        - generic [ref=e29]: Attaquants
+        - generic [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+          - text: Isak
+        - generic [ref=e32] [cursor=pointer]:
+          - img [ref=e33]
+          - text: Berg
+        - generic [ref=e34] [cursor=pointer]:
+          - img [ref=e35]
+          - text: Quaison
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - img [ref=e39]
+          - text: Tunisie
+        - generic [ref=e40]: Gardiens
+        - generic [ref=e41] [cursor=pointer]:
+          - img [ref=e42]
+          - text: Dahmen
+        - generic [ref=e43]: Défenseurs
+        - generic [ref=e44] [cursor=pointer]:
+          - img [ref=e45]
+          - text: Bronn
+        - generic [ref=e46] [cursor=pointer]:
+          - img [ref=e47]
+          - text: Meriah
+        - generic [ref=e48] [cursor=pointer]:
+          - img [ref=e49]
+          - text: Talbi
+        - generic [ref=e50]: Milieux
+        - generic [ref=e51] [cursor=pointer]:
+          - img [ref=e52]
+          - text: Skhiri
+        - generic [ref=e53] [cursor=pointer]:
+          - img [ref=e54]
+          - text: Laïdouni
+        - generic [ref=e55] [cursor=pointer]:
+          - img [ref=e56]
+          - text: Ben Romdhane
+        - generic [ref=e57]: Attaquants
+        - generic [ref=e58] [cursor=pointer]:
+          - img [ref=e59]
+          - text: Msakni
+        - generic [ref=e60] [cursor=pointer]:
+          - img [ref=e61]
+          - text: Khazri
+        - generic [ref=e62] [cursor=pointer]:
+          - img [ref=e63]
+          - text: Jaziri

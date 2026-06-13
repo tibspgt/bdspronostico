@@ -1,0 +1,5 @@
+[    1533ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[    1533ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[    1533ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[    1850ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://guileless-biscotti-93b1c5.netlify.app/favicon.ico:0
+[  706184ms] [ERROR] WebSocket connection to 'wss://godcigantcuuwnwerxjc.supabase.co/realtime/v1/websocket?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdvZGNpZ2FudGN1dXdud2VyeGpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNjU5MzYsImV4cCI6MjA5MTc0MTkzNn0.6udFhN0OhzWOGhLoLrD3q2qoS9zey9iHQVCUsdkBKpo&vsn=2.0.0' failed: Error in connection establishment: net::ERR_CONNECTION_CLOSED @ https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2:6

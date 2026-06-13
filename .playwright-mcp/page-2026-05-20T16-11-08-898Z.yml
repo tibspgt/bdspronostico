@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - paragraph [ref=e2]: TEST — MOTM PICKER DEUX COLONNES
+  - button "— choisir — ▾" [ref=e4] [cursor=pointer]:
+    - generic [ref=e5]: — choisir —
+    - generic [ref=e6]: ▾

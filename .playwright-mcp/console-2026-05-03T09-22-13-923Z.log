@@ -1,0 +1,6 @@
+[     962ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[     964ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[     964ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://guileless-biscotti-93b1c5.netlify.app/:0
+[    2132ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://guileless-biscotti-93b1c5.netlify.app/favicon.ico:0
+[    2171ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://godcigantcuuwnwerxjc.supabase.co/rest/v1/special_bets?select=*:0
+[    2189ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://godcigantcuuwnwerxjc.supabase.co/rest/v1/special_results?select=*:0
