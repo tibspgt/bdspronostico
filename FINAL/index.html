@@ -6537,8 +6537,6 @@ function buildPotentialPtsHtml(h, a, match) {
   const p1 = fmt((odds ? 1 * odds : 1) * matchBonus);
   const p2 = fmt((odds ? 2 * odds : 2) * matchBonus);
   const p4 = fmt((odds ? 4 * odds : 4) * matchBonus);
-  const multLabel = odds ? `<span class="pp-sep"> ×${odds.toFixed(2)}</span>` : '';
-
   return `
     <span class="pred-potential-lbl">Points potentiels</span>
     <span class="pp-item">vainqueur <span class="pp-val">${p1} pt</span></span>
@@ -6546,7 +6544,6 @@ function buildPotentialPtsHtml(h, a, match) {
     <span class="pp-item">bon écart <span class="pp-val">${p2} pts</span></span>
     <span class="pp-sep">·</span>
     <span class="pp-item pp-exact">score exact <span class="pp-val">${p4} pts</span></span>
-    ${multLabel}
   `;
 }
 
