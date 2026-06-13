@@ -7118,10 +7118,12 @@ function adminLockSelectChange() {
         ${awaySquad.length ? `<optgroup label="${m.away}">${awaySquad.map(p => `<option value="${p.player_name}">${p.player_name}${p.jersey_number ? ` #${p.jersey_number}` : ''}</option>`).join('')}</optgroup>` : ''}
        </select>`;
 
-  const scorerTagsHtml = scorers.map(s =>
+  const scorerCounts = {};
+  for (const s of scorers) scorerCounts[s] = (scorerCounts[s] || 0) + 1;
+  const scorerTagsHtml = Object.entries(scorerCounts).map(([name, count]) =>
     `<span style="display:inline-flex;align-items:center;gap:0.3rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;background:rgba(0,181,160,0.12);border:1px solid rgba(0,181,160,0.25);padding:0.15rem 0.5rem;">
-      ⚽ ${s}
-      <button onclick="adminRemoveScorer(${m.id},'${s.replace(/'/g, "\\'")}')" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.9rem;padding:0;line-height:1;">×</button>
+      ⚽ ${name}${count > 1 ? ` <span style="color:var(--cyan-bright);font-size:0.75rem;">×${count}</span>` : ''}
+      <button onclick="adminRemoveScorer(${m.id},'${name.replace(/'/g, "\\'")}')" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.9rem;padding:0;line-height:1;">×</button>
     </span>`
   ).join('');
 
@@ -7152,6 +7154,7 @@ function adminLockSelectChange() {
     <div style="margin-bottom:0.75rem;">
       <div style="display:flex;gap:0.5rem;margin-bottom:${scorers.length ? '0.5rem' : '0'};">
         ${scorerInputHtml}
+        <input type="number" id="live-scorer-goals" min="1" max="9" value="1" class="admin-text-input" style="width:52px;text-align:center;" title="Nombre de buts" />
         <button onclick="adminAddScorer(${m.id})" class="admin-btn">+ But</button>
       </div>
       ${scorers.length ? `<div style="display:flex;flex-wrap:wrap;gap:0.3rem;">${scorerTagsHtml}</div>` : ''}
@@ -7184,8 +7187,9 @@ async function adminAddScorer(matchId) {
   const input = document.getElementById('live-scorer-input');
   const name = input?.value?.trim();
   if (!name) return;
+  const goals = Math.max(1, Math.min(9, parseInt(document.getElementById('live-scorer-goals')?.value) || 1));
   const existing = m.scorer_result ? m.scorer_result.split(',').map(s => s.trim()).filter(Boolean) : [];
-  existing.push(name);
+  for (let i = 0; i < goals; i++) existing.push(name);
   const newResult = existing.join(', ');
   const { error } = await sb.from('matches').update({ scorer_result: newResult }).eq('id', matchId);
   if (error) { showToast('Erreur : ' + error.message, 'error'); return; }
@@ -7197,9 +7201,8 @@ async function adminRemoveScorer(matchId, name) {
   const m = state.matches.find(x => x.id === matchId);
   if (!m) return;
   const existing = m.scorer_result ? m.scorer_result.split(',').map(s => s.trim()).filter(Boolean) : [];
-  const idx = existing.findIndex(s => s === name);
-  if (idx >= 0) existing.splice(idx, 1);
-  const newResult = existing.length > 0 ? existing.join(', ') : null;
+  const newExisting = existing.filter(s => s !== name);
+  const newResult = newExisting.length > 0 ? newExisting.join(', ') : null;
   const { error } = await sb.from('matches').update({ scorer_result: newResult }).eq('id', matchId);
   if (error) { showToast('Erreur : ' + error.message, 'error'); return; }
   m.scorer_result = newResult;
