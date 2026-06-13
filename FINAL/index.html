@@ -570,6 +570,8 @@
       letter-spacing: 0.1em;
       padding: 0.15rem 0.5rem;
       white-space: nowrap;
+      align-self: flex-start;
+      border-radius: 3px;
     }
 
     .match-status.live {
@@ -1977,8 +1979,7 @@
       .scorer-save { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
       .match-card { margin-bottom: 0.5rem; overflow: hidden; max-width: 100%; }
       .team-flag { height: 14px; }
-      /* Header carte : cache la date (garde l'heure) pour éviter l'overflow */
-      .match-date-lbl { display: none; }
+      .match-status { white-space: normal; }
       .match-group { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
       .motm-pick { overflow: hidden; min-width: 0; }
       .scorer-pick { overflow: hidden; min-width: 0; }
