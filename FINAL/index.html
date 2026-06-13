@@ -141,7 +141,7 @@
       letter-spacing: 0.3em;
       color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 1.1rem;
+      margin-bottom: 2.25rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.2s ease forwards;
     }
@@ -675,6 +675,18 @@
       background: rgba(39,174,96,0.1);
       color: var(--green);
       border: 1px solid rgba(39,174,96,0.2);
+    }
+
+    .match-countdown {
+      font-family: 'Azeret Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted);
+      align-self: flex-start;
     }
 
     .match-teams {
@@ -3839,13 +3851,11 @@ function updateCountdowns() {
       return;
     }
     const totalMins = Math.floor(diff / 60000);
-    const days  = Math.floor(totalMins / 1440);
-    const hours = Math.floor((totalMins % 1440) / 60);
-    const mins  = totalMins % 60;
-    if (days > 0)       el.textContent = `J-${days}`;
-    else if (hours > 0) el.textContent = `H-${hours}`;
-    else if (mins > 0)  el.textContent = `M-${mins}`;
-    else                el.textContent = 'M-1';
+    const totalHours = Math.floor(totalMins / 60);
+    const mins = totalMins % 60;
+    const hh = String(totalHours).padStart(2, '0');
+    const mm = String(mins).padStart(2, '0');
+    el.textContent = `-${hh}:${mm}`;
     const urgent = diff < 3600000;
     el.style.color = urgent ? 'var(--gold)' : 'var(--text-muted)';
   });
@@ -4343,10 +4353,10 @@ function renderMatchCard(m) {
     const dateLabel = frDate ? `<span class="match-date-lbl" style="font-size:0.65rem;opacity:0.65;margin-right:0.3rem;">${frDate} ·</span>` : '';
     const _deadline = parseMatchStart(m.day, m.match_time);
     const _deadlineMs = _deadline ? _deadline.getTime() : 0;
-    const countdownHtml = _deadlineMs > Date.now()
-      ? `<span data-countdown="${_deadlineMs}" data-match-id="${m.id}" style="font-family:'Azeret Mono',monospace;font-size:0.52rem;color:var(--text-muted);margin-left:0.4rem;">…</span>`
+    const countdownBadge = _deadlineMs > Date.now()
+      ? `<span class="match-countdown" data-countdown="${_deadlineMs}" data-match-id="${m.id}">…</span>`
       : '';
-    statusHtml = `<span class="match-status upcoming">${dateLabel}${formatMatchTime(m.match_time)}${countdownHtml}</span>`;
+    statusHtml = `<span class="match-status upcoming">${dateLabel}${formatMatchTime(m.match_time)}</span>${countdownBadge}`;
   }
 
   const centerHtml = score
