@@ -5643,6 +5643,65 @@ function renderGroupes() {
     </div>`;
   }
 
+  // ── MEILLEURS BUTEURS ──
+  const goalMap = {};
+  for (const m of state.matches) {
+    if (m.status !== 'finished' || !m.scorer_result || m.scorer_result === 'AUCUN_BUT') continue;
+    const names = m.scorer_result.split(',').map(s => s.trim()).filter(Boolean);
+    const homeSquad = state.squads.filter(p => p.team_name === m.home);
+    const awaySquad = state.squads.filter(p => p.team_name === m.away);
+    for (const name of names) {
+      if (!goalMap[name]) {
+        const nl = name.toLowerCase();
+        let teamName = '', teamFlag = '';
+        if (homeSquad.some(p => p.player_name.toLowerCase().includes(nl) || nl.includes(p.player_name.toLowerCase()))) {
+          teamName = m.home; teamFlag = m.home_flag;
+        } else if (awaySquad.some(p => p.player_name.toLowerCase().includes(nl) || nl.includes(p.player_name.toLowerCase()))) {
+          teamName = m.away; teamFlag = m.away_flag;
+        }
+        goalMap[name] = { name, goals: 0, teamName, teamFlag };
+      }
+      goalMap[name].goals++;
+    }
+  }
+
+  const topScorers = Object.values(goalMap).filter(p => p.goals > 0).sort((a, b) => b.goals - a.goals || a.name.localeCompare(b.name, 'fr'));
+
+  if (topScorers.length > 0) {
+    const maxGoals = topScorers[0].goals;
+    const scorerRows = topScorers.map((p, i) => {
+      const flagHtml = p.teamFlag ? `<img src="https://flagcdn.com/w40/${p.teamFlag}.png" style="height:14px;border-radius:1px;flex-shrink:0;" alt="${p.teamName}">` : '';
+      const barW = Math.round((p.goals / maxGoals) * 100);
+      const rankColor = i === 0 ? 'var(--gold)' : i === 1 ? 'rgba(255,255,255,0.55)' : i === 2 ? 'var(--cyan)' : 'var(--text-muted)';
+      return `<div style="display:flex;align-items:center;gap:0.6rem;padding:0.45rem 0.75rem;border-bottom:1px solid rgba(255,255,255,0.04);">
+        <span style="font-family:'Azeret Mono',monospace;font-size:0.62rem;color:${rankColor};min-width:18px;text-align:center;">${i+1}</span>
+        <div style="flex:1;min-width:0;">
+          <div style="display:flex;align-items:center;gap:0.4rem;">
+            ${flagHtml}
+            <span style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:0.95rem;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${p.name}</span>
+            <span style="font-family:'Azeret Mono',monospace;font-size:0.52rem;color:var(--text-muted);white-space:nowrap;">${p.teamName}</span>
+          </div>
+          <div style="height:2px;background:rgba(255,255,255,0.06);border-radius:1px;margin-top:0.25rem;">
+            <div style="height:100%;width:${barW}%;background:${rankColor};border-radius:1px;transition:width 0.3s;"></div>
+          </div>
+        </div>
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:${rankColor};min-width:28px;text-align:right;">${p.goals}</span>
+        <span style="font-size:0.75rem;">⚽</span>
+      </div>`;
+    }).join('');
+
+    html += `<div style="margin-bottom:2rem;">
+      <div class="match-day-header" style="border-left:3px solid var(--cyan-bright);padding-left:0.75rem;margin-bottom:0.75rem;">
+        <span class="day-label" style="color:var(--cyan-bright)">Meilleurs buteurs</span>
+        <span class="day-date">${topScorers.length} joueur${topScorers.length > 1 ? 's' : ''} · ${topScorers.reduce((s,p)=>s+p.goals,0)} buts</span>
+        <div class="day-line" style="background:linear-gradient(90deg,rgba(0,212,188,0.4),transparent)"></div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border-soft);">
+        ${scorerRows}
+      </div>
+    </div>`;
+  }
+
   container.innerHTML = html;
 }
 
