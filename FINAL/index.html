@@ -7276,9 +7276,14 @@ function buildAdminCard(m) {
        <button class="admin-btn" onclick="saveAdminMotm(${m.id})">Valider</button>`;
 
   /* Scorer row */
-  const scorerTags = (adminState.scorerPicks[m.id] || []).map(n =>
-    `<span class="admin-scorer-tag">${n}<button onclick="removeAdminScorer(${m.id},'${n.replace(/'/g,"\\'")}')">×</button></span>`
-  ).join('');
+  function buildScorerTags(picks) {
+    const counts = {};
+    for (const n of picks) counts[n] = (counts[n] || 0) + 1;
+    return Object.entries(counts).map(([n, c]) =>
+      `<span class="admin-scorer-tag">${n}${c > 1 ? ` ×${c}` : ''}<button onclick="removeAdminScorer(${m.id},'${n.replace(/'/g,"\\'")}')">×</button></span>`
+    ).join('');
+  }
+  const scorerTags = buildScorerTags(adminState.scorerPicks[m.id] || []);
 
   let scorerRow;
   if (m.scorer_result) {
@@ -7287,6 +7292,7 @@ function buildAdminCard(m) {
                  <button class="admin-btn admin-btn--edit" onclick="resetAdminField(${m.id},'scorer')">Modifier</button>`;
   } else {
     scorerRow = `${squadSelect(`admin-scorer-sel-${m.id}`, true)}
+                 <input type="number" id="admin-scorer-goals-${m.id}" min="1" max="9" value="1" class="admin-text-input" style="width:50px;text-align:center;" title="Nombre de buts" />
                  <button class="admin-btn" onclick="addAdminScorer(${m.id})">+ Ajouter</button>
                  <div id="admin-scorers-${m.id}" style="display:flex;flex-wrap:wrap;gap:0.35rem;">${scorerTags}</div>
                  <button class="admin-btn" style="margin-left:auto;" onclick="saveAdminScorer(${m.id})">Valider buteur(s)</button>`;
@@ -7335,6 +7341,14 @@ function buildAdminCard(m) {
     </div>`;
 }
 
+function _renderScorerTags(matchId, picks) {
+  const counts = {};
+  for (const n of picks) counts[n] = (counts[n] || 0) + 1;
+  return Object.entries(counts).map(([n, c]) =>
+    `<span class="admin-scorer-tag">${n}${c > 1 ? ` ×${c}` : ''}<button onclick="removeAdminScorer(${matchId},'${n.replace(/'/g,"\\'")}')">×</button></span>`
+  ).join('');
+}
+
 function addAdminScorer(matchId) {
   const sel = document.getElementById(`admin-scorer-sel-${matchId}`);
   if (!sel || !sel.value) return;
@@ -7344,21 +7358,20 @@ function addAdminScorer(matchId) {
     adminState.scorerPicks[matchId] = ['AUCUN_BUT'];
   } else {
     adminState.scorerPicks[matchId] = adminState.scorerPicks[matchId].filter(n => n !== 'AUCUN_BUT');
-    if (!adminState.scorerPicks[matchId].includes(name)) adminState.scorerPicks[matchId].push(name);
+    const goalsInput = document.getElementById(`admin-scorer-goals-${matchId}`);
+    const goals = Math.max(1, Math.min(9, parseInt(goalsInput?.value) || 1));
+    for (let i = 0; i < goals; i++) adminState.scorerPicks[matchId].push(name);
+    if (goalsInput) goalsInput.value = 1;
   }
   const list = document.getElementById(`admin-scorers-${matchId}`);
-  if (list) list.innerHTML = adminState.scorerPicks[matchId].map(n =>
-    `<span class="admin-scorer-tag">${n}<button onclick="removeAdminScorer(${matchId},'${n.replace(/'/g,"\\'")}')">×</button></span>`
-  ).join('');
+  if (list) list.innerHTML = _renderScorerTags(matchId, adminState.scorerPicks[matchId]);
 }
 
 function removeAdminScorer(matchId, name) {
   if (!adminState.scorerPicks[matchId]) return;
   adminState.scorerPicks[matchId] = adminState.scorerPicks[matchId].filter(n => n !== name);
   const list = document.getElementById(`admin-scorers-${matchId}`);
-  if (list) list.innerHTML = adminState.scorerPicks[matchId].map(n =>
-    `<span class="admin-scorer-tag">${n}<button onclick="removeAdminScorer(${matchId},'${n.replace(/'/g,"\\'")}')">×</button></span>`
-  ).join('');
+  if (list) list.innerHTML = _renderScorerTags(matchId, adminState.scorerPicks[matchId]);
 }
 
 async function saveAdminMotm(matchId) {
