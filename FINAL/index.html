@@ -546,10 +546,10 @@
       justify-content: space-between;
       gap: 0.25rem 0.4rem;
     }
-    /* Desktop : groupe à gauche (ordre 0), badges à droite (ordre 1), status en dessous (ordre 2) */
+    /* Desktop : groupe à gauche, status+countdown à droite (même ligne), badges après */
     .match-group { order: 0; flex: 1; }
-    .mm-badges { order: 1; display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
-    .mm-status { order: 2; width: 100%; display: flex; align-items: center; gap: 0.4rem; }
+    .mm-status { order: 1; width: auto; display: flex; align-items: center; gap: 0.4rem; }
+    .mm-badges { order: 2; display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
 
     .match-group {
       font-family: 'Azeret Mono', monospace;
@@ -583,9 +583,9 @@
     }
 
     .match-status.upcoming {
-      background: rgba(212,160,23,0.1);
-      color: var(--gold);
-      border: 1px solid rgba(212,160,23,0.2);
+      background: color-mix(in srgb, var(--card-color) 10%, transparent);
+      color: var(--card-color);
+      border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent);
     }
 
     .pred-badge {
@@ -1968,7 +1968,6 @@
       .mm-status { order: 0; width: auto; flex: 1; }
       .mm-badges { order: 1; flex-shrink: 0; }
       .match-group { order: 2; width: 100%; flex: none; font-size: 0.55rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-      .match-status.upcoming { background: color-mix(in srgb, var(--card-color) 10%, transparent); color: var(--card-color); border: 1px solid color-mix(in srgb, var(--card-color) 25%, transparent); }
       .hero-eyebrow { margin-bottom: 2.25rem; }
       .match-time { font-size: 0.58rem; }
       .match-status { font-size: 0.55rem; padding: 0.1rem 0.4rem; white-space: normal; }
