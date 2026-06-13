@@ -708,7 +708,7 @@
     }
 
     .team-flag {
-      height: 20px;
+      height: 26px;
       width: auto;
       flex-shrink: 0;
       display: block;
@@ -716,7 +716,7 @@
 
     .team-name {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       letter-spacing: 0.04em;
       color: var(--text);
     }
@@ -1967,7 +1967,7 @@
       .match-time { font-size: 0.58rem; }
       .match-status { font-size: 0.55rem; padding: 0.1rem 0.4rem; }
       .match-teams { gap: 0.5rem; }
-      .team-name { font-size: 1rem; }
+      .team-name { font-size: 1.15rem; }
       .score-actual { font-size: 1.5rem; }
       .score-vs { font-size: 0.6rem; }
       .odds-band { padding: 0.35rem 0.75rem; }
@@ -1990,7 +1990,7 @@
       .motm-area { border-right: none; border-bottom: 1px solid color-mix(in srgb, var(--card-color) 15%, transparent); }
       .scorer-save { font-size: 0.7rem; padding: 0.25rem 0.6rem; }
       .match-card { margin-bottom: 0.5rem; overflow: hidden; max-width: 100%; }
-      .team-flag { height: 14px; }
+      .team-flag { height: 18px; }
       .match-status { white-space: normal; }
       .match-group { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
       .motm-pick { overflow: hidden; min-width: 0; }
@@ -4782,7 +4782,9 @@ function renderMatchCard(m) {
       <div class="match-inner">
         <div class="match-meta">
           <div class="match-meta-top">
-            ${statusHtml}
+            <div style="display:flex;align-items:center;gap:0.4rem;">
+              ${statusHtml}
+            </div>
             <div style="display:flex;align-items:center;gap:0.4rem;flex-shrink:0;">
               ${betCountBadgeHtml}
               ${state.currentUser && !isLocked && !isTBD ? (hasPred ? '<span class="pred-badge done">✓ POSÉ</span>' : '<span class="pred-badge todo">● À PARIER</span>') : ''}
