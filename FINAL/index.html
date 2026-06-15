@@ -3291,6 +3291,13 @@
       <div id="admin-matches-list">
         <div class="empty-state"><div class="empty-title">Chargement...</div></div>
       </div>
+      <div id="admin-pred-corrector" style="margin-top:2.5rem;display:none;">
+        <div class="section-header" style="padding-top:0;">
+          <p class="section-tag">// Correction manuelle</p>
+          <h2 class="section-title">Attribuer des points</h2>
+        </div>
+        <div id="admin-pred-corrector-inner"></div>
+      </div>
     </div>
 
   </div>
@@ -4045,6 +4052,7 @@ function renderAll() {
   renderBsimSection();
   renderCagnotte();
   renderAdmin();
+  renderAdminPredCorrector();
   updateCountdowns();
 }
 
@@ -7442,6 +7450,188 @@ async function resetAdminField(matchId, field) {
   if (field === 'scorer') delete adminState.scorerPicks[matchId];
   renderAdmin();
   if (field === 'penalty') renderAll();
+}
+
+/* ═══════════════════════════════════════════════
+   ADMIN — CORRECTION DE PRONOSTIC
+═══════════════════════════════════════════════ */
+
+function renderAdminPredCorrector() {
+  if (!state.currentUser?.is_admin) return;
+  const el = document.getElementById('admin-pred-corrector');
+  if (!el) return;
+  el.style.display = '';
+
+  const players = [...state.players].sort((a, b) => a.name.localeCompare(b.name, 'fr'));
+  const finished = state.matches.filter(m => m.status === 'finished' && m.score_home != null && m.score_away != null);
+
+  const playerOpts = players.map(p => `<option value="${p.id}">${p.name}</option>`).join('');
+  const matchOpts  = finished.map(m => `<option value="${m.id}">${m.home} ${m.score_home}–${m.score_away} ${m.away}</option>`).join('');
+
+  document.getElementById('admin-pred-corrector-inner').innerHTML = `
+    <div class="admin-card">
+      <div class="admin-row">
+        <span class="admin-row-label">Joueur</span>
+        <div class="admin-row-content">
+          <select class="admin-select" id="apc-player" onchange="adminPredCorrUpdate()">
+            <option value="">— Choisir un joueur —</option>
+            ${playerOpts}
+          </select>
+        </div>
+      </div>
+      <div class="admin-row">
+        <span class="admin-row-label">Match</span>
+        <div class="admin-row-content">
+          <select class="admin-select" id="apc-match" onchange="adminPredCorrUpdate()">
+            <option value="">— Choisir un match terminé —</option>
+            ${matchOpts}
+          </select>
+        </div>
+      </div>
+      <div id="apc-preview"></div>
+    </div>`;
+}
+
+function adminPredCorrUpdate() {
+  const playerId = document.getElementById('apc-player')?.value;
+  const matchId  = Number(document.getElementById('apc-match')?.value);
+  const preview  = document.getElementById('apc-preview');
+  if (!preview) return;
+  if (!playerId || !matchId) { preview.innerHTML = ''; return; }
+
+  const match  = state.matches.find(m => m.id === matchId);
+  if (!match) return;
+
+  const existingPred   = (state.allPredictions || []).find(p => p.player_id === playerId && p.match_id === matchId);
+  const existingScorer = state.scorerBets.find(b => b.player_id === playerId && b.match_id === matchId);
+
+  const POS_PTS = { GK: 10, DEF: 6, MID: 4, ATT: 2 };
+
+  let currentPredPts = 0;
+  if (existingPred) {
+    const actual = { h: match.score_home, a: match.score_away };
+    const base   = calcPoints({ h: existingPred.score_home, a: existingPred.score_away }, actual, match.penalty_winner || null, existingPred.penalty_pick || null);
+    const mult   = base > 0 ? getOddsMultiplier(actual, match) : null;
+    const fb     = getMatchBonus(match);
+    currentPredPts = base > 0 && mult ? parseFloat((base * fb * mult).toFixed(2)) : base * fb;
+  }
+
+  let currentScorerPts = 0;
+  if (existingScorer && match.scorer_result) {
+    if (existingScorer.pick_player_name === 'AUCUN_BUT') {
+      if (match.scorer_result === 'AUCUN_BUT') currentScorerPts = 6;
+    } else {
+      const sc = match.scorer_result.split(',').map(s => s.trim().toLowerCase());
+      if (sc.includes(existingScorer.pick_player_name.toLowerCase().trim())) currentScorerPts = POS_PTS[existingScorer.pick_position] || 2;
+    }
+  }
+
+  const POS_ORDER = { GK: 1, DEF: 2, MID: 3, ATT: 4 };
+  const sortSq = (a, b) => (POS_ORDER[a.position] || 99) - (POS_ORDER[b.position] || 99) || a.player_name.localeCompare(b.player_name, 'fr');
+  const homeSquad = (state.squads || []).filter(p => p.team_name === match.home).sort(sortSq);
+  const awaySquad = (state.squads || []).filter(p => p.team_name === match.away).sort(sortSq);
+
+  const scorerOpts = `<option value="">— Aucun changement —</option>
+    <option value="AUCUN_BUT" ${existingScorer?.pick_player_name === 'AUCUN_BUT' ? 'selected' : ''}>Aucun but</option>
+    ${homeSquad.length ? `<optgroup label="${match.home}">${homeSquad.map(p => `<option value="${p.player_name}" data-pos="${p.position}" ${existingScorer?.pick_player_name === p.player_name ? 'selected' : ''}>${p.player_name}</option>`).join('')}</optgroup>` : ''}
+    ${awaySquad.length ? `<optgroup label="${match.away}">${awaySquad.map(p => `<option value="${p.player_name}" data-pos="${p.position}" ${existingScorer?.pick_player_name === p.player_name ? 'selected' : ''}>${p.player_name}</option>`).join('')}</optgroup>` : ''}`;
+
+  const statusColor = (ok) => ok ? 'var(--green)' : 'var(--red)';
+
+  preview.innerHTML = `
+    <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:0.75rem;margin:0.75rem 0;font-family:'Azeret Mono',monospace;font-size:0.6rem;line-height:1.8;">
+      <div>PRONOSTIC: ${existingPred
+        ? `${existingPred.score_home}–${existingPred.score_away} → <span style="color:${statusColor(currentPredPts > 0)};">${currentPredPts} pts</span>`
+        : `<span style="color:var(--red);">Aucun pronostic enregistré</span>`}</div>
+      <div>BUTEUR: ${existingScorer
+        ? `${existingScorer.pick_player_name} (${existingScorer.pick_position}) → <span style="color:${statusColor(currentScorerPts > 0)};">${currentScorerPts} pts</span>`
+        : `<span style="color:var(--red);">Aucun buteur enregistré</span>`}</div>
+    </div>
+    <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+      <span style="font-family:'Azeret Mono',monospace;font-size:0.55rem;color:var(--text-muted);white-space:nowrap;min-width:52px;">SCORE</span>
+      <input type="number" id="apc-sh" min="0" max="20" value="${existingPred?.score_home ?? ''}" placeholder="Dom" class="admin-text-input" style="width:52px;text-align:center;" oninput="adminPredCorrPointsPreview()">
+      <span style="color:var(--text-muted);">–</span>
+      <input type="number" id="apc-sa" min="0" max="20" value="${existingPred?.score_away ?? ''}" placeholder="Ext" class="admin-text-input" style="width:52px;text-align:center;" oninput="adminPredCorrPointsPreview()">
+      <div id="apc-pts-preview" style="margin-left:auto;font-family:'Azeret Mono',monospace;font-size:0.65rem;"></div>
+    </div>
+    <div style="display:flex;gap:0.5rem;align-items:center;margin-bottom:0.75rem;">
+      <span style="font-family:'Azeret Mono',monospace;font-size:0.55rem;color:var(--text-muted);white-space:nowrap;min-width:52px;">BUTEUR</span>
+      <select id="apc-scorer" class="admin-select" style="flex:1;">${scorerOpts}</select>
+    </div>
+    <button onclick="adminSavePredCorr('${playerId}',${matchId})" class="admin-btn" style="background:var(--cyan-bright,#00b5a0);color:#000;width:100%;justify-content:center;font-weight:700;">💾 Sauvegarder</button>
+    <div id="apc-save-status" style="margin-top:0.5rem;font-family:'Azeret Mono',monospace;font-size:0.6rem;text-align:center;min-height:1.2em;"></div>`;
+
+  adminPredCorrPointsPreview();
+}
+
+function adminPredCorrPointsPreview() {
+  const matchId = Number(document.getElementById('apc-match')?.value);
+  const sh      = parseInt(document.getElementById('apc-sh')?.value);
+  const sa      = parseInt(document.getElementById('apc-sa')?.value);
+  const el      = document.getElementById('apc-pts-preview');
+  if (!el) return;
+  if (isNaN(sh) || isNaN(sa)) { el.textContent = ''; return; }
+  const match = state.matches.find(m => m.id === matchId);
+  if (!match || match.score_home == null) return;
+  const actual = { h: match.score_home, a: match.score_away };
+  const base   = calcPoints({ h: sh, a: sa }, actual, match.penalty_winner || null, null);
+  const mult   = base > 0 ? getOddsMultiplier(actual, match) : null;
+  const fb     = getMatchBonus(match);
+  const pts    = base > 0 && mult ? parseFloat((base * fb * mult).toFixed(2)) : base * fb;
+  el.textContent = `→ ${pts} pts`;
+  el.style.color = pts > 0 ? 'var(--green)' : 'var(--text-muted)';
+}
+
+async function adminSavePredCorr(playerId, matchId) {
+  const sh         = parseInt(document.getElementById('apc-sh')?.value);
+  const sa         = parseInt(document.getElementById('apc-sa')?.value);
+  const scorerName = document.getElementById('apc-scorer')?.value || '';
+  const statusEl   = document.getElementById('apc-save-status');
+  if (statusEl) statusEl.innerHTML = '';
+
+  if (isNaN(sh) || isNaN(sa)) {
+    if (statusEl) statusEl.innerHTML = '<span style="color:var(--red);">⚠ Entrez un score valide</span>';
+    return;
+  }
+
+  const existingPred = (state.allPredictions || []).find(p => p.player_id === playerId && p.match_id === matchId);
+  let predError;
+  if (existingPred) {
+    const { error } = await sb.from('predictions').update({ score_home: sh, score_away: sa }).eq('player_id', playerId).eq('match_id', matchId);
+    predError = error;
+    if (!error) { existingPred.score_home = sh; existingPred.score_away = sa; }
+  } else {
+    const { error } = await sb.from('predictions').insert({ player_id: playerId, match_id: matchId, score_home: sh, score_away: sa });
+    predError = error;
+    if (!error) { if (!state.allPredictions) state.allPredictions = []; state.allPredictions.push({ player_id: playerId, match_id: matchId, score_home: sh, score_away: sa }); }
+  }
+  if (predError) { if (statusEl) statusEl.innerHTML = `<span style="color:var(--red);">Erreur pronostic : ${predError.message}</span>`; return; }
+
+  if (scorerName) {
+    let scorerPos = 'ATT';
+    if (scorerName !== 'AUCUN_BUT') {
+      const sq = (state.squads || []).find(p => p.player_name === scorerName);
+      if (sq) scorerPos = sq.position;
+    }
+    const existingScorer = state.scorerBets.find(b => b.player_id === playerId && b.match_id === matchId);
+    let scorerError;
+    if (existingScorer) {
+      const { error } = await sb.from('scorer_bets').update({ pick_player_name: scorerName, pick_position: scorerPos }).eq('player_id', playerId).eq('match_id', matchId);
+      scorerError = error;
+      if (!error) { existingScorer.pick_player_name = scorerName; existingScorer.pick_position = scorerPos; }
+    } else {
+      const { error } = await sb.from('scorer_bets').insert({ player_id: playerId, match_id: matchId, pick_player_name: scorerName, pick_position: scorerPos });
+      scorerError = error;
+      if (!error) state.scorerBets.push({ player_id: playerId, match_id: matchId, pick_player_name: scorerName, pick_position: scorerPos });
+    }
+    if (scorerError) { if (statusEl) statusEl.innerHTML = `<span style="color:var(--red);">Erreur buteur : ${scorerError.message}</span>`; return; }
+  }
+
+  if (statusEl) statusEl.innerHTML = '<span style="color:var(--green);">✓ Sauvegardé avec succès !</span>';
+  renderLeaderboard();
+  renderClassementFull();
+  renderArchives();
+  setTimeout(() => adminPredCorrUpdate(), 300);
 }
 
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
