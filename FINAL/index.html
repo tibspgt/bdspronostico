@@ -218,6 +218,56 @@
       transform: translateY(-2px);
     }
 
+    .tournament-progress {
+      width: 100%;
+      max-width: 480px;
+      margin: 1.5rem auto 0;
+      position: relative;
+      z-index: 1;
+    }
+    .tp-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.55rem;
+    }
+    .tp-played {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .tp-pct {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .tp-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.10);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .tp-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--red-dark), var(--red-bright));
+      transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+    }
+    .tp-remaining {
+      margin-top: 0.45rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
     .hero-scroll {
       position: absolute;
       bottom: 2rem;
@@ -2789,6 +2839,7 @@
       COUPE<br>DU MONDE<br><span>2026</span>
     </h1>
     <p class="hero-subtitle">Pronostique. Rivalise. Triomphe.</p>
+    <div id="tournament-progress"></div>
     <div class="hero-cta">
       <button class="btn-primary" id="btn-join" onclick="openModal('login')">Rejoindre la ligue</button>
       <button class="btn-secondary" onclick="scrollToApp()">Voir les matchs</button>
@@ -4041,7 +4092,26 @@ function renderTicker() {
   });
 }
 
+function renderTournamentProgress() {
+  const el = document.getElementById('tournament-progress');
+  if (!el || !state.matches.length) return;
+  const total    = state.matches.length;
+  const played   = state.matches.filter(m => m.status === 'finished').length;
+  const pct      = Math.round((played / total) * 100);
+  const remaining = total - played;
+  el.innerHTML = `
+    <div class="tournament-progress">
+      <div class="tp-labels">
+        <span class="tp-played">${played} / ${total} matchs joués</span>
+        <span class="tp-pct">${pct}%</span>
+      </div>
+      <div class="tp-track"><div class="tp-fill" style="width:${pct}%"></div></div>
+      <div class="tp-remaining">${remaining} match${remaining > 1 ? 's' : ''} restant${remaining > 1 ? 's' : ''}</div>
+    </div>`;
+}
+
 function renderAll() {
+  renderTournamentProgress();
   renderMatches();
   renderLeaderboard();
   renderClassementFull();
