@@ -5220,7 +5220,7 @@ function renderLiveMatchBlock(m) {
     ? `<span style="font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--text);letter-spacing:0.05em;">${liveScore.h}<span style="color:var(--text-muted);font-size:1.1rem;margin:0 0.25rem;">:</span>${liveScore.a}</span>`
     : `<span style="font-family:'Azeret Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.12em;">EN COURS</span>`;
 
-  const POS_PTS_LIVE = { GK: 10, DEF: 6, MID: 4, ATT: 2 };
+  const POS_PTS_LIVE = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
   const playerRows = state.players.map(player => {
     const pred = state.allPredictions.find(p => p.player_id === player.id && p.match_id === m.id);
     if (!pred) return { player, hasPred: false };
@@ -5317,7 +5317,7 @@ function renderArchives() {
     const actual = { h: m.score_home, a: m.score_away };
     const mult = getOddsMultiplier(actual, m);
 
-    const POS_PTS_AR = { GK: 10, DEF: 6, MID: 4, ATT: 2 };
+    const POS_PTS_AR = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
 
     const playerRows = state.players.map(player => {
       const pred = state.allPredictions.find(p => p.player_id === player.id && p.match_id === m.id);
@@ -6055,7 +6055,7 @@ function getMotmPoints(playerId) {
 }
 
 function getScorerPoints(playerId) {
-  const POS_PTS = { GK: 10, DEF: 6, MID: 4, ATT: 2 };
+  const POS_PTS = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
   let pts = 0;
   for (const m of state.matches) {
     if (m.status !== 'finished') continue;
@@ -8203,7 +8203,7 @@ function buildProfileHTML(player, rank) {
     .filter(m => m.status === 'finished' && m.score_home != null && playerPreds.some(p => p.match_id === m.id))
     .sort((a, b) => parseDay(b) - parseDay(a) || b.id - a.id);
 
-  const POS_PTS_PP = { GK: 10, DEF: 6, MID: 4, ATT: 2 };
+  const POS_PTS_PP = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
 
   // Calcul des stats avancées
   const matchPtsData = finishedMatches.map(m => {
