@@ -5015,6 +5015,7 @@ function buildRankingEvolution() {
 
   return {
     labels,
+    series,
     datasets: state.players.map(p => ({ name: p.name || p.email?.split('@')[0] || 'Joueur', data: series[p.id], emoji: p.emoji || '⚽', avatar_url: p.avatar_url || null, color: p.color || '#FFD060' })),
     playerCount: N,
     isSimulated: false
@@ -6488,24 +6489,18 @@ function getSortedPlayers() {
     return { ...player, points: totalPoints, exact, gap, win, motmOk, bonus, motm, scorer, scorerCount, topBets, me: state.currentUser?.id === player.id };
   }).sort((a, b) => b.points - a.points || b.exact - a.exact);
 
-  const today = new Date().toISOString().slice(0, 10);
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-
-  // Sauvegarder le snapshot du jour uniquement une fois (premier chargement)
-  if (!localStorage.getItem(`cdm2026_rank_${today}`)) {
-    const ranks = {};
-    sorted.forEach((p, i) => { ranks[p.id] = i + 1; });
-    localStorage.setItem(`cdm2026_rank_${today}`, JSON.stringify(ranks));
+  // Utiliser l'avant-dernier checkpoint du graphique d'évolution comme référence
+  const evo = buildRankingEvolution();
+  let prevRanks = null;
+  if (evo && evo.labels.length >= 2) {
+    const prevIdx = evo.labels.length - 2;
+    prevRanks = {};
+    for (const [id, ranks] of Object.entries(evo.series)) {
+      prevRanks[id] = ranks[prevIdx];
+    }
   }
 
-  // Comparer avec le snapshot d'hier
-  let prevRanks = null;
-  try {
-    const raw = localStorage.getItem(`cdm2026_rank_${yesterday}`);
-    if (raw) prevRanks = JSON.parse(raw);
-  } catch {}
-
-  sorted.forEach((p, i) => { p.rankPrev = prevRanks ? (prevRanks[p.id] ?? null) : null; });
+  sorted.forEach(p => { p.rankPrev = prevRanks ? (prevRanks[p.id] ?? null) : null; });
 
   return sorted;
 }
