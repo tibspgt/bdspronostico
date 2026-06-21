@@ -2943,8 +2943,8 @@
         </div>
         <div style="display:flex;align-items:center;gap:0.4rem;flex-shrink:0;">
           <span style="font-family:'Azeret Mono',monospace;font-size:0.6rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;">Tri</span>
-          <button class="stab active" id="sort-btn-group" onclick="setMatchSort('group', this)">Par groupe</button>
-          <button class="stab" id="sort-btn-date" onclick="setMatchSort('date', this)">Par date</button>
+          <button class="stab" id="sort-btn-group" onclick="setMatchSort('group', this)">Par groupe</button>
+          <button class="stab active" id="sort-btn-date" onclick="setMatchSort('date', this)">Par date</button>
         </div>
       </div>
 
@@ -3741,7 +3741,7 @@ let state = {
   players:        [],
   matches:        [],
   currentRound:   'all',
-  matchSort:      'group',
+  matchSort:      'date',
   specialBets:    [],
   specialResults: {},
   motmBets:       [],   // paris MOTM de tous les joueurs
