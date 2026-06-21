@@ -7188,6 +7188,11 @@ function renderAdmin() {
   const container = document.getElementById('admin-matches-list');
   if (!container) return;
 
+  // On mémorise le match sélectionné dans le panneau de verrouillage,
+  // pour le restaurer après le re-rendu (sinon le temps réel le réinitialise
+  // à chaque but / changement de score).
+  const prevLockSel = document.getElementById('admin-lock-select')?.value || '';
+
   const lockable = state.matches.filter(m => m.status === 'upcoming' || m.status === 'live');
   const finished = state.matches.filter(m => m.status === 'finished');
 
@@ -7232,6 +7237,12 @@ function renderAdmin() {
   }
 
   container.innerHTML = html;
+
+  // Restaure la sélection précédente + son panneau (score / buteurs)
+  if (prevLockSel) {
+    const lockSel = document.getElementById('admin-lock-select');
+    if (lockSel) { lockSel.value = prevLockSel; adminLockSelectChange(); }
+  }
 }
 
 function adminLockSelectChange() {
@@ -7367,6 +7378,7 @@ async function adminFinishMatch(matchId) {
   if (error) { showToast('Erreur : ' + error.message, 'error'); return; }
   m.status = 'finished';
   renderAll();
+  maybeNotifyScoresIn(matchId);
 }
 
 async function adminLockMatch(matchId) {
@@ -7543,6 +7555,7 @@ async function saveAdminMotm(matchId) {
   if (m) m.motm_result = value;
   renderAdmin();
   renderAll();
+  maybeNotifyScoresIn(matchId);
 }
 
 async function saveAdminScorer(matchId) {
@@ -7558,6 +7571,7 @@ async function saveAdminScorer(matchId) {
   delete adminState.scorerPicks[matchId];
   renderAdmin();
   renderAll();
+  maybeNotifyScoresIn(matchId);
 }
 
 async function saveAdminPenalty(matchId, side) {
@@ -7588,6 +7602,87 @@ async function resetAdminField(matchId, field) {
   if (field === 'scorer') delete adminState.scorerPicks[matchId];
   renderAdmin();
   if (field === 'penalty') renderAll();
+}
+
+/* ═══════════════════════════════════════════════
+   ADMIN — NOTIFICATION « LES SCORES SONT TOMBÉS »
+   Déclenchée automatiquement quand un match est 100 % validé
+   (score + buteur(s) + homme du match). Chaque joueur reçoit
+   ses points du match + son nouveau rang. Envoyée une seule fois.
+═══════════════════════════════════════════════ */
+
+// Points d'un joueur pour UN match — même barème que le total / classement.
+function matchPointsForPlayer(player, m) {
+  let pts = 0;
+  const pred = state.allPredictions.find(p => p.player_id === player.id && p.match_id === m.id);
+  if (pred) {
+    const actual = { h: m.score_home, a: m.score_away };
+    const base = calcPoints({ h: pred.score_home, a: pred.score_away }, actual, m.penalty_winner || null, pred.penalty_pick || null);
+    const mult = base > 0 ? getOddsMultiplier(actual, m) : null;
+    const fb   = getMatchBonus(m);
+    pts += base > 0 && mult ? parseFloat((base * fb * mult).toFixed(2)) : base * fb;
+  }
+  const POS_PTS = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
+  const mb = state.motmBets.find(b => b.player_id === player.id && b.match_id === m.id);
+  if (mb && m.motm_result && mb.pick_player_name.toLowerCase().trim() === m.motm_result.toLowerCase().trim()) pts += MOTM_PTS;
+  const sBet = state.scorerBets.find(b => b.player_id === player.id && b.match_id === m.id);
+  if (sBet && m.scorer_result) {
+    if (sBet.pick_player_name === 'AUCUN_BUT') { if (m.scorer_result === 'AUCUN_BUT') pts += 6; }
+    else { const sc = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); if (sc.includes(sBet.pick_player_name.toLowerCase().trim())) pts += POS_PTS[sBet.pick_position] || 2; }
+  }
+  return Math.round(pts * 100) / 100;
+}
+
+function fmtNotifPts(v) {
+  const n = Math.round(v * 100) / 100;
+  return Number.isInteger(n) ? String(n) : n.toFixed(2).replace('.', ',');
+}
+
+function rankLabelFr(n) {
+  return n === 1 ? '1er' : `${n}e`;
+}
+
+// Envoie la notif « Les scores sont tombés ! » dès que le match est complet.
+async function maybeNotifyScoresIn(matchId) {
+  const m = state.matches.find(x => x.id === matchId);
+  if (!m) return;
+  const complete = m.status === 'finished'
+    && m.score_home != null && m.score_away != null
+    && m.motm_result != null && m.scorer_result != null;
+  if (!complete || m.scores_notified_at) return;
+
+  // Verrou atomique : on ne marque/n'envoie qu'une seule fois, même si
+  // plusieurs admins agissent ou si le temps réel relance un rendu.
+  const ts = new Date().toISOString();
+  const { data: marked, error } = await sb.from('matches')
+    .update({ scores_notified_at: ts })
+    .eq('id', matchId)
+    .is('scores_notified_at', null)
+    .select('id');
+  if (error) { console.error('[notif] marquage', error); return; }
+  if (!marked || marked.length === 0) return; // déjà notifié ailleurs
+  m.scores_notified_at = ts;
+
+  const ranked  = getSortedPlayers();
+  const rankMap = new Map(ranked.map((p, i) => [p.id, i + 1]));
+  const notifications = ranked.map(p => {
+    const pts    = matchPointsForPlayer(p, m);
+    const rank   = rankMap.get(p.id);
+    const ptsTxt = `${fmtNotifPts(pts)} pt${pts === 1 ? '' : 's'}`;
+    return {
+      player_id: p.id,
+      body: `${m.home} ${m.score_home}–${m.score_away} ${m.away} · tu as marqué ${ptsTxt} et tu es ${rankLabelFr(rank)} au classement.`
+    };
+  });
+
+  try {
+    await sb.functions.invoke('send-push', {
+      body: { title: '⚽ Les scores sont tombés !', notifications }
+    });
+    showToast('📲 Notifications envoyées aux joueurs', 'success');
+  } catch (e) {
+    console.error('[notif] envoi', e);
+  }
 }
 
 /* ═══════════════════════════════════════════════
