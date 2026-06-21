@@ -6489,19 +6489,23 @@ function getSortedPlayers() {
   }).sort((a, b) => b.points - a.points || b.exact - a.exact);
 
   const today = new Date().toISOString().slice(0, 10);
-  const snapRaw = localStorage.getItem('cdm2026_rank_snapshot');
-  let snap = null;
-  try { snap = snapRaw ? JSON.parse(snapRaw) : null; } catch {}
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
 
-  if (!snap || snap.date !== today) {
-    // Nouveau jour : on sauvegarde le classement actuel comme référence
+  // Sauvegarder le snapshot du jour uniquement une fois (premier chargement)
+  if (!localStorage.getItem(`cdm2026_rank_${today}`)) {
     const ranks = {};
     sorted.forEach((p, i) => { ranks[p.id] = i + 1; });
-    localStorage.setItem('cdm2026_rank_snapshot', JSON.stringify({ date: today, ranks }));
-    sorted.forEach(p => { p.rankPrev = null; });
-  } else {
-    sorted.forEach((p, i) => { p.rankPrev = snap.ranks[p.id] ?? null; });
+    localStorage.setItem(`cdm2026_rank_${today}`, JSON.stringify(ranks));
   }
+
+  // Comparer avec le snapshot d'hier
+  let prevRanks = null;
+  try {
+    const raw = localStorage.getItem(`cdm2026_rank_${yesterday}`);
+    if (raw) prevRanks = JSON.parse(raw);
+  } catch {}
+
+  sorted.forEach((p, i) => { p.rankPrev = prevRanks ? (prevRanks[p.id] ?? null) : null; });
 
   return sorted;
 }
