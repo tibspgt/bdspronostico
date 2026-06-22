@@ -3668,6 +3668,7 @@ async function initPush() {
   try { await navigator.serviceWorker.register('./sw.js'); } catch(e) {}
   updatePushButton();
   syncPushSubscription();
+  setTimeout(maybeShowPushPrompt, 1500);
 }
 
 // Ré-enregistre en base l'abonnement push du navigateur s'il manque, ou le
@@ -3736,11 +3737,73 @@ async function subscribePush() {
     }
     showToast('Notifications activées ! 🔔', 'success');
     updatePushButton();
+    dismissPushPrompt(0);
   } catch(e) {
     showToast(Notification.permission === 'denied'
       ? 'Notifications bloquées — autorise-les dans les paramètres du navigateur.'
       : 'Erreur lors de l\'activation des notifications.', 'error');
   }
+}
+
+/* ───── Bannière d'incitation aux notifications (à l'ouverture de l'app) ───── */
+function pushPromptEligible() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) return false;
+  if (Notification.permission !== 'default') return false; // déjà accordé / refusé
+  if (!state.currentUser) return false;
+  const snooze = parseInt(localStorage.getItem('cdm2026_push_snooze') || '0', 10);
+  return Date.now() >= snooze;
+}
+
+function dismissPushPrompt(snoozeDays) {
+  const el = document.getElementById('push-prompt');
+  if (el) { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }
+  if (snoozeDays) localStorage.setItem('cdm2026_push_snooze', String(Date.now() + snoozeDays * 86400000));
+}
+
+async function activatePushFromPrompt(btn) {
+  if (btn) { btn.disabled = true; btn.textContent = '…'; }
+  await subscribePush();
+  dismissPushPrompt(0); // après la décision (acceptée ou refusée), on retire la bannière
+}
+
+function maybeShowPushPrompt() {
+  if (!pushPromptEligible() || document.getElementById('push-prompt')) return;
+
+  if (!document.getElementById('pp-style')) {
+    const st = document.createElement('style');
+    st.id = 'pp-style';
+    st.textContent = `
+      #push-prompt{position:fixed;left:0;right:0;bottom:0;z-index:3000;display:flex;justify-content:center;padding:14px;pointer-events:none}
+      #push-prompt .pp-card{pointer-events:auto;width:100%;max-width:460px;background:#15171d;border:1px solid #262a34;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px;box-shadow:0 12px 44px rgba(0,0,0,.55);transform:translateY(160%);transition:transform .34s cubic-bezier(.2,.8,.2,1)}
+      #push-prompt.show .pp-card{transform:translateY(0)}
+      #push-prompt .pp-ico{font-size:26px;line-height:1;flex:0 0 auto}
+      #push-prompt .pp-txt{flex:1;min-width:0}
+      #push-prompt .pp-title{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.5px;color:#fff;line-height:1}
+      #push-prompt .pp-sub{font-family:'Barlow Condensed',sans-serif;font-size:13.5px;color:#aeb2bb;margin-top:3px;line-height:1.25}
+      #push-prompt .pp-actions{display:flex;flex-direction:column;gap:6px;flex:0 0 auto;align-items:stretch}
+      #push-prompt .pp-go{font-family:'Azeret Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.5px;color:#0a0b0e;border:none;border-radius:8px;padding:9px 16px;cursor:pointer;background:linear-gradient(110deg,#FF3D3D,#FFC542 48%,#00E6C3)}
+      #push-prompt .pp-later{font-family:'Azeret Mono',monospace;font-size:10px;letter-spacing:.5px;color:#7d828c;background:none;border:none;cursor:pointer;padding:4px}
+      @media(max-width:430px){#push-prompt .pp-card{flex-wrap:wrap}#push-prompt .pp-actions{flex-direction:row-reverse;width:100%;justify-content:space-between;align-items:center}#push-prompt .pp-go{flex:1}}
+    `;
+    document.head.appendChild(st);
+  }
+
+  const el = document.createElement('div');
+  el.id = 'push-prompt';
+  el.innerHTML = `
+    <div class="pp-card">
+      <div class="pp-ico">🔔</div>
+      <div class="pp-txt">
+        <div class="pp-title">Active les notifications</div>
+        <div class="pp-sub">Reçois une alerte 1h avant chaque match et dès que les scores tombent.</div>
+      </div>
+      <div class="pp-actions">
+        <button class="pp-go" onclick="activatePushFromPrompt(this)">Activer</button>
+        <button class="pp-later" onclick="dismissPushPrompt(2)">Plus tard</button>
+      </div>
+    </div>`;
+  document.body.appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
 }
 
 const SUPABASE_URL  = 'https://godcigantcuuwnwerxjc.supabase.co';
@@ -6948,6 +7011,7 @@ function connectPlayer(player) {
   loadBracketSim();
   renderAll();
   syncPushSubscription();
+  setTimeout(maybeShowPushPrompt, 800);
 }
 
 async function signUp() {
