@@ -77,6 +77,13 @@ Deno.serve(async (req) => {
   const { data: subs } = await sb.from('push_subscriptions').select('subscription');
   const allSubs = subs || [];
 
+  // Aucun abonné : on ne "consomme" pas le rappel, on réessaiera au prochain tick.
+  if (allSubs.length === 0) {
+    return new Response(JSON.stringify({ reminded: 0, due: due.length, reason: 'no subscribers' }), {
+      headers: { ...CORS, 'Content-Type': 'application/json' },
+    });
+  }
+
   let reminded = 0, totalSent = 0;
   for (const m of due) {
     // Verrou atomique : on ne rappelle qu'une fois, même si deux exécutions se chevauchent.
