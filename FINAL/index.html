@@ -3660,6 +3660,33 @@ async function initPush() {
   if (!('serviceWorker' in navigator) || !('PushManager' in window)) return;
   try { await navigator.serviceWorker.register('./sw.js'); } catch(e) {}
   updatePushButton();
+  syncPushSubscription();
+}
+
+// Ré-enregistre en base l'abonnement push du navigateur s'il manque, ou le
+// recrée si la clé serveur (VAPID) a changé. Auto-répare les abonnements
+// perdus (ex : table créée après coup, ou changement de clé) sans que
+// l'utilisateur ait à recliquer sur le bouton.
+async function syncPushSubscription() {
+  if (!('serviceWorker' in navigator) || !('PushManager' in window)) return;
+  if (Notification.permission !== 'granted' || !state.currentUser) return;
+  try {
+    const reg = await navigator.serviceWorker.ready;
+    const appKey = urlBase64ToUint8Array(VAPID_PUBLIC_KEY);
+    let sub = await reg.pushManager.getSubscription();
+    if (sub) {
+      const cur = new Uint8Array(sub.options.applicationServerKey || []);
+      const sameKey = cur.length === appKey.length && cur.every((b, i) => b === appKey[i]);
+      if (!sameKey) { try { await sub.unsubscribe(); } catch (e) {} sub = null; }
+    }
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: appKey });
+    const { error } = await sb.from('push_subscriptions').upsert(
+      { player_id: state.currentUser.id, subscription: sub.toJSON() },
+      { onConflict: 'player_id' }
+    );
+    if (error) console.warn('[push] sync DB échoué:', error.message);
+    else updatePushButton();
+  } catch (e) { console.warn('[push] sync échoué:', e); }
 }
 
 async function updatePushButton() {
@@ -3691,10 +3718,15 @@ async function subscribePush() {
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
     });
-    await sb.from('push_subscriptions').upsert(
+    const { error: upErr } = await sb.from('push_subscriptions').upsert(
       { player_id: state.currentUser.id, subscription: sub.toJSON() },
       { onConflict: 'player_id' }
     );
+    if (upErr) {
+      console.warn('[push] upsert échoué:', upErr.message);
+      showToast('Erreur d\'enregistrement des notifications. Réessaie.', 'error');
+      return;
+    }
     showToast('Notifications activées ! 🔔', 'success');
     updatePushButton();
   } catch(e) {
@@ -6908,6 +6940,7 @@ function connectPlayer(player) {
   closeModal('login');
   loadBracketSim();
   renderAll();
+  syncPushSubscription();
 }
 
 async function signUp() {
