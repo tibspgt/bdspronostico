@@ -3,8 +3,8 @@ self.addEventListener('push', event => {
   const title = data.title || 'Coupe du Monde 2026';
   const options = {
     body: data.body || 'N\'oublie pas tes pronostics !',
-    icon: 'https://flagcdn.com/w40/us.png',
-    badge: 'https://flagcdn.com/w20/us.png',
+    icon: data.icon || './icons/icon-192.png',
+    badge: data.badge || './icons/icon-192.png',
     tag: 'pronostics-reminder',
     renotify: true,
     data: { url: self.location.origin }
