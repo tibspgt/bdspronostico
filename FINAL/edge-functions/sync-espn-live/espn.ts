@@ -83,3 +83,30 @@ export function parseSummary(summary: any): ParsedSummary {
 
   return { status, homeScore: toScore(homeC), awayScore: toScore(awayC), goals }
 }
+
+export function buildScorerResult(
+  goals: EspnGoal[],
+  homeRoster: string[],
+  awayRoster: string[],
+  finished: boolean,
+): { result: string | null; unmatched: string[] } {
+  const unmatched: string[] = []
+  const names: string[] = []
+
+  for (const g of goals) {
+    if (g.isOwnGoal) continue
+    const roster = g.side === 'home' ? homeRoster : awayRoster
+    const canonical = resolveSquadName(g.scorerName, roster)
+    if (canonical) {
+      names.push(canonical)
+    } else {
+      names.push(g.scorerName)        // on garde le nom brut pour ne pas fausser le compte
+      unmatched.push(g.scorerName)
+    }
+  }
+
+  if (names.length === 0) {
+    return { result: finished ? 'AUCUN_BUT' : null, unmatched }
+  }
+  return { result: names.join(', '), unmatched }
+}
