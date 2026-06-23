@@ -2897,7 +2897,7 @@
 
     /* --- Textes rouges → dégradé (background-clip trick) --- */
     .hero-title span,
-    .tp-score,
+    .tp-pct,
     .tp-milestone.reached .tp-milestone-label,
     .lb-title,
     .stat-val,
@@ -2909,7 +2909,11 @@
       background-clip: text !important;
       color: transparent !important;
     }
-    .stab.active { border-bottom-color: #FF3D3D !important; }
+    /* Trait bas des onglets → dégradé via border-image */
+    .stab.active {
+      border-bottom: 2px solid transparent !important;
+      border-image: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) 1 !important;
+    }
     @media (max-width: 600px) {
       .nav-tab.active { box-shadow: inset 0 -2px 0 #FF3D3D !important; }
     }
