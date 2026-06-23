@@ -113,7 +113,7 @@ Deno.test('resolveSquadName matches by surname, returns canonical roster name', 
 
 - [ ] **Step 3: Run the test to verify it fails**
 
-Run: `cd "supabase/functions/sync-espn-live" && deno test --allow-net espn.test.ts`
+Run: `cd "supabase/functions/sync-espn-live" && deno test --allow-net --no-check espn.test.ts`
 Expected: FAIL — `Module not found "espn.ts"` / export errors.
 
 - [ ] **Step 4: Write the minimal implementation**
@@ -161,7 +161,7 @@ export function resolveSquadName(espnName: string, roster: string[]): string | n
 
 - [ ] **Step 5: Run the test to verify it passes**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: PASS (3 tests).
 
 - [ ] **Step 6: Commit**
@@ -238,7 +238,7 @@ Deno.test('parseSummary extracts status, score, and goals (own goal flagged, red
 
 - [ ] **Step 2: Run the test to verify it fails**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: FAIL — `cleanMinute`/`parseSummary` not exported.
 
 - [ ] **Step 3: Write the implementation**
@@ -298,7 +298,7 @@ export function parseSummary(summary: any): ParsedSummary {
 
 - [ ] **Step 4: Run the test to verify it passes**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: PASS (all tests in file).
 
 - [ ] **Step 5: Commit**
@@ -366,7 +366,7 @@ Deno.test('buildScorerResult: finished scoreless → AUCUN_BUT; in-progress → 
 
 - [ ] **Step 2: Run the test to verify it fails**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: FAIL — `buildScorerResult` not exported.
 
 - [ ] **Step 3: Write the implementation**
@@ -404,7 +404,7 @@ export function buildScorerResult(
 
 - [ ] **Step 4: Run the test to verify it passes**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: PASS.
 
 - [ ] **Step 5: Commit**
@@ -475,7 +475,7 @@ Deno.test('findEventId matches both teams against ESPN scoreboard', () => {
 
 - [ ] **Step 2: Run the test to verify it fails**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: FAIL — new exports missing.
 
 - [ ] **Step 3: Write the implementation**
@@ -572,7 +572,7 @@ export function findEventId(scoreboard: any, frHome: string, frAway: string): st
 
 - [ ] **Step 4: Run the test to verify it passes**
 
-Run: `deno test --allow-net espn.test.ts`
+Run: `deno test --allow-net --no-check espn.test.ts`
 Expected: PASS (all file tests).
 
 - [ ] **Step 5: Commit**

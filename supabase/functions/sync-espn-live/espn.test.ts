@@ -1,5 +1,5 @@
 import { assertEquals } from 'https://deno.land/std@0.224.0/assert/mod.ts'
-import { normalizeName, surnameMatch, resolveSquadName } from './espn.ts'
+import { normalizeName, surnameMatch, resolveSquadName } from './index.ts'
 
 Deno.test('normalizeName strips accents, case, extra spaces', () => {
   assertEquals(normalizeName('  Kylian  MBAPPÉ '), 'kylian mbappe')
@@ -30,7 +30,7 @@ Deno.test('resolveSquadName falls back to substring match (tier 3) when exact an
   assertEquals(resolveSquadName('Pedro Cavaco', roster2), 'João Pedro Cavaco Silva')
 })
 
-import { cleanMinute, parseSummary } from './espn.ts'
+import { cleanMinute, parseSummary } from './index.ts'
 
 Deno.test('cleanMinute parses ESPN clock displays', () => {
   assertEquals(cleanMinute("45'"), 45)
@@ -95,8 +95,8 @@ Deno.test('parseSummary excludes penalty-shootout goals (period 5)', () => {
   assertEquals(p.goals[0], { scorerName: 'K. Mbappé', side: 'home', minute: 34, isOwnGoal: false })
 })
 
-import { buildScorerResult } from './espn.ts'
-import type { EspnGoal } from './espn.ts'
+import { buildScorerResult } from './index.ts'
+import type { EspnGoal } from './index.ts'
 
 const HOME = ['Kylian Mbappé', 'Antoine Griezmann']
 const AWAY = ['Lautaro Martínez', 'Julián Álvarez']
@@ -131,7 +131,7 @@ Deno.test('buildScorerResult: finished scoreless → AUCUN_BUT; in-progress → 
   assertEquals(buildScorerResult(og, HOME, AWAY, true).result, 'AUCUN_BUT')
 })
 
-import { enNames, kickoffMs, espnDatesToTry, findEventId } from './espn.ts'
+import { enNames, kickoffMs, espnDatesToTry, findEventId } from './index.ts'
 
 Deno.test('enNames maps French team names to English candidates', () => {
   assertEquals(enNames('Allemagne'), ['Germany'])
