@@ -4241,6 +4241,7 @@ function renderTournamentProgress() {
   const milestones = [
     { label: 'Groupes', maxRound: 3 },
     { label: '1/8',     maxRound: 4 },
+    { label: 'Finale',  maxRound: 8 },
   ].map(s => {
     const count = stageEnd(s.maxRound);
     return { label: s.label, pct: (count / total) * 100, reached: played >= count };
