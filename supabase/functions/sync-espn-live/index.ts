@@ -96,7 +96,7 @@ serve(async (req) => {
       updated++
     }
 
-    for (const name of unmatched) allUnmatched.push({ match: `${m.home} vs ${m.away}`, name })
+    if (finished) for (const name of unmatched) allUnmatched.push({ match: `${m.home} vs ${m.away}`, name })
   }
 
   // 6) Alerte admin pour les buteurs non reconnus.

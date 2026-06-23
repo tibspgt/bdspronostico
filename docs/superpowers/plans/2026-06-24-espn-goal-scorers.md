@@ -69,8 +69,8 @@ git commit -m "feat(db): add matches.espn_event_id column for ESPN scorer sync"
 ### Task 2: Pure helper module + name-mapping helpers (TDD)
 
 **Files:**
-- Create: `FINAL/edge-functions/sync-espn-live/espn.ts`
-- Test: `FINAL/edge-functions/sync-espn-live/espn.test.ts`
+- Create: `supabase/functions/sync-espn-live/espn.ts`
+- Test: `supabase/functions/sync-espn-live/espn.test.ts`
 
 **Interfaces:**
 - Produces:
@@ -86,7 +86,7 @@ Expected: prints a `deno x.y.z` version line.
 
 - [ ] **Step 2: Write the failing test**
 
-Create `FINAL/edge-functions/sync-espn-live/espn.test.ts`:
+Create `supabase/functions/sync-espn-live/espn.test.ts`:
 
 ```ts
 import { assertEquals } from 'https://deno.land/std@0.224.0/assert/mod.ts'
@@ -113,12 +113,12 @@ Deno.test('resolveSquadName matches by surname, returns canonical roster name', 
 
 - [ ] **Step 3: Run the test to verify it fails**
 
-Run: `cd "FINAL/edge-functions/sync-espn-live" && deno test --allow-net espn.test.ts`
+Run: `cd "supabase/functions/sync-espn-live" && deno test --allow-net espn.test.ts`
 Expected: FAIL — `Module not found "espn.ts"` / export errors.
 
 - [ ] **Step 4: Write the minimal implementation**
 
-Create `FINAL/edge-functions/sync-espn-live/espn.ts`:
+Create `supabase/functions/sync-espn-live/espn.ts`:
 
 ```ts
 // Fonctions pures pour la synchro ESPN. Aucune dépendance externe :
@@ -167,7 +167,7 @@ Expected: PASS (3 tests).
 - [ ] **Step 6: Commit**
 
 ```bash
-git add FINAL/edge-functions/sync-espn-live/espn.ts FINAL/edge-functions/sync-espn-live/espn.test.ts
+git add supabase/functions/sync-espn-live/espn.ts supabase/functions/sync-espn-live/espn.test.ts
 git commit -m "feat(espn): name normalization and squad-name resolver"
 ```
 
@@ -176,8 +176,8 @@ git commit -m "feat(espn): name normalization and squad-name resolver"
 ### Task 3: ESPN summary parser (TDD)
 
 **Files:**
-- Modify: `FINAL/edge-functions/sync-espn-live/espn.ts`
-- Test: `FINAL/edge-functions/sync-espn-live/espn.test.ts`
+- Modify: `supabase/functions/sync-espn-live/espn.ts`
+- Test: `supabase/functions/sync-espn-live/espn.test.ts`
 
 **Interfaces:**
 - Consumes: nothing from other tasks.
@@ -304,7 +304,7 @@ Expected: PASS (all tests in file).
 - [ ] **Step 5: Commit**
 
 ```bash
-git add FINAL/edge-functions/sync-espn-live/espn.ts FINAL/edge-functions/sync-espn-live/espn.test.ts
+git add supabase/functions/sync-espn-live/espn.ts supabase/functions/sync-espn-live/espn.test.ts
 git commit -m "feat(espn): summary parser for status, score, and goals"
 ```
 
@@ -313,8 +313,8 @@ git commit -m "feat(espn): summary parser for status, score, and goals"
 ### Task 4: `buildScorerResult` (TDD)
 
 **Files:**
-- Modify: `FINAL/edge-functions/sync-espn-live/espn.ts`
-- Test: `FINAL/edge-functions/sync-espn-live/espn.test.ts`
+- Modify: `supabase/functions/sync-espn-live/espn.ts`
+- Test: `supabase/functions/sync-espn-live/espn.test.ts`
 
 **Interfaces:**
 - Consumes: `EspnGoal`, `resolveSquadName` (Tasks 2-3).
@@ -410,7 +410,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add FINAL/edge-functions/sync-espn-live/espn.ts FINAL/edge-functions/sync-espn-live/espn.test.ts
+git add supabase/functions/sync-espn-live/espn.ts supabase/functions/sync-espn-live/espn.test.ts
 git commit -m "feat(espn): build scorer_result string from mapped goals"
 ```
 
@@ -419,8 +419,8 @@ git commit -m "feat(espn): build scorer_result string from mapped goals"
 ### Task 5: ESPN event resolver + kickoff helpers (TDD)
 
 **Files:**
-- Modify: `FINAL/edge-functions/sync-espn-live/espn.ts`
-- Test: `FINAL/edge-functions/sync-espn-live/espn.test.ts`
+- Modify: `supabase/functions/sync-espn-live/espn.ts`
+- Test: `supabase/functions/sync-espn-live/espn.test.ts`
 
 **Interfaces:**
 - Consumes: `normalizeName` (Task 2).
@@ -578,7 +578,7 @@ Expected: PASS (all file tests).
 - [ ] **Step 5: Commit**
 
 ```bash
-git add FINAL/edge-functions/sync-espn-live/espn.ts FINAL/edge-functions/sync-espn-live/espn.test.ts
+git add supabase/functions/sync-espn-live/espn.ts supabase/functions/sync-espn-live/espn.test.ts
 git commit -m "feat(espn): event resolver, FR->EN map, and kickoff helpers"
 ```
 
@@ -587,7 +587,7 @@ git commit -m "feat(espn): event resolver, FR->EN map, and kickoff helpers"
 ### Task 6: `sync-espn-live` edge function (orchestration)
 
 **Files:**
-- Create: `FINAL/edge-functions/sync-espn-live/index.ts`
+- Create: `supabase/functions/sync-espn-live/index.ts`
 
 **Interfaces:**
 - Consumes: everything exported from `espn.ts` (Tasks 2-5).
@@ -595,7 +595,7 @@ git commit -m "feat(espn): event resolver, FR->EN map, and kickoff helpers"
 
 - [ ] **Step 1: Write the function**
 
-Create `FINAL/edge-functions/sync-espn-live/index.ts`:
+Create `supabase/functions/sync-espn-live/index.ts`:
 
 ```ts
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
@@ -748,7 +748,7 @@ Pick a finished match, blank its `scorer_result`, and temporarily remove one rea
 - [ ] **Step 5: Commit**
 
 ```bash
-git add FINAL/edge-functions/sync-espn-live/index.ts
+git add supabase/functions/sync-espn-live/index.ts
 git commit -m "feat(espn): sync-espn-live edge function (live score + scorers + admin alert)"
 ```
 
