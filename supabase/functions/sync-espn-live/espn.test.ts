@@ -30,7 +30,15 @@ Deno.test('resolveSquadName falls back to substring match (tier 3) when exact an
   assertEquals(resolveSquadName('Pedro Cavaco', roster2), 'João Pedro Cavaco Silva')
 })
 
-import { cleanMinute, parseSummary } from './index.ts'
+import { cleanMinute, parseSummary, frLiveLabel } from './index.ts'
+
+Deno.test('frLiveLabel: halftime localized to French, otherwise the live clock', () => {
+  assertEquals(frLiveLabel('Halftime', "45'+3'"), 'Mi-temps')
+  assertEquals(frLiveLabel('Second Half', "67'"), "67'")
+  assertEquals(frLiveLabel('First Half', "23'"), "23'")
+  assertEquals(frLiveLabel('Penalties', ''), 'T.A.B.')
+  assertEquals(frLiveLabel('', "90'+2'"), "90'+2'")
+})
 
 Deno.test('cleanMinute parses ESPN clock displays', () => {
   assertEquals(cleanMinute("45'"), 45)

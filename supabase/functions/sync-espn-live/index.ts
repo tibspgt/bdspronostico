@@ -55,6 +55,8 @@ export type GoalSide = 'home' | 'away'
 export interface EspnGoal { scorerName: string; side: GoalSide; minute: number; isOwnGoal: boolean }
 export interface ParsedSummary {
   status: 'upcoming' | 'live' | 'finished'
+  statusDescription: string   // ex. "Halftime", "Second Half" (brut ESPN)
+  displayClock: string        // ex. "67'", "45'+3'" (brut ESPN)
   homeScore: number | null
   awayScore: number | null
   goals: EspnGoal[]
@@ -70,6 +72,9 @@ export function parseSummary(summary: any): ParsedSummary {
   const completed = comp?.status?.type?.completed === true
   const status: ParsedSummary['status'] =
     state === 'post' || completed ? 'finished' : state === 'in' ? 'live' : 'upcoming'
+
+  const statusDescription = comp?.status?.type?.description ?? ''
+  const displayClock = comp?.status?.displayClock ?? ''
 
   const toScore = (c: any): number | null => {
     if (c?.score === undefined || c?.score === null || c?.score === '') return null
@@ -90,7 +95,15 @@ export function parseSummary(summary: any): ParsedSummary {
   }
   goals.sort((a, b) => a.minute - b.minute)
 
-  return { status, homeScore: toScore(homeC), awayScore: toScore(awayC), goals }
+  return { status, statusDescription, displayClock, homeScore: toScore(homeC), awayScore: toScore(awayC), goals }
+}
+
+// Libellé "live" en français pour l'app : "Mi-temps", "T.A.B.", ou la minute ESPN.
+export function frLiveLabel(description: string, displayClock: string): string {
+  const d = (description ?? '').toLowerCase()
+  if (d === 'halftime' || d.includes('half-time') || d.includes('mi-temps')) return 'Mi-temps'
+  if (d.includes('penalt')) return 'T.A.B.' // séance de tirs au but
+  return (displayClock ?? '').trim()
 }
 
 export function buildScorerResult(
@@ -293,6 +306,10 @@ export async function handleRequest(req: Request): Promise<Response> {
     if (parsed.homeScore !== null) update.score_home = parsed.homeScore
     if (parsed.awayScore !== null) update.score_away = parsed.awayScore
     if (parsed.status !== 'upcoming') update.status = parsed.status
+
+    // Détail live ("Mi-temps", "67'") tant que le match est en cours ; effacé à la fin.
+    if (parsed.status === 'live') update.live_detail = frLiveLabel(parsed.statusDescription, parsed.displayClock)
+    else if (parsed.status === 'finished') update.live_detail = null
 
     const alreadyFinalised = m.status === 'finished' && m.scorer_result != null
     if (result !== null && !alreadyFinalised) update.scorer_result = result
