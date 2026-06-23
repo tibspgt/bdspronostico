@@ -5432,10 +5432,10 @@ function buildScorerSplit(scorerResult, homeTeam, awayTeam) {
     if (isHome) homeScorers.push(fmt);
     else awayScorers.push(fmt);
   }
-  const s = `font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;color:var(--cyan-bright);margin-top:0.18rem;line-height:1.6;`;
+  const s = `font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;color:var(--cyan-bright);line-height:1.6;`;
   return {
-    homeHtml: homeScorers.length ? `<div style="${s}">${homeScorers.map(n => `<div>${n}</div>`).join('')}</div>` : '',
-    awayHtml: awayScorers.length ? `<div style="${s}text-align:right;">${awayScorers.map(n => `<div>${n}</div>`).join('')}</div>` : '',
+    homeHtml: homeScorers.length ? `<div style="${s}">${homeScorers.map(n => `<div style="white-space:nowrap;">${n}</div>`).join('')}</div>` : '',
+    awayHtml: awayScorers.length ? `<div style="${s}text-align:right;">${awayScorers.map(n => `<div style="white-space:nowrap;">${n}</div>`).join('')}</div>` : '',
   };
 }
 
@@ -5521,6 +5521,9 @@ function renderLiveMatchBlock(m) {
   }).join('');
 
   const scorerSplit = buildScorerSplit(m.scorer_result, m.home, m.away);
+  const scorerRowLive = scorerSplit.homeHtml || scorerSplit.awayHtml
+    ? `<div style="display:flex;justify-content:space-between;gap:1rem;margin-top:0.45rem;"><div style="flex:1;">${scorerSplit.homeHtml}</div><div style="flex:1;">${scorerSplit.awayHtml}</div></div>`
+    : m.scorer_result === 'AUCUN_BUT' ? buildScorerLine(m.scorer_result, m.home, m.away, m.home_flag, m.away_flag) : '';
   return `<div style="margin-bottom:1.5rem;background:var(--surface);border:1px solid rgba(232,32,32,0.3);position:relative;overflow:hidden;">
     <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);animation:livePulse 2s infinite;"></div>
     <div style="padding:0.85rem 1.25rem 0.75rem;">
@@ -5528,12 +5531,12 @@ function renderLiveMatchBlock(m) {
         <span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:var(--red);text-transform:uppercase;opacity:0.85;">${dateLabel}</span>
         <span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--red-bright);background:rgba(192,57,43,0.15);padding:0.15rem 0.5rem;border:1px solid rgba(192,57,43,0.3);animation:livePulse 2s infinite;">● EN DIRECT</span>
       </div>
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;">
-        <div style="flex:1;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:0.5rem;">${flagCircle(m.home_flag, m.home)}<span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.home}</span></div>${scorerSplit.homeHtml}</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex:1;">${flagCircle(m.home_flag, m.home)}<span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.home}</span></div>
         ${scoreDisplay}
-        <div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;"><div style="display:flex;align-items:center;gap:0.5rem;justify-content:flex-end;"><span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.away}</span>${flagCircle(m.away_flag, m.away)}</div>${scorerSplit.awayHtml}</div>
+        <div style="display:flex;align-items:center;gap:0.5rem;flex:1;justify-content:flex-end;"><span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.away}</span>${flagCircle(m.away_flag, m.away)}</div>
       </div>
-      ${m.scorer_result === 'AUCUN_BUT' ? buildScorerLine(m.scorer_result, m.home, m.away, m.home_flag, m.away_flag) : ''}
+      ${scorerRowLive}
     </div>
     <div style="border-top:1px solid rgba(232,32,32,0.15);padding:0.28rem 1.25rem;display:flex;align-items:center;gap:0.5rem;background:rgba(232,32,32,0.03);">
       <span style="font-family:'Azeret Mono',monospace;font-size:0.5rem;letter-spacing:0.12em;color:var(--red);text-transform:uppercase;">📊 Paris en cours</span>
@@ -5633,7 +5636,7 @@ function renderArchives() {
     });
 
     const motmHtml = m.motm_result
-      ? `<div style="margin-top:0.35rem;font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--gold);opacity:0.75;">MOTM — <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:600;opacity:1;color:var(--gold-bright);">${m.motm_result}</span></div>`
+      ? `<div style="margin-top:0.35rem;font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--gold);opacity:0.75;">MOTM — <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:600;opacity:1;color:var(--gold-bright);">⭐ ${m.motm_result}</span></div>`
       : '';
     const scorerHtml = buildScorerLine(m.scorer_result, m.home, m.away, m.home_flag, m.away_flag);
 
@@ -5660,8 +5663,11 @@ function renderArchives() {
     const toggleId = `preds-${m.id}`;
     const btnId = `btn-${m.id}`;
     const scorerSplit = buildScorerSplit(m.scorer_result, m.home, m.away);
+    const scorerRowAr = scorerSplit.homeHtml || scorerSplit.awayHtml
+      ? `<div style="display:flex;justify-content:space-between;gap:1rem;margin-top:0.45rem;"><div style="flex:1;">${scorerSplit.homeHtml}</div><div style="flex:1;">${scorerSplit.awayHtml}</div></div>`
+      : m.scorer_result === 'AUCUN_BUT' ? scorerHtml : '';
 
-    return `<div style="margin-bottom:1rem;background:var(--surface);border:1px solid color-mix(in srgb,${color} 28%,transparent);position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${color};"></div><div style="padding:0.85rem 1.25rem 0.85rem;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.55rem;"><span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:${color};text-transform:uppercase;opacity:0.85;">${dateLabel}</span><span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--green);background:rgba(45,179,74,0.08);padding:0.15rem 0.5rem;border:1px solid rgba(45,179,74,0.2);">● Terminé</span></div><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;"><div style="flex:1;display:flex;flex-direction:column;"><div style="display:flex;align-items:center;gap:0.5rem;">${flagCircle(m.home_flag, m.home)}<span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.home}</span></div>${scorerSplit.homeHtml}</div><span style="font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--text);letter-spacing:0.05em;">${m.score_home} <span style="color:var(--text-muted);font-size:1.1rem;">:</span> ${m.score_away}</span><div style="flex:1;display:flex;flex-direction:column;align-items:flex-end;"><div style="display:flex;align-items:center;gap:0.5rem;justify-content:flex-end;"><span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.away}</span>${flagCircle(m.away_flag, m.away)}</div>${scorerSplit.awayHtml}</div></div>${motmHtml}${m.scorer_result === 'AUCUN_BUT' ? scorerHtml : ''}<div style="margin-top:0.7rem;display:flex;gap:0.5rem;"><button id="${btnId}" onclick="togglePreds('${m.id}')" style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.06em;color:var(--text-dim);background:transparent;border:1px solid rgba(255,255,255,0.1);padding:0.28rem 0.7rem;cursor:pointer;text-transform:uppercase;">Paris ▾</button></div></div><div id="${toggleId}" style="display:none;border-top:1px solid var(--border-soft);">${rowsHtml}</div></div>`;
+    return `<div style="margin-bottom:1rem;background:var(--surface);border:1px solid color-mix(in srgb,${color} 28%,transparent);position:relative;overflow:hidden;"><div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:${color};"></div><div style="padding:0.85rem 1.25rem 0.85rem;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.55rem;"><span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:${color};text-transform:uppercase;opacity:0.85;">${dateLabel}</span><span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--green);background:rgba(45,179,74,0.08);padding:0.15rem 0.5rem;border:1px solid rgba(45,179,74,0.2);">● Terminé</span></div><div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;"><div style="display:flex;align-items:center;gap:0.5rem;flex:1;">${flagCircle(m.home_flag, m.home)}<span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.home}</span></div><span style="font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--text);letter-spacing:0.05em;">${m.score_home} <span style="color:var(--text-muted);font-size:1.1rem;">:</span> ${m.score_away}</span><div style="display:flex;align-items:center;gap:0.5rem;flex:1;justify-content:flex-end;"><span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.away}</span>${flagCircle(m.away_flag, m.away)}</div></div>${scorerRowAr}${motmHtml}<div style="margin-top:0.7rem;display:flex;gap:0.5rem;"><button id="${btnId}" onclick="togglePreds('${m.id}')" style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.06em;color:var(--text-dim);background:transparent;border:1px solid rgba(255,255,255,0.1);padding:0.28rem 0.7rem;cursor:pointer;text-transform:uppercase;">Paris ▾</button></div></div><div id="${toggleId}" style="display:none;border-top:1px solid var(--border-soft);">${rowsHtml}</div></div>`;
   }).join('');
 
   container.innerHTML = liveBlocksHtml + finishedBlocksHtml;
