@@ -2868,67 +2868,6 @@
       .pen-ex { text-align: left; }
     }
 
-    /* ── GRADIENT TEST : remplace le rouge par le dégradé bouton Activer ── */
-    /* Raccourci pour le gradient texte */
-    .gt { /* helper class, non utilisée directement */ }
-
-    /* --- Fonds rouges → dégradé --- */
-    .btn-primary {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(110deg, #FF6060, #FFD060 48%, #40F0DC) !important;
-    }
-    .nav-tab::after {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-    .tp-fill {
-      background: linear-gradient(90deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-    .tp-milestone.reached .tp-milestone-tick {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542) !important;
-    }
-    .scroll-line {
-      background: linear-gradient(180deg, #FF3D3D, transparent) !important;
-    }
-    .bonus-save-btn {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-
-    /* --- Textes rouges → dégradé (background-clip trick) --- */
-    .hero-title span,
-    .tp-pct,
-    .tp-milestone.reached .tp-milestone-label,
-    .lb-title,
-    .stat-val,
-    .nav-tab.active,
-    .stab.active {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-      -webkit-background-clip: text !important;
-      -webkit-text-fill-color: transparent !important;
-      background-clip: text !important;
-      color: transparent !important;
-    }
-    /* Trait bas des onglets → dégradé via border-image */
-    .stab.active {
-      border-bottom: 2px solid transparent !important;
-      border-image: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) 1 !important;
-    }
-    @media (max-width: 600px) {
-      .nav-tab.active { box-shadow: inset 0 -2px 0 #FF3D3D !important; }
-    }
-    /* Barre multicolore sous le nav → nouveau dégradé */
-    .nav-colorbar {
-      background: linear-gradient(90deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-    /* PRONOSTICO → blanc pur */
-    .nav-logo {
-      background: none !important;
-      -webkit-background-clip: unset !important;
-      -webkit-text-fill-color: #ffffff !important;
-      background-clip: unset !important;
-    }
-    /* ── FIN GRADIENT TEST ── */
   </style>
 </head>
 <body>
