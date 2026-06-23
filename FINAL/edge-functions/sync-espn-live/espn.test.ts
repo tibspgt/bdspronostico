@@ -19,6 +19,17 @@ Deno.test('resolveSquadName matches by surname, returns canonical roster name', 
   assertEquals(resolveSquadName('Unknown Player', roster), null)
 })
 
+Deno.test('resolveSquadName falls back to substring match (tier 3) when exact and surname fail', () => {
+  // 'Tchouameni' normalizes to 'tchouameni'; roster has 'Aurelien Tchouameni' → substring match
+  // ESPN sends only the shortened version; it doesn't match exact ('aurelien tchouameni' ≠ 'tchouameni')
+  // and surnameMatch won't fire because last token of 'Tchouameni' IS 'tchouameni' which equals
+  // last token of 'Aurélien Tchouaméni' → actually that would be tier 2. Use a case where ESPN
+  // sends a multi-word name that is a strict substring of the roster name.
+  const roster2 = ['João Pedro Cavaco Silva']
+  // ESPN name 'Pedro Cavaco' is a substring of normalized roster name, but not exact and not surname-match
+  assertEquals(resolveSquadName('Pedro Cavaco', roster2), 'João Pedro Cavaco Silva')
+})
+
 import { cleanMinute, parseSummary } from './espn.ts'
 
 Deno.test('cleanMinute parses ESPN clock displays', () => {
@@ -59,6 +70,29 @@ Deno.test('parseSummary extracts status, score, and goals (own goal flagged, red
   assertEquals(p.goals[0], { scorerName: 'K. Mbappé', side: 'home', minute: 23, isOwnGoal: false })
   assertEquals(p.goals[1].isOwnGoal, true)
   assertEquals(p.goals[2], { scorerName: 'Lautaro Martínez', side: 'away', minute: 70, isOwnGoal: false })
+})
+
+Deno.test('parseSummary excludes penalty-shootout goals (period 5)', () => {
+  const summaryWithShootout = {
+    header: {
+      competitions: [{
+        status: { type: { state: 'post', completed: true } },
+        competitors: [
+          { id: 'H', homeAway: 'home', score: '4' },
+          { id: 'A', homeAway: 'away', score: '3' },
+        ],
+        details: [
+          { scoringPlay: true, ownGoal: false, team: { id: 'H' }, clock: { displayValue: "34'" },
+            participants: [{ athlete: { shortName: 'K. Mbappé' } }], period: { number: 1 } },
+          { scoringPlay: true, ownGoal: false, team: { id: 'A' }, clock: { displayValue: "1'" },
+            participants: [{ athlete: { shortName: 'Penalty Scorer' } }], period: { number: 5 } },
+        ],
+      }],
+    },
+  }
+  const p = parseSummary(summaryWithShootout)
+  assertEquals(p.goals.length, 1)
+  assertEquals(p.goals[0], { scorerName: 'K. Mbappé', side: 'home', minute: 34, isOwnGoal: false })
 })
 
 import { buildScorerResult } from './espn.ts'

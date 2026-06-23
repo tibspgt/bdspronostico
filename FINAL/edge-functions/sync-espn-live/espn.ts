@@ -177,7 +177,7 @@ function ymd(ms: number): string {
 export function espnDatesToTry(kickoffMs: number): string[] {
   const a = ymd(kickoffMs)
   const b = ymd(kickoffMs - 24 * 60 * 60 * 1000)
-  return a === b ? [a] : [a, b]
+  return [a, b]
 }
 
 export function findEventId(scoreboard: any, frHome: string, frAway: string): string | null {
