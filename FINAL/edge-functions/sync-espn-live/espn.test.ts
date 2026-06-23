@@ -96,3 +96,39 @@ Deno.test('buildScorerResult: finished scoreless → AUCUN_BUT; in-progress → 
   const og: EspnGoal[] = [{ scorerName: 'X', side: 'home', minute: 30, isOwnGoal: true }]
   assertEquals(buildScorerResult(og, HOME, AWAY, true).result, 'AUCUN_BUT')
 })
+
+import { enNames, kickoffMs, espnDatesToTry, findEventId } from './espn.ts'
+
+Deno.test('enNames maps French team names to English candidates', () => {
+  assertEquals(enNames('Allemagne'), ['Germany'])
+  assertEquals(enNames('Espagne'), ['Spain'])
+  assertEquals(enNames('Pays inconnu'), ['Pays inconnu']) // fallback to itself
+})
+
+Deno.test('kickoffMs converts Paris-local day/time to UTC epoch ms', () => {
+  // 22 juin 2026 23:00 CEST = 21:00 UTC
+  assertEquals(kickoffMs('22 juin', '23:00'), Date.UTC(2026, 5, 22, 21, 0))
+  assertEquals(kickoffMs('', ''), null)
+})
+
+Deno.test('espnDatesToTry returns the UTC date and the day before', () => {
+  // 2026-06-25 01:00 UTC → try 20260625 and 20260624
+  const ko = Date.UTC(2026, 5, 25, 1, 0)
+  assertEquals(espnDatesToTry(ko), ['20260625', '20260624'])
+})
+
+Deno.test('findEventId matches both teams against ESPN scoreboard', () => {
+  const scoreboard = {
+    events: [
+      { id: '111', competitions: [{ competitors: [
+        { team: { displayName: 'France' } }, { team: { displayName: 'Spain' } },
+      ] }] },
+      { id: '222', competitions: [{ competitors: [
+        { team: { displayName: 'Germany' } }, { team: { displayName: 'Brazil' } },
+      ] }] },
+    ],
+  }
+  assertEquals(findEventId(scoreboard, 'Allemagne', 'Brésil'), '222')
+  assertEquals(findEventId(scoreboard, 'France', 'Espagne'), '111')
+  assertEquals(findEventId(scoreboard, 'France', 'Allemagne'), null) // not a real pairing
+})

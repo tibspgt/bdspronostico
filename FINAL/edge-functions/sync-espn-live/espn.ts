@@ -110,3 +110,89 @@ export function buildScorerResult(
   }
   return { result: names.join(', '), unmatched }
 }
+
+// Noms FR → EN (copié de import-fixtures/index.ts pour rester autonome).
+export const FR_TO_EN: Record<string, string[]> = {
+  'Allemagne': ['Germany'], 'France': ['France'], 'Brésil': ['Brazil'],
+  'Argentine': ['Argentina'], 'Espagne': ['Spain'], 'Pays-Bas': ['Netherlands'],
+  'Portugal': ['Portugal'], 'Angleterre': ['England'],
+  'États-Unis': ['USA', 'United States'], 'Mexique': ['Mexico'],
+  'Canada': ['Canada'], 'Japon': ['Japan'], 'Corée du Sud': ['South Korea'],
+  'Australie': ['Australia'], 'Maroc': ['Morocco'], 'Sénégal': ['Senegal'],
+  "Côte d'Ivoire": ['Ivory Coast', "Cote d'Ivoire"],
+  'Nigeria': ['Nigeria'], 'Cameroun': ['Cameroon'], 'Égypte': ['Egypt'],
+  'Afrique du Sud': ['South Africa'], 'Belgique': ['Belgium'],
+  'Croatie': ['Croatia'], 'Suisse': ['Switzerland'], 'Danemark': ['Denmark'],
+  'Suède': ['Sweden'], 'Autriche': ['Austria'],
+  'Turquie': ['Turkey', 'Türkiye'], 'Pologne': ['Poland'],
+  'Hongrie': ['Hungary'], 'Slovaquie': ['Slovakia'], 'Roumanie': ['Romania'],
+  'Serbie': ['Serbia'], 'Uruguay': ['Uruguay'], 'Colombie': ['Colombia'],
+  'Équateur': ['Ecuador'], 'Pérou': ['Peru'], 'Chili': ['Chile'],
+  'Paraguay': ['Paraguay'], 'Bolivie': ['Bolivia'], 'Venezuela': ['Venezuela'],
+  'Costa Rica': ['Costa Rica'], 'Honduras': ['Honduras'],
+  'Jamaïque': ['Jamaica'], 'Panama': ['Panama'],
+  'Arabie Saoudite': ['Saudi Arabia'], 'Iran': ['Iran'], 'Irak': ['Iraq'],
+  'Jordanie': ['Jordan'], 'Chine': ['China'], 'Indonésie': ['Indonesia'],
+  'Thaïlande': ['Thailand'], 'Philippines': ['Philippines'],
+  'Nouvelle-Zélande': ['New Zealand'], 'Ouzbékistan': ['Uzbekistan'],
+  'Tunisie': ['Tunisia'], 'Ghana': ['Ghana'], 'Mali': ['Mali'],
+  'Guinée': ['Guinea'], 'Curaçao': ['Curaçao', 'Curacao'],
+  'Tanzanie': ['Tanzania'], 'Zimbabwe': ['Zimbabwe'],
+  'Albanie': ['Albania'], 'Slovénie': ['Slovenia'], 'Grèce': ['Greece'],
+  'Tchéquie': ['Czech Republic', 'Czechia'], 'Ukraine': ['Ukraine'],
+  'Écosse': ['Scotland'], 'Irlande': ['Ireland'], 'Géorgie': ['Georgia'],
+}
+
+export function enNames(frName: string): string[] {
+  return FR_TO_EN[frName] || [frName]
+}
+
+const PARIS_OFFSET_MS = 2 * 60 * 60 * 1000 // CEST = UTC+2
+const MONTHS: Record<string, number> = {
+  janvier: 1, février: 2, fevrier: 2, mars: 3, avril: 4, mai: 5, juin: 6,
+  juillet: 7, août: 8, aout: 8, septembre: 9, octobre: 10, novembre: 11,
+  décembre: 12, decembre: 12,
+}
+
+export function kickoffMs(day: string, matchTime: string): number | null {
+  if (!day || !matchTime) return null
+  const dm = day.trim().match(/(\d+)\s+(\S+)/)
+  if (!dm) return null
+  const dayNum = parseInt(dm[1], 10)
+  const mon = MONTHS[dm[2].toLowerCase()]
+  if (!mon) return null
+  const tm = matchTime.match(/(\d{1,2})[:h](\d{2})/)
+  if (!tm) return null
+  return Date.UTC(2026, mon - 1, dayNum, parseInt(tm[1], 10), parseInt(tm[2], 10)) - PARIS_OFFSET_MS
+}
+
+function ymd(ms: number): string {
+  const d = new Date(ms)
+  const y = d.getUTCFullYear()
+  const m = String(d.getUTCMonth() + 1).padStart(2, '0')
+  const day = String(d.getUTCDate()).padStart(2, '0')
+  return `${y}${m}${day}`
+}
+
+export function espnDatesToTry(kickoffMs: number): string[] {
+  const a = ymd(kickoffMs)
+  const b = ymd(kickoffMs - 24 * 60 * 60 * 1000)
+  return a === b ? [a] : [a, b]
+}
+
+export function findEventId(scoreboard: any, frHome: string, frAway: string): string | null {
+  const homeCands = enNames(frHome).map(normalizeName)
+  const awayCands = enNames(frAway).map(normalizeName)
+  const hit = (espnTeam: string, cands: string[]) => {
+    const n = normalizeName(espnTeam)
+    return cands.some((c) => n.includes(c) || c.includes(n))
+  }
+  for (const ev of (scoreboard?.events ?? [])) {
+    const comps: any[] = ev?.competitions?.[0]?.competitors ?? []
+    const names = comps.map((c) => c?.team?.displayName || c?.team?.name || c?.team?.shortDisplayName || '')
+    const homeOk = names.some((nm) => hit(nm, homeCands))
+    const awayOk = names.some((nm) => hit(nm, awayCands))
+    if (homeOk && awayOk) return String(ev.id)
+  }
+  return null
+}
