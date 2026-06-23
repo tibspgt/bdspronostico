@@ -2869,6 +2869,10 @@
     }
 
     /* ── GRADIENT TEST : remplace le rouge par le dégradé bouton Activer ── */
+    /* Raccourci pour le gradient texte */
+    .gt { /* helper class, non utilisée directement */ }
+
+    /* --- Fonds rouges → dégradé --- */
     .btn-primary {
       background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
     }
@@ -2877,13 +2881,6 @@
     }
     .nav-tab::after {
       background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
-    }
-    .nav-tab.active {
-      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent !important;
     }
     .tp-fill {
       background: linear-gradient(90deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
@@ -2896,6 +2893,25 @@
     }
     .bonus-save-btn {
       background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
+    }
+
+    /* --- Textes rouges → dégradé (background-clip trick) --- */
+    .hero-title span,
+    .tp-score,
+    .tp-milestone.reached .tp-milestone-label,
+    .lb-title,
+    .stat-val,
+    .nav-tab.active,
+    .stab.active {
+      background: linear-gradient(110deg, #FF3D3D, #FFC542 48%, #00E6C3) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: transparent !important;
+    }
+    .stab.active { border-bottom-color: #FF3D3D !important; }
+    @media (max-width: 600px) {
+      .nav-tab.active { box-shadow: inset 0 -2px 0 #FF3D3D !important; }
     }
     /* ── FIN GRADIENT TEST ── */
   </style>
