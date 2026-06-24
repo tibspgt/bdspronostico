@@ -4591,7 +4591,7 @@ function renderMatchCard(m) {
     : basePts !== null ? basePts * matchBonus : null;
 
   let statusHtml = '';
-  if (m.status === 'live')          statusHtml = `<span class="match-status live">● LIVE</span>`;
+  if (m.status === 'live')          statusHtml = `<span class="match-status live">● ${m.live_detail ? m.live_detail : 'LIVE'}</span>`;
   else if (m.status === 'finished') statusHtml = `<span class="match-status finished">TERMINÉ</span>`;
   else if (isTBD)                   statusHtml = `<span class="match-status upcoming" style="color:var(--text-muted)">Qualifiés à déterminer</span>`;
   else {
