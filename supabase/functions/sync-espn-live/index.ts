@@ -165,6 +165,7 @@ export const FR_TO_EN: Record<string, string[]> = {
   'Écosse': ['Scotland'], 'Irlande': ['Ireland'], 'Géorgie': ['Georgia'],
   'RD Congo': ['Congo DR', 'DR Congo'], 'Qatar': ['Qatar'], 'Haïti': ['Haiti'],
   'Bosnie-Herzégovine': ['Bosnia-Herzegovina', 'Bosnia and Herzegovina'],
+  'Algérie': ['Algeria'], 'Cap-Vert': ['Cape Verde', 'Cabo Verde'], 'Norvège': ['Norway'],
 }
 
 export function enNames(frName: string): string[] {
