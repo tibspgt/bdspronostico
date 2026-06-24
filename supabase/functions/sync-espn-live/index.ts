@@ -163,6 +163,8 @@ export const FR_TO_EN: Record<string, string[]> = {
   'Albanie': ['Albania'], 'Slovénie': ['Slovenia'], 'Grèce': ['Greece'],
   'Tchéquie': ['Czech Republic', 'Czechia'], 'Ukraine': ['Ukraine'],
   'Écosse': ['Scotland'], 'Irlande': ['Ireland'], 'Géorgie': ['Georgia'],
+  'RD Congo': ['Congo DR', 'DR Congo'], 'Qatar': ['Qatar'], 'Haïti': ['Haiti'],
+  'Bosnie-Herzégovine': ['Bosnia-Herzegovina', 'Bosnia and Herzegovina'],
 }
 
 export function enNames(frName: string): string[] {
