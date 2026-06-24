@@ -3867,6 +3867,59 @@ let state = {
 };
 
 // ════════════════════════════════════════
+//  RAFRAÎCHISSEMENT LIVE NON-INTRUSIF DES MATCHS
+//  Met à jour scores / minute / buteurs sans casser le défilement ni la saisie.
+//  - Ne re-render QUE si quelque chose de visible a réellement changé.
+//  - Conserve la position de défilement.
+//  - Reporte le rafraîchissement si l'utilisateur est en train de saisir.
+// ════════════════════════════════════════
+let _pendingMatchesRender = false;
+let _lastMatchesSig = '';
+
+function matchesSignature(arr) {
+  return (arr || []).map(m =>
+    `${m.id}:${m.status}:${m.score_home}:${m.score_away}:${m.live_detail || ''}:${m.scorer_result || ''}:${m.motm_result || ''}:${m.penalty_winner || ''}`
+  ).join('|');
+}
+
+// L'utilisateur est-il en train de saisir un champ dans la liste des matchs ?
+function matchesListBusy() {
+  const ae = document.activeElement;
+  const c = document.getElementById('matches-container');
+  return !!(ae && c && c.contains(ae) && ['INPUT', 'SELECT', 'TEXTAREA'].includes(ae.tagName));
+}
+
+function renderMatchesPreservingView() {
+  if (matchesListBusy()) { _pendingMatchesRender = true; return; } // on ne coupe pas la saisie
+  _pendingMatchesRender = false;
+  const y = window.scrollY;        // on mémorise la position
+  renderAll();
+  renderTicker();
+  resolveKnockoutSlots();
+  window.scrollTo(0, y);           // ...et on la restaure (pas de saut en haut)
+}
+
+function applyMatchesData(data) {
+  if (!data) return;
+  const sig = matchesSignature(data);
+  if (sig === _lastMatchesSig) return; // rien de visible n'a changé → aucun re-render
+  _lastMatchesSig = sig;
+  state.matches = data;
+  renderMatchesPreservingView();
+}
+
+async function refreshMatchesLive() {
+  const { data } = await sb.from('matches').select('*').order('id');
+  applyMatchesData(data);
+}
+
+// Dès que l'utilisateur quitte un champ, on applique un rafraîchissement en attente.
+document.addEventListener('focusout', () => {
+  if (!_pendingMatchesRender) return;
+  setTimeout(() => { if (_pendingMatchesRender) renderMatchesPreservingView(); }, 250);
+});
+
+// ════════════════════════════════════════
 //  INIT ASYNC
 // ════════════════════════════════════════
 async function init() {
@@ -3952,11 +4005,7 @@ async function init() {
   // Temps réel — scores des matchs (+ résolution automatique des slots de phases finales)
   sb.channel('rt-matches')
     .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'matches' }, async () => {
-      const { data } = await sb.from('matches').select('*').order('id');
-      if (data) state.matches = data;
-      renderAll();
-      renderTicker();
-      resolveKnockoutSlots();
+      await refreshMatchesLive(); // non-intrusif : préserve défilement + saisie
     })
     .subscribe((status, err) => {
       if (status === 'SUBSCRIBED') console.log('[RT] matches connecté');
@@ -4028,12 +4077,16 @@ async function init() {
 
   renderAll();
   renderTicker();
+  _lastMatchesSig = matchesSignature(state.matches); // évite un re-render inutile au 1er tick
   startBonusCountdown();
   startBracketCountdown();
   renderFlagPicker();
   initPush();
   startLivePolling();
   startCountdownUpdater();
+  // Rafraîchissement live de l'UI des matchs (indépendant du Realtime) : toutes les 30 s,
+  // mais ne re-render que si un score / une minute / un buteur a changé.
+  setInterval(refreshMatchesLive, 30000);
 }
 
 // ════════════════════════════════════════
