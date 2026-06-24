@@ -5530,7 +5530,7 @@ function renderLiveMatchBlock(m) {
     <div style="padding:0.85rem 1.25rem 0.75rem;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.55rem;">
         <span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;color:var(--red);text-transform:uppercase;opacity:0.85;">${dateLabel}</span>
-        <span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--red-bright);background:rgba(192,57,43,0.15);padding:0.15rem 0.5rem;border:1px solid rgba(192,57,43,0.3);animation:livePulse 2s infinite;">● EN DIRECT</span>
+        <span style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--red-bright);background:rgba(192,57,43,0.15);padding:0.15rem 0.5rem;border:1px solid rgba(192,57,43,0.3);animation:livePulse 2s infinite;">● ${m.live_detail ? m.live_detail : 'EN DIRECT'}</span>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;">
         <div style="display:flex;align-items:center;gap:0.5rem;flex:1;">${flagCircle(m.home_flag, m.home)}<span style="font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.04em;">${m.home}</span></div>

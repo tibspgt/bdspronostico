@@ -248,11 +248,12 @@ export async function handleRequest(req: Request): Promise<Response> {
     Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
   )
 
-  // 1) Matchs candidats : non terminés OU sans buteur enregistré.
+  // 1) Matchs candidats : non terminés OU sans buteur enregistré OU dont le
+  //    rappel "homme du match" n'a pas encore été envoyé aux admins.
   const { data: rows } = await sb
     .from('matches')
-    .select('id, home, away, day, match_time, status, score_home, score_away, scorer_result, espn_event_id')
-    .or('status.neq.finished,scorer_result.is.null')
+    .select('id, home, away, day, match_time, status, score_home, score_away, scorer_result, espn_event_id, motm_result, motm_notified_at')
+    .or('status.neq.finished,scorer_result.is.null,motm_notified_at.is.null')
 
   const now = Date.now()
   const candidates = (rows ?? []).filter((m: any) => {
@@ -268,6 +269,7 @@ export async function handleRequest(req: Request): Promise<Response> {
   }
 
   const allUnmatched: { match: string; name: string }[] = []
+  const motmReminders: { match: string }[] = []
   let updated = 0
 
   for (const m of candidates) {
@@ -314,6 +316,14 @@ export async function handleRequest(req: Request): Promise<Response> {
     const alreadyFinalised = m.status === 'finished' && m.scorer_result != null
     if (result !== null && !alreadyFinalised) update.scorer_result = result
 
+    // À la fin du match : rappel "homme du match" aux admins (une seule fois).
+    // On marque toujours le rappel comme traité pour ne pas re-notifier, mais on
+    // ne notifie que si l'effectif existe (MOTM réellement sélectionnable).
+    if (finished && !m.motm_result && !m.motm_notified_at) {
+      update.motm_notified_at = new Date().toISOString()
+      if (homeRoster.length || awayRoster.length) motmReminders.push({ match: `${m.home} vs ${m.away}` })
+    }
+
     if (Object.keys(update).length > 0) {
       await sb.from('matches').update(update).eq('id', m.id)
       updated++
@@ -322,23 +332,32 @@ export async function handleRequest(req: Request): Promise<Response> {
     if (finished) for (const name of unmatched) allUnmatched.push({ match: `${m.home} vs ${m.away}`, name })
   }
 
-  // 6) Alerte admin pour les buteurs non reconnus.
-  if (allUnmatched.length > 0) {
+  // 6) Notifications admin : buteurs non reconnus + rappel "homme du match".
+  if (allUnmatched.length > 0 || motmReminders.length > 0) {
     const { data: admins } = await sb.from('players').select('id').eq('is_admin', true)
     const adminIds = (admins ?? []).map((a: any) => a.id)
     if (adminIds.length > 0) {
-      const notifications = allUnmatched.flatMap((u) =>
-        adminIds.map((id: string) => ({
-          player_id: id,
-          title: '⚠️ Buteur non reconnu',
-          body: `"${u.name}" — ${u.match}. À corriger dans l'admin.`,
-        })),
-      )
-      await sb.functions.invoke('send-push', { body: { title: '⚠️ Buteur non reconnu', notifications } })
+      const notifications = [
+        ...allUnmatched.flatMap((u) =>
+          adminIds.map((id: string) => ({
+            player_id: id,
+            title: '⚠️ Buteur non reconnu',
+            body: `"${u.name}" — ${u.match}. À corriger dans l'admin.`,
+          })),
+        ),
+        ...motmReminders.flatMap((r) =>
+          adminIds.map((id: string) => ({
+            player_id: id,
+            title: '⭐ Homme du match',
+            body: `Match terminé : ${r.match}. Ajoute l'homme du match dans l'admin.`,
+          })),
+        ),
+      ]
+      await sb.functions.invoke('send-push', { body: { title: '⚽ CDM 2026', notifications } })
     }
   }
 
-  return new Response(JSON.stringify({ ok: true, checked: candidates.length, updated, unmatched: allUnmatched }), {
+  return new Response(JSON.stringify({ ok: true, checked: candidates.length, updated, unmatched: allUnmatched, motmReminders: motmReminders.length }), {
     headers: { ...CORS, 'Content-Type': 'application/json' },
   })
 }
