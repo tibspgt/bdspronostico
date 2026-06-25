@@ -3864,6 +3864,7 @@ let state = {
   draftPreds:     {},
   draftMotm:      {},
   draftScorer:    {},
+  expandedCategories: new Set(), // classements spéciaux dépliés
 };
 
 // ════════════════════════════════════════
@@ -5452,6 +5453,7 @@ function renderClassementFull() {
   }
   html += '</div>';
 
+  html += renderCategoryLeaderboards();
 
   html += `
     <div style="background:var(--surface);border:1px solid var(--border-soft);padding:1.5rem;margin-top:1rem;">
@@ -5469,6 +5471,78 @@ function renderClassementFull() {
 
   document.getElementById('classement-full').innerHTML = html;
   setTimeout(renderEvolutionChart, 0);
+}
+
+// ── CLASSEMENTS SPÉCIAUX (par catégorie) ─────────────────────────────────────
+
+const CATEGORY_BOARDS = [
+  { key:'exact',       label:'Scores exacts',  icon:'🎯', color:'rgba(232,160,32,0.9)',  field:'exact',       unit:'exacts'     },
+  { key:'motmOk',      label:'Homme du match', icon:'🟣', color:'rgba(168,85,247,0.9)',  field:'motmOk',      unit:'MOTM'       },
+  { key:'scorerCount', label:'Buteurs',        icon:'⚽', color:'rgba(16,192,224,0.9)',  field:'scorerCount', unit:'buteurs'    },
+  { key:'gap',         label:'Bon écart',      icon:'📏', color:'rgba(80,224,160,0.9)',  field:'gap',         unit:'écarts'     },
+  { key:'win',         label:'Bon vainqueur',  icon:'✅', color:'rgba(120,150,240,0.9)', field:'win',         unit:'vainqueurs' },
+];
+
+function renderCategoryLeaderboards() {
+  if (state.players.length === 0) return '';
+  return `
+    <div style="background:var(--surface);border:1px solid var(--border-soft);padding:1.5rem;margin-top:1rem;">
+      <div style="margin-bottom:1.25rem;">
+        <div style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">Qui mène sur quoi</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.04em;margin:0;">CLASSEMENTS SPÉCIAUX</h3>
+      </div>
+      <div id="category-boards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
+        ${renderCategoryBoardsGrid()}
+      </div>
+    </div>`;
+}
+
+function renderCategoryBoardsGrid() {
+  const players = getSortedPlayers();
+  return CATEGORY_BOARDS.map(board => {
+    const ranked = [...players].sort((a, b) => (b[board.field] || 0) - (a[board.field] || 0) || b.points - a.points);
+    const expanded = state.expandedCategories.has(board.key);
+    const visible = expanded ? ranked : ranked.slice(0, 3);
+    const rowsHtml = visible.map((p, i) => {
+      const count = p[board.field] || 0;
+      return categoryBoardRow(p, i + 1, count, board.color, board.unit, count === 0);
+    }).join('');
+    const toggleHtml = ranked.length > 3
+      ? `<div onclick="event.stopPropagation();toggleCategoryBoard('${board.key}')" style="padding:0.55rem;text-align:center;font-family:'Azeret Mono',monospace;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;border-top:1px solid var(--border-soft);">${expanded ? 'Réduire ▲' : `Voir tout (${ranked.length}) ▼`}</div>`
+      : '';
+    return `
+      <div style="border:1px solid var(--border-soft);background:rgba(255,255,255,0.015);display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;gap:0.5rem;padding:0.75rem 0.9rem;border-bottom:1px solid var(--border-soft);background:linear-gradient(135deg,${board.color.replace('0.9','0.12')} 0%,transparent 100%);">
+          <span style="font-size:1rem;">${board.icon}</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:0.05em;color:${board.color};">${board.label}</span>
+        </div>
+        <div style="flex:1;">${rowsHtml}</div>
+        ${toggleHtml}
+      </div>`;
+  }).join('');
+}
+
+function categoryBoardRow(p, rank, count, color, unit, isZero) {
+  const rankText = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank;
+  const meColor = p.me ? 'var(--cyan-bright)' : 'var(--text)';
+  return `
+    <div onclick="openPlayerProfile('${p.id}')" title="Voir le profil de ${p.name || 'ce joueur'}"
+         style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.9rem;border-bottom:1px solid var(--border-soft);cursor:pointer;${isZero ? 'opacity:0.45;' : ''}">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:0.95rem;width:20px;text-align:center;flex-shrink:0;color:var(--text-muted);">${rankText}</div>
+      <div class="lb-avatar" style="width:26px;height:26px;font-size:0.85rem;background:${p.color}20;border:1px solid ${p.color}40;">${renderAvatar(p.emoji, p.avatar_url)}</div>
+      <div style="flex:1;min-width:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.9rem;color:${meColor};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${p.name}${p.me ? ' <span style="color:var(--text-muted);font-size:0.7rem;">(toi)</span>' : ''}</div>
+      <div style="flex-shrink:0;text-align:right;">
+        <span style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:${color};">${count}</span>
+        <span style="font-family:'Azeret Mono',monospace;font-size:0.5rem;color:var(--text-muted);text-transform:uppercase;display:block;margin-top:-2px;">${unit}</span>
+      </div>
+    </div>`;
+}
+
+function toggleCategoryBoard(key) {
+  if (state.expandedCategories.has(key)) state.expandedCategories.delete(key);
+  else state.expandedCategories.add(key);
+  const grid = document.getElementById('category-boards-grid');
+  if (grid) grid.innerHTML = renderCategoryBoardsGrid();
 }
 
 function buildScorerSplit(scorerResult, homeTeam, awayTeam) {
