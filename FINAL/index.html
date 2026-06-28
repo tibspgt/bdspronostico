@@ -6175,6 +6175,18 @@ function ruleToLabel(code) {
   return code;
 }
 
+// Détermine le côté vainqueur ('home'/'away') d'un match éliminatoire terminé,
+// séance de tirs au but comprise. Un match à élimination directe ne finit jamais
+// sur un nul : si les scores sont à égalité, c'est penalty_winner (fourni par
+// ESPN) qui tranche. Renvoie null si on a un nul mais pas encore de vainqueur aux
+// pénos enregistré → on laisse le slot TBD et on réessaiera à la prochaine sync.
+function knockoutWinnerSide(src) {
+  if (src.score_home > src.score_away) return 'home';
+  if (src.score_home < src.score_away) return 'away';
+  if (src.penalty_winner === 'home' || src.penalty_winner === 'away') return src.penalty_winner;
+  return null;
+}
+
 // Calcule les classements de groupe puis résout automatiquement
 // tous les slots de phases finales dont les équipes sont encore "TBD".
 // Appelé après chaque mise à jour de score (temps réel) et sur demande.
@@ -6219,7 +6231,9 @@ async function resolveKnockoutSlots() {
     if (mW) {
       const src = state.matches.find(m => m.id === parseInt(mW[1]) && m.status === 'finished' && m.score_home != null);
       if (!src) return null;
-      return src.score_home > src.score_away
+      const side = knockoutWinnerSide(src);
+      if (!side) return null; // nul sans vainqueur aux pénos connu → on attend
+      return side === 'home'
         ? { team: src.home, flag: src.home_flag }
         : { team: src.away, flag: src.away_flag };
     }
@@ -6227,7 +6241,10 @@ async function resolveKnockoutSlots() {
     if (mL) {
       const src = state.matches.find(m => m.id === parseInt(mL[1]) && m.status === 'finished' && m.score_home != null);
       if (!src) return null;
-      return src.score_home < src.score_away
+      const side = knockoutWinnerSide(src);
+      if (!side) return null;
+      const loser = side === 'home' ? 'away' : 'home';
+      return loser === 'home'
         ? { team: src.home, flag: src.home_flag }
         : { team: src.away, flag: src.away_flag };
     }

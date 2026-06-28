@@ -19,8 +19,28 @@ export function normalizeName(s: string): string {
     .trim()
 }
 
+// Suffixes "Junior"/"Senior" : ESPN écrit le mot complet ("Vinícius Júnior"),
+// les effectifs souvent l'abréviation ("Vinicius JR"). On les ramène à une forme
+// canonique pour que le mapping fonctionne dans les deux sens.
+const NAME_SUFFIX: Record<string, string> = {
+  jr: 'junior', jnr: 'junior', junior: 'junior',
+  sr: 'senior', snr: 'senior', senior: 'senior',
+}
+
+// Tokens normalisés + abréviations de suffixe canonicalisées ("jr." → "junior").
+function canonicalTokens(s: string): string[] {
+  return normalizeName(s).split(' ').filter(Boolean).map((t) => {
+    const bare = t.replace(/\.+$/, '') // retire un point final éventuel ("jr." → "jr")
+    return NAME_SUFFIX[bare] ?? bare
+  })
+}
+
+function canonicalName(s: string): string {
+  return canonicalTokens(s).join(' ')
+}
+
 function lastToken(s: string): string {
-  const parts = normalizeName(s).split(' ').filter(Boolean)
+  const parts = canonicalTokens(s)
   return parts.length ? parts[parts.length - 1] : ''
 }
 
@@ -30,15 +50,15 @@ export function surnameMatch(a: string, b: string): boolean {
 }
 
 export function resolveSquadName(espnName: string, roster: string[]): string | null {
-  const target = normalizeName(espnName)
+  const target = canonicalName(espnName)
   if (!target) return null
-  // 1) égalité exacte normalisée
-  for (const r of roster) if (normalizeName(r) === target) return r
+  // 1) égalité exacte (suffixes Jr/Júnior canonicalisés)
+  for (const r of roster) if (canonicalName(r) === target) return r
   // 2) même nom de famille
   for (const r of roster) if (surnameMatch(espnName, r)) return r
   // 3) inclusion dans un sens ou l'autre
   for (const r of roster) {
-    const nr = normalizeName(r)
+    const nr = canonicalName(r)
     if (nr.includes(target) || target.includes(nr)) return r
   }
   return null
@@ -60,6 +80,7 @@ export interface ParsedSummary {
   homeScore: number | null
   awayScore: number | null
   goals: EspnGoal[]
+  penaltyWinner: GoalSide | null  // vainqueur de la séance de tirs au but ('home'/'away'), sinon null
 }
 
 export function parseSummary(summary: any): ParsedSummary {
@@ -95,7 +116,19 @@ export function parseSummary(summary: any): ParsedSummary {
   }
   goals.sort((a, b) => a.minute - b.minute)
 
-  return { status, statusDescription, displayClock, homeScore: toScore(homeC), awayScore: toScore(awayC), goals }
+  // Vainqueur aux tirs au but : un match à élimination directe à égalité après
+  // prolongation se décide aux pénos. ESPN marque le qualifié via le booléen
+  // `winner` du competitor ; à défaut on compare `shootoutScore`.
+  let penaltyWinner: GoalSide | null = null
+  if (homeC?.winner === true) penaltyWinner = 'home'
+  else if (awayC?.winner === true) penaltyWinner = 'away'
+  else {
+    const hs = parseInt(String(homeC?.shootoutScore ?? ''), 10)
+    const as = parseInt(String(awayC?.shootoutScore ?? ''), 10)
+    if (!Number.isNaN(hs) && !Number.isNaN(as) && hs !== as) penaltyWinner = hs > as ? 'home' : 'away'
+  }
+
+  return { status, statusDescription, displayClock, homeScore: toScore(homeC), awayScore: toScore(awayC), goals, penaltyWinner }
 }
 
 // Libellé "live" en français pour l'app : "Mi-temps", "T.A.B.", ou la minute ESPN.
@@ -255,7 +288,7 @@ export async function handleRequest(req: Request): Promise<Response> {
   //    rappel "homme du match" n'a pas encore été envoyé aux admins.
   const { data: rows } = await sb
     .from('matches')
-    .select('id, home, away, day, match_time, status, score_home, score_away, scorer_result, espn_event_id, motm_result, motm_notified_at')
+    .select('id, home, away, day, match_time, status, score_home, score_away, scorer_result, espn_event_id, motm_result, motm_notified_at, penalty_winner')
     .or('status.neq.finished,scorer_result.is.null,motm_notified_at.is.null')
 
   const now = Date.now()
@@ -319,12 +352,22 @@ export async function handleRequest(req: Request): Promise<Response> {
     const alreadyFinalised = m.status === 'finished' && m.scorer_result != null
     if (result !== null && !alreadyFinalised) update.scorer_result = result
 
-    // À la fin du match : rappel "homme du match" aux admins (une seule fois).
-    // On marque toujours le rappel comme traité pour ne pas re-notifier, mais on
-    // ne notifie que si l'effectif existe (MOTM réellement sélectionnable).
-    if (finished && !m.motm_result && !m.motm_notified_at) {
+    // Vainqueur aux pénos : on l'inscrit dès qu'un match terminé est à égalité
+    // dans le score (une vraie séance a donc eu lieu), sans écraser une éventuelle
+    // correction admin déjà saisie.
+    if (finished && parsed.homeScore !== null && parsed.homeScore === parsed.awayScore
+        && parsed.penaltyWinner && m.penalty_winner == null) {
+      update.penalty_winner = parsed.penaltyWinner
+    }
+
+    // À la fin du match : on marque le rappel "homme du match" comme traité dès
+    // que le match est terminé — sinon, si l'admin a déjà choisi le MOTM, le
+    // champ resterait null et le match reviendrait indéfiniment dans les
+    // candidats (re-synchro + re-notification à chaque passage). On ne notifie
+    // les admins que si le MOTM n'est pas encore saisi et que l'effectif existe.
+    if (finished && !m.motm_notified_at) {
       update.motm_notified_at = new Date().toISOString()
-      if (homeRoster.length || awayRoster.length) motmReminders.push({ match: `${m.home} vs ${m.away}` })
+      if (!m.motm_result && (homeRoster.length || awayRoster.length)) motmReminders.push({ match: `${m.home} vs ${m.away}` })
     }
 
     if (Object.keys(update).length > 0) {
@@ -332,7 +375,10 @@ export async function handleRequest(req: Request): Promise<Response> {
       updated++
     }
 
-    if (finished) for (const name of unmatched) allUnmatched.push({ match: `${m.home} vs ${m.away}`, name })
+    // Alerte "buteur non reconnu" : uniquement au moment où l'on écrit réellement
+    // scorer_result (pas à chaque passage sur un match déjà finalisé), pour ne pas
+    // spammer les admins toutes les 5 min tant qu'une correction n'est pas faite.
+    if (finished && !alreadyFinalised) for (const name of unmatched) allUnmatched.push({ match: `${m.home} vs ${m.away}`, name })
   }
 
   // 6) Notifications admin : buteurs non reconnus + rappel "homme du match".

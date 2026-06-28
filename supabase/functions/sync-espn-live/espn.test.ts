@@ -19,6 +19,16 @@ Deno.test('resolveSquadName matches by surname, returns canonical roster name', 
   assertEquals(resolveSquadName('Unknown Player', roster), null)
 })
 
+Deno.test('resolveSquadName bridges Jr/Júnior abbreviations (squad "Vinicius JR" ↔ ESPN "Vinícius Júnior")', () => {
+  const roster = ['Vinicius JR', 'Matheus CUNHA', 'Raphinha']
+  // full name from ESPN, abbreviated suffix in squad → tier-1 exact after canonicalization
+  assertEquals(resolveSquadName('Vinícius Júnior', roster), 'Vinicius JR')
+  // abbreviated first name from ESPN → tier-2 surname after canonicalization
+  assertEquals(resolveSquadName('V. Júnior', roster), 'Vinicius JR')
+  // reverse direction (Jr. with trailing dot) also canonicalizes
+  assertEquals(surnameMatch('Vinícius Júnior', 'Vinicius Jr.'), true)
+})
+
 Deno.test('resolveSquadName falls back to substring match (tier 3) when exact and surname fail', () => {
   // 'Tchouameni' normalizes to 'tchouameni'; roster has 'Aurelien Tchouameni' → substring match
   // ESPN sends only the shortened version; it doesn't match exact ('aurelien tchouameni' ≠ 'tchouameni')
@@ -101,6 +111,31 @@ Deno.test('parseSummary excludes penalty-shootout goals (period 5)', () => {
   const p = parseSummary(summaryWithShootout)
   assertEquals(p.goals.length, 1)
   assertEquals(p.goals[0], { scorerName: 'K. Mbappé', side: 'home', minute: 34, isOwnGoal: false })
+})
+
+function shootoutSummary(homeC: any, awayC: any) {
+  return { header: { competitions: [{ status: { type: { state: 'post', completed: true } },
+    competitors: [{ id: 'H', homeAway: 'home', ...homeC }, { id: 'A', homeAway: 'away', ...awayC }], details: [] }] } }
+}
+
+Deno.test('parseSummary: penaltyWinner from ESPN winner flag (home)', () => {
+  const p = parseSummary(shootoutSummary({ score: '1', winner: true }, { score: '1', winner: false }))
+  assertEquals(p.penaltyWinner, 'home')
+})
+
+Deno.test('parseSummary: penaltyWinner from ESPN winner flag (away)', () => {
+  const p = parseSummary(shootoutSummary({ score: '2', winner: false }, { score: '2', winner: true }))
+  assertEquals(p.penaltyWinner, 'away')
+})
+
+Deno.test('parseSummary: penaltyWinner falls back to shootoutScore when no winner flag', () => {
+  const p = parseSummary(shootoutSummary({ score: '2', shootoutScore: '4' }, { score: '2', shootoutScore: '5' }))
+  assertEquals(p.penaltyWinner, 'away')
+})
+
+Deno.test('parseSummary: penaltyWinner null for a decisive result (no shootout)', () => {
+  const p = parseSummary(shootoutSummary({ score: '2' }, { score: '1' }))
+  assertEquals(p.penaltyWinner, null)
 })
 
 import { buildScorerResult } from './index.ts'
