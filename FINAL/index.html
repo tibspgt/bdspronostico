@@ -4971,9 +4971,8 @@ function renderMatchCard(m) {
         pickDisplay   = 'Pas de buteur';
         resultDisplay = isAucunRes ? 'Score vierge' : scorerResult;
       } else {
-        const scorers = scorerResult.split(',').map(s => s.trim().toLowerCase());
-        scored     = scorers.includes(scorerBet.pick_player_name.toLowerCase().trim());
-        earnedPts  = POS_PTS[scorerBet.pick_position] || 2;
+        earnedPts  = computeScorerPts(scorerBet.pick_player_name, scorerBet.pick_position, scorerResult, m.round);
+        scored     = earnedPts > 0;
         pickDisplay   = scorerBet.pick_player_name;
         resultDisplay = isAucunRes ? 'Score vierge' : scorerResult;
       }
@@ -5164,11 +5163,7 @@ function buildRankingEvolution() {
         if (mb && match.motm_result && mb.pick_player_name.toLowerCase().trim() === match.motm_result.toLowerCase().trim()) cum[player.id] += MOTM_PTS;
         const sb = state.scorerBets.find(b => b.player_id === player.id && b.match_id === match.id);
         if (sb && match.scorer_result) {
-          if (sb.pick_player_name === 'AUCUN_BUT' && match.scorer_result === 'AUCUN_BUT') cum[player.id] += 6;
-          else if (sb.pick_player_name !== 'AUCUN_BUT') {
-            const scorers = match.scorer_result.split(',').map(s => s.trim().toLowerCase());
-            if (scorers.includes(sb.pick_player_name.toLowerCase().trim())) cum[player.id] += PPTS[sb.pick_position] || 2;
-          }
+          cum[player.id] += computeScorerPts(sb.pick_player_name, sb.pick_position, match.scorer_result, match.round);
         }
       }
     }
@@ -5620,8 +5615,7 @@ function renderLiveMatchBlock(m) {
     const scorerBet = (state.scorerBets || []).find(b => b.player_id === player.id && b.match_id === m.id);
     let scorerPts = 0;
     if (scorerBet && m.scorer_result) {
-      if (scorerBet.pick_player_name === 'AUCUN_BUT') { if (m.scorer_result === 'AUCUN_BUT') scorerPts = 6; }
-      else { const sc = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); if (sc.includes(scorerBet.pick_player_name.toLowerCase().trim())) scorerPts = POS_PTS_LIVE[scorerBet.pick_position] || 2; }
+      scorerPts = computeScorerPts(scorerBet.pick_player_name, scorerBet.pick_position, m.scorer_result, m.round);
     }
     const totalPts = scorePts !== null ? scorePts + motmPts + scorerPts : null;
     return { player, hasPred: true, pred, scorePts, motmBet, motmOk, motmPts, scorerBet, scorerPts, totalPts };
@@ -6380,6 +6374,19 @@ function getMatchBonus(match) {
   if (isBigMatch(match)) return 1.5;
   if (isFunkyMatch(match)) return 1.25;
   return 1;
+}
+
+// Points buteur : à partir des seizièmes (round >= 4), multiplier par le nb de buts inscrits
+function computeScorerPts(pickName, pickPos, scorerResult, matchRound) {
+  const BASE = { GK: 30, DEF: 10, MID: 5, ATT: 2 };
+  if (!pickName || !scorerResult) return 0;
+  if (pickName === 'AUCUN_BUT') return scorerResult === 'AUCUN_BUT' ? 6 : 0;
+  if (scorerResult === 'AUCUN_BUT') return 0;
+  const base = BASE[pickPos] || 2;
+  const scorers = scorerResult.split(',').map(s => s.trim().toLowerCase());
+  const goals = scorers.filter(s => s === pickName.toLowerCase().trim()).length;
+  if (goals === 0) return 0;
+  return matchRound >= 4 ? base * goals : base;
 }
 
 function getOddsMultiplier(actual, match) {
