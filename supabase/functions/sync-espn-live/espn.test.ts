@@ -138,6 +138,29 @@ Deno.test('parseSummary: penaltyWinner null for a decisive result (no shootout)'
   assertEquals(p.penaltyWinner, null)
 })
 
+import { americanToDecimal, extractOdds } from './index.ts'
+
+Deno.test('americanToDecimal converts moneylines (favorite/underdog) and rejects junk', () => {
+  assertEquals(americanToDecimal(-125), 1.8)   // favori
+  assertEquals(americanToDecimal(230), 3.3)    // outsider
+  assertEquals(americanToDecimal(-650), 1.15)  // gros favori
+  assertEquals(americanToDecimal(null), null)
+  assertEquals(americanToDecimal(0), null)
+})
+
+Deno.test('extractOdds returns a complete 1N2 decimal triplet from pickcenter', () => {
+  const summary = { pickcenter: [{
+    homeTeamOdds: { moneyLine: -125 }, drawOdds: { moneyLine: 230 }, awayTeamOdds: { moneyLine: 450 },
+  }] }
+  assertEquals(extractOdds(summary), { home: 1.8, draw: 3.3, away: 5.5 })
+})
+
+Deno.test('extractOdds returns null when the triplet is incomplete or absent', () => {
+  assertEquals(extractOdds({ pickcenter: [{ homeTeamOdds: { moneyLine: -125 }, awayTeamOdds: { moneyLine: 450 } }] }), null)
+  assertEquals(extractOdds({ pickcenter: [] }), null)
+  assertEquals(extractOdds({}), null)
+})
+
 import { buildScorerResult } from './index.ts'
 import type { EspnGoal } from './index.ts'
 

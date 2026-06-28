@@ -255,6 +255,31 @@ export function findEventId(scoreboard: any, frHome: string, frAway: string): st
   return null
 }
 
+// Cote américaine (moneyline) → cote décimale, format utilisé par l'app.
+//   +M  → M/100 + 1   (outsider)   |   -M → 100/|M| + 1   (favori)
+export function americanToDecimal(ml: number | null | undefined): number | null {
+  if (ml === null || ml === undefined) return null
+  const m = Number(ml)
+  if (!Number.isFinite(m) || m === 0) return null
+  const dec = m > 0 ? m / 100 + 1 : 100 / Math.abs(m) + 1
+  return Math.round(dec * 100) / 100
+}
+
+// Extrait un triplet de cotes décimales {home, draw, away} du résumé ESPN.
+// On exige les trois moneylines (1N2 complet) ; sinon null → on réessaiera plus
+// tard (les cotes n'apparaissent qu'à l'approche du match).
+export function extractOdds(summary: any): { home: number; draw: number; away: number } | null {
+  const pc = summary?.pickcenter
+  if (!Array.isArray(pc)) return null
+  for (const o of pc) {
+    const home = americanToDecimal(o?.homeTeamOdds?.moneyLine)
+    const draw = americanToDecimal(o?.drawOdds?.moneyLine)
+    const away = americanToDecimal(o?.awayTeamOdds?.moneyLine)
+    if (home !== null && draw !== null && away !== null) return { home, draw, away }
+  }
+  return null
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 //  Serveur (synchro live)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -284,6 +309,33 @@ export async function handleRequest(req: Request): Promise<Response> {
     Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
   )
 
+  // 0) Verrouillage des cotes en phase finale. Dès qu'un match à élimination
+  //    directe connaît ses deux adversaires (plus de "TBD") et n'a pas encore de
+  //    cotes, on récupère les cotes ESPN une seule fois et on les fige : la cote
+  //    sert de multiplicateur de points, elle doit donc rester stable et connue
+  //    au moment où l'on parie. Une fois odds_home non nul, le match sort de cette
+  //    requête → jamais réécrit. Indépendant de la fenêtre de coup d'envoi (les
+  //    adversaires se décident souvent plusieurs jours avant).
+  let oddsLocked = 0
+  const { data: oddsPending } = await sb
+    .from('matches')
+    .select('id, espn_event_id')
+    .gte('round', 4)
+    .is('odds_home', null)
+    .not('home', 'eq', 'TBD')
+    .not('away', 'eq', 'TBD')
+    .not('espn_event_id', 'is', null)
+  for (const m of oddsPending ?? []) {
+    const summary = await espnJson(`${SB}/summary?event=${m.espn_event_id}`)
+    const odds = extractOdds(summary)
+    if (!odds) continue // cotes pas encore publiées → on réessaiera au prochain passage
+    await sb.from('matches').update({
+      odds_home: odds.home, odds_draw: odds.draw, odds_away: odds.away,
+      odds_updated_at: new Date().toISOString(),
+    }).eq('id', m.id)
+    oddsLocked++
+  }
+
   // 1) Matchs candidats : non terminés OU sans buteur enregistré OU dont le
   //    rappel "homme du match" n'a pas encore été envoyé aux admins.
   const { data: rows } = await sb
@@ -299,7 +351,7 @@ export async function handleRequest(req: Request): Promise<Response> {
   })
 
   if (candidates.length === 0) {
-    return new Response(JSON.stringify({ ok: true, checked: 0 }), {
+    return new Response(JSON.stringify({ ok: true, checked: 0, oddsLocked }), {
       headers: { ...CORS, 'Content-Type': 'application/json' },
     })
   }
@@ -406,7 +458,7 @@ export async function handleRequest(req: Request): Promise<Response> {
     }
   }
 
-  return new Response(JSON.stringify({ ok: true, checked: candidates.length, updated, unmatched: allUnmatched, motmReminders: motmReminders.length }), {
+  return new Response(JSON.stringify({ ok: true, checked: candidates.length, updated, oddsLocked, unmatched: allUnmatched, motmReminders: motmReminders.length }), {
     headers: { ...CORS, 'Content-Type': 'application/json' },
   })
 }
