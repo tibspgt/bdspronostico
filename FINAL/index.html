@@ -1284,10 +1284,11 @@
       pointer-events: none;
     }
 
-    /* ── Seizièmes de finale ×1.25 ── */
-    @keyframes r16-glow {
-      0%, 100% { color: var(--gold); border-bottom-color: rgba(255,208,96,0.3); }
-      50%       { color: var(--gold-bright); border-bottom-color: rgba(255,208,96,0.55); }
+    /* ── Seizièmes de finale ×1.25 — dégradé animé charte WC2026 ── */
+    @keyframes r16-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .r16-bonus-band {
       position: relative; overflow: hidden;
@@ -1296,18 +1297,24 @@
       font-family: 'Azeret Mono', monospace; font-size: 0.55rem;
       letter-spacing: 0.14em; text-transform: uppercase;
       background: linear-gradient(90deg,
-        rgba(255,160,0,0.18) 0%,
-        rgba(255,208,96,0.06) 50%,
-        rgba(255,160,0,0.18) 100%);
-      border-bottom: 1px solid rgba(255,208,96,0.3);
-      animation: r16-glow 2.5s ease-in-out infinite;
+        #E82020 0%,
+        #7B2FBE 22%,
+        #00B5A0 44%,
+        #9DC420 66%,
+        #E8A020 82%,
+        #E82020 100%);
+      background-size: 250% 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 10px rgba(0,0,0,0.7);
+      animation: r16-shift 6s ease-in-out infinite;
     }
     .r16-bonus-band::after {
       content: '';
       position: absolute; top: 0; left: 0;
       width: 40%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,208,96,0.12), transparent);
-      animation: band-sweep 3.5s ease-in-out infinite;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      animation: band-sweep 3s ease-in-out infinite;
       pointer-events: none;
     }
 
