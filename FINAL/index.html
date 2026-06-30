@@ -3194,7 +3194,7 @@
         <!-- BLOC 4 : BUTEUR -->
         <div style="background: var(--surface); border: 1px solid rgba(34,197,94,0.25); padding: 1.5rem; grid-row: span 2;">
           <div style="font-family: 'Azeret Mono', monospace; font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">04 — Par match</div>
-          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: rgba(34,197,94,0.9); margin-bottom: 1rem; letter-spacing: 0.04em;">⚽ BUTEUR</h3>
+          <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: rgba(34,197,94,0.9); margin-bottom: 1rem; letter-spacing: 0.04em;"><img src="icons/ball.png" alt="⚽" style="width:1.4rem;height:1.4rem;vertical-align:-0.25rem;display:inline-block;object-fit:contain;"> BUTEUR</h3>
           <p style="font-family: 'Barlow Condensed', sans-serif; color: var(--text-dim); font-size: 0.92rem; margin-bottom: 1rem; line-height: 1.5;">
             Parie sur le joueur qui va marquer. Plus le buteur est inattendu, plus les points sont élevés.
           </p>
@@ -3612,6 +3612,8 @@
 // ════════════════════════════════════════
 const LEAGUE_CODE   = 'CDM2026';
 
+const BALL_ICON = `<img src="icons/ball.png" alt="⚽" style="width:1em;height:1em;vertical-align:-0.15em;display:inline-block;object-fit:contain;">`;
+
 const WC2026_TEAMS = [
   // Hôtes
   { code:'us', name:'États-Unis' }, { code:'ca', name:'Canada' }, { code:'mx', name:'Mexique' },
@@ -3654,7 +3656,7 @@ function renderAvatar(code, avatarUrl) {
   if (code && /^[a-z]{2}(-[a-z]+)?$/.test(code)) {
     return `<img src="https://flagcdn.com/w40/${code}.png" alt="" />`;
   }
-  return code || '⚽';
+  return code || BALL_ICON;
 }
 
 function updateNavUser(player) {
@@ -5509,7 +5511,7 @@ function renderClassementFull() {
 const CATEGORY_BOARDS = [
   { key:'exact',       label:'Scores exacts',  icon:'🎯', color:'rgba(232,160,32,0.9)',  field:'exact',       unit:'exacts'     },
   { key:'motmOk',      label:'Homme du match', icon:'🟣', color:'rgba(168,85,247,0.9)',  field:'motmOk',      unit:'MOTM'       },
-  { key:'scorerCount', label:'Buteurs',        icon:'⚽', color:'rgba(16,192,224,0.9)',  field:'scorerCount', unit:'buteurs'    },
+  { key:'scorerCount', label:'Buteurs',        icon:BALL_ICON, color:'rgba(16,192,224,0.9)',  field:'scorerCount', unit:'buteurs'    },
   { key:'gap',         label:'Bon écart',      icon:'📏', color:'rgba(80,224,160,0.9)',  field:'gap',         unit:'écarts'     },
   { key:'win',         label:'Bon vainqueur',  icon:'✅', color:'rgba(120,150,240,0.9)', field:'win',         unit:'vainqueurs' },
 ];
@@ -5587,7 +5589,7 @@ function buildScorerSplit(scorerResult, homeTeam, awayTeam) {
   for (const name of [...new Set(names)]) {
     const nl = name.toLowerCase();
     const isHome = homeSquad.some(p => p.player_name.toLowerCase().includes(nl) || nl.includes(p.player_name.toLowerCase()));
-    const fmt = `${name} ${'⚽'.repeat(counts[name])}`;
+    const fmt = `${name} ${BALL_ICON.repeat(counts[name])}`;
     if (isHome) homeScorers.push(fmt);
     else awayScorers.push(fmt);
   }
@@ -5679,7 +5681,7 @@ function renderLiveMatchBlock(m) {
     if (row.totalPts === null) { ptsLabel = '?'; ptsColor = 'var(--text-muted)'; }
     else { ptsColor = row.totalPts === 0 ? '#CC4444' : row.totalPts < 2 ? '#D4B86A' : row.totalPts < 4 ? '#A8D87A' : '#2DB34A'; ptsLabel = row.totalPts === 0 ? '0' : (Number.isInteger(row.totalPts) ? `+${row.totalPts}` : `+${row.totalPts.toFixed(2)}`); }
     const motmLine = row.motmBet ? `<span style="color:${row.motmOk ? 'var(--gold)' : 'rgba(255,255,255,0.3)'};">⭐ ${row.motmBet.pick_player_name.split(' ').pop()}</span>` : '';
-    const scorerLine = row.scorerBet ? `<span style="color:${row.scorerPts > 0 ? 'var(--cyan-bright)' : 'rgba(255,255,255,0.3)'};">⚽ ${row.scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : row.scorerBet.pick_player_name.split(' ').pop()}</span>` : '';
+    const scorerLine = row.scorerBet ? `<span style="color:${row.scorerPts > 0 ? 'var(--cyan-bright)' : 'rgba(255,255,255,0.3)'};">${BALL_ICON} ${row.scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : row.scorerBet.pick_player_name.split(' ').pop()}</span>` : '';
     const chips = (motmLine || scorerLine) ? `<div style="display:flex;gap:0.5rem;margin-top:0.08rem;font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;">${motmLine}${scorerLine}</div>` : '';
     return `<div style="display:flex;align-items:center;padding:0.45rem 1.25rem;${border}${me}gap:0.75rem;">${avatarHtml}<div style="flex:1;min-width:0;"><div style="display:flex;align-items:baseline;gap:0.4rem;"><span style="font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;">${row.player.name}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:0.88rem;color:var(--text-muted);">${row.pred.score_home}—${row.pred.score_away}</span>${penPickLabel(row.pred, m)}</div>${chips}</div><span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;min-width:46px;text-align:right;color:${ptsColor};">${ptsLabel}<span style="font-size:0.6rem;opacity:0.65;margin-left:1px;">pts</span></span></div>`;
   }).join('');
@@ -6127,7 +6129,7 @@ function renderGroupes() {
           </div>
         </div>
         <span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:${rankColor};min-width:28px;text-align:right;">${p.goals}</span>
-        <span style="font-size:0.75rem;">⚽</span>
+        <span style="font-size:0.75rem;">${BALL_ICON}</span>
       </div>`;
     }).join('');
 
@@ -7626,7 +7628,7 @@ function adminLockSelectChange() {
   for (const s of scorers) scorerCounts[s] = (scorerCounts[s] || 0) + 1;
   const scorerTagsHtml = Object.entries(scorerCounts).map(([name, count]) =>
     `<span style="display:inline-flex;align-items:center;gap:0.3rem;font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;background:rgba(0,181,160,0.12);border:1px solid rgba(0,181,160,0.25);padding:0.15rem 0.5rem;">
-      ⚽ ${name}${count > 1 ? ` <span style="color:var(--cyan-bright);font-size:0.75rem;">×${count}</span>` : ''}
+      ${BALL_ICON} ${name}${count > 1 ? ` <span style="color:var(--cyan-bright);font-size:0.75rem;">×${count}</span>` : ''}
       <button onclick="adminRemoveScorer(${m.id},'${name.replace(/'/g, "\\'")}')" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.9rem;padding:0;line-height:1;">×</button>
     </span>`
   ).join('');
@@ -8841,7 +8843,7 @@ function buildProfileHTML(player, rank) {
     const scorerPickName = scorerBet ? (scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : scorerBet.pick_player_name) : null;
     const picksLine = (motmPickName || scorerPickName) ? `<div style="display:flex;gap:0.6rem;margin-top:0.15rem;flex-wrap:wrap;">
       ${motmPickName ? `<span style="font-family:'Azeret Mono',monospace;font-size:0.46rem;color:${motmPts>0?'var(--gold)':'rgba(255,255,255,0.25)'};">⭐ ${motmPickName} ${motmPts>0?'✓':'✗'}</span>` : ''}
-      ${scorerPickName ? `<span style="font-family:'Azeret Mono',monospace;font-size:0.46rem;color:${scorerPts>0?'var(--cyan-bright)':'rgba(255,255,255,0.25)'};">⚽ ${scorerPickName} ${scorerPts>0?'✓':'✗'}</span>` : ''}
+      ${scorerPickName ? `<span style="font-family:'Azeret Mono',monospace;font-size:0.46rem;color:${scorerPts>0?'var(--cyan-bright)':'rgba(255,255,255,0.25)'};">${BALL_ICON} ${scorerPickName} ${scorerPts>0?'✓':'✗'}</span>` : ''}
     </div>` : '';
     return `<div class="pp-bet-row" style="border-left-color:${ptsColor};">
       <div class="pp-bet-pts" style="color:${ptsColor};">${fmt(totalPts)}</div>
@@ -8932,7 +8934,7 @@ function buildProfileHTML(player, rank) {
               </div>
               ${(b.motmPick || b.scorerPick) ? `<div style="display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap;padding-top:0.2rem;border-top:1px solid rgba(255,255,255,0.05);">
                 ${b.motmPick ? `<span style="display:inline-flex;align-items:center;gap:0.25rem;font-family:'Azeret Mono',monospace;font-size:0.5rem;background:rgba(168,85,247,0.07);border:1px solid rgba(168,85,247,${b.motmOk ? '0.35' : '0.12'});padding:0.15rem 0.4rem;color:${b.motmOk ? 'rgba(168,85,247,0.95)' : 'var(--text-muted)'};">${b.motmOk ? '✓' : '✗'} MOTM · ${b.motmPick}</span>` : ''}
-                ${b.scorerPick ? `<span style="display:inline-flex;align-items:center;gap:0.25rem;font-family:'Azeret Mono',monospace;font-size:0.5rem;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,${b.scorerOk ? '0.35' : '0.12'});padding:0.15rem 0.4rem;color:${b.scorerOk ? 'var(--cyan-bright)' : 'var(--text-muted)'};">⚽ ${b.scorerOk ? '✓' : '✗'} · ${b.scorerPick}</span>` : ''}
+                ${b.scorerPick ? `<span style="display:inline-flex;align-items:center;gap:0.25rem;font-family:'Azeret Mono',monospace;font-size:0.5rem;background:rgba(6,182,212,0.07);border:1px solid rgba(6,182,212,${b.scorerOk ? '0.35' : '0.12'});padding:0.15rem 0.4rem;color:${b.scorerOk ? 'var(--cyan-bright)' : 'var(--text-muted)'};">${BALL_ICON} ${b.scorerOk ? '✓' : '✗'} · ${b.scorerPick}</span>` : ''}
               </div>` : ''}
             </div>
           </div>`;
