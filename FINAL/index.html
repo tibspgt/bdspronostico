@@ -5625,6 +5625,12 @@ function buildScorerLine(scorerResult, homeTeam, awayTeam, homeFlag, awayFlag) {
   return `<div style="margin-top:0.2rem;font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--cyan);opacity:0.75;">BUTEUR(S) — <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:600;opacity:1;color:var(--cyan-bright);">${parts}</span></div>`;
 }
 
+function penPickLabel(pred, m) {
+  if (!pred || pred.score_home !== pred.score_away || !pred.penalty_pick) return '';
+  const team = pred.penalty_pick === 'home' ? m.home : m.away;
+  return ` <span style="font-family:'Azeret Mono',monospace;font-size:0.55rem;color:var(--text-muted);opacity:0.7;">🥅${team}</span>`;
+}
+
 function renderLiveMatchBlock(m) {
   const liveScore = m.score_home != null ? { h: m.score_home, a: m.score_away } : null;
   const mult = liveScore ? getOddsMultiplier(liveScore, m) : null;
@@ -5675,7 +5681,7 @@ function renderLiveMatchBlock(m) {
     const motmLine = row.motmBet ? `<span style="color:${row.motmOk ? 'var(--gold)' : 'rgba(255,255,255,0.3)'};">⭐ ${row.motmBet.pick_player_name.split(' ').pop()}</span>` : '';
     const scorerLine = row.scorerBet ? `<span style="color:${row.scorerPts > 0 ? 'var(--cyan-bright)' : 'rgba(255,255,255,0.3)'};">⚽ ${row.scorerBet.pick_player_name === 'AUCUN_BUT' ? 'aucun but' : row.scorerBet.pick_player_name.split(' ').pop()}</span>` : '';
     const chips = (motmLine || scorerLine) ? `<div style="display:flex;gap:0.5rem;margin-top:0.08rem;font-family:'Barlow Condensed',sans-serif;font-size:0.78rem;">${motmLine}${scorerLine}</div>` : '';
-    return `<div style="display:flex;align-items:center;padding:0.45rem 1.25rem;${border}${me}gap:0.75rem;">${avatarHtml}<div style="flex:1;min-width:0;"><div style="display:flex;align-items:baseline;gap:0.4rem;"><span style="font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;">${row.player.name}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:0.88rem;color:var(--text-muted);">${row.pred.score_home}—${row.pred.score_away}</span></div>${chips}</div><span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;min-width:46px;text-align:right;color:${ptsColor};">${ptsLabel}<span style="font-size:0.6rem;opacity:0.65;margin-left:1px;">pts</span></span></div>`;
+    return `<div style="display:flex;align-items:center;padding:0.45rem 1.25rem;${border}${me}gap:0.75rem;">${avatarHtml}<div style="flex:1;min-width:0;"><div style="display:flex;align-items:baseline;gap:0.4rem;"><span style="font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;">${row.player.name}</span><span style="font-family:'Bebas Neue',sans-serif;font-size:0.88rem;color:var(--text-muted);">${row.pred.score_home}—${row.pred.score_away}</span>${penPickLabel(row.pred, m)}</div>${chips}</div><span style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;min-width:46px;text-align:right;color:${ptsColor};">${ptsLabel}<span style="font-size:0.6rem;opacity:0.65;margin-left:1px;">pts</span></span></div>`;
   }).join('');
 
   const scorerSplit = buildScorerSplit(m.scorer_result, m.home, m.away);
@@ -5786,7 +5792,7 @@ function renderArchives() {
           : `<span style="color:rgba(255,255,255,0.2);">· buteur ✗ (${bn})</span>`;
       }
 
-      return { player, total, ptsColor, ptsLabel, predScore: `${pred.score_home}—${pred.score_away}`, scoreChip, motmChip, scorerChip };
+      return { player, total, ptsColor, ptsLabel, predScore: `${pred.score_home}—${pred.score_away}${penPickLabel(pred, m)}`, scoreChip, motmChip, scorerChip };
     }).filter(Boolean).sort((a, b) => {
       if (a.noPred && !b.noPred) return 1;
       if (!a.noPred && b.noPred) return -1;
