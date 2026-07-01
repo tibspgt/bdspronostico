@@ -4242,7 +4242,7 @@ function formatMatchTime(matchTime) {
 }
 
 function formatMatchDate(m) {
-  const MONTHS_IN    = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,dec:12 };
+  const MONTHS_IN    = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,dec:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const MONTHS_SHORT = ['jan','fév','mars','avr','mai','juin','juil','août','sept','oct','nov','déc'];
   const dayMatch  = (m.day || '').match(/(\d+)\s+(\S+)/i);
   const timeMatch = (m.match_time || '00:00').match(/(\d+):(\d+)/);
@@ -4258,7 +4258,7 @@ function renderTicker() {
   const el = document.getElementById('ticker');
   if (!el) return;
 
-  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12 };
+  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const parseDay = m => {
     const mo = (m.day || '').match(/(\d+)\s+(\S+)/i);
     if (!mo) return 0;
@@ -4547,7 +4547,7 @@ function renderMatches() {
 
   if (state.matchSort === 'date') {
     // Parse "12 juin" → clé numérique pour tri correct
-    const MONTHS_NUM = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,dec:12 };
+    const MONTHS_NUM = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,dec:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
     const dayToNum = day => {
       const r = (day || '').match(/(\d+)\s+(\S+)/i);
       if (!r) return 99999;
@@ -5162,7 +5162,7 @@ function buildRankingEvolution() {
   const completed = state.matches.filter(m => m.status === 'finished' && m.score_home != null && m.score_away != null);
   if (completed.length < 2) return null;
 
-  const MONTHS = { jan:1,fév:2,févr:2,mars:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12 };
+  const MONTHS = { jan:1,fév:2,févr:2,mars:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,janvier:1,février:2,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const MNAMES = ['','jan','fév','mars','avr','mai','juin','juil','aoû','sep','oct','nov','déc'];
   const parseDate = m => { const mo = (m.day||'').match(/(\d+)\s+(\S+)/i); return mo ? (MONTHS[mo[2].toLowerCase()]||0)*100+parseInt(mo[1]) : 0; };
   const dateLabel = m => { const d = parseDate(m); return `${d%100} ${MNAMES[Math.floor(d/100)]}`; };
@@ -5716,7 +5716,7 @@ function renderArchives() {
   const container = document.getElementById('archives-container');
   if (!container) return;
 
-  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12 };
+  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const parseDay = m => {
     const mo = (m.day || '').match(/(\d+)\s+(\S+)/i);
     if (!mo) return 0;
@@ -5843,7 +5843,7 @@ function renderSidebarResults() {
   const container = document.getElementById('sidebar-results-rows');
   if (!container) return;
 
-  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12 };
+  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const parseDay = m => {
     const mo = (m.day||'').match(/(\d+)\s+(\S+)/i);
     if (!mo) return 0;
@@ -8768,7 +8768,7 @@ function closePlayerProfile() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeBracketLightbox(); closePlayerProfile(); } });
 
 function buildProfileHTML(player, rank) {
-  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12 };
+  const MONTHS = { jan:1,fév:2,févr:2,mar:3,avr:4,mai:5,juin:6,juil:7,aoû:8,aout:8,sep:9,oct:10,nov:11,déc:12,janvier:1,février:2,mars:3,avril:4,juillet:7,août:8,septembre:9,octobre:10,novembre:11,décembre:12 };
   const parseDay = m => { const mo = (m.day||'').match(/(\d+)\s+(\S+)/i); return mo ? (MONTHS[mo[2].toLowerCase()]||0)*100+parseInt(mo[1]) : 0; };
   const rankColor = rank === 1 ? '#FFD700' : rank === 2 ? '#C0C0C0' : rank === 3 ? '#CD7F32' : 'var(--text-muted)';
   const rankDisplay = rank <= 3 ? ['🥇','🥈','🥉'][rank-1] : `#${rank}`;
