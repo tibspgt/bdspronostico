@@ -4648,6 +4648,29 @@ function renderMatches() {
   toRestore.forEach(matchId => { updatePotentialPts(matchId); updatePenaltyPicker(matchId); });
 }
 
+function renderMatchConsensus(m) {
+  if (!(m.status === 'live' || m.status === 'finished')) return '';
+  const c = Consensus.computeMatchConsensus({
+    matchId: m.id,
+    match: m,
+    predictions: state.allPredictions,
+    scorerBets: state.scorerBets,
+    motmBets: state.motmBets,
+  });
+  if (c.n === 0) return '';
+  const flag = code => code ? `<img src="https://flagcdn.com/w20/${code}.png" style="height:10px;border-radius:1px;vertical-align:middle;">` : '';
+  const dist = `${flag(m.home_flag)} ${c.outcomeDist.home}% <span style="opacity:0.3;">·</span> Nul ${c.outcomeDist.draw}% <span style="opacity:0.3;">·</span> ${flag(m.away_flag)} ${c.outcomeDist.away}%`;
+  const scorerLine = c.topScorer ? `🔥 ${c.topScorer.name} (${c.topScorer.count})` : '';
+  const motmLine   = c.topMotm ? `🟣 ${c.topMotm.name} (${c.topMotm.count})` : '';
+  const extra = [scorerLine, motmLine].filter(Boolean).join('<span style="opacity:0.3;margin:0 0.4rem;">·</span>');
+  return `
+    <div style="border-top:1px solid var(--border-soft);padding:0.55rem 0.9rem;">
+      <div style="font-family:'Azeret Mono',monospace;font-size:0.52rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:0.3rem;">Consensus du groupe · ${c.n} pronostic${c.n > 1 ? 's' : ''}</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;color:var(--text);">${dist}</div>
+      ${extra ? `<div style="font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;color:var(--text-muted);margin-top:0.2rem;">${extra}</div>` : ''}
+    </div>`;
+}
+
 function renderMatchCard(m) {
   // Résolution des équipes pour les phases finales (TBD → règle lisible)
   let homeLabel = m.home, awayLabel = m.away;
@@ -5135,6 +5158,7 @@ function renderMatchCard(m) {
       ${oddsHtml}
       ${predHtml}
       ${(motmHtml || scorerHtml) ? `<div class="bets-row">${motmHtml}${scorerHtml}</div>` : ''}
+      ${renderMatchConsensus(m)}
     </div>`;
 }
 
