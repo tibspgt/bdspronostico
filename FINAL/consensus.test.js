@@ -64,7 +64,6 @@ test('computeTeamWinBelief counts predicted winners, skips draws and TBD', () =>
 });
 
 test('computeMatchConsensus computes distribution and top picks for one match', () => {
-  const match = { id: 1, home: 'France', away: 'Brésil' };
   const predictions = [
     { match_id: 1, score_home: 2, score_away: 0 },
     { match_id: 1, score_home: 1, score_away: 0 },
@@ -78,7 +77,7 @@ test('computeMatchConsensus computes distribution and top picks for one match', 
     { match_id: 1, pick_player_name: 'AUCUN_BUT' },
   ];
   const motmBets = [{ match_id: 1, pick_player_name: 'Griezmann' }];
-  const res = C.computeMatchConsensus({ matchId: 1, match, predictions, scorerBets, motmBets });
+  const res = C.computeMatchConsensus({ matchId: 1, predictions, scorerBets, motmBets });
   assert.strictEqual(res.n, 4);
   assert.deepStrictEqual(res.outcomeDist, { home: 50, draw: 25, away: 25 });
   assert.deepStrictEqual(res.topScorer, { name: 'Mbappé', count: 2 });
@@ -86,9 +85,32 @@ test('computeMatchConsensus computes distribution and top picks for one match', 
 });
 
 test('computeMatchConsensus with no predictions returns zeros and nulls', () => {
-  const res = C.computeMatchConsensus({ matchId: 99, match: { id: 99, home: 'A', away: 'B' }, predictions: [], scorerBets: [], motmBets: [] });
+  const res = C.computeMatchConsensus({ matchId: 99, predictions: [], scorerBets: [], motmBets: [] });
   assert.strictEqual(res.n, 0);
   assert.deepStrictEqual(res.outcomeDist, { home: 0, draw: 0, away: 0 });
   assert.strictEqual(res.topScorer, null);
   assert.strictEqual(res.topMotm, null);
+});
+
+test('computeTopPicks truncates to the limit (default 5, explicit, and 0)', () => {
+  const bets = ['A','A','A','A','A','A','B','B','B','B','B','C','C','C','C','D','D','D','E','E','F']
+    .map(n => ({ pick_player_name: n }));
+  // Counts: A=6, B=5, C=4, D=3, E=2, F=1 → 6 distinct names.
+  // Default limit 5 drops the lowest (F).
+  assert.deepStrictEqual(C.computeTopPicks(bets).map(x => x.name), ['A', 'B', 'C', 'D', 'E']);
+  // Explicit limit truncates further.
+  assert.deepStrictEqual(C.computeTopPicks(bets, 2), [
+    { name: 'A', count: 6 },
+    { name: 'B', count: 5 },
+  ]);
+  // limit 0 means empty, not "no limit".
+  assert.deepStrictEqual(C.computeTopPicks(bets, 0), []);
+});
+
+test('computeTeamWinBelief truncates to the limit', () => {
+  const matches = Array.from({ length: 10 }, (_, i) => ({ id: i + 1, home: 'T' + (i + 1), away: 'X' }));
+  const predictions = matches.map(m => ({ match_id: m.id, score_home: 1, score_away: 0 }));
+  // 10 distinct winning teams; default limit 8 caps the list.
+  assert.strictEqual(C.computeTeamWinBelief(predictions, matches).length, 8);
+  assert.strictEqual(C.computeTeamWinBelief(predictions, matches, 3).length, 3);
 });

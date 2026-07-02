@@ -4652,7 +4652,6 @@ function renderMatchConsensus(m) {
   if (!(m.status === 'live' || m.status === 'finished')) return '';
   const c = Consensus.computeMatchConsensus({
     matchId: m.id,
-    match: m,
     predictions: state.allPredictions,
     scorerBets: state.scorerBets,
     motmBets: state.motmBets,

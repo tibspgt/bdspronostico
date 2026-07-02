@@ -29,7 +29,7 @@
       .map(b => b.pick_player_name)
       .filter(n => n && n !== 'AUCUN_BUT');
     const ranked = tally(names);
-    return limit ? ranked.slice(0, limit) : ranked;
+    return Number.isFinite(limit) ? ranked.slice(0, limit) : ranked;
   }
 
   // Tournament-winner votes from special_bets (category 'vainqueur').
@@ -78,10 +78,11 @@
     const ranked = [...votes.entries()]
       .map(([team, winVotes]) => ({ team, winVotes }))
       .sort((a, b) => b.winVotes - a.winVotes || a.team.localeCompare(b.team, 'fr'));
-    return limit ? ranked.slice(0, limit) : ranked;
+    return Number.isFinite(limit) ? ranked.slice(0, limit) : ranked;
   }
 
   // Per-match consensus: outcome distribution (integer %) + top scorer/MOTM pick.
+  // (No `match` object needed — outputs are keyed by side, not team name.)
   function computeMatchConsensus({ matchId, predictions, scorerBets, motmBets }) {
     const preds = (predictions || []).filter(
       p => p.match_id === matchId && p.score_home != null && p.score_away != null
