@@ -3599,6 +3599,7 @@
 <div class="toast-container" id="toasts"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="consensus.js"></script>
 <script>
 // ════════════════════════════════════════
 //  SUPABASE CLIENT
@@ -3892,6 +3893,7 @@ let state = {
   draftMotm:      {},
   draftScorer:    {},
   expandedCategories: new Set(), // classements spéciaux dépliés
+  classementSubtab: 'classement', // sous-onglet actif de l'onglet Classement
 };
 
 // ════════════════════════════════════════
@@ -5466,35 +5468,65 @@ async function renderEvolutionChart() {
 // ─────────────────────────────────────────────────────────────────────────────
 
 
+function renderConsensus() {
+  return '<div style="background:var(--surface);border:1px solid var(--border-soft);padding:1.5rem;margin-top:1rem;font-family:\'Barlow Condensed\',sans-serif;color:var(--text-muted);">Consensus à venir…</div>';
+}
+
 function renderClassementFull() {
-  const sorted = getSortedPlayers();
-
-  let html = '<div style="background:var(--surface);border:1px solid var(--border-soft);">';
-  if (sorted.length === 0) {
-    html += '<div class="empty-state" style="padding:2rem;"><div class="empty-title">Aucun joueur</div><div class="empty-text">Rejoins la ligue pour apparaître ici</div></div>';
-  } else {
-    sorted.forEach((p, i) => { html += renderLbRow(p, i + 1, true); });
-  }
-  html += '</div>';
-
-  html += renderCategoryLeaderboards();
-
-  html += `
-    <div style="background:var(--surface);border:1px solid var(--border-soft);padding:1.5rem;margin-top:1rem;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
-        <div>
-          <div style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">Évolution du tournoi</div>
-          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.04em;margin:0;">TRAJECTOIRES</h3>
-        </div>
-        <span id="chart-mode-badge" style="font-family:'Azeret Mono',monospace;font-size:0.52rem;background:rgba(255,255,255,0.03);border:1px solid var(--border-soft);padding:0.25rem 0.65rem;"></span>
-      </div>
-      <div style="position:relative;height:420px;">
-        <canvas id="evolution-chart"></canvas>
-      </div>
+  const sub = state.classementSubtab || 'classement';
+  const tabs = [
+    { key: 'classement', label: 'Classement' },
+    { key: 'stats',      label: 'Stats joueurs' },
+    { key: 'consensus',  label: 'Pronostics du groupe' },
+  ];
+  const nav = `
+    <div style="display:flex;gap:0.4rem;margin-bottom:1rem;flex-wrap:wrap;">
+      ${tabs.map(t => `
+        <button onclick="setClassementSubtab('${t.key}')" style="
+          flex:1;min-width:90px;padding:0.6rem 0.5rem;cursor:pointer;
+          font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;
+          letter-spacing:0.03em;text-transform:uppercase;border-radius:6px;
+          background:${sub === t.key ? 'var(--gold)' : 'rgba(255,255,255,0.03)'};
+          color:${sub === t.key ? '#000' : 'var(--text-muted)'};
+          border:1px solid ${sub === t.key ? 'var(--gold)' : 'var(--border-soft)'};">${t.label}</button>`).join('')}
     </div>`;
 
-  document.getElementById('classement-full').innerHTML = html;
-  setTimeout(renderEvolutionChart, 0);
+  let body = '';
+  if (sub === 'classement') {
+    const sorted = getSortedPlayers();
+    let lb = '<div style="background:var(--surface);border:1px solid var(--border-soft);">';
+    if (sorted.length === 0) {
+      lb += '<div class="empty-state" style="padding:2rem;"><div class="empty-title">Aucun joueur</div><div class="empty-text">Rejoins la ligue pour apparaître ici</div></div>';
+    } else {
+      sorted.forEach((p, i) => { lb += renderLbRow(p, i + 1, true); });
+    }
+    lb += '</div>';
+    body = lb + `
+      <div style="background:var(--surface);border:1px solid var(--border-soft);padding:1.5rem;margin-top:1rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;">
+          <div>
+            <div style="font-family:'Azeret Mono',monospace;font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem;">Évolution du tournoi</div>
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);letter-spacing:0.04em;margin:0;">TRAJECTOIRES</h3>
+          </div>
+          <span id="chart-mode-badge" style="font-family:'Azeret Mono',monospace;font-size:0.52rem;background:rgba(255,255,255,0.03);border:1px solid var(--border-soft);padding:0.25rem 0.65rem;"></span>
+        </div>
+        <div style="position:relative;height:420px;">
+          <canvas id="evolution-chart"></canvas>
+        </div>
+      </div>`;
+  } else if (sub === 'stats') {
+    body = renderCategoryLeaderboards();
+  } else {
+    body = renderConsensus();
+  }
+
+  document.getElementById('classement-full').innerHTML = nav + body;
+  if (sub === 'classement') setTimeout(renderEvolutionChart, 0);
+}
+
+function setClassementSubtab(key) {
+  state.classementSubtab = key;
+  renderClassementFull();
 }
 
 // ── CLASSEMENTS SPÉCIAUX (par catégorie) ─────────────────────────────────────
