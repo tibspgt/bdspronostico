@@ -5881,9 +5881,8 @@ function renderArchives() {
           scorerPts = 6;
         } else if (scorerBet.pick_player_name !== 'AUCUN_BUT') {
           const scorers = m.scorer_result.split(',').map(s => s.trim().toLowerCase());
-          if (scorers.includes(scorerBet.pick_player_name.toLowerCase().trim())) {
-            scorerPts = POS_PTS_AR[scorerBet.pick_position] || 2;
-          }
+          const goals = scorers.filter(s => s === scorerBet.pick_player_name.toLowerCase().trim()).length;
+          if (goals > 0) scorerPts = (POS_PTS_AR[scorerBet.pick_position] || 2) * goals;
         }
       }
 
@@ -6553,7 +6552,7 @@ function computeScorerPts(pickName, pickPos, scorerResult, matchRound) {
   const scorers = scorerResult.split(',').map(s => s.trim().toLowerCase());
   const goals = scorers.filter(s => s === pickName.toLowerCase().trim()).length;
   if (goals === 0) return 0;
-  return matchRound >= 4 ? base * goals : base;
+  return base * goals;
 }
 
 function getOddsMultiplier(actual, match) {
@@ -6650,9 +6649,8 @@ function getScorerPoints(playerId) {
       if (m.scorer_result === 'AUCUN_BUT') pts += 6;
     } else {
       const scorers = m.scorer_result.split(',').map(s => s.trim().toLowerCase());
-      if (scorers.includes(bet.pick_player_name.toLowerCase().trim())) {
-        pts += POS_PTS[bet.pick_position] || 2;
-      }
+      const goals = scorers.filter(s => s === bet.pick_player_name.toLowerCase().trim()).length;
+      if (goals > 0) pts += (POS_PTS[bet.pick_position] || 2) * goals;
     }
   }
   return pts;
@@ -8088,7 +8086,7 @@ function matchPointsForPlayer(player, m) {
   const sBet = state.scorerBets.find(b => b.player_id === player.id && b.match_id === m.id);
   if (sBet && m.scorer_result) {
     if (sBet.pick_player_name === 'AUCUN_BUT') { if (m.scorer_result === 'AUCUN_BUT') pts += 6; }
-    else { const sc = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); if (sc.includes(sBet.pick_player_name.toLowerCase().trim())) pts += POS_PTS[sBet.pick_position] || 2; }
+    else { const sc = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); const _g = sc.filter(s => s === sBet.pick_player_name.toLowerCase().trim()).length; if (_g > 0) pts += (POS_PTS[sBet.pick_position] || 2) * _g; }
   }
   return Math.round(pts * 100) / 100;
 }
@@ -8215,7 +8213,8 @@ function adminPredCorrUpdate() {
       if (match.scorer_result === 'AUCUN_BUT') currentScorerPts = 6;
     } else {
       const sc = match.scorer_result.split(',').map(s => s.trim().toLowerCase());
-      if (sc.includes(existingScorer.pick_player_name.toLowerCase().trim())) currentScorerPts = POS_PTS[existingScorer.pick_position] || 2;
+      const _g = sc.filter(s => s === existingScorer.pick_player_name.toLowerCase().trim()).length;
+      if (_g > 0) currentScorerPts = (POS_PTS[existingScorer.pick_position] || 2) * _g;
     }
   }
 
@@ -8912,7 +8911,7 @@ function buildProfileHTML(player, rank) {
     let sc = 0;
     if (sb2 && m.scorer_result) {
       if (sb2.pick_player_name === 'AUCUN_BUT') { if (m.scorer_result === 'AUCUN_BUT') sc = 6; }
-      else { const sc2 = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); if (sc2.includes(sb2.pick_player_name.toLowerCase().trim())) sc = POS_PTS_PP[sb2.pick_position] || 2; }
+      else { const sc2 = m.scorer_result.split(',').map(s => s.trim().toLowerCase()); const _g = sc2.filter(s => s === sb2.pick_player_name.toLowerCase().trim()).length; if (_g > 0) sc = (POS_PTS_PP[sb2.pick_position] || 2) * _g; }
     }
     return sp + mp + sc;
   });
@@ -8941,7 +8940,8 @@ function buildProfileHTML(player, rank) {
         if (m.scorer_result === 'AUCUN_BUT') scorerPts = 6;
       } else {
         const scorers = m.scorer_result.split(',').map(s => s.trim().toLowerCase());
-        if (scorers.includes(scorerBet.pick_player_name.toLowerCase().trim())) scorerPts = POS_PTS_PP[scorerBet.pick_position] || 2;
+        const goals = scorers.filter(s => s === scorerBet.pick_player_name.toLowerCase().trim()).length;
+        if (goals > 0) scorerPts = (POS_PTS_PP[scorerBet.pick_position] || 2) * goals;
       }
     }
 
