@@ -1284,10 +1284,11 @@
       pointer-events: none;
     }
 
-    /* ── Quarts / Demis / Finale ×2 ── */
-    @keyframes qf-band-glow {
-      0%,100% { color: #FFD700; text-shadow: 0 0 4px rgba(255,210,0,0.25); border-bottom-color: rgba(255,200,0,0.35); }
-      50%      { color: #FFF3A0; text-shadow: 0 0 14px rgba(255,230,50,0.7), 0 0 28px rgba(255,200,0,0.25); border-bottom-color: rgba(255,230,50,0.6); }
+    /* ── Quarts de finale — dégradé WC2026 ── */
+    @keyframes qf-band-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     .qf-match-band {
       position: relative; overflow: hidden;
@@ -1296,20 +1297,25 @@
       font-family: 'Azeret Mono', monospace; font-size: 0.55rem;
       letter-spacing: 0.14em; text-transform: uppercase;
       background: linear-gradient(90deg,
-        rgba(120,85,0,0.65) 0%,
-        rgba(160,115,0,0.30) 30%,
-        rgba(200,155,0,0.18) 50%,
-        rgba(160,115,0,0.30) 70%,
-        rgba(120,85,0,0.65) 100%);
-      border-bottom: 1px solid rgba(255,200,0,0.35);
-      animation: qf-band-glow 2.2s ease-in-out infinite;
+        #E82020 0%,
+        #C030A0 18%,
+        #7B2FBE 34%,
+        #00B5A0 50%,
+        #9DC420 66%,
+        #E8A020 82%,
+        #E82020 100%);
+      background-size: 250% 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 10px rgba(0,0,0,0.7);
+      animation: qf-band-shift 6s ease-in-out infinite;
     }
     .qf-match-band::after {
       content: '';
       position: absolute; top: 0; left: 0;
       width: 40%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,230,80,0.18), transparent);
-      animation: band-sweep 2.8s ease-in-out infinite;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      animation: band-sweep 3s ease-in-out infinite;
       pointer-events: none;
     }
 
@@ -5247,8 +5253,8 @@ function renderMatchCard(m) {
   }
 
   const franceBadge = isFranceMatch(m)
-    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round >= 5 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
-    : m.round >= 5
+    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round === 5 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
+    : m.round === 5
     ? `<div class="qf-match-band">🏆 QUARTS DE FINALE · ×2 SUR TOUS LES SCORES</div>`
     : isOpeningMatch(m)
     ? `<div class="opening-bonus-band"><img src="https://flagcdn.com/w20/mx.png" style="height:11px;border-radius:1px;flex-shrink:0;"> MATCH D'OUVERTURE MEXIQUE · POINTS × 1.5</div>`
