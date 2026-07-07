@@ -2002,19 +2002,28 @@
     }
 
     /* ── BANDEAU QUARTS DE FINALE ── */
+    @keyframes qf-banner-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     .qf-banner {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #0e0b00 0%, #1c1400 35%, #110e00 65%, #0e0b00 100%);
-      border-top: 1px solid rgba(255,198,60,0.55);
-      border-bottom: 1px solid rgba(255,198,60,0.35);
+      background: linear-gradient(90deg,
+        #E82020 0%, #C030A0 16%, #7B2FBE 32%,
+        #00B5A0 50%,
+        #9DC420 66%, #E8A020 82%, #E82020 100%);
+      background-size: 250% 100%;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       padding: 0.95rem 1.5rem 1rem;
       text-align: center;
-      animation: qf-glow 3.5s ease-in-out infinite;
+      animation: qf-banner-shift 7s ease-in-out infinite;
     }
     .qf-banner-shimmer {
       position: absolute; inset: 0;
-      background: linear-gradient(90deg,transparent 0%,rgba(255,215,0,0.07) 38%,rgba(255,235,110,0.22) 50%,rgba(255,215,0,0.07) 62%,transparent 100%);
+      background: linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.12) 45%,rgba(255,255,255,0.28) 50%,rgba(255,255,255,0.12) 55%,transparent 100%);
       background-size: 220% 100%;
       animation: qf-shimmer 2.8s ease-in-out infinite;
       pointer-events: none;
@@ -2025,7 +2034,7 @@
     }
     .qf-trophy {
       font-size: 1.9rem;
-      filter: drop-shadow(0 0 10px rgba(255,198,60,0.8));
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
       animation: qf-float 2.2s ease-in-out infinite alternate;
     }
     .qf-trophy:last-child { animation-delay: 0.6s; }
@@ -2034,24 +2043,22 @@
       font-size: 2rem;
       letter-spacing: 0.14em;
       line-height: 1;
-      background: linear-gradient(90deg, #b87a00 0%, #ffe066 25%, #FFD700 50%, #ffe066 75%, #b87a00 100%);
-      background-size: 220% 100%;
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: qf-text-shine 2.8s linear infinite;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6), 0 0 20px rgba(0,0,0,0.4);
     }
     .qf-sub {
       font-family: 'Azeret Mono', monospace;
       font-size: 0.58rem;
       letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: rgba(255,198,60,0.65);
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
       margin-top: 0.28rem;
     }
     .qf-banner-stars { position: absolute; inset: 0; pointer-events: none; }
     .qf-banner-stars span {
       position: absolute;
-      color: rgba(255,215,0,0.5);
+      color: rgba(255,255,255,0.6);
       font-size: 0.55rem;
       animation: qf-star 3s ease-in-out infinite;
     }
@@ -2063,32 +2070,19 @@
     .qf-banner-stars span:nth-child(6){top:70%;left:55%;animation-delay:1.6s;font-size:0.45rem}
     .qf-banner-line {
       position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, #FFD700 20%, #fff8c0 50%, #FFD700 80%, transparent);
-      animation: qf-line-pulse 3.5s ease-in-out infinite;
+      background: rgba(255,255,255,0.3);
     }
     @keyframes qf-shimmer {
       0%   { background-position: -220% 0; }
       100% { background-position: 220% 0; }
     }
-    @keyframes qf-glow {
-      0%,100% { box-shadow: 0 0 28px rgba(255,198,60,0.10), inset 0 0 40px rgba(255,198,60,0.03); }
-      50%      { box-shadow: 0 0 60px rgba(255,198,60,0.22), inset 0 0 80px rgba(255,198,60,0.08); }
-    }
     @keyframes qf-float {
       from { transform: translateY(0); }
       to   { transform: translateY(-5px); }
     }
-    @keyframes qf-text-shine {
-      0%   { background-position: -220% 0; }
-      100% { background-position: 220% 0; }
-    }
     @keyframes qf-star {
       0%,100% { opacity: 0.15; transform: scale(0.9); }
       50%      { opacity: 1;    transform: scale(1.6); }
-    }
-    @keyframes qf-line-pulse {
-      0%,100% { opacity: 0.45; }
-      50%      { opacity: 1; }
     }
     @media (max-width: 600px) {
       .qf-title  { font-size: 1.45rem; }
@@ -5253,8 +5247,8 @@ function renderMatchCard(m) {
   }
 
   const franceBadge = isFranceMatch(m)
-    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round === 5 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
-    : m.round === 5
+    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round === 6 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
+    : m.round === 6
     ? `<div class="qf-match-band">🏆 QUARTS DE FINALE · ×2 SUR TOUS LES SCORES</div>`
     : isOpeningMatch(m)
     ? `<div class="opening-bonus-band"><img src="https://flagcdn.com/w20/mx.png" style="height:11px;border-radius:1px;flex-shrink:0;"> MATCH D'OUVERTURE MEXIQUE · POINTS × 1.5</div>`
