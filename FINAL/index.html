@@ -1284,6 +1284,35 @@
       pointer-events: none;
     }
 
+    /* ── Quarts / Demis / Finale ×2 ── */
+    @keyframes qf-band-glow {
+      0%,100% { color: #FFD700; text-shadow: 0 0 4px rgba(255,210,0,0.25); border-bottom-color: rgba(255,200,0,0.35); }
+      50%      { color: #FFF3A0; text-shadow: 0 0 14px rgba(255,230,50,0.7), 0 0 28px rgba(255,200,0,0.25); border-bottom-color: rgba(255,230,50,0.6); }
+    }
+    .qf-match-band {
+      position: relative; overflow: hidden;
+      height: 28px; padding: 0 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Azeret Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: linear-gradient(90deg,
+        rgba(120,85,0,0.65) 0%,
+        rgba(160,115,0,0.30) 30%,
+        rgba(200,155,0,0.18) 50%,
+        rgba(160,115,0,0.30) 70%,
+        rgba(120,85,0,0.65) 100%);
+      border-bottom: 1px solid rgba(255,200,0,0.35);
+      animation: qf-band-glow 2.2s ease-in-out infinite;
+    }
+    .qf-match-band::after {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 40%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,230,80,0.18), transparent);
+      animation: band-sweep 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
     /* ── Seizièmes de finale ×1.25 — dégradé animé charte WC2026 ── */
     @keyframes r16-shift {
       0%   { background-position: 0% 50%; }
@@ -3075,7 +3104,7 @@
     <span class="qf-trophy">🏆</span>
     <div>
       <div class="qf-title">QUARTS DE FINALE</div>
-      <div class="qf-sub">×2 sur tous les scores &nbsp;·&nbsp; Les 8 derniers matchs de la compétition</div>
+      <div class="qf-sub">×2 sur tous les scores</div>
     </div>
     <span class="qf-trophy">🏆</span>
   </div>
@@ -5218,7 +5247,9 @@ function renderMatchCard(m) {
   }
 
   const franceBadge = isFranceMatch(m)
-    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS</div>`
+    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS${m.round >= 5 ? ' · ×2 MOTM & BUTEURS' : ''}</div>`
+    : m.round >= 5
+    ? `<div class="qf-match-band">🏆 QUARTS DE FINALE · ×2 SUR TOUS LES SCORES</div>`
     : isOpeningMatch(m)
     ? `<div class="opening-bonus-band"><img src="https://flagcdn.com/w20/mx.png" style="height:11px;border-radius:1px;flex-shrink:0;"> MATCH D'OUVERTURE MEXIQUE · POINTS × 1.5</div>`
     : isCanadaOpeningMatch(m)
