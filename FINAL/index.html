@@ -1304,14 +1304,7 @@
       text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 10px rgba(0,0,0,0.7);
       animation: qf-band-shift 6s ease-in-out infinite;
     }
-    .qf-match-band::after {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 40%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
-      animation: band-sweep 3s ease-in-out infinite;
-      pointer-events: none;
-    }
+    .qf-match-band::after { display: none; }
 
     /* ── Seizièmes de finale ×1.25 — dégradé animé charte WC2026 ── */
     @keyframes r16-shift {
@@ -2013,13 +2006,7 @@
       text-align: center;
       animation: qf-banner-shift 7s ease-in-out infinite;
     }
-    .qf-banner-shimmer {
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.12) 45%,rgba(255,255,255,0.28) 50%,rgba(255,255,255,0.12) 55%,transparent 100%);
-      background-size: 220% 100%;
-      animation: qf-shimmer 2.8s ease-in-out infinite;
-      pointer-events: none;
-    }
+    .qf-banner-shimmer { display: none; }
     .qf-banner-content {
       position: relative;
       display: flex; align-items: center; justify-content: center; gap: 1rem;
