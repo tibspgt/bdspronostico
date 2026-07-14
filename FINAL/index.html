@@ -4593,7 +4593,7 @@ function renderTournamentProgress() {
 function renderPhaseBanner() {
   const el = document.getElementById('phase-banner');
   if (!el) return;
-  const active = state.matches.filter(m => m.score_home == null || m.status === 'live');
+  const active = state.matches.filter(m => (m.score_home == null || m.status === 'live') && m.round !== 8);
   if (active.length === 0) { el.innerHTML = ''; return; }
   const minRound = Math.min(...active.map(m => m.round));
   const stars = `<div class="qf-banner-stars">
@@ -4615,7 +4615,7 @@ function renderPhaseBanner() {
         <div><div class="sf-title">DEMI-FINALES</div><div class="sf-sub">×2 sur tous les points</div></div>
         <span class="sf-trophy">🏆</span>
       </div><div class="qf-banner-line"></div></div>`;
-  } else if (minRound >= 8) {
+  } else if (minRound === 9) {
     el.innerHTML = `<div class="final-banner">
       ${stars}
       <div class="qf-banner-content">
@@ -5367,9 +5367,11 @@ function renderMatchCard(m) {
       </div>`;
   }
 
-  const franceBadge = isFranceMatch(m)
-    ? `<div class="${m.round >= 8 ? 'final-match-band' : m.round === 7 ? 'sf-match-band' : 'france-bonus-band'}"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round >= 8 ? 'FRANCE EN FINALE · ×2 TOUT' : m.round === 7 ? 'FRANCE EN DEMI · ×2 TOUT' : m.round === 6 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
-    : m.round >= 8
+  const franceBadge = m.round === 8
+    ? ''
+    : isFranceMatch(m)
+    ? `<div class="${m.round === 9 ? 'final-match-band' : m.round === 7 ? 'sf-match-band' : 'france-bonus-band'}"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round === 9 ? 'FRANCE EN FINALE · ×2 TOUT' : m.round === 7 ? 'FRANCE EN DEMI · ×2 TOUT' : m.round === 6 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
+    : m.round === 9
     ? `<div class="final-match-band">🏆 FINALE · ×2 SUR TOUS LES POINTS</div>`
     : m.round === 7
     ? `<div class="sf-match-band">🏆 DEMI-FINALES · ×2 SUR TOUS LES POINTS</div>`
@@ -6794,8 +6796,8 @@ function isBigMatch(match) {
 }
 
 function getMatchBonus(match) {
-  // À partir des quarts de finale (round 5+) : ×2 sur tous les matchs score
-  if (match.round >= 5) return 2;
+  if (match.round === 8) return 1; // 3ème place : pas de bonus
+  if (match.round >= 5) return 2;  // QF, SF, Finale : ×2
   // Huitièmes et phases de groupes
   if (isFranceMatch(match)) return 2;
   if (isBigMatch(match)) return 1.5;
