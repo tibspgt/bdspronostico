@@ -1988,6 +1988,120 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    /* ── BANDEAU DEMI-FINALES (per-match, doré) ── */
+    @keyframes sf-gold-shift {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+    .sf-match-band {
+      position: relative; overflow: hidden;
+      height: 28px; padding: 0 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Azeret Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      background: linear-gradient(90deg,
+        #5a3a00 0%, #9E6B00 20%, #D4A017 40%, #FFD700 55%, #D4A017 70%, #9E6B00 85%, #5a3a00 100%);
+      background-size: 200% 100%;
+      border-bottom: 1px solid rgba(255,215,0,0.4);
+      color: #1a0f00;
+      text-shadow: 0 1px 2px rgba(255,255,255,0.2);
+      animation: sf-gold-shift 4s ease-in-out infinite;
+    }
+
+    /* ── BANDEAU FINALE (per-match, doré premium) ── */
+    @keyframes final-gold-pulse {
+      0%,100% { background-position: 0% 50%; }
+      50%      { background-position: 100% 50%; }
+    }
+    .final-match-band {
+      position: relative; overflow: hidden;
+      height: 32px; padding: 0 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-family: 'Azeret Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase; font-weight: bold;
+      background: linear-gradient(90deg,
+        #3d2600 0%, #7a4f00 15%, #B8860B 30%, #FFD700 45%, #FFF8DC 55%, #FFD700 65%, #B8860B 80%, #3d2600 100%);
+      background-size: 250% 100%;
+      border-bottom: 2px solid rgba(255,215,0,0.6);
+      border-top: 1px solid rgba(255,215,0,0.3);
+      color: #1a0f00;
+      animation: final-gold-pulse 3s ease-in-out infinite;
+    }
+
+    /* ── BANNIÈRE GLOBALE DEMI-FINALES ── */
+    @keyframes sf-banner-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .sf-banner {
+      position: relative; overflow: hidden;
+      background: linear-gradient(90deg,
+        #5a3a00 0%, #9E6B00 20%, #D4A017 40%, #FFD700 60%, #D4A017 80%, #5a3a00 100%);
+      background-size: 250% 100%;
+      border-top: 1px solid rgba(255,215,0,0.3);
+      border-bottom: 1px solid rgba(255,215,0,0.2);
+      padding: 0.95rem 1.5rem 1rem;
+      text-align: center;
+      animation: sf-banner-shift 6s ease-in-out infinite;
+    }
+    .sf-banner .qf-banner-stars span { color: rgba(26,15,0,0.4); }
+    .sf-banner .qf-banner-line { background: rgba(26,15,0,0.2); }
+    .sf-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2rem;
+      letter-spacing: 0.14em; line-height: 1; color: #1a0f00;
+      text-shadow: 0 2px 6px rgba(255,215,0,0.3), 0 1px 0 rgba(255,255,255,0.15);
+    }
+    .sf-sub {
+      font-family: 'Azeret Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: rgba(26,15,0,0.75); margin-top: 0.28rem;
+    }
+    .sf-trophy {
+      font-size: 1.9rem; filter: drop-shadow(0 0 8px rgba(255,215,0,0.5));
+      animation: qf-float 2.2s ease-in-out infinite alternate;
+    }
+    .sf-trophy:last-child { animation-delay: 0.6s; }
+
+    /* ── BANNIÈRE GLOBALE FINALE ── */
+    @keyframes final-banner-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes final-banner-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255,215,0,0.15); }
+      50%       { box-shadow: 0 0 60px rgba(255,215,0,0.4), 0 0 100px rgba(255,215,0,0.15); }
+    }
+    .final-banner {
+      position: relative; overflow: hidden;
+      background: linear-gradient(90deg,
+        #3d2600 0%, #7a4f00 15%, #B8860B 30%, #FFD700 45%, #FFF8DC 55%, #FFD700 65%, #B8860B 80%, #3d2600 100%);
+      background-size: 300% 100%;
+      border-top: 2px solid rgba(255,215,0,0.5);
+      border-bottom: 2px solid rgba(255,215,0,0.5);
+      padding: 1.1rem 1.5rem 1.15rem;
+      text-align: center;
+      animation: final-banner-shift 5s ease-in-out infinite, final-banner-glow 3s ease-in-out infinite;
+    }
+    .final-banner .qf-banner-stars span { color: rgba(26,15,0,0.4); }
+    .final-banner .qf-banner-line { background: rgba(26,15,0,0.25); }
+    .final-title {
+      font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem;
+      letter-spacing: 0.2em; line-height: 1; color: #1a0f00;
+      text-shadow: 0 2px 8px rgba(255,215,0,0.35), 0 1px 0 rgba(255,255,255,0.2);
+    }
+    .final-sub {
+      font-family: 'Azeret Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(26,15,0,0.8); font-weight: bold; margin-top: 0.3rem;
+    }
+    .final-trophy {
+      font-size: 2.2rem; filter: drop-shadow(0 0 12px rgba(255,215,0,0.7));
+      animation: qf-float 1.8s ease-in-out infinite alternate;
+    }
+    .final-trophy:last-child { animation-delay: 0.5s; }
+
     /* ── BANDEAU QUARTS DE FINALE ── */
     @keyframes qf-banner-shift {
       0%   { background-position: 0% 50%; }
@@ -3073,22 +3187,8 @@
 </nav>
 </div><!-- /.sticky-header -->
 
-<!-- ──────────────── BANDEAU QUARTS DE FINALE ──────────────── -->
-<div class="qf-banner">
-  <div class="qf-banner-shimmer"></div>
-  <div class="qf-banner-stars">
-    <span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span>
-  </div>
-  <div class="qf-banner-content">
-    <span class="qf-trophy">🏆</span>
-    <div>
-      <div class="qf-title">QUARTS DE FINALE</div>
-      <div class="qf-sub">×2 sur tous les scores</div>
-    </div>
-    <span class="qf-trophy">🏆</span>
-  </div>
-  <div class="qf-banner-line"></div>
-</div>
+<!-- ──────────────── BANDEAU DE PHASE (dynamique) ──────────────── -->
+<div id="phase-banner"></div>
 
 <!-- ──────────────── APP ──────────────── -->
 <main class="main" data-tab="matches">
@@ -4487,8 +4587,47 @@ function renderTournamentProgress() {
     </div>`;
 }
 
+function renderPhaseBanner() {
+  const el = document.getElementById('phase-banner');
+  if (!el) return;
+  const active = state.matches.filter(m => m.score_home == null || m.status === 'live');
+  if (active.length === 0) { el.innerHTML = ''; return; }
+  const minRound = Math.min(...active.map(m => m.round));
+  const stars = `<div class="qf-banner-stars">
+    <span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+  </div>`;
+  if (minRound === 6) {
+    el.innerHTML = `<div class="qf-banner">
+      <div class="qf-banner-shimmer"></div>${stars}
+      <div class="qf-banner-content">
+        <span class="qf-trophy">🏆</span>
+        <div><div class="qf-title">QUARTS DE FINALE</div><div class="qf-sub">×2 sur tous les scores</div></div>
+        <span class="qf-trophy">🏆</span>
+      </div><div class="qf-banner-line"></div></div>`;
+  } else if (minRound === 7) {
+    el.innerHTML = `<div class="sf-banner">
+      ${stars}
+      <div class="qf-banner-content">
+        <span class="sf-trophy">🏆</span>
+        <div><div class="sf-title">DEMI-FINALES</div><div class="sf-sub">×2 sur tous les scores</div></div>
+        <span class="sf-trophy">🏆</span>
+      </div><div class="qf-banner-line"></div></div>`;
+  } else if (minRound >= 8) {
+    el.innerHTML = `<div class="final-banner">
+      ${stars}
+      <div class="qf-banner-content">
+        <span class="final-trophy">🏆</span>
+        <div><div class="final-title">FINALE</div><div class="final-sub">×2 · Le match ultime</div></div>
+        <span class="final-trophy">🏆</span>
+      </div><div class="qf-banner-line"></div></div>`;
+  } else {
+    el.innerHTML = '';
+  }
+}
+
 function renderAll() {
   renderTournamentProgress();
+  renderPhaseBanner();
   renderMatches();
   renderLeaderboard();
   renderClassementFull();
@@ -5226,7 +5365,11 @@ function renderMatchCard(m) {
   }
 
   const franceBadge = isFranceMatch(m)
-    ? `<div class="france-bonus-band"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round === 6 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
+    ? `<div class="${m.round >= 8 ? 'final-match-band' : m.round === 7 ? 'sf-match-band' : 'france-bonus-band'}"><img src="https://flagcdn.com/w20/fr.png" style="height:11px;border-radius:1px;flex-shrink:0;"> ${m.round >= 8 ? 'FRANCE EN FINALE · ×2 TOUT' : m.round === 7 ? 'FRANCE EN DEMI · ×2 TOUT' : m.round === 6 ? 'FRANCE · ×2 TOUT — SCORES · MOTM · BUTEURS' : 'OFFRE SPÉCIALE FRANCE · POINTS DOUBLÉS'}</div>`
+    : m.round >= 8
+    ? `<div class="final-match-band">🏆 FINALE · ×2 SUR TOUS LES SCORES</div>`
+    : m.round === 7
+    ? `<div class="sf-match-band">🏆 DEMI-FINALES · ×2 SUR TOUS LES SCORES</div>`
     : m.round === 6
     ? `<div class="qf-match-band">🏆 QUARTS DE FINALE · ×2 SUR TOUS LES SCORES</div>`
     : isOpeningMatch(m)
