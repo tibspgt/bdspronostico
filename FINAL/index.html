@@ -7023,7 +7023,15 @@ function renderBonus() {
 
     let inputHtml = '';
     if (result) {
-      // Résultat révélé → rien à saisir
+      if (myBet) {
+        const ok = myBet.toLowerCase().trim() === result.toLowerCase().trim();
+        inputHtml = `<div style="display:flex;align-items:center;gap:0.5rem;font-family:'Barlow Condensed',sans-serif;font-size:0.88rem;flex-wrap:wrap;padding:0.45rem 0;">
+          <span style="color:var(--text-muted);font-family:'Azeret Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;white-space:nowrap;">MON PARI :</span>
+          <span>${ok ? '✅' : '❌'}</span>
+          <em style="color:var(--text)">${betDisplay}</em>
+          ${ok ? `<span style="margin-left:0.3rem;font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:0.82rem;">+10 PTS</span>` : ''}
+        </div>`;
+      }
     } else if (deadlinePassed) {
       if (myBet) {
         inputHtml = `<div style="display:flex;align-items:center;gap:0.5rem;font-family:'Barlow Condensed',sans-serif;font-size:0.88rem;color:var(--text-dim);">
@@ -7076,7 +7084,6 @@ function renderBonus() {
       <div class="bonus-result-banner">
         <span class="bonus-result-label">Résultat officiel :</span>
         <span class="bonus-result-val">${result}</span>
-        <span style="margin-left:auto;font-family:'Bebas Neue',sans-serif;color:var(--gold);font-size:0.82rem;">+10 PTS ✅</span>
       </div>` : '';
 
     const rows = state.players.map(p => {
