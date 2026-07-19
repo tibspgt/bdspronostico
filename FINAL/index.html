@@ -4803,7 +4803,7 @@ function renderMatches() {
     : notFinished.filter(m => m.round === state.currentRound);
 
   if (base.length === 0) {
-    container.innerHTML = '<div class="empty-state"><div class="empty-title">Chargement...</div></div>';
+    container.innerHTML = '<div class="empty-state"><div class="empty-icon">🏆</div><div class="empty-title">Merci à tous d\'avoir participé !</div><div class="empty-text">Ce fut une belle aventure en votre compagnie ❤️</div></div>';
     return;
   }
 
